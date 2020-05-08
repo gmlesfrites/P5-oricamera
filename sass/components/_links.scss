@@ -1,0 +1,18 @@
+// Liens du footer
+.footer__link{
+    padding: 1.5em 2em 0 2em;
+}
+// Menu du header
+.menu__link {
+    padding: 1em 2em;
+}
+
+.menu__link, .footer__link {
+    color: $color-text;
+    font-family: $ff-text;
+    text-decoration: none;
+    &:hover:focus {
+        text-decoration:inherit;
+    }
+}
+

@@ -1,0 +1,42 @@
+//Page principale
+.main__content--home {
+    padding-top : 3em;
+    @include dispoCenter;
+}
+
+//Page panier
+.main__content--basket {
+    padding-top: 3em;
+    @include dispoCenter;
+    height:100vh;
+}
+
+//conteneur global des 5 articles
+@media all and (min-width: 768px) {
+    .container__boxPolaroid--flex {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
+//contenant des images
+.box__link--polaroid {
+    background: #fffff9;
+    text-decoration: none;
+    padding: 1.5em 0.2em 6em 0.2em;
+    margin:2em;
+    width: 80%;
+    max-width: 350px;
+    color: $color-text;
+    box-shadow: 1px 1px 3px #8b8b8b;
+    @include dispoCenter;
+    @media all and (min-width : 768px) {
+        width:350px;
+    }
+}
+.box__link--polaroid img {
+    width: 88%;
+    border: 1px solid #acaaaa23;
+}

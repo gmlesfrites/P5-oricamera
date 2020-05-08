@@ -3,26 +3,21 @@ html, body {
     font-size: $fz-base;
     font-family: $ff-text;
 }
-
 h1 {
     font-size: $fz-h1;
     padding:$fz-h1;
 }
-
 h2 {
     font-size: $fz-h2;
     padding: $fz-h2;
 }
-
 h1, h2 {
     text-align: center;
 }
-
 h3 {
     font-size: $fz-h3;
     padding: $fz-h3;
 }
-
 p {
     font-size: $fz-p;
     font-family: $ff-text;

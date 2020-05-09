@@ -12,7 +12,9 @@
     font-family: $ff-text;
     text-decoration: none;
     &:hover:focus {
-        text-decoration:inherit;
+        text-decoration: underline;
+        font-size: $fz-h3;
+        font-family: $ff-title;
     }
 }
 

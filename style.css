@@ -44,7 +44,9 @@ p {
   font-family: "Raleway", sans-serif;
   text-decoration: none; }
   .menu__link:hover:focus, .footer__link:hover:focus {
-    text-decoration: inherit; }
+    text-decoration: underline;
+    font-size: 1.2em;
+    font-family: "Indie Flower", cursive; }
 
 .fab {
   font-size: 2em;
@@ -52,6 +54,7 @@ p {
 
 .box__image--polaroid {
   width: 88%;
+  text-align: center;
   border: 1px solid #acaaaa23; }
 
 .header__menu {
@@ -109,7 +112,7 @@ p {
   background: #fffff9;
   text-decoration: none;
   padding: 1.5em 0.2em 6em 0.2em;
-  margin: 2em;
+  margin: 2em 0;
   width: 80%;
   max-width: 350px;
   color: #3d3d3d;
@@ -119,7 +122,8 @@ p {
   align-items: center; }
   @media all and (min-width: 768px) {
     .box__link--polaroid {
-      width: 350px; } }
+      width: 350px;
+      margin: 2em; } }
 
 .footer {
   background-color: #f3e9f1;

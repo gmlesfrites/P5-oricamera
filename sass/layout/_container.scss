@@ -26,7 +26,7 @@
     background: #fffff9;
     text-decoration: none;
     padding: 1.5em 0.2em 6em 0.2em;
-    margin:2em;
+    margin:2em 0;
     width: 80%;
     max-width: 350px;
     color: $color-text;
@@ -34,5 +34,6 @@
     @include dispoCenter;
     @media all and (min-width : 768px) {
         width:350px;
+        margin: 2em;
     }
 }

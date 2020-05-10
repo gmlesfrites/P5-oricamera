@@ -1,18 +1,10 @@
 // Mise en page du footer
 .footer {
-    background-color: rgb(243, 233, 241);
-    font-family: $ff-title;
-    color: $color-text;
-    @include dispoCenter;
-    padding-top: 0.5em;
-    text-align: center;
-    box-shadow: 1px -1px 0 rgba(179,111,152, 0.4);
-}
-
-// Liens du footer à partir de tab:768px
-@media all and (min-width:768px) {
-    .footer__link--flex{
-        display: flex;
-        justify-content: space-between;
-    }
+  background-color: rgb(243, 233, 241);
+  font-family: $ff-title;
+  color: $color-text;
+  @include dispoCenter;
+  padding-top: 0.5em;
+  text-align: center;
+  box-shadow: 1px -1px 0 rgba(179, 111, 152, 0.4);
 }

@@ -1,0 +1,19 @@
+{
+  "name": "oricamera",
+  "version": "1.0.0",
+  "description": "site web oricamera, utilisant JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmlesfrites/P5-oricamera.git"
+  },
+  "author": "gmlesfrites",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmlesfrites/P5-oricamera/issues"
+  },
+  "homepage": "https://github.com/gmlesfrites/P5-oricamera#readme"
+}

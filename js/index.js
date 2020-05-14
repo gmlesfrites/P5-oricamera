@@ -1,1 +1,0 @@
-const camera = require ()

@@ -7,7 +7,9 @@
 //Page panier
 .main__content--cart {
 	padding-top: 3em;
-	@include dispoCenter;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 	height: 100vh;
 	// TODO Verifier si ca ne pose pas de souci le height 100vh
 }
@@ -20,7 +22,10 @@
 //conteneur global des articles
 .container__boxPolaroid--flex {
 	@include dispoCenter;
-	flex-wrap: wrap;
+	@media all and (min-width: 768px) {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
 }
 
 //contenant des images
@@ -29,11 +34,11 @@
 	padding: 1.5em 0.2em 6em 0.2em;
 	margin: 2em auto;
 	width: 80%;
+	max-width: 350px;
 	color: $color-text;
 	box-shadow: 1px 1px 3px #8b8b8b;
 	@include dispoCenter;
 	@media all and (min-width: 768px) {
-		width: 350px;
 		margin: 2em;
 	}
 }

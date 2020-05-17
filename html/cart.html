@@ -5,23 +5,10 @@
 		<meta charset="UTF-8" />
 		<!-- Balises meta END -->
 
-		<!-- Données structurées -->
-		<script type="application/ld+json">
-			{
-				"@context": "http://www.schema.org",
-				"@type": "HobbyShop",
-				"name": "oricamera",
-				"url": "https://gmlesfrites.github.io/P5-oricamera/",
-				"description": "oricamera, votre boutique en ligne spécialisée dans la vente d'appareils photos argentiques d'occasion",
-				"hasMap": "https://goo.gl/maps/BZkDZfiyKqX2oUeB9"
-			}
-		</script>
-		<!-- Données structurées END-->
-
 		<!-- Balises Meta description -->
 		<meta
 			name="description"
-			content="oricamera, votre boutique en ligne spécialisée dans la vente d'appareils photos argentiques d'occasion"
+			content="votre panier - Oricamera, boutique en ligne spécialisée dans la vente d'appareils photos argentiques d'occasion"
 		/>
 		<meta
 			name="author"
@@ -40,47 +27,6 @@
 		/>
 		<!-- Balise canonique END -->
 
-		<!-- Balises meta opengraph -->
-		<meta
-			property="og:url"
-			content="https://gmlesfrites.github.io//P5-oricamera/"
-		/>
-		<meta property="og:type" content="website" />
-		<meta
-			property="og:title"
-			content="oricamera - vente en ligne d'appareils photos argentiques"
-		/>
-		<meta
-			property="og:description"
-			content="oricamera, votre boutique en ligne spécialisée dans la vente d'appareils photos argentiques d'occasion"
-		/>
-		<meta property="og:image" content="Emblème d'oricamera" />
-		<meta property="og:image:type" content="images/favicon.png" />
-		<meta
-			property="og:image:alt"
-			content="Logo de la boutique oricamera, boutique en ligne spécialisée dans la vente d'appareils photos argentiques d'occasion"
-		/>
-		<meta property="fb:app_id" content="2994854247242223" />
-		<!--Balises meta opengraph END -->
-
-		<!-- Twitter Cards -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@gmlesfrites" />
-		<meta
-			name="twitter:title"
-			content="oricamera - vente en ligne d'appareils photos argentiques"
-		/>
-		<meta
-			name="twitter:description"
-			content="oricamera, votre boutique en ligne spécialisée dans la vente d'appareils photos argentiques d'occasion"
-		/>
-		<meta name="twitter:image" content="images/favicon.png" />
-		<meta
-			name="twitter:url"
-			content="https://gmlesfrites.github.io/p4-lachouetteagence/"
-		/>
-		<!-- Twitter Cards END -->
-
 		<!--Balises meta pour la compatibilté navigateurs et différents device-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -88,18 +34,18 @@
 
 		<!--Favicon-->
 		<link
-			href="images/favicon.png"
+			href="../images/favicon.png"
 			rel="icon"
 			type="image/vnd.microsoft.icon"
 		/>
 		<!-- Favicon END -->
 
 		<!-- Icône pour apple -->
-		<link rel="apple-touch-icon" href="images/favicon.png" />
+		<link rel="apple-touch-icon" href="../images/favicon.png" />
 		<!-- Icône pour apple END-->
 
 		<!--Titre page-->
-		<title>Oricamera - camera shop</title>
+		<title>Votre panier - Oricamera | camera shop</title>
 		<!-- Titre page END -->
 
 		<!--Liens Google Fonts-->
@@ -132,7 +78,7 @@
 		<!-- Liens font awesome END-->
 
 		<!-- Lien Feuille de style -->
-		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="../style.css" />
 		<!-- Lien Feuille de style END-->
 	</head>
 	<body>
@@ -142,20 +88,20 @@
 			<nav class="header__navbar">
 				<a
 					class="header__navbar--logoText"
-					href="#"
+					href="../index.html"
 					aria-label="Lien vers la page d'accueil"
 					><i class="fas fa-shopping-cart"></i>Oricamera</a
 				>
 			</nav>
 			<nav class="menu__navigation">
 				<a
-					href="#"
+					href="../index.html"
 					aria-label="Lien vers page d'accueil"
 					class="menu__link"
 					>Accueil</a
 				>
 				<a
-					href="html/cart.html"
+					href="#"
 					aria-label="Lien vers page panier"
 					class="menu__link"
 					>Panier</a
@@ -165,27 +111,25 @@
 		</header>
 		<!-- Header END -->
 		<!-- Main -->
-		<main class="main__content--home main__home--background">
-			<h1>
-				Oricamera, votre boutique en ligne d'appareils photos
-				argentiques
-			</h1>
-			<h2>Les articles du moment</h2>
-			<!-- Affichage des articles  -->
-			<div id="boxPolaroid" class="container__boxPolaroid--flex"></div>
-			<!-- Affichage des articles END -->
+		<main class="main__content--basket main__basket--background">
+			<h1>Votre panier</h1>
+			<!-- Panier -->
+			<div
+				id="contenant__panier"
+				class="contenant__panier--vide contenant__panier--plein"
+			>
+				<p id="article"></p>
+			</div>
+			<!-- Panier END -->
 		</main>
-		<!-- Main END -->
+		<!-- Main END-->
 
 		<!-- Footer -->
 		<footer class="footer">
 			<p>&copy; 2020 - Oricamera</p>
 		</footer>
 		<!-- Footer END -->
-		<!-- Mes scripts -->
-		<script src="js/index.js"></script>
-		<script src="js/cameras.js"></script>
-		<!-- Mes scripts END -->
+
 		<!--Script font awesome-->
 		<script
 			src="https://kit.fontawesome.com/6a89ea6dae.js"

@@ -157,7 +157,7 @@ p {
 
 .main__cart--background::after {
   content: "";
-  background-image: url("/images/background.png");
+  background-image: url("images/background.png");
   filter: grayscale(90%);
   opacity: 0.2;
   overflow-x: hidden;
@@ -180,7 +180,7 @@ p {
 
 .main__home--background::after {
   content: "";
-  background-image: url("/images/backgroundHome.png");
+  background-image: url("images/backgroundHome.png");
   filter: grayscale(90%);
   opacity: 0.2;
   overflow-x: hidden;

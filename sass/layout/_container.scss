@@ -5,10 +5,16 @@
 }
 
 //Page panier
-.main__content--basket {
+.main__content--cart {
 	padding-top: 3em;
 	@include dispoCenter;
 	height: 100vh;
+	// TODO Verifier si ca ne pose pas de souci le height 100vh
+}
+
+//Conteneur des articles du panier
+.container__cart {
+	@include dispoCenter;
 }
 
 //conteneur global des articles

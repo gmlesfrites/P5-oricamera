@@ -1,20 +1,20 @@
 // Mise en page de la partie principale page accueil
 .main__home--background {
-    position:relative;
-
-}.main__home--background::after {
-    content:"";
-    background-image: url('images/backgroundHome.png');
-    filter: grayscale(90%);
-    opacity:0.2;
-    overflow-x:hidden;
-    position: absolute;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
+	position: relative;
+}
+.main__home--background::after {
+	content: "";
+	background-image: url("/images/backgroundHome.png");
+	filter: grayscale(90%);
+	opacity: 0.2;
+	overflow-x: hidden;
+	position: absolute;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
 }

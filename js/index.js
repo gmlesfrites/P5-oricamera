@@ -51,7 +51,7 @@ const divElt = document.querySelector("main div");
 
 for (let i = 0; i < data.length; i++) {
 	//Creation de la boite pour chaque item
-	const boxPolaroid = document.createElement("div");
+	const boxPolaroid = document.createElement("section");
 	boxPolaroid.classList.add("box__link--polaroid");
 	divElt.appendChild(boxPolaroid);
 

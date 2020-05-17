@@ -1,24 +1,27 @@
 /* Typographie - taille et couleurs */
-html, body {
-    font-size: $fz-base;
-    font-family: $ff-text;
+html,
+body {
+	font-size: $fz-base;
+	font-family: $ff-text;
 }
 h1 {
-    font-size: $fz-h1;
-    padding:$fz-h1;
+	font-size: $fz-h1;
+	padding: $fz-h1;
 }
 h2 {
-    font-size: $fz-h2;
-    padding: $fz-h2;
+	font-size: $fz-h2;
+	padding: $fz-h2;
 }
-h1, h2 {
-    text-align: center;
+h1,
+h2 {
+	text-align: center;
 }
-h3 {
-    font-size: $fz-h3;
-    padding: $fz-h3;
+h3,
+.h3 {
+	font-size: $fz-h3;
+	line-height: 1;
 }
 p {
-    font-size: $fz-p;
-    font-family: $ff-text;
+	font-size: $fz-p;
+	font-family: $ff-text;
 }

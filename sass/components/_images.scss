@@ -1,12 +1,13 @@
 // Icônes font pour liens
 .fab {
-    font-size: 2em;
-    padding:1em;
+	font-size: 2em;
+	padding: 1em;
 }
 
 //images des appareils
 .box__image--polaroid {
-    width: 88%;
-    text-align: center;
-    border: 1px solid #acaaaa23;
+	width: 88%;
+	max-width: 310px;
+	text-align: center;
+	border: 1px solid #acaaaa23;
 }

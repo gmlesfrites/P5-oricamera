@@ -83,12 +83,13 @@ window.onload = () => {
 
 		//Ajout du bouton voir le produit
 		const buttonElt = document.createElement("button");
+		buttonElt.className = "button__seeProduct"
 		buttonElt.textContent = "Voir le produit";
 		divButtons.appendChild(buttonElt);
 
 		//Ajout bouton achat rapide
 		const quickCartElt = document.createElement("i");
-		quickCartElt.className = "fas fa-shopping-cart";
+		quickCartElt.className = "fas fa-shopping-cart button__quickCart";
 		divButtons.appendChild(quickCartElt);
 	}
 };

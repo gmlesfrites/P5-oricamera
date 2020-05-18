@@ -1,0 +1,25 @@
+// page d'accueil container des deux boutons
+.container__buttons--flex {
+	display: flex;
+	justify-content: center;
+	align-content: space-around;
+	align-items: center;
+	margin-top: 3em;
+}
+
+// bouton voir le produit
+.button__seeProduct {
+	@include mainDesign;
+	border: 1px solid rgb(224, 213, 222);
+	border-radius: 20px 20px;
+	// border: ;
+	padding: 0.5em 1.5em;
+	margin-right: 0.5em;
+	font-size: $fz-p;
+}
+// bouton achat rapide
+.button__quickCart {
+	font-size: 2em;
+	padding: 1em;
+	margin-left: 0.5em;
+}

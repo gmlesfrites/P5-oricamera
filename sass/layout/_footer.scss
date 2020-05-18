@@ -1,10 +1,8 @@
 // Mise en page du footer
 .footer {
-  background-color: rgb(243, 233, 241);
-  font-family: $ff-title;
-  color: $color-text;
-  @include dispoCenter;
-  padding-top: 0.5em;
-  text-align: center;
-  box-shadow: 1px -1px 0 rgba(179, 111, 152, 0.4);
+	@include mainDesign;
+	@include dispoCenter;
+	padding-top: 0.5em;
+	text-align: center;
+	box-shadow: 1px -1px 0 rgba(179, 111, 152, 0.4);
 }

@@ -30,6 +30,28 @@ p {
   font-size: 1em;
   font-family: "Raleway", sans-serif; }
 
+.container__buttons--flex {
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  align-items: center;
+  margin-top: 3em; }
+
+.button__seeProduct {
+  background-color: #f3e9f1;
+  font-family: "Caveat Brush", cursive;
+  color: #3d3d3d;
+  border: 1px solid #e0d5de;
+  border-radius: 20px 20px;
+  padding: 0.5em 1.5em;
+  margin-right: 0.5em;
+  font-size: 1em; }
+
+.button__quickCart {
+  font-size: 2em;
+  padding: 1em;
+  margin-left: 0.5em; }
+
 .fa-shopping-cart, .fab {
   background: linear-gradient(120deg, rgba(227, 137, 18, 0.9), rgba(179, 111, 152, 0.9), rgba(143, 91, 254, 0.8));
   -webkit-background-clip: text;
@@ -64,6 +86,7 @@ p {
 .header__menu {
   background-color: #f3e9f1;
   font-family: "Caveat Brush", cursive;
+  color: #3d3d3d;
   box-shadow: 0px 1px 1px rgba(179, 111, 152, 0.4); }
 
 .header__navbar {
@@ -126,7 +149,7 @@ p {
 
 .box__link--polaroid {
   background: #fffff9;
-  padding: 1.5em 0.2em 6em 0.2em;
+  padding: 1.5em 0.2em 2em 0.2em;
   margin: 2em auto;
   width: 80%;
   max-width: 350px;

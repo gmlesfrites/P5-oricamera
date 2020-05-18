@@ -142,7 +142,7 @@ p {
   flex-direction: column;
   align-items: center; }
 
-.main__content--cart {
+.main__content--cart, .main__content--product {
   padding-top: 3em;
   display: flex;
   flex-direction: column;
@@ -224,6 +224,25 @@ p {
   background: url("./../images/backgroundHome.png");
   filter: grayscale(90%);
   opacity: 0.2;
+  overflow-x: hidden;
+  position: absolute;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1; }
+
+.main__product--background {
+  position: relative; }
+
+.main__product--background::after {
+  content: "";
+  background: url("./../images/backgroundProduct.png");
+  filter: grayscale(90%);
+  opacity: 0.4;
   overflow-x: hidden;
   position: absolute;
   background-size: cover;

@@ -4,8 +4,8 @@
 	@include dispoCenter;
 }
 
-//Page panier
-.main__content--cart {
+//Page panier et page produit
+.main__content--cart, .main__content--product {
 	padding-top: 3em;
 	display: flex;
 	flex-direction: column;

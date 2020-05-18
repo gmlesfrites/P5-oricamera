@@ -75,5 +75,20 @@ window.onload = () => {
 		priceElt.innerHTML =
 			'<div id="price">' + data[i].price + "&#128;" + "</div>";
 		boxPolaroid.appendChild(priceElt);
+
+		// Ajout div pour bouton produit et bouton achat rapide
+		const divButtons = document.createElement("div");
+		divButtons.className = "container__buttons--flex";
+		boxPolaroid.appendChild(divButtons);
+
+		//Ajout du bouton voir le produit
+		const buttonElt = document.createElement("button");
+		buttonElt.textContent = "Voir le produit";
+		divButtons.appendChild(buttonElt);
+
+		//Ajout bouton achat rapide
+		const quickCartElt = document.createElement("i");
+		quickCartElt.className = "fas fa-shopping-cart";
+		divButtons.appendChild(quickCartElt);
 	}
 };

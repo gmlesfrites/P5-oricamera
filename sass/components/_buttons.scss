@@ -10,11 +10,12 @@
 // bouton voir le produit
 .button__seeProduct {
 	@include mainDesign;
-	border: 1px solid #daa520;
-	border-radius: 20px 20px;
-	padding: 0.6em 1.6em;
-	margin-right: 0.5em;
-	font-size: $fz-p;
+	@include btnDesign;
+	@include zoomBtn(1.2);
+}
+.button__seeProduct a {
+	text-decoration: none;
+	color: $color-text;
 }
 
 // bouton achat rapide
@@ -22,4 +23,5 @@
 	font-size: 2em;
 	padding: 1em;
 	margin-left: 0.5em;
+	@include zoomBtn(1.2);
 }

@@ -10,3 +10,22 @@
 	font-family: $ff-title;
 	color: $color-text;
 }
+
+@mixin btnDesign {
+	border: 1px solid #daa520;
+	border-radius: 20px 20px;
+	padding: 0.6em 1.6em;
+	margin-right: 0.5em;
+	font-size: $fz-btn;
+}
+
+@mixin zoomBtn($zoom) {
+	-webkit-transform: scale($zoom);
+	-moz-transform: scale($zoom);
+	-ms-transform: scale($zoom);
+	transform: scale($zoom);
+	&:active:hover {
+		transition: 0.8s cubic-bezier(0.68, 0.25, 0.53, 0.82);
+		opacity: 0.8;
+	}
+}

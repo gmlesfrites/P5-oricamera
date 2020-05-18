@@ -83,8 +83,11 @@ window.onload = () => {
 
 		//Ajout du bouton voir le produit
 		const buttonElt = document.createElement("button");
-		buttonElt.className = "button__seeProduct"
-		buttonElt.textContent = "Voir le produit";
+		buttonElt.className = "button__seeProduct";
+		buttonElt.innerHTML =
+			'<a href="html/product.html" aria-label="Lien vers la page produit">' +
+			"Voir le produit" +
+			"</a>";
 		divButtons.appendChild(buttonElt);
 
 		//Ajout bouton achat rapide

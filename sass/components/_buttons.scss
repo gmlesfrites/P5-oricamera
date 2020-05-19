@@ -2,7 +2,7 @@
 .container__buttons--flex {
 	display: flex;
 	justify-content: center;
-	align-content: space-around;
+	align-content: space-between;
 	align-items: center;
 	margin-top: 3em;
 }
@@ -11,7 +11,7 @@
 .button__seeProduct {
 	@include mainDesign;
 	@include btnDesign;
-	@include zoomBtn(1.2);
+	margin-right: 0.5em;
 }
 .button__seeProduct a {
 	text-decoration: none;
@@ -21,7 +21,6 @@
 // bouton achat rapide
 .button__quickCart {
 	font-size: 2em;
-	padding: 1em;
+	padding: 1em 0 1em 1em;
 	margin-left: 0.5em;
-	@include zoomBtn(1.2);
 }

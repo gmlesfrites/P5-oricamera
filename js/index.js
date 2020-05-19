@@ -91,8 +91,10 @@ window.onload = () => {
 		divButtons.appendChild(buttonElt);
 
 		//Ajout bouton achat rapide
-		const quickCartElt = document.createElement("i");
-		quickCartElt.className = "fas fa-cart-plus button__quickCart";
+		const quickCartElt = document.createElement("p");
+		quickCartElt.className = "button__quickCart";
+		quickCartElt.innerHTML =
+			"<p>" + '<i class="fas fa-cart-plus"></i>' + "</p>";
 		divButtons.appendChild(quickCartElt);
 	}
 };

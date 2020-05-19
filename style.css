@@ -33,7 +33,7 @@ p {
 .container__buttons--flex {
   display: flex;
   justify-content: center;
-  align-content: space-around;
+  align-content: space-between;
   align-items: center;
   margin-top: 3em; }
 
@@ -43,16 +43,9 @@ p {
   color: #3d3d3d;
   border: 1px solid #daa520;
   border-radius: 20px 20px;
-  padding: 0.6em 1.6em;
-  margin-right: 0.5em;
+  padding: 0.6em 1.3em;
   font-size: 1.1em;
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2); }
-  .button__seeProduct:active:hover {
-    transition: 0.8s cubic-bezier(0.68, 0.25, 0.53, 0.82);
-    opacity: 0.8; }
+  margin-right: 0.5em; }
 
 .button__seeProduct a {
   text-decoration: none;
@@ -60,17 +53,10 @@ p {
 
 .button__quickCart {
   font-size: 2em;
-  padding: 1em;
-  margin-left: 0.5em;
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2); }
-  .button__quickCart:active:hover {
-    transition: 0.8s cubic-bezier(0.68, 0.25, 0.53, 0.82);
-    opacity: 0.8; }
+  padding: 1em 0 1em 1em;
+  margin-left: 0.5em; }
 
-.fa-shopping-cart, .fa-cart-plus {
+.fa-shopping-cart, .fa-cart-plus, .fa-info-circle {
   background: linear-gradient(120deg, rgba(227, 137, 18, 0.9), rgba(179, 111, 152, 0.9), rgba(143, 91, 254, 0.8));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -96,8 +82,7 @@ p {
   padding: 1em; }
 
 .box__image--polaroid {
-  width: 88%;
-  max-width: 310px;
+  width: 90%;
   text-align: center;
   border: 1px solid #acaaaa23; }
 
@@ -142,11 +127,13 @@ p {
   flex-direction: column;
   align-items: center; }
 
-.main__content--cart, .main__content--product {
+.main__content--cart,
+.main__content--product {
   padding-top: 3em;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
   height: 100vh; }
 
 .container__cart {
@@ -169,8 +156,8 @@ p {
   background: #fffff9;
   padding: 1.5em 0.2em 2em 0.2em;
   margin: 2em auto;
-  width: 80%;
-  max-width: 350px;
+  width: 88%;
+  max-width: 400px;
   color: #3d3d3d;
   box-shadow: 1px 1px 3px #8b8b8b;
   display: flex;
@@ -212,9 +199,9 @@ p {
   left: 0;
   z-index: -1; }
 
-#contenant__panier {
-  width: 80%;
-  background-color: rgba(255, 255, 255, 0.5); }
+.container__cart {
+  width: 90%;
+  background-color: #fffff9; }
 
 .main__home--background {
   position: relative; }

@@ -23,3 +23,32 @@
 	width: 90%;
 	background-color: #fffff9;
 }
+
+// //Panier visualisation swipe
+// .cart__static {
+// 	cursor: pointer;
+// }
+// .cart__visible {
+// 	animation: 0.5s slideRight ease-in;
+// 	transition-delay: 0;
+// }
+// .cart__hidden {
+// 	animation: 0.5s slideRight ease-out;
+// 	transition-delay: 0;
+// }
+// @keyframes slideRight {
+// 	from {
+// 		left: -25%;
+// 	}
+// 	to {
+// 		left: 0%;
+// 	}
+// }
+// @keyframes slideLeft {
+// 	from {
+// 		left: 0%;
+// 	}
+// 	to {
+// 		left: -25%;
+// 	}
+// }

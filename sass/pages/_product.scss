@@ -4,7 +4,7 @@
 }
 .main__product--background::after {
 	content: "";
-	background: url("./../images/backgroundProduct.png");
+	background: url("images/backgroundProduct.png");
 	filter: grayscale(90%);
 	opacity: 0.4;
 	overflow-x: hidden;

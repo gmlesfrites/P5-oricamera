@@ -198,7 +198,7 @@ p {
 
 .main__cart--background::after {
   content: "";
-  background-image: url("../../images/background.png");
+  background-image: url("../../Images/background.png");
   filter: grayscale(90%);
   opacity: 0.2;
   overflow-x: hidden;
@@ -221,7 +221,7 @@ p {
 
 .main__home--background::after {
   content: "";
-  background: url("../../images/backgroundHome.png");
+  background: url("../../Images/backgroundHome.png");
   filter: grayscale(90%);
   opacity: 0.2;
   overflow-x: hidden;
@@ -240,7 +240,7 @@ p {
 
 .main__product--background::after {
   content: "";
-  background: url("../../images/backgroundProduct.png");
+  background: url("../../Images/backgroundProduct.png");
   filter: grayscale(90%);
   opacity: 0.4;
   overflow-x: hidden;

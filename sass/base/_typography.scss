@@ -19,9 +19,11 @@ h2 {
 h3,
 .h3 {
 	font-size: $fz-h3;
-	line-height: 2;
+	padding-top: $fz-p;
+	padding-bottom: 0.3em;
 }
 p {
 	font-size: $fz-p;
+
 	font-family: $ff-text;
 }

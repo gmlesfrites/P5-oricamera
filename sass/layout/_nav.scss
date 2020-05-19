@@ -1,17 +1,7 @@
-.menu__navigation {
-    width: 100%;
-    @include dispoCenter;
-    & li{
-        list-style: none;
-        font-size: 1.5em;
-        text-align : center;
-        padding: 0.3em;
-    }
-    @media all and (min-width : 768px) {
-        flex-direction: row;
-        justify-content: space-around;
-    }
+.header__navbar {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
 }
-
-
-

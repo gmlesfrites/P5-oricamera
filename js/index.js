@@ -72,8 +72,8 @@ window.onload = () => {
 
 		//Ajout des détails de prix
 		const priceElt = document.createElement("p");
-		priceElt.innerHTML =
-			'<div id="price">' + data[i].price + "&#128;" + "</div>";
+		const price = data[i].price / 100;
+		priceElt.innerHTML = '<div id="price">' + price + " &#128;" + "</div>";
 		boxPolaroid.appendChild(priceElt);
 
 		// Ajout div pour bouton produit et bouton achat rapide

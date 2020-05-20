@@ -1,16 +1,19 @@
+// Emploi flexbox pour centrer en colonne
 @mixin dispoCenter {
 	display: flex;
-	justify-content: center;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 }
 
+//Header et footer
 @mixin mainDesign {
 	background-color: rgb(243, 233, 241);
 	font-family: $ff-title;
 	color: $color-text;
 }
 
+//Design de boutons
 @mixin btnDesign {
 	border: 1px solid #daa520;
 	border-radius: 20px 20px;
@@ -18,6 +21,7 @@
 	font-size: $fz-btn;
 }
 
+//Si animation bouton
 @mixin zoomBtn($zoom) {
 	-webkit-transform: scale($zoom);
 	-moz-transform: scale($zoom);
@@ -29,8 +33,19 @@
 	}
 }
 
+//Format polaroid
 @mixin designBox {
-			background-color: #fffff9;
+	background-color: #fffff9;
 	padding: 1.5em 0.2em 2em 0.2em;
 	box-shadow: 1px 1px 3px #8b8b8b;
+	width: 90%;
+	border-radius: 5px;
+}
+
+//format input
+@mixin input {
+	font-family: $ff-text;
+	font-weight: 200;
+	margin: 1em 0;
+	width: 100%;
 }

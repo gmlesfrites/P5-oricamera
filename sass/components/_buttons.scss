@@ -1,6 +1,6 @@
 // page d'accueil container des deux boutons
 .container__buttons--flex {
-	width:90%;
+	width: 90%;
 	margin: 5%;
 	display: flex;
 	justify-content: space-between;
@@ -24,8 +24,7 @@ button a {
 	padding: 1em 0 1em 1em;
 }
 
-
-//Bouton page produit 
+//Bouton page produit
 .container__product--buttons {
 	width: 90%;
 	margin: 5%;
@@ -36,13 +35,18 @@ button a {
 		flex-direction: row;
 		justify-content: space-between;
 		align-content: center;
-		
 	}
-
 }
 .container__product--toCart,
 .container__product--homeReturn {
 	@include mainDesign;
 	@include btnDesign;
+	margin: 1em;
+}
+
+//Bouton passer la commande
+.button__form {
+	@include btnDesign;
+	@include mainDesign;
 	margin: 1em;
 }

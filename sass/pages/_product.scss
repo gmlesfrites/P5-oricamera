@@ -21,13 +21,9 @@
 
 // Contenant de la fiche produit
 .container__product {
-	width: 90%;
 	@include designBox;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	@include dispoCenter;
 	align-content: flex-start;
-	align-items: center;
 	padding: 2em 1em;
 	margin: 2em 0;
 }

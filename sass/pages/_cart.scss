@@ -19,37 +19,54 @@
 	z-index: -1;
 }
 
+//titres
+.title__cart,
+.title__form {
+	font-size: $fz-h1;
+}
+//contenant du panier
 .container__cart {
-	width: 90%;
-	background-color: #fffff9;
+	@include designBox;
+	font-size: $fz-h3;
+	opacity: 0.7;
+	margin-bottom: 5em;
 }
 
-//Panier visualisation swipe
-//  TODO à enlever si je garde un affichage classique
-// .cart__static {
-// 	cursor: pointer;
-// }
-// .cart__visible {
-// 	animation: 0.5s slideRight ease-in;
-// 	transition-delay: 0;
-// }
-// .cart__hidden {
-// 	animation: 0.5s slideRight ease-out;
-// 	transition-delay: 0;
-// }
-// @keyframes slideRight {
-// 	from {
-// 		left: -25%;
-// 	}
-// 	to {
-// 		left: 0%;
-// 	}
-// }
-// @keyframes slideLeft {
-// 	from {
-// 		left: 0%;
-// 	}
-// 	to {
-// 		left: -25%;
-// 	}
-// }
+//contenant du formulaire
+.container__form {
+	@include designBox;
+	opacity: 0.7;
+	@include dispoCenter;
+	margin-bottom: 3em;
+}
+.fieldset__form {
+	font-size: $fz-h3;
+	display: flex;
+	width: 100%;
+	padding: 5%;
+	margin: 2em;
+}
+//légende des fieldsets
+.legend__form {
+	font-size: $fz-h2;
+	font-family: $ff-title;
+}
+//label
+.label__form {
+	font-family: $ff-text;
+	font-size: $fz-p;
+}
+//Input classique
+.input__form {
+	@include input;
+	height: 3em;
+}
+//Input radio
+.radio__form {
+	@include input;
+}
+//textarea
+.textarea__form {
+	@include input;
+	height: 6em;
+}

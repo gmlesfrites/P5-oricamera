@@ -1,19 +1,19 @@
 // page d'accueil container des deux boutons
 .container__buttons--flex {
+	width:90%;
+	margin: 5%;
 	display: flex;
-	justify-content: center;
-	align-content: space-between;
+	justify-content: space-between;
+	align-content: center;
 	align-items: center;
-	margin-top: 2em;
 }
 
 // bouton voir le produit
 .button__seeProduct {
 	@include mainDesign;
 	@include btnDesign;
-	margin-right: 0.5em;
 }
-.button__seeProduct a {
+button a {
 	text-decoration: none;
 	color: $color-text;
 }
@@ -22,5 +22,27 @@
 .button__quickCart {
 	font-size: 2em;
 	padding: 1em 0 1em 1em;
-	margin-left: 0.5em;
+}
+
+
+//Bouton page produit 
+.container__product--buttons {
+	width: 90%;
+	margin: 5%;
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: center;
+	@media all and (min-width: 768px) {
+		flex-direction: row;
+		justify-content: space-between;
+		align-content: center;
+		
+	}
+
+}
+.container__product--toCart,
+.container__product--homeReturn {
+	@include mainDesign;
+	@include btnDesign;
+	margin: 1em;
 }

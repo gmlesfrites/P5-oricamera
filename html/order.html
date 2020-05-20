@@ -33,7 +33,7 @@
 	<!-- Icône pour apple END-->
 
 	<!--Titre page-->
-	<title>Votre panier - Oricamera | camera shop</title>
+	<title>Confirmation de votre commande - Oricamera | camera shop</title>
 	<!-- Titre page END -->
 
 	<!--Liens Google Fonts-->
@@ -77,89 +77,24 @@
 
 	<!-- Main -->
 	<main class="main__content--cart main__cart--background">
-		<h1 class="title__cart">Votre panier</h1>
-		<!-- Panier vide-->
+		<h1 class="title__cart">Votre commande est confirmée !</h1>
+		
+		<!-- Message de confirmation de commande-->
 		<div id="container__cart" class="container__cart">
-			<p><i class="fas fa-info-circle"></i> Votre panier est vide.</p>
+			<p><strong><i class="fas fa-info-circle"></i></strong>&nbsp; Votre bon de commande a été validé. Nous vous remercions pour votre commande.</p>
 		</div>
-		<!-- Panier vide END -->
+		<!-- Message de confirmation de commande END -->
 
-		<!-- Section formulaire de commande -->
-		<section class="container__form">
-			<h2 class="title__form">Votre formulaire de commande</h2>
+		<!-- Section Récapitulatif de commande -->
+		<section class="container__purchase">
+			<h2 class="title__purchase">Récapitulatif de votre commande</h2>
 
-			<!-- formulaire de commande -->
-			<form id="formOrder" method="POST">
-
-				<!-- Civilité -->
-				<fieldset class="fieldset__form">
-					<legend class="legend__form">&nbsp; Votre civilité &nbsp;</legend>
-					<!-- Sexe -->
-					<label for="sex" class="label__form">Merci de renseigner votre civilité.</label>
-					<input type="radio" id="sex" name="sex" class="radio__form"
-						aria-label="Merci de renseigner votre civilité, ce champ est oligatoire">
-					<!-- Sexe END -->
-
-					<!-- Nom -->
-					<label for="name">Merci de renseigner votre nom.</label>
-					<input type="text" id="name" name="Votre nom" class="input__form" required autocomplete="on"
-						placeholder="DOE" maxlength="200"
-						aria-label="Merci de renseigner votre nom, ce champ est oligatoire">
-					<!-- Nom END -->
-
-					<!-- Prénom -->
-					<label for="firstname">Merci de renseigner votre prénom.</label>
-					<input type="text" id="firstname" name="Votre nom" class="input__form" required autocomplete="on"
-						placeholder="John" maxlength="200"
-						aria-label="Merci de renseigner votre prénom, ce champ est oligatoire">
-					<!-- Prénom END -->
-				</fieldset>
-				<!-- Civilité END -->
-
-				<!-- Coordonnées -->
-				<fieldset class="fieldset__form">
-					<legend class="legend__form">&nbsp; Vos coordonnées &nbsp;</legend>
-
-					<!-- Coordonnées Email -->
-					<label for="email">Merci d'indiquer votre adresse email pour vous adresser votre facture.</label>
-					<input type="email" id="email" name="Votre email" class="input__form" required autocomplete="on"
-						placeholder="johndoe@mail.fr" maxlength="250"
-						aria-label="Merci d'indiquer votre adresse email, ce champ est obligatoire">
-					<!-- Coordonnées Email END -->
-
-					<!-- Coordonnées téléphoniques -->
-					<label for="telephone">Merci d'indiquer votre numéro de téléphone pour que nous puissions vous
-						rappeler.</label>
-					<input type="tel" id="telephone" name="Vos coordonnées téléphoniques" class="input__form" required
-						autocomplete="on" placeholder="0401020304" maxlength="13" minlength="10"
-						aria-label="Merci d'indiquer votre numéro de téléphone pour que nous puissions vous rappeler">
-					<!-- Coordonnées téléphoniques END -->
-
-					<!-- Adresse -->
-					<label for="email">Merci d'indiquer votre adresse postale pour vous adresser votre commande.</label>
-					<input type="email" id="email" name="Votre email" class="input__form" required autocomplete="on"
-						placeholder="johndoe@mail.fr" maxlength="250"
-						aria-label="Merci d'indiquer votre adresse postale, ce champ est obligatoire">
-					<!-- Adresse END -->
-				</fieldset>
-				<!-- Coordonnées END -->
-
-				<!-- Commentaire pour livraison -->
-				<fieldset class="fieldset__form">
-					<legend class="legend__form">&nbsp; Commentaires additionnels &nbsp;</legend>
-					<label for="message">Merci de préciser les informations utiles pour faciliter la livraison.</label>
-					<textarea class="textarea__form" id="message" name="Votre projet" rows="4" cols="50"
-						maxlength="1000" placeholder="Résidence fermée, digicode, ..." autocomplete="on"
-						aria-label="Merci de préciser les informations utiles pour faciliter la livraison, ce champ n'est pas obligatoire."></textarea>
-				</fieldset>
-				<!-- Commentaire pour livraison -->
-
-				<!-- Bouton envoi -->
-				<button class="button__form" type="submit"
-					aria-label="Ci-après le bouton d'envoi de votre formulaire">Passer ma commande</button>
-				<!-- Bouton envoi END -->
-			</form>
-			<!-- formulaire de commande END -->
+			
+			<!-- Bouton retour au catalogue -->
+			<button class="container__product--homeReturn">
+				<a href="../index.html" aria-label="Bouton retour vers catalogue">Retour au catalogue</a>
+			</button>
+			<!-- Bouton retour au catalogue END -->
 
 		</section>
 		<!-- Section formulaire de commande END -->

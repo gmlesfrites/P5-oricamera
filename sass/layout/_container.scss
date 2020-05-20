@@ -32,13 +32,12 @@
 
 //contenant des images
 .box__link--polaroid {
-	background: #fffff9;
-	padding: 1.5em 0.2em 2em 0.2em;
+	@include designBox;
 	margin: 2em auto;
 	width: 88%;
 	max-width: 400px;
 	color: $color-text;
-	box-shadow: 1px 1px 3px #8b8b8b;
+	
 	@include dispoCenter;
 	@media all and (min-width: 768px) {
 		margin: 2em;

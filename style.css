@@ -140,13 +140,13 @@ p {
       flex-wrap: wrap; } }
 
 .box__link--polaroid {
-  background: #fffff9;
+  background-color: #fffff9;
   padding: 1.5em 0.2em 2em 0.2em;
+  box-shadow: 1px 1px 3px #8b8b8b;
   margin: 2em auto;
   width: 88%;
   max-width: 400px;
   color: #3d3d3d;
-  box-shadow: 1px 1px 3px #8b8b8b;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -228,8 +228,34 @@ p {
   left: 0;
   z-index: -1; }
 
-.container__description {
+.container__product {
   width: 90%;
-  background-color: #fffff9; }
+  background-color: #fffff9;
+  padding: 1.5em 0.2em 2em 0.2em;
+  box-shadow: 1px 1px 3px #8b8b8b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: center; }
+
+.title__product {
+  font-size: 1.44em; }
+
+.image__product {
+  width: 90%; }
+
+.description__product {
+  font-size: 1em;
+  padding-top: 1em;
+  margin: 5%; }
+
+.lenses__product {
+  font-size: 1em;
+  padding: 1em 0; }
+
+.price__product {
+  font-size: 1em;
+  font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */

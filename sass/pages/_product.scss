@@ -20,7 +20,39 @@
 }
 
 // Contenant de la fiche produit
-.container__description {
+.container__product {
 	width: 90%;
-	background-color: #fffff9;
+	@include designBox;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: flex-start;
+	align-items:center;
 }
+//Titre du produit
+.title__product {
+	font-size: $fz-h2;
+}
+//image du produit
+.image__product {
+	width:90%;
+}
+//Description du produit
+.description__product {
+	font-size: $fz-p;
+	padding-top: 1em;
+	margin:5%;
+}
+//choix des optiques 
+.lenses__product {
+	font-size: $fz-p;
+	padding: 1em 0;
+}
+//Prix du produit
+.price__product {
+	font-size: $fz-p;
+	font-weight: bold;
+}
+
+
+

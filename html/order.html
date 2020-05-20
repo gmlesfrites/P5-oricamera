@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<!-- Balises meta -->
+	<meta charset="UTF-8" />
+	<!-- Balises meta END -->
+
+	<!-- Balises Meta description -->
+	<meta name="description"
+		content="votre panier - Oricamera, boutique en ligne spécialisée dans la vente d'appareils photos argentiques d'occasion" />
+	<meta name="author"
+		content="Paul LECEO - Directeur d'agence, Fanny LUXE - UX Designer, Jeanne DEVE - Web développeur, Emilie GOURLIN - Web développeur" />
+	<meta name="copyright"
+		content="&copy; 2020 - oricamera, site de e-commerce, vente d'appareils photos argentiques" />
+	<!-- Balises Meta description END -->
+
+	<!-- Balise canonique -->
+	<link rel="canonical" href="https://gmlesfrites.github.io/P5-oricamera/html/cart.html" />
+	<!-- Balise canonique END -->
+
+	<!--Balises meta pour la compatibilté navigateurs et différents device-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<!-- Balises meta pour la compatibilté navigateurs et différents device END -->
+
+	<!--Favicon-->
+	<link href="../Images/favicon.png" rel="icon" type="image/vnd.microsoft.icon" />
+	<!-- Favicon END -->
+
+	<!-- Icône pour apple -->
+	<link rel="apple-touch-icon" href="../Images/favicon.png" />
+	<!-- Icône pour apple END-->
+
+	<!--Titre page-->
+	<title>Votre panier - Oricamera | camera shop</title>
+	<!-- Titre page END -->
+
+	<!--Liens Google Fonts-->
+	<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+	<!--Liens Google Fonts END-->
+
+	<!--Liens font awesome-->
+	<link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all"
+		rel="stylesheet" />
+	<link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"
+		rel="stylesheet" />
+	<link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet" />
+	<!-- Liens font awesome END-->
+
+	<!-- Lien Feuille de style -->
+	<link rel="stylesheet" type="text/css" href="../style.css" />
+	<!-- Lien Feuille de style END-->
+</head>
+
+<body>
+	<!-- Header -->
+	<header class="header__menu">
+
+		<!-- Image and text navbar -->
+		<nav class="header__navbar">
+			<!-- retour accueil -->
+			<a class="header__navbar--logoText" href="../index.html" aria-label="Lien vers la page d'accueil"><i
+					class="fa fa-camera-retro" aria-hidden="true"></i>&nbsp;Oricamera</a>
+			<!-- retour accueil END-->
+
+			<!-- Accès panier -->
+			<a href="#" aria-label="Lien vers page panier" class="menu__link cart__static cart__visible cart__hidden"><i
+					class="fas fa-shopping-cart" aria-hidden="true"></i>Panier</a>
+			<!-- Accès panier END -->
+		</nav>
+		<!-- Image and text navbar END-->
+
+	</header>
+	<!-- Header END -->
+
+	<!-- Main -->
+	<main class="main__content--cart main__cart--background">
+		<h1 class="title__cart">Votre panier</h1>
+		<!-- Panier vide-->
+		<div id="container__cart" class="container__cart">
+			<p><i class="fas fa-info-circle"></i> Votre panier est vide.</p>
+		</div>
+		<!-- Panier vide END -->
+
+		<!-- Section formulaire de commande -->
+		<section class="container__form">
+			<h2 class="title__form">Votre formulaire de commande</h2>
+
+			<!-- formulaire de commande -->
+			<form id="formOrder" method="POST">
+
+				<!-- Civilité -->
+				<fieldset class="fieldset__form">
+					<legend class="legend__form">&nbsp; Votre civilité &nbsp;</legend>
+					<!-- Sexe -->
+					<label for="sex" class="label__form">Merci de renseigner votre civilité.</label>
+					<input type="radio" id="sex" name="sex" class="radio__form"
+						aria-label="Merci de renseigner votre civilité, ce champ est oligatoire">
+					<!-- Sexe END -->
+
+					<!-- Nom -->
+					<label for="name">Merci de renseigner votre nom.</label>
+					<input type="text" id="name" name="Votre nom" class="input__form" required autocomplete="on"
+						placeholder="DOE" maxlength="200"
+						aria-label="Merci de renseigner votre nom, ce champ est oligatoire">
+					<!-- Nom END -->
+
+					<!-- Prénom -->
+					<label for="firstname">Merci de renseigner votre prénom.</label>
+					<input type="text" id="firstname" name="Votre nom" class="input__form" required autocomplete="on"
+						placeholder="John" maxlength="200"
+						aria-label="Merci de renseigner votre prénom, ce champ est oligatoire">
+					<!-- Prénom END -->
+				</fieldset>
+				<!-- Civilité END -->
+
+				<!-- Coordonnées -->
+				<fieldset class="fieldset__form">
+					<legend class="legend__form">&nbsp; Vos coordonnées &nbsp;</legend>
+
+					<!-- Coordonnées Email -->
+					<label for="email">Merci d'indiquer votre adresse email pour vous adresser votre facture.</label>
+					<input type="email" id="email" name="Votre email" class="input__form" required autocomplete="on"
+						placeholder="johndoe@mail.fr" maxlength="250"
+						aria-label="Merci d'indiquer votre adresse email, ce champ est obligatoire">
+					<!-- Coordonnées Email END -->
+
+					<!-- Coordonnées téléphoniques -->
+					<label for="telephone">Merci d'indiquer votre numéro de téléphone pour que nous puissions vous
+						rappeler.</label>
+					<input type="tel" id="telephone" name="Vos coordonnées téléphoniques" class="input__form" required
+						autocomplete="on" placeholder="0401020304" maxlength="13" minlength="10"
+						aria-label="Merci d'indiquer votre numéro de téléphone pour que nous puissions vous rappeler">
+					<!-- Coordonnées téléphoniques END -->
+
+					<!-- Adresse -->
+					<label for="email">Merci d'indiquer votre adresse postale pour vous adresser votre commande.</label>
+					<input type="email" id="email" name="Votre email" class="input__form" required autocomplete="on"
+						placeholder="johndoe@mail.fr" maxlength="250"
+						aria-label="Merci d'indiquer votre adresse postale, ce champ est obligatoire">
+					<!-- Adresse END -->
+				</fieldset>
+				<!-- Coordonnées END -->
+
+				<!-- Commentaire pour livraison -->
+				<fieldset class="fieldset__form">
+					<legend class="legend__form">&nbsp; Commentaires additionnels &nbsp;</legend>
+					<label for="message">Merci de préciser les informations utiles pour faciliter la livraison.</label>
+					<textarea class="textarea__form" id="message" name="Votre projet" rows="4" cols="50"
+						maxlength="1000" placeholder="Résidence fermée, digicode, ..." autocomplete="on"
+						aria-label="Merci de préciser les informations utiles pour faciliter la livraison, ce champ n'est pas obligatoire."></textarea>
+				</fieldset>
+				<!-- Commentaire pour livraison -->
+
+				<!-- Bouton envoi -->
+				<button class="button__form" type="submit"
+					aria-label="Ci-après le bouton d'envoi de votre formulaire">Passer ma commande</button>
+				<!-- Bouton envoi END -->
+			</form>
+			<!-- formulaire de commande END -->
+
+		</section>
+		<!-- Section formulaire de commande END -->
+
+	</main>
+	<!-- Main END-->
+	<!-- Footer -->
+	<footer class="footer">
+		<p>&copy; 2020 - Oricamera</p>
+	</footer>
+	<!-- Footer END -->
+	<!-- Mes scripts -->
+	<script src="../js/cart.js"></script>
+	<!-- Mes scripts END -->
+	<!--Script font awesome-->
+	<script src="https://kit.fontawesome.com/6a89ea6dae.js" crossorigin="anonymous"></script>
+	<!-- Script font awesome END -->
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+// Mise en page de la partie principale page panier
+.main__cart--background {
+	position: relative;
+}
+.main__cart--background::after {
+	content: "";
+	background-image: url("Images/background.png");
+	filter: grayscale(90%);
+	opacity: 0.2;
+	overflow-x: hidden;
+	position: absolute;
+	background-size: cover;
+	background-position: 40% 60%;
+	background-repeat: no-repeat;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+}
+
+//titres
+.title__cart,
+.title__form {
+	font-size: $fz-h1;
+}
+//contenant du panier
+.container__cart {
+	@include designBox;
+	font-size: $fz-h3;
+	opacity: 0.7;
+	margin-bottom: 5em;
+}
+
+//contenant du formulaire
+.container__form {
+	@include designBox;
+	opacity: 0.7;
+	@include dispoCenter;
+	margin-bottom: 3em;
+}
+.fieldset__form {
+	font-size: $fz-h3;
+	display: flex;
+	width: 100%;
+	padding: 5%;
+	margin: 2em;
+}
+//légende des fieldsets
+.legend__form {
+	font-size: $fz-h2;
+	font-family: $ff-title;
+}
+//label
+.label__form {
+	font-family: $ff-text;
+	font-size: $fz-p;
+}
+//Input classique
+.input__form {
+	@include input;
+	height: 3em;
+}
+//Input radio
+.radio__form {
+	@include input;
+}
+//textarea
+.textarea__form {
+	@include input;
+	height: 6em;
+}

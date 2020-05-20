@@ -67,35 +67,48 @@
 		<!-- Image and text navbar END-->
 	</header>
 	<!-- Header END -->
+
 	<!-- Main -->
 	<main class="main__content--product main__product--background">
 		<h1>Votre sélection</h1>
-		<!-- Container de la fiche produit -->
-		<section class="container__product">
-			<img src="#" class="container__product--image">
-			<h2 class="container__product--titre"></h2>
 
-			<p class="container__product--description"></p>
-			<ul class="container__product--lenses">
-			</ul>
-			<p class="container__product--price"></p>
+		<!-- Container de la fiche produit -->
+		<section id="product" class="container__product">
+
+			<!-- Informations produit importées de l'API en JS -->
+			<img src="#" id="imageUrl" aria-label="photo du produit" class="container__product--image">
+			<h2 id="name" class="container__product--titre"></h2>
+			<p id="description" class="container__product--description"></p>
+			<ul id="lenses" class="container__product--lenses"></ul>
+			<p id="price" class="container__product--price"></p>
+			<!-- Informations produit importées de l'API en JS END-->
+
+			<!-- Contenant pour les boutons retour accueil et bouton achat -->
 			<div class="container__product--buttons">
+				<!-- Bouton retour au catalogue -->
 				<button class="container__product--homeReturn">
 					<a href="../index.html" aria-label="Bouton retour vers catalogue">Retour au catalogue</a>
 				</button>
+				<!-- Bouton retour au catalogue END -->
+				<!-- Bouton achat -->
 				<button class="container__product--toCart" aria-label="Bouton ajout au panier">Ajouter ce produit au
 					panier</button>
+				<!-- Bouton achat END -->
 			</div>
+			<!-- Contenant pour les boutons retour accueil et bouton achat END -->
+
 		</section>
-		</div>
 		<!-- Container de la fiche produit END -->
+
 	</main>
 	<!-- Main END-->
+
 	<!-- Footer -->
 	<footer class="footer">
 		<p>&copy; 2020 - Oricamera</p>
 	</footer>
 	<!-- Footer END -->
+
 	<!-- Mes scripts -->
 	<script src="../js/cameras.js"></script>
 	<!-- Mes scripts END -->

@@ -32,27 +32,37 @@
 	margin-bottom: 5em;
 }
 
-//contenant du formulaire
+//contenant global du formulaire
 .container__form {
 	@include designBox;
 	opacity: 0.7;
 	@include dispoCenter;
 	margin-bottom: 3em;
 }
+//contenant balise form
+.container__form--flex {
+	@include dispoCenter;
+}
+//partie civilité puis coordonnées puis commentaires
 .fieldset__form {
 	font-size: $fz-h3;
 	display: flex;
-	width: 100%;
+	width: 95%;
 	padding: 5%;
-	margin: 2em;
+	margin: 2em 0;
 }
 //légende des fieldsets
 .legend__form {
 	font-size: $fz-h2;
 	font-family: $ff-title;
 }
+// contenant de chaque sous-partie contenant label+input
+.subpart__form {
+	margin-bottom: 1.5em;
+}
 //label
-.label__form {
+.label__form,
+.p__form {
 	font-family: $ff-text;
 	font-size: $fz-p;
 }
@@ -61,12 +71,25 @@
 	@include input;
 	height: 3em;
 }
-//Input radio
-.radio__form {
-	@include input;
-}
 //textarea
 .textarea__form {
 	@include input;
 	height: 6em;
+}
+
+//Contenant Monsieur-Madame
+//Input radio
+.container__form--sex {
+	margin-bottom: 1.5em;
+}
+//Monsieur-Madame__form
+.monsieur__form,
+.madame__form {
+	font-family: $ff-text;
+	display: flex;
+	flex-direction: row;
+	margin: 0.5em;
+}
+.radio__form {
+	@include input;
 }

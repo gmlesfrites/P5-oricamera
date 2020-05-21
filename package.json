@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/gmlesfrites/P5-oricamera/issues"
   },
-  "homepage": "https://github.com/gmlesfrites/P5-oricamera#readme"
+  "homepage": "https://github.com/gmlesfrites/P5-oricamera#readme",
+  "dependencies": {}
 }

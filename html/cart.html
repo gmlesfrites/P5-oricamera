@@ -89,29 +89,46 @@
 			<h2 class="title__form">Votre formulaire de commande</h2>
 
 			<!-- formulaire de commande -->
-			<form id="formOrder" method="POST">
+			<form id="formOrder" class="container__form--flex" method="POST">
 
 				<!-- Civilité -->
 				<fieldset class="fieldset__form">
 					<legend class="legend__form">&nbsp; Votre civilité &nbsp;</legend>
 					<!-- Sexe -->
-					<label for="sex" class="label__form">Merci de renseigner votre civilité.</label>
-					<input type="radio" id="sex" name="sex" class="radio__form"
-						aria-label="Merci de renseigner votre civilité, ce champ est oligatoire">
+					<div class="container__form--sex">
+						<p class="p__form">Merci d'indiquer votre civilité.</p>
+						<!-- Monsieur -->
+						<div class="monsieur__form">
+							<input type="radio" id="Monsieur" name="M-Mme" aria-label="Choix Monsieur par défaut"
+								value="Monsieur" checked>
+							<label for="Monsieur" class="label__form">&nbsp;Monsieur</label>
+						</div>
+						<!-- Monsieur END -->
+						<!-- Madame -->
+						<div class="madame__form">
+							<input type="radio" id="Madame" name="M-Mme" aria-label="Choix Madame" value="Madame">
+							<label for="Madame" class="label__form">&nbsp;Madame</label>
+						</div>
+						<!-- Madame END -->
+					</div>
 					<!-- Sexe END -->
 
 					<!-- Nom -->
-					<label for="name">Merci de renseigner votre nom.</label>
-					<input type="text" id="name" name="Votre nom" class="input__form" required autocomplete="on"
-						placeholder="DOE" maxlength="200"
-						aria-label="Merci de renseigner votre nom, ce champ est oligatoire">
+					<div class="subpart__form">
+						<label for="name">Merci de renseigner votre nom.</label>
+						<input type="text" id="name" name="Votre nom" class="input__form" required autocomplete="on"
+							placeholder="DOE" maxlength="200"
+							aria-label="Merci de renseigner votre nom, ce champ est oligatoire">
+					</div>
 					<!-- Nom END -->
 
 					<!-- Prénom -->
-					<label for="firstname">Merci de renseigner votre prénom.</label>
-					<input type="text" id="firstname" name="Votre nom" class="input__form" required autocomplete="on"
-						placeholder="John" maxlength="200"
-						aria-label="Merci de renseigner votre prénom, ce champ est oligatoire">
+					<div class="subpart__form">
+						<label for="firstname">Merci de renseigner votre prénom.</label>
+						<input type="text" id="firstname" name="Votre nom" class="input__form" required
+							autocomplete="on" placeholder="John" maxlength="200"
+							aria-label="Merci de renseigner votre prénom, ce champ est oligatoire">
+					</div>
 					<!-- Prénom END -->
 				</fieldset>
 				<!-- Civilité END -->
@@ -121,36 +138,47 @@
 					<legend class="legend__form">&nbsp; Vos coordonnées &nbsp;</legend>
 
 					<!-- Coordonnées Email -->
-					<label for="email">Merci d'indiquer votre adresse email pour vous adresser votre facture.</label>
-					<input type="email" id="email" name="Votre email" class="input__form" required autocomplete="on"
-						placeholder="johndoe@mail.fr" maxlength="250"
-						aria-label="Merci d'indiquer votre adresse email, ce champ est obligatoire">
+					<div class="subpart__form">
+						<label for="email">Merci d'indiquer votre adresse email pour vous adresser votre
+							facture.</label>
+						<input type="email" id="email" name="Votre email" class="input__form" required autocomplete="on"
+							placeholder="johndoe@mail.fr" maxlength="250"
+							aria-label="Merci d'indiquer votre adresse email, ce champ est obligatoire">
+					</div>
 					<!-- Coordonnées Email END -->
 
 					<!-- Coordonnées téléphoniques -->
-					<label for="telephone">Merci d'indiquer votre numéro de téléphone pour que nous puissions vous
-						rappeler.</label>
-					<input type="tel" id="telephone" name="Vos coordonnées téléphoniques" class="input__form" required
-						autocomplete="on" placeholder="0401020304" maxlength="13" minlength="10"
-						aria-label="Merci d'indiquer votre numéro de téléphone pour que nous puissions vous rappeler">
+					<div class="subpart__form">
+						<label for="telephone">Merci d'indiquer votre numéro de téléphone pour que nous puissions vous
+							rappeler.</label>
+						<input type="tel" id="telephone" name="Vos coordonnées téléphoniques" class="input__form"
+							required autocomplete="on" placeholder="0401020304" maxlength="13" minlength="10"
+							aria-label="Merci d'indiquer votre numéro de téléphone pour que nous puissions vous rappeler">
+					</div>
 					<!-- Coordonnées téléphoniques END -->
 
 					<!-- Adresse -->
-					<label for="email">Merci d'indiquer votre adresse postale pour vous adresser votre commande.</label>
-					<input type="email" id="email" name="Votre email" class="input__form" required autocomplete="on"
-						placeholder="johndoe@mail.fr" maxlength="250"
-						aria-label="Merci d'indiquer votre adresse postale, ce champ est obligatoire">
+					<div class="subpart__form">
+						<label for="email">Merci d'indiquer votre adresse postale pour vous adresser votre
+							commande.</label>
+						<input type="email" id="email" name="Votre email" class="input__form" required autocomplete="on"
+							placeholder="johndoe@mail.fr" maxlength="250"
+							aria-label="Merci d'indiquer votre adresse postale, ce champ est obligatoire">
+					</div>
 					<!-- Adresse END -->
 				</fieldset>
 				<!-- Coordonnées END -->
 
 				<!-- Commentaire pour livraison -->
 				<fieldset class="fieldset__form">
-					<legend class="legend__form">&nbsp; Commentaires additionnels &nbsp;</legend>
-					<label for="message">Merci de préciser les informations utiles pour faciliter la livraison.</label>
-					<textarea class="textarea__form" id="message" name="Votre projet" rows="4" cols="50"
-						maxlength="1000" placeholder="Résidence fermée, digicode, ..." autocomplete="on"
-						aria-label="Merci de préciser les informations utiles pour faciliter la livraison, ce champ n'est pas obligatoire."></textarea>
+					<legend class="legend__form">&nbsp; Commentaires &nbsp;</legend>
+					<div class="subpart__form">
+						<label for="message">Merci de préciser les informations utiles pour faciliter la
+							livraison.</label>
+						<textarea class="textarea__form" id="message" name="Votre projet" rows="4" cols="50"
+							maxlength="1000" placeholder="Résidence fermée, digicode, ..." autocomplete="on"
+							aria-label="Merci de préciser les informations utiles pour faciliter la livraison, ce champ n'est pas obligatoire."></textarea>
+					</div>
 				</fieldset>
 				<!-- Commentaire pour livraison -->
 

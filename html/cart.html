@@ -106,7 +106,7 @@
 						<!-- Monsieur END -->
 						<!-- Madame -->
 						<div class="madame__form">
-							<input type="radio" id="Madame" name="M-Mme" aria-label="Choix Madame" value="Madame">
+							<input type="radio" id="Madame" name="m-mme" aria-label="Choix Madame" value="Madame">
 							<label for="Madame" class="label__form">&nbsp;Madame</label>
 						</div>
 						<!-- Madame END -->
@@ -116,17 +116,17 @@
 					<!-- Nom -->
 					<div class="subpart__form">
 						<label for="name">Merci de renseigner votre nom.</label>
-						<input type="text" id="name" name="Votre nom" class="input__form" required autocomplete="on"
-							placeholder="DOE" maxlength="200"
-							aria-label="Merci de renseigner votre nom, ce champ est oligatoire">
+						<input type="text" id="name" name="nom" class="input__form" required autocomplete="on"
+							placeholder="DOE" maxlength="100"
+							aria-label="Merci de renseigner votre nom, ce champ est oligatoire" autofocus>
 					</div>
 					<!-- Nom END -->
 
 					<!-- Prénom -->
 					<div class="subpart__form">
 						<label for="firstname">Merci de renseigner votre prénom.</label>
-						<input type="text" id="firstname" name="Votre nom" class="input__form" required
-							autocomplete="on" placeholder="John" maxlength="200"
+						<input type="text" id="firstname" name="prenom" class="input__form" required autocomplete="on"
+							placeholder="John" maxlength="100"
 							aria-label="Merci de renseigner votre prénom, ce champ est oligatoire">
 					</div>
 					<!-- Prénom END -->
@@ -141,8 +141,8 @@
 					<div class="subpart__form">
 						<label for="email">Merci d'indiquer votre adresse email pour vous adresser votre
 							facture.</label>
-						<input type="email" id="email" name="Votre email" class="input__form" required autocomplete="on"
-							placeholder="johndoe@mail.fr" maxlength="250"
+						<input type="email" id="email" name="email" class="input__form" required autocomplete="on"
+							placeholder="johndoe@mail.fr" maxlength="250" inputmode="email"
 							aria-label="Merci d'indiquer votre adresse email, ce champ est obligatoire">
 					</div>
 					<!-- Coordonnées Email END -->
@@ -150,24 +150,39 @@
 					<!-- Coordonnées téléphoniques -->
 					<div class="subpart__form">
 						<label for="telephone">Merci d'indiquer votre numéro de téléphone pour que nous puissions vous
-							rappeler.</label>
-						<input type="tel" id="telephone" name="Vos coordonnées téléphoniques" class="input__form"
-							required autocomplete="on" placeholder="0401020304" maxlength="13" minlength="10"
-							aria-label="Merci d'indiquer votre numéro de téléphone pour que nous puissions vous rappeler">
+							contacter.</label>
+						<input type="tel" id="telephone" name="telephone" class="input__form" inputmode="tel" required
+							autocomplete="on" placeholder="0401020304" maxlength="13" minlength="10"
+							aria-label="Merci d'indiquer votre numéro de téléphone pour que nous puissions vous contacter">
 					</div>
 					<!-- Coordonnées téléphoniques END -->
-
-					<!-- Adresse -->
-					<div class="subpart__form">
-						<label for="email">Merci d'indiquer votre adresse postale pour vous adresser votre
-							commande.</label>
-						<input type="email" id="email" name="Votre email" class="input__form" required autocomplete="on"
-							placeholder="johndoe@mail.fr" maxlength="250"
-							aria-label="Merci d'indiquer votre adresse postale, ce champ est obligatoire">
-					</div>
-					<!-- Adresse END -->
 				</fieldset>
 				<!-- Coordonnées END -->
+
+				<!-- Adresse -->
+				<fieldset class="fieldset__form">
+					<legend class="legend__form">&nbsp; Adresse de livraison &nbsp;</legend>
+					<div class="subpart__form">
+						<label for="address">Adresse</label>
+						<input type="address" id="adresse" name="adresse" class="input__form" required autocomplete="on"
+							placeholder="29 rue Quincampoix" maxlength="250"
+							aria-label="Merci d'indiquer votre adresse postale, ce champ est obligatoire">
+					</div>
+					<div class="subpart__form">
+						<label for="address">Code postal</label>
+						<input type="address" id="codePostal" name="adresse" class="input__form" required
+							autocomplete="on" placeholder="75004" maxlength="7" inputmode="numeric"
+							aria-label="Merci d'indiquer votre code postal, ce champ est obligatoire">
+					</div>
+					<div class="subpart__form">
+						<label for="address">Ville</label>
+						<input type="address" id="ville" name="adresse" class="input__form" required autocomplete="on"
+							placeholder="PARIS" maxlength="100"
+							aria-label="Merci d'indiquer votre ville, ce champ est obligatoire">
+					</div>
+				</fieldset>
+				<!-- Adresse END -->
+
 
 				<!-- Commentaire pour livraison -->
 				<fieldset class="fieldset__form">

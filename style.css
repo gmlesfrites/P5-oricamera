@@ -249,12 +249,13 @@ button a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  width: 100%; }
 
 .fieldset__form {
   font-size: 1.2em;
   display: flex;
-  width: 95%;
+  width: 90%;
   padding: 5%;
   margin: 2em 0; }
 

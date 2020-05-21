@@ -42,12 +42,13 @@
 //contenant balise form
 .container__form--flex {
 	@include dispoCenter;
+	width: 100%;
 }
-//partie civilité puis coordonnées puis commentaires
+//partie civilité - coordonnées - adresse - commentaires
 .fieldset__form {
 	font-size: $fz-h3;
 	display: flex;
-	width: 95%;
+	width: 90%;
 	padding: 5%;
 	margin: 2em 0;
 }

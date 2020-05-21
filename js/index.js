@@ -48,9 +48,9 @@ const data = fetch("http://localhost:3000/api/cameras")
 			quickCartElt.className = "button__quickCart";
 			quickCartElt.innerHTML =
 				"<p>" +
-				'<span class="i">' +
+				'<strong>' +
 				'<i class="fas fa-cart-plus toCart"></i>' +
-				"</span>" +
+				"</strong>" +
 				"</p>";
 			divButtons.appendChild(quickCartElt);
 		}

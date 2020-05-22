@@ -164,7 +164,8 @@ button a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  width: 100%; }
   @media all and (min-width: 768px) {
     .container__boxPolaroid--flex {
       flex-direction: row;
@@ -176,8 +177,7 @@ button a {
   box-shadow: 1px 1px 3px #8b8b8b;
   width: 90%;
   border-radius: 5px;
-  margin: 2em auto;
-  max-width: 400px;
+  margin: 2em 0;
   color: #3d3d3d;
   display: flex;
   flex-direction: column;
@@ -185,7 +185,11 @@ button a {
   align-items: center; }
   @media all and (min-width: 768px) {
     .box__link--polaroid {
+      max-width: 300px;
       margin: 2em; } }
+  @media all and (min-width: 900px) {
+    .box__link--polaroid {
+      max-width: 400px; } }
 
 .footer {
   background-color: #f3e9f1;

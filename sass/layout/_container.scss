@@ -19,6 +19,7 @@
 //conteneur global des articles
 .container__boxPolaroid--flex {
 	@include dispoCenter;
+	width:100%;
 	@media all and (min-width: 768px) {
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -28,12 +29,14 @@
 //contenant des images
 .box__link--polaroid {
 	@include designBox;
-	margin: 2em auto;
-	max-width: 400px;
+	margin: 2em 0;
 	color: $color-text;
-
 	@include dispoCenter;
 	@media all and (min-width: 768px) {
+		max-width: 300px;
 		margin: 2em;
+	}
+	@media all and (min-width: 900px) {
+		max-width:400px;
 	}
 }

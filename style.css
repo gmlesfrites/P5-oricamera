@@ -372,4 +372,8 @@ button a {
   font-size: 1em;
   font-weight: bold; }
 
+.container__product--ref {
+  font-size: 0.8em;
+  font-style: italic; }
+
 /*# sourceMappingURL=style.css.map */

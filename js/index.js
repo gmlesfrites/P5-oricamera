@@ -22,7 +22,7 @@ fetchCameras().then(function (data) {
 	for (let i = 0; i < data.length; i++) {
 		//Creation de la boite pour chaque item
 		const boxPolaroid = document.createElement("section");
-		boxPolaroid.classList.add("box__link--polaroid");
+		boxPolaroid.className = "box__link--polaroid";
 		divElt.appendChild(boxPolaroid);
 
 		//Ajout de l'image

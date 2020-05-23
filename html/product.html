@@ -76,20 +76,21 @@
 		<section id="product" class="container__product">
 
 			<!--Informations produit importées de l'API en JS -->
-			<img src="#" id="imageUrl" aria-label="photo du produit" class="container__product--image">
-			<p id="ref" class="container__product--ref"></p>
-			<h2 id="name" class="container__product--titre"></h2>
-			<p id="description" class="container__product--description"></p>
-			<ul id="lenses" class="container__product--lenses"></ul>
-			<p id="price" class="container__product--price"></p>
+			<img src="#" id="imageUrl" alt="photo du produit" aria-label="photo du produit"
+				class="container__product--image">
+			<p id="ref" class="container__product--ref">Référence du produit :</p>
+			<h2 id="name" class="container__product--titre">Le produit sélectionné :</h2>
+			<p id="description" class="container__product--description">Fiche technique : </p>
+			<ul id="lenses" class="container__product--lenses"> </ul>
+			<p id="price" class="container__product--price">Prix : </p>
 			<!--Informations produit importées de l'API en JS END-->
 
 			<!-- Contenant pour les boutons retour accueil et bouton achat -->
 			<div class="container__product--buttons">
 				<!-- Bouton retour au catalogue -->
-				<button class="container__product--homeReturn">
+				<div class="container__product--homeReturn">
 					<a href="../index.html" aria-label="Bouton retour vers catalogue">Retour au catalogue</a>
-				</button>
+				</div>
 				<!-- Bouton retour au catalogue END -->
 				<!-- Bouton achat -->
 				<button class="container__product--toCart" aria-label="Bouton ajout au panier">Ajouter ce produit au

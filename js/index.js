@@ -54,6 +54,9 @@ fetchCameras().then(function (data) {
 		buttonElt.className = "button__seeProduct";
 		buttonElt.ariaLabel = "Lien vers la page produit";
 		buttonElt.textContent = "Voir le produit";
+		buttonElt.addEventListener('click', function (e) {
+			window.open("html/product.html");
+		});
 		divButtons.appendChild(buttonElt);
 
 		//Ajout bouton achat rapide

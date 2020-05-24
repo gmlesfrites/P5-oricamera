@@ -47,18 +47,25 @@ p {
   border: 1px solid #daa520;
   border-radius: 20px 20px;
   padding: 0.6em 1.3em;
-  font-size: 1.1em; }
+  font-size: 1.1em;
+  width: 100%;
+  margin-right: 5%; }
 
-button a {
+button, a {
+  cursor: pointer;
   text-decoration: none;
-  color: #3d3d3d; }
+  color: #3d3d3d;
+  font-style: "Caveat Brush", cursive;
+  text-align: center; }
 
 .button__quickCart {
   font-size: 2em;
-  padding: 1em 0 1em 1em; }
+  padding: 1em 0 1em 1em;
+  margin-right: 3%;
+  cursor: pointer; }
 
 .container__product--buttons {
-  width: 90%;
+  width: 100%;
   margin: 5%;
   display: flex;
   flex-direction: column-reverse;
@@ -317,7 +324,7 @@ button a {
   position: absolute;
   background-size: cover;
   background-position: 50% 50%;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   top: 0;
   right: 0;
   bottom: 0;

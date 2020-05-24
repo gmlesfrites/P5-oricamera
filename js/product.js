@@ -46,16 +46,6 @@ fetchCameras().then(function (idData) {
 
 
 
-
-
-
-
-
-
-
-
-
-
 // Constitution Fiche produit
 class Camera {
     constructor(imageUrl, _id, name, description, lenses, price) {

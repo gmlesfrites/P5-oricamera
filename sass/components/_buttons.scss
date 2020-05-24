@@ -12,21 +12,28 @@
 .button__seeProduct {
 	@include mainDesign;
 	@include btnDesign;
+	width: 100%;
+	margin-right: 5%;
 }
-button a {
+button, a {
+	cursor: pointer;
 	text-decoration: none;
 	color: $color-text;
+	font-style: $ff-title;
+	text-align: center;
 }
 
 // bouton achat rapide
 .button__quickCart {
 	font-size: 2em;
 	padding: 1em 0 1em 1em;
+	margin-right: 3%;
+	cursor: pointer;
 }
 
 //Bouton page produit
 .container__product--buttons {
-	width: 90%;
+	width: 100%;
 	margin: 5%;
 	display: flex;
 	flex-direction: column-reverse;
@@ -34,7 +41,7 @@ button a {
 	@media all and (min-width: 768px) {
 		flex-direction: row;
 		justify-content: space-between;
-		align-content: center;
+			align-content: center;
 	}
 }
 .container__product--toCart,

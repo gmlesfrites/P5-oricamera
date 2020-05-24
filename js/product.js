@@ -1,5 +1,5 @@
 // Récupération des données par id
-const idUrl = 'http://localhost:3000/api/:id';
+const idUrl = 'http://localhost:3000/api/:_id';
 const fetchId = async function () {
     try {
         const response = await fetch(idUrl);

@@ -14,27 +14,17 @@ const fetchId = async function () {
     }
 }
 
-// Création de la constante pour la div 'boxPolaroid'
-const sectionElt = document.querySelector("main section");
-
 //Utilisation des données récupérées pour les insérer dans la page
 fetchId().then(function (idData) {
     console.log(idData);
 });
 
 
-
-
-
-
-
-
-
 // Constitution Fiche produit
 class Camera {
-    constructor(imageUrl, _id, name, description, lenses, price) {
+    constructor(imageUrl, id, name, description, lenses, price) {
         this.imageUrl = imageUrl;
-        this._id = _id;
+        this._id = id;
         this.name = name;
         this.description = description;
         this.lenses = lenses;
@@ -42,12 +32,12 @@ class Camera {
     }
 }
 
-// const camera1;
-// const camera2;
-// const camera3;
-// const camera4;
-// const camera5;
-
+// Récup des données de chaque produit
+const product1 = new Camera();
+const product2 = new Camera();
+const product3 = new Camera();
+const product4 = new Camera();
+const product5 = new Camera();
 
 
 

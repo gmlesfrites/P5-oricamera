@@ -57,3 +57,10 @@ button, a {
 	@include mainDesign;
 	margin: 1em;
 }
+
+
+//bouton retirer du panier
+.removeFromCart {
+	@include btnDesign;
+	@include mainDesign;
+}

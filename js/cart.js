@@ -1,11 +1,33 @@
-//  TODO http://localhost:3000/api/cameras/order
-
-
 // //ajout au panier
 // const AddToCart = document.getElementsByClassName("toCart");
 
-// //suppression du panier
-// const removeFromCart = getElementsByClassName("removeFromCart");
+//suppression du panier
+const removeFromCart = document.getElementsByClassName("removeFromCart");
+for (i = 0; i < removeFromCart.length; i++) {
+    let btnRemove = removeFromCart[i];
+    btnRemove.addEventListener('click', function () {
+        console.log("clicked");
+    })
+}
+
+
+
+//localStorage
+
+
+
+
+
+
+
+
+
+
+
+//  TODO http://localhost:3000/api/cameras/order
+
+
+
 
 
 

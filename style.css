@@ -97,6 +97,15 @@ button, a {
   color: #3d3d3d;
   margin: 1em; }
 
+.removeFromCart {
+  border: 1px solid #daa520;
+  border-radius: 20px 20px;
+  padding: 0.6em 1.3em;
+  font-size: 1.1em;
+  background-color: #f3e9f1;
+  font-family: "Caveat Brush", cursive;
+  color: #3d3d3d; }
+
 .fa-shopping-cart, .fa-cart-plus, .fa-info-circle {
   background: linear-gradient(120deg, rgba(227, 137, 18, 0.9), rgba(179, 111, 152, 0.9), rgba(143, 91, 254, 0.8));
   -webkit-background-clip: text;
@@ -161,12 +170,6 @@ button, a {
 .main__content--cart,
 .main__content--product {
   padding-top: 3em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-
-.container__cart {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -238,7 +241,8 @@ button, a {
 .title__form {
   font-size: 1.728em; }
 
-.container__cart {
+.container__cart--empty,
+.container__cart--full {
   background-color: #fffff9;
   padding: 1.5em 0.2em 2em 0.2em;
   box-shadow: 1px 1px 3px #8b8b8b;
@@ -247,6 +251,69 @@ button, a {
   font-size: 1.2em;
   opacity: 0.7;
   margin-bottom: 5em; }
+
+.container__cart--empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.container__cart--table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+  @media all and (min-width: 1024px) {
+    .container__cart--table {
+      flex-direction: row; } }
+
+.flexcontainer__cart--table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 2em;
+  padding: 1%; }
+
+.title__cart--table {
+  font-weight: 700;
+  border-bottom: #3d3d3d 1px dashed;
+  margin-bottom: 1em; }
+
+.subContent__cart--table {
+  display: flex;
+  width: 100%; }
+
+.spaceB__cart--table {
+  flex-direction: column;
+  justify-content: center; }
+  @media all and (min-width: 768px) {
+    .spaceB__cart--table {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center; } }
+
+.img__cart--table {
+  width: 20%;
+  height: 20%;
+  margin-right: 5%; }
+
+.price__cart--table {
+  justify-content: flex-end;
+  align-content: center; }
+
+.countItems__cart--table {
+  text-align: center;
+  margin-bottom: 1em;
+  background-color: #f3e9f1;
+  font-family: "Caveat Brush", cursive;
+  color: #3d3d3d;
+  border: 1px solid #daa520;
+  border-radius: 20px 20px;
+  padding: 0.6em 1.3em;
+  font-size: 1.1em; }
+  @media all and (min-width: 768px) {
+    .countItems__cart--table {
+      margin-bottom: 0; } }
 
 .container__form {
   background-color: #fffff9;

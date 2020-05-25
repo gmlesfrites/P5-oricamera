@@ -80,10 +80,60 @@
 	<main class="main__content--cart main__cart--background">
 		<h1 class="title__cart">Votre panier</h1>
 		<!-- Panier vide-->
-		<div id="container__cart" class="container__cart">
-			<p><strong><i class="fas fa-info-circle"></i></strong>&nbsp; Votre panier est vide.</p>
-		</div>
+		<section id="container__cart--empty" class="container__cart--empty">
+			<h2><strong><i class="fas fa-info-circle"></i></strong>&nbsp; Votre panier est vide.</h2>
+		</section>
 		<!-- Panier vide END -->
+
+		<!-- Panier rempli -->
+		<section id="container__cart--full" class="container__cart--full">
+			<h2>Articles dans votre panier</h2>
+
+			<!-- articles ajoutés -->
+			<div class="container__cart--table">
+				<div class="flexcontainer__cart--table">
+					<!-- Photo et nom des articles ajoutés -->
+					<p class="title__cart--table">Nom de l'article</p>
+					<div class="subContent__cart--table">
+						<img src="../Images/background.png" class="img__cart--table">
+						<p>Nom du produit</p>
+					</div>
+				</div>
+				<!-- Photo et nom des articles ajoutés END-->
+
+				<!-- Prix unitaire des articles ajoutés -->
+				<div class="flexcontainer__cart--table">
+					<p class="title__cart--table">Prix unitaire</p>
+					<div class="subContent__cart--table price__cart--table">
+						<p>&nbsp; &#128;</p>
+					</div>
+				</div>
+				<!-- Prix unitaire des articles ajoutés END-->
+
+				<!-- Quantité des articles ajoutés -->
+				<div class="flexcontainer__cart--table">
+					<p class="title__cart--table">Quantité</p>
+					<div class="subContent__cart--table spaceB__cart--table">
+						<p class="countItems__cart--table">1</p>
+						<button id="removeFromCart" class=" removeFromCart"
+							aria-label="retirer le produit du panier">Supprimer</button>
+					</div>
+				</div>
+				<!-- Quantité des articles ajoutés END-->
+			</div>
+			<!-- articles ajoutés END-->
+
+			<!-- Prix total des articles ajoutés -->
+			<div class="flexcontainer__cart--table">
+				<p class="title__cart--table">Prix Total</p>
+				<div class="subContent__cart--table price__cart--table">
+					<p>&nbsp; &#128;</p>
+				</div>
+			</div>
+			<!-- Prix total des articles ajoutés END-->
+
+		</section>
+		<!-- Panier rempli END -->
 
 		<!-- Section formulaire de commande -->
 		<section class="container__form">

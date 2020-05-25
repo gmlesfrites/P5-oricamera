@@ -1,3 +1,4 @@
+//Design de la barre de navigation
 .header__navbar {
 	width: 100%;
 	display: flex;
@@ -5,4 +6,11 @@
 	justify-content: space-between;
 	padding: 0 0.5em;
 	align-items: center;
+}
+.header__navbar--logoText {
+	font-weight: 700;
+	font-size: 3em;
+	text-decoration: none;
+	color: $color-text;
+	padding-bottom: 0.2em;
 }

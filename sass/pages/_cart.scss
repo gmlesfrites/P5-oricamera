@@ -28,73 +28,37 @@
 //contenant global du panier (fond polaroid)
 .container__cart--empty,
 .container__cart--full {
+	@include dispoCenter;
 	@include designBox;
 	font-size: $fz-h3;
 	opacity: 0.7;
 	margin-bottom: 5em;
 }
-//Conteneur des articles du panier vide
-.container__cart--empty {
-	@include dispoCenter;
-}
 
-//Container du panier rempli
-.container__cart--table {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	@media all and (min-width: 1024px) {
-	flex-direction: row;
-	}
-	
-}
-.flexcontainer__cart--table {
-	display: flex;
-	flex-direction: column;
-	width:100%;
-	margin-bottom: 2em;
-	padding: 1%;
-}
 
 // Nom d'article/Prix unitaire/Quantité/Prix total
 .title__cart--table {
 	font-weight: 700;
 	border-bottom: $color-text 1px dashed;
 	margin-bottom: 1em;
+	padding-right:10px;
 }
 
-//contenant pour les div avec image ou bouton
-.subContent__cart--table {
-	display: flex;
-	width: 100%;
-}
-.spaceB__cart--table {
-	flex-direction: column;
-	justify-content: center;
-	@media all and (min-width: 768px){
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	}
-}
+
+//Affichage de l'image du produit
 .img__cart--table {
 		width: 20%;
 		height:20%;
 		margin-right: 5%;
 }
+//Alignement des prix en fin de colonne
 .price__cart--table {
 	justify-content: flex-end;
-	align-content: center;
 }
 .countItems__cart--table{
 	text-align: center;
-	margin-bottom: 1em;
-	@include mainDesign;
 	@include btnDesign;
-	@media all and (min-width:768px) {
-		margin-bottom: 0;
-	}
+	@include mainDesign;
 }
 
 

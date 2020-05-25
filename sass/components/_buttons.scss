@@ -1,20 +1,4 @@
-// page d'accueil container des deux boutons
-.container__buttons--flex {
-	width: 90%;
-	margin: 5%;
-	display: flex;
-	justify-content: space-between;
-	align-content: center;
-	align-items: center;
-}
-
-// bouton voir le produit
-.button__seeProduct {
-	@include mainDesign;
-	@include btnDesign;
-	width: 100%;
-	margin-right: 5%;
-}
+//règle générale pour les boutons et les liens
 button, a {
 	cursor: pointer;
 	text-decoration: none;
@@ -23,6 +7,22 @@ button, a {
 	text-align: center;
 }
 
+// page d'accueil container des deux boutons voir et achat rapide
+.container__buttons--flex {
+	width: 90%;
+	margin: 5%;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	align-items: center;
+}
+// bouton voir le produit
+.button__seeProduct {
+	@include mainDesign;
+	@include btnDesign;
+	width: 100%;
+	margin-right: 5%;
+}
 // bouton achat rapide
 .button__quickCart {
 	font-size: 2em;
@@ -31,7 +31,7 @@ button, a {
 	cursor: pointer;
 }
 
-//Bouton page produit
+//Bouton page produit pour retour au catalogue et ajout panier
 .container__product--buttons {
 	width: 100%;
 	margin: 5%;
@@ -44,13 +44,13 @@ button, a {
 			align-content: center;
 	}
 }
+//Design boutons retour au catalogue et ajout au panier
 .container__product--toCart,
 .container__product--homeReturn {
 	@include mainDesign;
 	@include btnDesign;
 	margin: 1em;
 }
-
 //Bouton passer la commande
 .button__form {
 	@include btnDesign;
@@ -58,9 +58,9 @@ button, a {
 	margin: 1em;
 }
 
-
+//Boutons de la page panier et formulaire de commande
 //bouton retirer du panier
 .removeFromCart {
-	@include btnDesign;
 	@include mainDesign;
+	@include btnDesign;
 }

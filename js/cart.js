@@ -1,15 +1,22 @@
 // //ajout au panier
 // const AddToCart = document.getElementsByClassName("toCart");
 
-//suppression du panier
+//suppression des articles bouton supprimer
 const removeFromCart = document.getElementsByClassName("removeFromCart");
 for (i = 0; i < removeFromCart.length; i++) {
     let btnRemove = removeFromCart[i];
     btnRemove.addEventListener('click', function () {
-        console.log("clicked");
+        let btnclicked = event.target; {
+            btnclicked.parentElement.parentElement.parentElement.remove();
+        }
+        updateTotalPrice();
     })
 }
 
+function updateTotalPrice() {
+    let unitPrice = document.getElementsByClassName("price")
+    let
+}
 
 
 //localStorage

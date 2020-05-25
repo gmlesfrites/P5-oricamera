@@ -1,5 +1,5 @@
 // Récupération des données par id
-let idUrl = 'http://localhost:3000/api/cameras/:id';
+let idUrl = 'http://localhost:3000/api/cameras';
 const fetchId = async function () {
     try {
         const response = await fetch(idUrl);

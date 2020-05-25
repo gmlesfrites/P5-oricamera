@@ -22,7 +22,8 @@
 // Contenant de la fiche produit
 .container__product {
 	@include designBox;
-	@include dispoCenter;
+	display: flex;
+	flex-direction: column;
 	align-content: flex-start;
 	padding: 2em 1em;
 	margin: 2em 0;
@@ -39,7 +40,6 @@
 //Description du produit
 .container__product--description {
 	font-size: $fz-p;
-	margin: 5%;
 }
 //choix des optiques
 .container__product--lenses {

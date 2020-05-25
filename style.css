@@ -97,14 +97,10 @@ button, a {
   color: #3d3d3d;
   margin: 1em; }
 
-.removeFromCart {
+.countItems__cart--table {
   background-color: #f3e9f1;
   font-family: "Caveat Brush", cursive;
-  color: #3d3d3d;
-  border: 1px solid #daa520;
-  border-radius: 20px 20px;
-  padding: 0.6em 1.3em;
-  font-size: 1.1em; }
+  color: #3d3d3d; }
 
 .fa-shopping-cart, .fa-cart-plus, .fa-info-circle {
   background: linear-gradient(120deg, rgba(227, 137, 18, 0.9), rgba(179, 111, 152, 0.9), rgba(143, 91, 254, 0.8));
@@ -315,16 +311,6 @@ button, a {
 
 .price__cart--table {
   justify-content: flex-end; }
-
-.countItems__cart--table {
-  text-align: center;
-  border: 1px solid #daa520;
-  border-radius: 20px 20px;
-  padding: 0.6em 1.3em;
-  font-size: 1.1em;
-  background-color: #f3e9f1;
-  font-family: "Caveat Brush", cursive;
-  color: #3d3d3d; }
 
 .container__form {
   background-color: #fffff9;

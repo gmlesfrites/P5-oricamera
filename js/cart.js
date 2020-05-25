@@ -2,20 +2,25 @@
 // const AddToCart = document.getElementsByClassName("toCart");
 
 //suppression des articles bouton supprimer
-const removeFromCart = document.getElementsByClassName("removeFromCart");
+const removeFromCart = document.getElementsById("removeFromCart");
 for (i = 0; i < removeFromCart.length; i++) {
     let btnRemove = removeFromCart[i];
-    btnRemove.addEventListener('click', function () {
+    btnRemove.addEventListener('click', function (event) {
         let btnclicked = event.target; {
-            btnclicked.parentElement.parentElement.parentElement.remove();
+            btnclicked.parentElement.parentElement.remove();
         }
-        updateTotalPrice();
     })
 }
 
-function updateTotalPrice() {
-    let unitPrice = document.getElementsByClassName("price")
-    let
+
+//MAJ prix total
+let unitPrice = document.getElementsByClassName("unit_price");
+let quantity = document.getElementsByClassName("quantity");
+let totalPrice = document.getElementsByClassName("total_price")
+for (i = 0; i < quantity.length; i++) {
+    let quantityElt = quantity[i];
+    let priceElt = unitPrice[i];
+    totalPrice = quantityElt[i] * priceElt;
 }
 
 

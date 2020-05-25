@@ -1,6 +1,6 @@
 // Récupération des données par id
-const idUrl = 'http://localhost:3000/api/cameras/';
-const fetchCameras = async function () {
+let idUrl = 'http://localhost:3000/api/cameras/:id';
+const fetchId = async function () {
     try {
         const response = await fetch(idUrl);
         if (!response.ok) {
@@ -18,7 +18,7 @@ const fetchCameras = async function () {
 const sectionElt = document.querySelector("main section");
 
 //Utilisation des données récupérées pour les insérer dans la page
-fetchCameras().then(function (idData) {
+fetchId().then(function (idData) {
     console.log(idData);
 });
 

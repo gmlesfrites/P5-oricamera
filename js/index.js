@@ -18,7 +18,7 @@ const fetchCameras = async function () {
 const divElt = document.querySelector("main div");
 
 //Utilisation des données récupérées pour les insérer dans la page
-fetchCameras().then(function (data) {
+fetchCameras().then(function(data) {
 	for (let i = 0; i < data.length; i++) {
 		//Creation de la boite pour chaque item
 		const boxPolaroid = document.createElement("section");

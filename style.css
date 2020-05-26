@@ -365,7 +365,9 @@ button, a {
   width: 100%;
   height: 6em; }
 
-.container__form--sex {
+.container__form--sex,
+.subpart__form--ck,
+.subpart__form--cb {
   margin-bottom: 1.5em; }
 
 .monsieur__form,

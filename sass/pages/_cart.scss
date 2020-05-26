@@ -108,7 +108,9 @@
 
 //Contenant Monsieur-Madame
 //Input radio
-.container__form--sex {
+.container__form--sex,
+.subpart__form--ck, 
+.subpart__form--cb {
 	margin-bottom: 1.5em;
 }
 //Monsieur-Madame__form
@@ -122,3 +124,4 @@
 .radio__form {
 	@include input;
 }
+

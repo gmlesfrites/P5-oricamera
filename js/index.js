@@ -55,14 +55,15 @@ fetchCameras().then(function (data) {
 		const idCam = data[i]._id;
 
 		//Ajout du bouton voir le produit
-		const buttonElt = document.createElement("button");
+		const buttonElt = document.createElement("a");
 		buttonElt.className = "button__seeProduct";
 		buttonElt.id = idCam;
 		buttonElt.ariaLabel = "Lien vers la page produit";
-		buttonElt.textContent = "Voir le produit";
-		buttonElt.addEventListener('click', function (e) {
-			open("html/product.html", "_self");
-		});
+		buttonElt.innerHTML = `<a href="html/product.html?id= ${data[i]._id}"> Voir le produit </a>`;
+		// //au clic sur le bouton, ouverture grâce à l'id du produit
+		// buttonElt.addEventListener('click', function (e) {
+		// 	open("" , "_self");
+		// });
 		divButtons.appendChild(buttonElt);
 		console.log(buttonElt);
 

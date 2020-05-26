@@ -60,10 +60,6 @@ fetchCameras().then(function (data) {
 		buttonElt.id = idCam;
 		buttonElt.ariaLabel = "Lien vers la page produit";
 		buttonElt.innerHTML = `<a href="html/product.html?id= ${data[i]._id}"> Voir le produit </a>`;
-		// //au clic sur le bouton, ouverture grâce à l'id du produit
-		// buttonElt.addEventListener('click', function (e) {
-		// 	open("" , "_self");
-		// });
 		divButtons.appendChild(buttonElt);
 		console.log(buttonElt);
 

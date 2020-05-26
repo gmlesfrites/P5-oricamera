@@ -1,14 +1,12 @@
 // Récupération des données suite btn produit cliqué
 let id = window.location.search;
-const newId = id.slice(5);
-
+const newId = id.slice(4);
 const url = `http://localhost:3000/api/cameras/${newId}`;
-console.log(url);
 
 //fetch pour la récupération des données par id
 const fetchId = async function () {
     try {
-        const response = await fetch('url');
+        const response = await fetch(url);
         if (!response.ok) {
             throw new Error(response.status);
         } else {
@@ -22,9 +20,6 @@ const fetchId = async function () {
 
 //Utilisation des données de fetch pour les insérer dans la page
 fetchId().then(function (data) {
-    // Récup des données de chaque produit
-    // const product = new Camera(data.imageUrl, data._id, data.name,data.description, data.price);
-
     //Ajout de l'image
     const imageElt = document.getElementById("imageUrl");
     imageElt.src = data.imageUrl;
@@ -58,10 +53,6 @@ fetchId().then(function (data) {
     singlePriceElt.innerHTML = `<p><strong>Prix : </strong> ${priceDot} &#128; </p>`;
 });
 
-
-
-
-
 // Constitution Fiche produit
 class Camera {
     constructor(imageUrl, id, name, description, lenses, price) {
@@ -74,6 +65,3 @@ class Camera {
     }
 }
 
-function newFunction() {
-    id = parseInt(id);
-}

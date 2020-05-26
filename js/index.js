@@ -59,7 +59,8 @@ fetchCameras().then(function (data) {
 		buttonElt.className = "button__seeProduct";
 		buttonElt.id = idCam;
 		buttonElt.ariaLabel = "Lien vers la page produit";
-		buttonElt.innerHTML = `<a href="html/product.html?id= ${data[i]._id}"> Voir le produit </a>`;
+		buttonElt.href = `html/product.html?id=${idCam}`;
+		buttonElt.innerHTML = `<a>Voir le produit</a>`;
 		divButtons.appendChild(buttonElt);
 		console.log(buttonElt);
 
@@ -67,7 +68,7 @@ fetchCameras().then(function (data) {
 		const quickCartElt = document.createElement("p");
 		quickCartElt.className = "button__quickCart";
 		quickCartElt.id = "quick" + i;
-		quickCartElt.innerHTML = `<p> <strong> <i class="fas fa-cart-plus toCart"></i> </strong> </p>`;
+		quickCartElt.innerHTML = `<p> <strong> <i class="fas fa-cart-plus toCart"></i> </strong> </p > `;
 		divButtons.appendChild(quickCartElt);
 	}
 });

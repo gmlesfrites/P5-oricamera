@@ -35,13 +35,13 @@ fetchCameras().then(function (data) {
 		//creation des titres
 		const newh3 = document.createElement("h3");
 		newh3.className = "h3";
-		newh3.innerHTML = '<h3 id="name">' + data[i].name + "</h3>";
+		newh3.innerHTML = `<h3> ${data[i].name} </h3>`;
 		boxPolaroid.appendChild(newh3);
 
 		//Ajout des détails de prix
 		const priceElt = document.createElement("p");
-		const price = data[i].price / 100;
-		priceElt.innerHTML = '<div id="price">' + price + "&#128;" + "</div>";
+		const price = (data[i].price / 100).toFixed(2);
+		priceElt.innerHTML = `<p> ${price} &#128; </p>`;
 		boxPolaroid.appendChild(priceElt);
 
 		// Ajout div pour bouton produit et bouton achat rapide
@@ -55,14 +55,16 @@ fetchCameras().then(function (data) {
 		buttonElt.id = "see" + i;
 		buttonElt.ariaLabel = "Lien vers la page produit";
 		buttonElt.textContent = "Voir le produit";
-		buttonElt.addEventListener('click', function (e) { open("html/product.html", "_self"); });
+		buttonElt.addEventListener('click', function (e) {
+			open("html/product.html", "_self");
+		});
 		divButtons.appendChild(buttonElt);
 
 		//Ajout bouton achat rapide
 		const quickCartElt = document.createElement("p");
 		quickCartElt.className = "button__quickCart";
 		quickCartElt.id = "quick" + i;
-		quickCartElt.innerHTML = "<p>" + "<strong>" + '<i class="fas fa-cart-plus toCart"></i>' + "</strong>" + "</p>";
+		quickCartElt.innerHTML = `<p> <strong> <i class="fas fa-cart-plus toCart"></i> </strong> </p>`;
 		divButtons.appendChild(quickCartElt);
 	}
 });

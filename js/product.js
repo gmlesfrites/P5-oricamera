@@ -1,11 +1,8 @@
 // Récupération des données suite btn produit cliqué
 let id = window.location.search;
-console.log(id);
-id = parseInt(id);
+const newId = id.slice(5);
 
-
-
-let url = `http://localhost:3000/api/cameras/${id}`;
+const url = `http://localhost:3000/api/cameras/${newId}`;
 console.log(url);
 
 //fetch pour la récupération des données par id
@@ -75,4 +72,8 @@ class Camera {
         this.lenses = lenses;
         this.price = price;
     }
+}
+
+function newFunction() {
+    id = parseInt(id);
 }

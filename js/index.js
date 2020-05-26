@@ -69,8 +69,6 @@ fetchCameras().then(function (data) {
 		quickCartElt.id = "quick" + i;
 		quickCartElt.innerHTML = `<p> <strong> <i class="fas fa-cart-plus toCart"></i> </strong> </p>`;
 		divButtons.appendChild(quickCartElt);
-
-
 	}
 });
 

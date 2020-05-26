@@ -49,7 +49,7 @@ button, a {
 .container__product--homeReturn {
 	@include mainDesign;
 	@include btnDesign;
-	margin: 1em;
+	margin: 1em 5%;
 }
 //Bouton passer la commande
 .button__form {

@@ -77,10 +77,11 @@
 
 			<!--Informations produit importées de l'API en JS -->
 			<!-- Image -->
-			<img src="#" id="imageUrl" alt="photo du produit" aria-label="photo du produit"
-				class="container__product--image">
-			<!-- Image END -->
-
+			<div id="img" class="container__product--image">
+				<img src="#" id="imageUrl" class="box__image--polaroid" alt="photo du produit"
+					aria-label="photo du produit">
+				<!-- Image END -->
+			</div>
 			<!-- référence -->
 			<div id="ref" class="container__product--ref">
 				<p>Référence du produit : </p>
@@ -100,9 +101,11 @@
 			<!-- Description END -->
 
 			<!-- Choix d'optiques -->
-			<div  class="container__product--lenses">
-				<p>Choix de l'optique : </p>
-				<ul id="lenses"></ul>
+			<div class="container__product--lenses">
+				<label for="lenses"><strong>Choix de l'optique :</strong> &nbsp;</label>
+				<select name="lenses" id="lenses" class="container__product--select">
+					<option value="select">Sélectionnez ici votre optique</option>
+				</select>
 			</div>
 			<!-- Choix d'optiques END -->
 

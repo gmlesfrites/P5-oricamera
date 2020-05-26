@@ -85,7 +85,7 @@ button, a {
   border-radius: 20px 20px;
   padding: 0.6em 1.3em;
   font-size: 1.1em;
-  margin: 1em; }
+  margin: 1em 5%; }
 
 .button__form {
   border: 1px solid #daa520;
@@ -431,26 +431,44 @@ button, a {
   padding: 2em 1em;
   margin: 2em 0; }
 
-.container__product--title {
-  font-size: 1.2em; }
-
 .container__product--image {
-  width: 90%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   padding: 1.5em 0 1em; }
-
-.container__product--description {
-  font-size: 1em; }
-
-.container__product--lenses {
-  font-size: 1em;
-  padding: 1em 0; }
-
-.container__product--price {
-  font-size: 1em;
-  font-weight: bold; }
 
 .container__product--ref {
   font-size: 0.8em;
-  font-style: italic; }
+  margin: 1em 5%; }
+
+.container__product--title {
+  font-size: 1.2em; }
+
+.container__product--description {
+  font-size: 1em;
+  margin: 1em 5%; }
+
+.container__product--lenses {
+  font-size: 1em;
+  margin: 1em 5%; }
+
+.container__product--select {
+  font-family: "Raleway", sans-serif;
+  border: 1px solid #daa520;
+  border-radius: 20px 20px;
+  padding: 0.6em 1.3em;
+  font-size: 1.1em;
+  background-color: #f3e9f1;
+  font-family: "Caveat Brush", cursive;
+  color: #3d3d3d;
+  margin: 1em 0;
+  width: 100%; }
+  @media all and (min-width: 768px) {
+    .container__product--select {
+      width: auto; } }
+
+.container__product--price {
+  font-size: 1em;
+  margin: 1em 5%; }
 
 /*# sourceMappingURL=style.css.map */

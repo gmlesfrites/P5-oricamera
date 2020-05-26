@@ -28,31 +28,53 @@
 	padding: 2em 1em;
 	margin: 2em 0;
 }
+
+//Image du produit
+.container__product--image {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 1.5em 0 1em;
+}
+
+//Référence produit
+.container__product--ref{
+	font-size: $fz-ref;
+	@include marginProduct;
+}
+
 //Titre du produit
 .container__product--title {
 	font-size: $fz-h3;
 }
-//image du produit
-.container__product--image {
-	width: 90%;
-	padding: 1.5em 0 1em;
-}
+
 //Description du produit
 .container__product--description {
 	font-size: $fz-p;
+	@include marginProduct;
 }
 //choix des optiques
 .container__product--lenses {
 	font-size: $fz-p;
-	padding: 1em 0;
+	@include marginProduct;
 }
+
+//Sélection
+.container__product--select {
+	font-family: $ff-text;
+	@include btnDesign;
+	@include mainDesign;
+	margin: 1em 0;
+	width: 100%;
+	@media all and (min-width:768px) {
+		width:auto;
+	}
+}
+
 //Prix du produit
 .container__product--price {
 	font-size: $fz-p;
-	font-weight: bold;
+	@include marginProduct;
+
 }
-//Référence produit
-.container__product--ref{
-	font-size: $fz-ref;
-	font-style: italic;
-}
+

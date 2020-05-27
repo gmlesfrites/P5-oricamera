@@ -90,42 +90,15 @@
 			<h2>Articles dans votre panier</h2>
 
 			<!-- Panier -->
-			<div class="container__cart">
+			<div class="container__cart" id="contentCart">
+
+				<!-- **************** TEST EN HTML ****************-->
+
 				<!-- article ajouté -->
 				<div class="article__cart">
 					<!-- Photo -->
 					<div class="subContent__cart--photo">
-						<img src="../Images/background.png" class="img__cart" aria-label="image du produit"
-							alt="image du produit">
-					</div>
-					<!-- Photo END -->
-
-					<!-- Infos -->
-					<div class="subContent__cart--article">
-						<p class="title__cart--article">Nom du produit</p>
-						<p class="ref__cart">référence du produit</p>
-						<p class="description__cart">description du produit</p>
-						<p class="description__cart"><span class="unit__price">15</span>&nbsp;&euro;</p>
-					</div>
-					<!-- Infos END-->
-
-					<!-- Quantité -->
-					<div class="subContent__cart--quantity">
-						<select class="countItems__cart quantity">
-							<option value="1" selected>1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-						</select>
-						<button class=" removeFromCart" aria-label="retirer le produit du panier">Supprimer</button>
-					</div>
-					<!-- Quantité END-->
-				</div>
-				<!-- article ajouté END -->
-				<!-- article ajouté -->
-				<div class="article__cart">
-					<!-- Photo -->
-					<div class="subContent__cart--photo">
-						<img src="../Images/background.png" class="img__cart" aria-label="image du produit"
+						<img src="#" class="img__cart" aria-label="image du produit"
 							alt="image du produit">
 					</div>
 					<!-- Photo END -->
@@ -146,16 +119,28 @@
 						<button class="removeFromCart" aria-label="retirer le produit du panier">Supprimer</button>
 					</div>
 					<!-- Quantité END-->
+
+					<!-- Prix si plusieurs du même article achetés-->
+					<div class="subContent__cart--sevUnit">
+						<p class="sevUnit__price"><span>30</span>&nbsp;&euro;</p>
+					</div>
+					<!-- Prix si plusieurs du même article achetés-->
+
 				</div>
 				<!-- article ajouté END -->
+
+				<!-- *****************  TEST EN HTML  END ************-->
+
 			</div>
 			<!-- Panier END -->
+
+
 
 			<!-- Prix total des articles ajoutés -->
 			<div class="subContent__cart--total">
 				<p class="title__cart--total">Montant total TTC</p>
 				<div class="totalPrice__cart">
-					<p class="description__cart"><span class="total__price">15</span>&nbsp;&euro;</p>
+					<p class="description__cart"><span class="total__price">15</span><span>&nbsp;&euro;</span></p>
 				</div>
 			</div>
 			<!-- Prix total des articles ajoutés END-->
@@ -164,7 +149,7 @@
 		<!-- Panier rempli END -->
 
 		<!-- Section formulaire de commande  -->
-		<section class="container__form" style="display:none;">
+		<section class="container__form" style="display: none;">
 			<h2 class="title__form">Votre formulaire de commande</h2>
 
 			<!-- formulaire de commande -->
@@ -290,42 +275,20 @@
 							<div class="subpart_form">
 								<div class="subpart_form">
 									<label for="numcb" class="label__form">&nbsp;Visa/Mastercard/Amex</label>
-									<input type="text" id="numcb" autocomplete="on" placeholder="0000 0000 0000 0000"
-										maxlength="16" minlength="16"
+									<input type="text" id="numcb" class="input__form" autocomplete="on"
+										placeholder="0000 0000 0000 0000" maxlength="16" minlength="16"
 										aria-label="Merci d'indiquer votre numéro de carte bancaire">
 								</div>
 								<div class="subpart_form">
 									<label for="cryptocb" class="label__form">&nbsp;Cryptogramme visuel</label>
-									<input type="text" id="cryptocb" autocomplete="on" placeholder="000" maxlength="5"
-										minlength="3" aria-label="Merci d'indiquer votre numéro de cryptogramme">
+									<input type="text" id="cryptocb" class="input__form" autocomplete="on"
+										placeholder="000" maxlength="5" minlength="3"
+										aria-label="Merci d'indiquer votre numéro de cryptogramme">
 								</div>
 								<div class="subpart_form">
-									<p>Date d'expiration</p>
-									<div>
-										<label for="monthcb" class="label__form">Mois &nbsp;</label>
-										<select name="monthcb" id="monthcb" aria-label="Mois d'expiration">
-											<option value="01">01</option>
-											<option value="02">02</option>
-											<option value="03">03</option>
-											<option value="04">04</option>
-											<option value="05">05</option>
-											<option value="06">06</option>
-											<option value="07">07</option>
-											<option value="08">08</option>
-											<option value="09">09</option>
-											<option value="10">10</option>
-											<option value="11">11</option>
-											<option value="12">12</option>
-										</select>
-										<label for="yearcb" class="label__form">Année &nbsp;</label>
-										<select name="yearcb" id="yearcb" aria-label="Année d'expiration">
-											<option value="2020">2020</option>
-											<option value="2021">2021</option>
-											<option value="2022">2022</option>
-											<option value="2023">2023</option>
-											<option value="2024">2024</option>
-										</select>
-									</div>
+									<label for="cbexp" class="label__form">Date d'expiration &nbsp;</label>
+									<input type="date" name="cbexp" id="cbexp" class="input__form"
+										aria-label="Date d'expiration" required>
 								</div>
 							</div>
 						</div>

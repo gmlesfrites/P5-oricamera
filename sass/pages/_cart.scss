@@ -56,7 +56,7 @@
 }
 // Description du produit
 .ref__cart, .description__cart, 
-.unit__price{
+.unit__price, .sevUnit__price{
 	font-size: $fz-p;
 }
 //titre montant global
@@ -73,7 +73,8 @@
 .countItems__cart {
 	@include mainDesign;
 	@include btnDesign;
-	width: 30%;
+	width: 40%;
+	margin-right: 5%;
 } 
 //bouton supprimer du panier
 .removeFromCart {

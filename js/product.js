@@ -51,17 +51,8 @@ fetchId().then(function (data) {
     //Prix 000.00€
     let priceDot = (data.price / 100).toFixed(2);
     singlePriceElt.innerHTML = `<p><strong>Prix : </strong> ${priceDot} &#128; </p>`;
+
+    //Bouton addToCart page produit
+    const btnAddToCart = document.querySelector('div button');
+    btnAddToCart.id = `${data._id} `;
 });
-
-// Constitution Fiche produit
-class Camera {
-    constructor(imageUrl, id, name, description, lenses, price) {
-        this.imageUrl = imageUrl;
-        this._id = id;
-        this.name = name;
-        this.description = description;
-        this.lenses = lenses;
-        this.price = price;
-    }
-}
-

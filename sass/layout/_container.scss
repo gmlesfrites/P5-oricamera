@@ -49,18 +49,26 @@
 .subContent__cart--article {
 	padding-bottom: 1em;
 	@media all and (min-width:768px) {
-	width: 60%;	
+	width: 50%;	
 	}
 }
 // contenant quantité et bouton supprimer
 .subContent__cart--quantity {
 	display: flex;
+	width: 100%;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	@media all and (min-width:768px) {
 	width: 40%;	
 	}
+}
+//Prix total plusieurs du même article
+.subContent__cart--sevUnit {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 20%
 }
 .subContent__cart--total{
 	display: flex;

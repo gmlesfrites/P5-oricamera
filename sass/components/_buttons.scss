@@ -57,15 +57,3 @@ button, a {
 	@include mainDesign;
 	margin: 1em;
 }
-
-//Boutons de la page panier et formulaire de commande
-//bouton retirer du panier
-.removeFromCart {
-// 	@include mainDesign;
-// 	@include btnDesign;
-}
-.countItems__cart--table{
-// 	text-align: center;
-// 	@include btnDesign;
-	@include mainDesign;
-}

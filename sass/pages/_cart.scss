@@ -69,73 +69,21 @@
 	display: flex;
 	justify-content: flex-end;
 }
+//compteur quantité
+.countItems__cart {
+	@include mainDesign;
+	@include btnDesign;
+	width: 30%;
+} 
+//bouton supprimer du panier
+.removeFromCart {
+	@include btnDesign;
+	@include mainDesign;
+	width: 60%;
+}
+
 
 
 
 
-
-//contenant global du formulaire
-.container__form {
-	@include designBox;
-	opacity: 0.7;
-	@include dispoCenter;
-	margin-bottom: 3em;
-}
-//contenant balise form
-.container__form--flex {
-	@include dispoCenter;
-	width: 100%;
-}
-//partie civilité - coordonnées - adresse - commentaires
-.fieldset__form {
-	font-size: $fz-h3;
-	display: flex;
-	width: 90%;
-	padding: 5%;
-	margin: 2em 0;
-}
-//légende des fieldsets
-.legend__form {
-	font-size: $fz-h2;
-	font-family: $ff-title;
-}
-// contenant de chaque sous-partie contenant label+input
-.subpart__form {
-	margin-bottom: 1.5em;
-}
-//label
-.label__form,
-.p__form {
-	font-family: $ff-text;
-	font-size: $fz-p;
-}
-//Input classique
-.input__form {
-	@include input;
-	height: 3em;
-}
-//textarea
-.textarea__form {
-	@include input;
-	height: 6em;
-}
-
-//Contenant Monsieur-Madame
-//Input radio
-.container__form--sex,
-.subpart__form--ck, 
-.subpart__form--cb {
-	margin-bottom: 1.5em;
-}
-//Monsieur-Madame__form
-.monsieur__form,
-.madame__form {
-	font-family: $ff-text;
-	display: flex;
-	flex-direction: row;
-	margin: 0.5em;
-}
-.radio__form {
-	@include input;
-}
 

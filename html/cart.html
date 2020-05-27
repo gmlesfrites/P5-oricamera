@@ -105,13 +105,13 @@
 						<p class="title__cart--article">Nom du produit</p>
 						<p class="ref__cart">référence du produit</p>
 						<p class="description__cart">description du produit</p>
-						<p class="unit__price"><span>15</span>&nbsp;&euro;</p>
+						<p class="description__cart"><span class="unit__price">15</span>&nbsp;&euro;</p>
 					</div>
 					<!-- Infos END-->
 
 					<!-- Quantité -->
 					<div class="subContent__cart--quantity">
-						<select class="countItems__cart">
+						<select class="countItems__cart quantity">
 							<option value="1" selected>1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -141,12 +141,9 @@
 
 					<!-- Quantité -->
 					<div class="subContent__cart--quantity">
-						<select class="countItems__cart">
-							<option value="1" selected>1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-						</select>
-						<button class=" removeFromCart" aria-label="retirer le produit du panier">Supprimer</button>
+						<label for="quantity" aria-label="quantité de produits"></label>
+						<input id="quantity" class="countItems__cart" type="number" value="1">
+						<button class="removeFromCart" aria-label="retirer le produit du panier">Supprimer</button>
 					</div>
 					<!-- Quantité END-->
 				</div>
@@ -158,7 +155,7 @@
 			<div class="subContent__cart--total">
 				<p class="title__cart--total">Montant total TTC</p>
 				<div class="totalPrice__cart">
-					<p class="total_price"><span>15</span>&nbsp;&euro;</p>
+					<p class="description__cart"><span class="total__price">15</span>&nbsp;&euro;</p>
 				</div>
 			</div>
 			<!-- Prix total des articles ajoutés END-->

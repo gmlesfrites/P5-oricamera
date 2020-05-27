@@ -80,7 +80,7 @@
 	<main class="main__content--cart main__cart--background">
 		<h1 class="title__cart">Votre panier</h1>
 		<!-- Panier vide-->
-		<section id="container__cart--empty" class="container__cart--empty">
+		<section id="container__cart--empty" class="container__cart--empty" style="display:none;">
 			<h2><strong><i class="fas fa-info-circle"></i></strong>&nbsp; Votre panier est vide.</h2>
 		</section>
 		<!-- Panier vide END -->
@@ -89,62 +89,76 @@
 		<section id="container__cart--full" class="container__cart--full">
 			<h2>Articles dans votre panier</h2>
 
-			<!-- Tableau des achats -->
-			<div class="container__cart--table">
-				<!-- articles ajoutés -->
-				<div class="flexcontainer__cart--table">
-					<!-- Photo et nom des articles ajoutés -->
-					<div class="article__cart--table">
-						<p class="title__cart--table">Nom de l'article</p>
-						<div id="name0" class="subContent__cart--table">
-							<img src="#" class="img__cart--table" aria-label="image du produit" alt="image du produit">
-							<p>Nom du produit</p>
-						</div>
-						<div id="name1" class="subContent__cart--table">
-							<img src="#" class="img__cart--table" aria-label="image du produit" alt="image du produit">
-							<p>Nom du produit 2</p>
-						</div>
+			<!-- Panier -->
+			<div class="container__cart">
+				<!-- article ajouté -->
+				<div class="article__cart">
+					<!-- Photo -->
+					<div class="subContent__cart--photo">
+						<img src="../Images/background.png" class="img__cart" aria-label="image du produit"
+							alt="image du produit">
 					</div>
-					<!-- Photo et nom des articles ajoutés END-->
+					<!-- Photo END -->
 
-					<!-- Prix unitaire des articles ajoutés -->
-					<div class="unitprice__cart--table">
-						<p class="title__cart--table">Prix unitaire</p>
-						<div id="unitPrice0" class="subContent__cart--table price__cart--table">
-							<p class="price unit_price">&nbsp; 15 </p>
-						</div>
-						<div id="unitPrice1" class="subContent__cart--table price__cart--table">
-							<p class="price">&nbsp; <span class=" unit_price">30</span>&nbsp; </p>
-						</div>
+					<!-- Infos -->
+					<div class="subContent__cart--article">
+						<p class="title__cart--article">Nom du produit</p>
+						<p class="ref__cart">référence du produit</p>
+						<p class="description__cart">description du produit</p>
+						<p class="unit__price"><span>15</span>&nbsp;&euro;</p>
 					</div>
-					<!-- Prix unitaire des articles ajoutés END-->
+					<!-- Infos END-->
 
-					<!-- Quantité des articles ajoutés -->
-					<div class="quantity__cart--table">
-						<p class="title__cart--table">Quantité</p>
-						<div id="quantity0" class="subContent__cart--table spaceB__cart--table quantity">
-							<p class="countItems__cart--table">1</p>
-							<button class=" removeFromCart" aria-label="retirer le produit du panier">Supprimer</button>
-						</div>
-						<div id="quantity1" class="subContent__cart--table spaceB__cart--table quantity">
-							<p class="countItems__cart--table">3</p>
-							<button class=" removeFromCart" aria-label="retirer le produit du panier">Supprimer</button>
-						</div>
+					<!-- Quantité -->
+					<div class="subContent__cart--quantity">
+						<select class="countItems__cart">
+							<option value="1" selected>1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+						<button class=" removeFromCart" aria-label="retirer le produit du panier">Supprimer</button>
 					</div>
-					<!-- Quantité des articles ajoutés END-->
+					<!-- Quantité END-->
 				</div>
-				<!-- articles ajoutés END -->
-			</div>
-			<!-- Tableau des achats -->
+				<!-- article ajouté END -->
+				<!-- article ajouté -->
+				<div class="article__cart">
+					<!-- Photo -->
+					<div class="subContent__cart--photo">
+						<img src="../Images/background.png" class="img__cart" aria-label="image du produit"
+							alt="image du produit">
+					</div>
+					<!-- Photo END -->
 
+					<!-- Infos -->
+					<div class="subContent__cart--article">
+						<p class="title__cart--article">Truc 2</p>
+						<p class="ref__cart">référence du produit</p>
+						<p class="description__cart">description du produit</p>
+						<p class="unit__price"><span>30</span>&nbsp;&euro;</p>
+					</div>
+					<!-- Infos END-->
+
+					<!-- Quantité -->
+					<div class="subContent__cart--quantity">
+						<select class="countItems__cart">
+							<option value="1" selected>1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+						<button class=" removeFromCart" aria-label="retirer le produit du panier">Supprimer</button>
+					</div>
+					<!-- Quantité END-->
+				</div>
+				<!-- article ajouté END -->
+			</div>
+			<!-- Panier END -->
 
 			<!-- Prix total des articles ajoutés -->
-			<div class="flexcontainer__cart--table">
-				<div class="totalprice__cart--table">
-					<p class="title__cart--table">Montant total TTC</p>
-					<div id="totalPrice0" class="subContent__cart--table price__cart--table">
-						<p class="price">&nbsp; <span class="total_price">15</span>&nbsp;</p>
-					</div>
+			<div class="subContent__cart--total">
+				<p class="title__cart--total">Montant total TTC</p>
+				<div class="totalPrice__cart">
+					<p class="total_price"><span>15</span>&nbsp;&euro;</p>
 				</div>
 			</div>
 			<!-- Prix total des articles ajoutés END-->
@@ -152,8 +166,8 @@
 		</section>
 		<!-- Panier rempli END -->
 
-		<!-- Section formulaire de commande style="display:none;" -->
-		<section class="container__form">
+		<!-- Section formulaire de commande  -->
+		<section class="container__form" style="display:none;">
 			<h2 class="title__form">Votre formulaire de commande</h2>
 
 			<!-- formulaire de commande -->

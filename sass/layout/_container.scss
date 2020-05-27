@@ -3,13 +3,13 @@
 	padding-top: 3em;
 	@include dispoCenter;
 }
-
 //Design alerte javascript désactivé
 .noscript {
 	background-color: $color-danger;
 	color: $color-text;
 	height: 4em;
 }
+
 
 //Page Produit : conteneur global des articles
 .container__boxPolaroid--flex {
@@ -22,56 +22,55 @@
 }
 
 
+
 //Container du panier rempli
-.container__cart--table {
+.container__cart {
 	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+	padding:5%;
+	// @include dispoCenter;
+}
+//contenant pour chaque article
+.article__cart {
+	margin: 5%;
+	padding: 1em 0;
+	margin-bottom: 3em;
+	border-bottom: 1px solid $color-border;
+	border-top: 1px solid $color-border;
 	@media all and (min-width: 768px) {
-	flex-direction: row;
+	display: flex;
 	}
 }
-.flexcontainer__cart--table {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width:100%;
-	margin-bottom: 2em;
+//Contenant photo
+.subContent__cart--photo {
+	width: 20%;	
+}
+//Contenant descriptif article
+.subContent__cart--article {
+	padding-bottom: 1em;
 	@media all and (min-width:768px) {
-		flex-direction: row;
+	width: 60%;	
 	}
 }
-//contenant pour les div avec image ou bouton
-.subContent__cart--table {
+// contenant quantité et bouton supprimer
+.subContent__cart--quantity {
 	display: flex;
-	align-items: flex-start;
-	width: 100%;
-	margin-bottom: 1em;
-}
-.spaceB__cart--table {
-	flex-direction: column;
-	justify-content: center;
-	@media all and (min-width: 768px){
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	@media all and (min-width:768px) {
+	width: 40%;	
 	}
 }
-.totalprice__cart--table{
+.countItems__cart, .removeFromCart {
+	@include btnDesign;
+	@include mainDesign;
+}
+.subContent__cart--total{
 	display: flex;
 	flex-direction: column;
-	margin: 0 2%;
+	padding: 0 10%;
 	width: 100%;
 }
-//taille des articles, quantités, prix
-.article__cart--table, .unitprice__cart--table, .quantity__cart--table {
-	padding: 0 2%;
-	@media all and (min-width: 768px) {
-		width: 33%;
-	}
-}
-
 
 //Page panier et page produit
 .main__content--cart,

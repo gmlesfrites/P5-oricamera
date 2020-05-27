@@ -11,7 +11,7 @@
 	position: absolute;
 	background-size: cover;
 	background-position: 40% 60%;
-	background-repeat: no-repeat;
+	background-repeat: repeat;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -36,23 +36,37 @@
 }
 
 
-// Nom d'article/Prix unitaire/Quantité/Prix total
-.title__cart--table {
-	font-weight: 700;
-	border-bottom: $color-text 1px dashed;
-	margin-bottom: 1em;
-	padding-right:10px;
-}
-
-
 //Affichage de l'image du produit
-.img__cart--table {
-		width: 20%;
-		height:20%;
-		margin-right: 5%;
+.img__cart {
+	width: 100%;
+	height:100%;
+	@media all and (min-width:768px) {
+		width: 60%;
+		height: 60%;
+	}
+	@media all and (min-width:1024px) {
+		width:90%;
+		height: 90%;	
+	}
+}
+// Titre du produit
+.title__cart--article{
+	font-size: $fz-h3;
+	font-weight: 600;
+}
+// Description du produit
+.ref__cart, .description__cart, 
+.unit__price{
+	font-size: $fz-p;
+}
+//titre montant global
+.title__cart--total {
+	border-bottom: 1px $color-border dashed;
+	margin-bottom: 1em;
 }
 //Alignement des prix en fin de colonne
-.price__cart--table {
+.totalPrice__cart {
+	display: flex;
 	justify-content: flex-end;
 }
 

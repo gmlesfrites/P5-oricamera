@@ -1,9 +1,4 @@
 //HOME
-//Page principale container principal
-.main__content--home {
-	padding-top: 3em;
-	@include dispoCenter;
-}
 //Design alerte javascript désactivé
 .noscript {
 	background-color: $color-danger;
@@ -21,7 +16,6 @@
 		flex-wrap: wrap;
 	}
 }
-
 
 // PAGE PANIER
 //Container du panier rempli
@@ -77,13 +71,13 @@
 	width: 100%;
 }
 
-
-
 // GLOBAL 
-//Page panier et page produit
+//Page accueil, produit, panier et confirmation de commande
+.main__content--home, 
+.main__content--product,
 .main__content--cart,
-.main__content--product {
-	padding-top: 3em;
+.main__content--order {
+	margin-top: 5em;
 	@include dispoCenter;
 }
 
@@ -97,7 +91,7 @@
 		max-width: 300px;
 		margin: 2em;
 	}
-	@media all and (min-width: 900px) {
+	@media all and (min-width: 1024px) {
 		max-width:400px;
 	}
 }

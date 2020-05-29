@@ -55,4 +55,6 @@ fetchId().then(function (data) {
     //Bouton addToCart page produit
     const btnAddToCart = document.querySelector('div button');
     btnAddToCart.id = `${data._id} `;
+    btnAddToCart.className = "button__product--toCart addToCart"
+
 });

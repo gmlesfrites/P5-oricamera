@@ -45,7 +45,7 @@ button, a {
 	}
 }
 //Design boutons retour au catalogue et ajout au panier
-.container__product--toCart,
+.button__product--toCart,
 .container__product--homeReturn, 
 .container__order--homeReturn {
 	@include mainDesign;

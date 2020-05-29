@@ -76,7 +76,7 @@ button, a {
       justify-content: space-between;
       align-content: center; } }
 
-.container__product--toCart,
+.button__product--toCart,
 .container__product--homeReturn,
 .container__order--homeReturn {
   background-color: #f3e9f1;

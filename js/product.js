@@ -53,7 +53,7 @@ fetchId().then(function (data) {
     singlePriceElt.innerHTML = `<p><strong>Prix : </strong> ${priceDot} &#128; </p>`;
 
     //Bouton addToCart page produit
-    const btnAddToCart = document.querySelector('div button');
+    const btnAddToCart = document.getElementById('addToCart');
     btnAddToCart.id = `${data._id} `;
     btnAddToCart.className = "button__product--toCart addToCart"
 

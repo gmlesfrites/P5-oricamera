@@ -98,7 +98,10 @@ document.addEventListener('DOMContentLoaded', function () {
 function getCameras() {
     //Pour connaître la caméra cliquée
     let addToCart = document.getElementsByClassName('addToCart');
-    addToCart.addEventListener = ('click', addToCart);
+    addToCart.addEventListener = ('click', function () {
+        console.log('click')
+    });
+
 
     for (i = 0; i < addToCart.length; i++) {
         //Récupération du contenant panier

@@ -1,25 +1,4 @@
-// Récupération des données suite btn produit cliqué
-const newId = new URLSearchParams(window.location.search.substring(0));
-const id = newId.get("id");
-
-const url = `http://localhost:3000/api/cameras/${id}`;
-
-//fetch pour la récupération des données par id
-const fetchId = async function () {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(response.status);
-        } else {
-            const data = await response.json();
-            return data;
-        }
-    } catch (error) {
-        console.log(error);
-    }
-};
-
-//Utilisation des données de fetch pour les insérer dans la page
+//Utilisation des données de fetch par Id pour les insérer dans la page
 fetchId().then(function (data) {
     //Ajout de l'image
     const imageElt = document.getElementById("imageUrl");

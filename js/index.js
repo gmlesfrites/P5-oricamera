@@ -1,21 +1,4 @@
-// Récupération des données
-const url = 'http://localhost:3000/api/cameras';
-const fetchCameras = async function () {
-	try {
-		const response = await fetch(url);
-		if (!response.ok) {
-			throw new Error(response.status);
-		} else {
-			const data = await response.json();
-			console.log(data);
-			return data;
-		}
-	} catch (error) {
-		console.log(error);
-	}
-}
-
-//Utilisation des données récupérées pour les insérer dans la page
+//Utilisation des données récupérées dans Camera.js pour les insérer dans la page
 fetchCameras().then(function (data) {
 	const cameras = data.map(camera => {
 		// Création de la constante pour la div 'boxPolaroid'
@@ -74,6 +57,9 @@ fetchCameras().then(function (data) {
 
 
 
+
+
+//******  Première version avec boucle for          *******
 // // Création de la constante pour la div 'boxPolaroid'
 // const divElt = document.querySelector("main div");
 

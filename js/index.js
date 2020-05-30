@@ -7,6 +7,7 @@ const fetchCameras = async function () {
 			throw new Error(response.status);
 		} else {
 			const data = await response.json();
+			console.log(data);
 			return data;
 		}
 	} catch (error) {
@@ -20,8 +21,6 @@ const divElt = document.querySelector("main div");
 //Utilisation des données récupérées pour les insérer dans la page
 fetchCameras().then(function (data) {
 	for (let i = 0; i < data.length; i++) {
-		console.log(data);
-
 		//Creation de la boite pour chaque item
 		const boxPolaroid = document.createElement("section");
 		boxPolaroid.className = "box__link--polaroid";
@@ -61,7 +60,6 @@ fetchCameras().then(function (data) {
 		buttonElt.href = `html/product.html?id=${idCam}`;
 		buttonElt.textContent = "Voir le produit";
 		divButtons.appendChild(buttonElt);
-		console.log(buttonElt);
 
 		//Ajout bouton achat rapide
 		const quickCartElt = document.createElement("a");

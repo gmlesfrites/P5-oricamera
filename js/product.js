@@ -1,7 +1,8 @@
 // Récupération des données suite btn produit cliqué
-let id = window.location.search;
-const newId = id.slice(4);
-const url = `http://localhost:3000/api/cameras/${newId}`;
+const newId = new URLSearchParams(window.location.search.substring(0));
+const id = newId.get("id");
+
+const url = `http://localhost:3000/api/cameras/${id}`;
 
 //fetch pour la récupération des données par id
 const fetchId = async function () {

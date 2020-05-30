@@ -221,52 +221,6 @@
 				</fieldset>
 				<!-- Commentaire pour livraison -->
 
-
-				<!-- Paiement -->
-				<fieldset class="fieldset__form">
-					<legend class="legend__form">&nbsp; Paiement &nbsp;</legend>
-					<div class="subpart__form">
-						<!-- Carte bancaire -->
-						<div class="subpart__form subpart__form--cb">
-							<input type="radio" id="cb" name="paiement"
-								aria-label="paiement par carte bancaire, choix par défaut" value="Carte bancaire"
-								checked>
-							<label for="cb" class="label__form">&nbsp;Carte bancaire</label>
-							<div class="subpart_form">
-								<div class="subpart_form">
-									<label for="numcb" class="label__form">&nbsp;Visa/Mastercard/Amex</label>
-									<input type="text" id="numcb" class="input__form" autocomplete="on"
-										placeholder="0000 0000 0000 0000" maxlength="16" minlength="16"
-										aria-label="Merci d'indiquer votre numéro de carte bancaire">
-								</div>
-								<div class="subpart_form">
-									<label for="cryptocb" class="label__form">&nbsp;Cryptogramme visuel</label>
-									<input type="text" id="cryptocb" class="input__form" autocomplete="on"
-										placeholder="000" maxlength="5" minlength="3"
-										aria-label="Merci d'indiquer votre numéro de cryptogramme">
-								</div>
-								<div class="subpart_form">
-									<label for="cbexp" class="label__form">Date d'expiration &nbsp;<span
-											class="datepicker-format">MM/AAAA</span></label>
-									<input type="date" name="cbexp" id="cbexp" class="input__form"
-										aria-label="Date d'expiration" required>
-								</div>
-							</div>
-						</div>
-						<!-- Carte bancaire END -->
-						<!-- Chèque -->
-						<div class="subpart__form subpart__form--ck">
-							<input type="radio" id="cheque" name="paiement" aria-label="Choix de paiement par chèque"
-								value="cheque">
-							<label for="cheque" class="label__form">&nbsp;Chèque</label>
-							<p class="p__form">Ordre du chèque : Oricamera SARL</p>
-						</div>
-						<!-- Chèque END -->
-					</div>
-				</fieldset>
-				<!-- Commentaire pour livraison -->
-
-
 				<div class="container__buttons--flex">
 					<!-- Bouton effacer le formulaire -->
 					<button class="button__form" type="reset"

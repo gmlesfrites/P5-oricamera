@@ -40,18 +40,21 @@ fetchId().then(function (data) {
     // Optiques
     const lensesElt = document.querySelector("select");
     const lensesData = data.lenses;
-    for (let i = 0; i < lensesData.length; i++) {
+    lensesData.map(lenses => {
         let optElt = document.createElement("option");
-        optElt.value = lensesData[i];
-        optElt.innerHTML = lensesData[i];
+        optElt.value = lenses;
+        optElt.innerHTML = lenses;
         lensesElt.appendChild(optElt)
-    }
+    });
 
     // Prix
     const singlePriceElt = document.getElementById("price");
+
     //Prix 000.00€
     let priceDot = (data.price / 100).toFixed(2);
-    singlePriceElt.innerHTML = `<p><strong>Prix : </strong> ${priceDot} &#128; </p>`;
+    priceDot = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${priceDot}`);
+
+    singlePriceElt.innerHTML = `<p><strong>Prix : </strong> ${priceDot} </p>`;
 
     //Bouton addToCart page produit
     const btnAddToCart = document.getElementById('addToCart');

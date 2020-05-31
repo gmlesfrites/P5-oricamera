@@ -97,9 +97,18 @@
 		<nav class="header__navbar">
 			<a class="header__navbar--logoText" href="#" aria-label="Lien vers la page d'accueil"><strong><i
 						class="fa fa-camera-retro"></i></strong>&nbsp; Oricamera</a>
-			<a href="html/cart.html" aria-label="Lien vers page panier"
-				class="menu__link cart__static cart__visible cart__hidden"><strong><i
-						class="fas fa-shopping-cart"></i></strong>&nbsp; Panier</a>
+
+			<!-- Accès panier -->
+			<a href="html/cart.html" aria-label="Lien vers page panier" class="menu__link cart__link">
+
+				<div class="header__cart">
+					<span><strong><i class="fas fa-shopping-cart"></i></strong></span>
+					<span class="a__cartCounter howManyItems">0</span>
+				</div>
+
+				&nbsp; Panier &nbsp;
+			</a>
+			<!-- Accès panier END -->
 		</nav>
 		<!-- Image and text navbar END-->
 	</header>

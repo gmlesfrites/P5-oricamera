@@ -1,11 +1,15 @@
-// class Cart {
+//Panier
+const cart = {
+    key: "oricamerakey",
+    inCart: []
+};
 
-// }
-// "oricameraKey";
-// const cameras = "camerasInCart";
+const cartJSON = JSON.stringify(cart);
+console.log(cartJSON);
 
-// localStorage.cart = cart;
-// localStorage.cameras = cameras;
+const cartObj = JSON.parse(cart)
+console.log(cartObj);
+
 
 
 

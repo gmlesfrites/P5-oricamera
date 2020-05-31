@@ -11,7 +11,7 @@
 	position: absolute;
 	background-size: cover;
 	background-position: 40% 60%;
-	background-repeat: no-repeat;
+	background-repeat: repeat;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -36,89 +36,55 @@
 }
 
 
-// Nom d'article/Prix unitaire/Quantité/Prix total
-.title__cart--table {
-	font-weight: 700;
-	border-bottom: $color-text 1px dashed;
-	margin-bottom: 1em;
-	padding-right:10px;
-}
-
-
 //Affichage de l'image du produit
-.img__cart--table {
-		width: 20%;
-		height:20%;
-		margin-right: 5%;
-}
-//Alignement des prix en fin de colonne
-.price__cart--table {
-	justify-content: flex-end;
-}
-
-
-
-
-
-//contenant global du formulaire
-.container__form {
-	@include designBox;
-	opacity: 0.7;
-	@include dispoCenter;
-	margin-bottom: 3em;
-}
-//contenant balise form
-.container__form--flex {
-	@include dispoCenter;
+.img__cart {
 	width: 100%;
+	height:100%;
+	@media all and (min-width:768px) {
+		width: 60%;
+		height: 60%;
+	}
+	@media all and (min-width:1024px) {
+		width:90%;
+		height: 90%;	
+	}
 }
-//partie civilité - coordonnées - adresse - commentaires
-.fieldset__form {
+// Titre du produit
+.title__cart--article{
 	font-size: $fz-h3;
-	display: flex;
-	width: 90%;
-	padding: 5%;
-	margin: 2em 0;
+	font-weight: 600;
 }
-//légende des fieldsets
-.legend__form {
-	font-size: $fz-h2;
-	font-family: $ff-title;
-}
-// contenant de chaque sous-partie contenant label+input
-.subpart__form {
-	margin-bottom: 1.5em;
-}
-//label
-.label__form,
-.p__form {
-	font-family: $ff-text;
+// Description du produit
+.ref__cart, .description__cart, 
+.unit__price, .sevUnit__price{
 	font-size: $fz-p;
 }
-//Input classique
-.input__form {
-	@include input;
-	height: 3em;
+//titre montant global
+.title__cart--total {
+	border-bottom: 1px $color-border dashed;
+	margin-bottom: 1em;
 }
-//textarea
-.textarea__form {
-	@include input;
-	height: 6em;
+//Alignement des prix en fin de colonne
+.totalPrice__cart {
+	display: flex;
+	justify-content: flex-end;
+}
+//compteur quantité
+.countItems__cart {
+	@include mainDesign;
+	@include btnDesign;
+	width: 40%;
+	margin-right: 5%;
+} 
+//bouton supprimer du panier
+.removeFromCart {
+	@include btnDesign;
+	@include mainDesign;
+	width: 60%;
 }
 
-//Contenant Monsieur-Madame
-//Input radio
-.container__form--sex {
-	margin-bottom: 1.5em;
-}
-//Monsieur-Madame__form
-.monsieur__form,
-.madame__form {
-	font-family: $ff-text;
-	display: flex;
-	flex-direction: row;
-	margin: 0.5em;
-}
-.radio__form {
-	@include input;
-}
+
+
+
+
+

@@ -1,14 +1,64 @@
-//titre
-.title__purchase {
-	font-size: $fz-h1;
+// Mise en page de la page confirmation de commande
+.main__order--background {
+	position: relative;
 }
-//contenant du panier
+.main__order--background::after {
+	content: "";
+	background-image: url("Images/background.png");
+	filter: grayscale(90%);
+	opacity: 0.2;
+	overflow-x: hidden;
+	position: absolute;
+	background-size: cover;
+	background-position: 40% 60%;
+	background-repeat: no-repeat;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+}
+
+
+
+//contenant du récap de commande
 .container__purchase {
 	@include designBox;
-	margin-bottom: 5em;
+	opacity: 0.6;
+	padding: 5%;
+	margin-bottom:5em;
 }
-//ordre du chèque
-label span{
-	font-style: italic;
+
+//titre de la page
+.title__order {
+	font-size: $fz-h1;
+	margin: 2em;
+	text-align: center;
+}
+
+// Récap de la commande 
+.title__purchase {
 	font-size: $fz-h2;
+}
+
+//Partie infos de commande
+.details__purchase {
+	margin: 2em 0 5em 0;
+}
+//Texte de confirmation de commande
+.thanks__purchase {
+	padding-bottom: $fz-h3;
+}
+
+//référence commande et montant de commande
+.date__purchase, .ref__purchase, .order__purchase  {
+	padding-top : $fz-h3;
+	font-weight: 700;
+}
+
+
+// Bouton retour home
+.container__order--homeReturn {
+	margin:2em;
+	text-align: center;
 }

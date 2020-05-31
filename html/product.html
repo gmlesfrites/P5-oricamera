@@ -61,8 +61,18 @@
 		<nav class="header__navbar">
 			<a class="header__navbar--logoText" href="../index.html" aria-label="Lien vers la page d'accueil"><strong><i
 						class="fa fa-camera-retro"></i></strong>&nbsp;Oricamera</a>
-			<a href="cart.html" aria-label="Lien vers page panier" class="menu__link"><strong><i
-						class="fas fa-shopping-cart"></i></strong>&nbsp;Panier</a>
+
+			<!-- Accès panier -->
+			<a href="cart.html" aria-label="Lien vers page panier" class="menu__link cart__link">
+
+				<div class="header__cart">
+					<span><strong><i class="fas fa-shopping-cart"></i></strong></span>
+					<span class="a__cartCounter howManyItems">0</span>
+				</div>
+
+				&nbsp; Panier &nbsp;
+			</a>
+			<!-- Accès panier END -->
 		</nav>
 		<!-- Image and text navbar END-->
 	</header>
@@ -77,10 +87,11 @@
 
 			<!--Informations produit importées de l'API en JS -->
 			<!-- Image -->
-			<img src="#" id="imageUrl" alt="photo du produit" aria-label="photo du produit"
-				class="container__product--image">
-			<!-- Image END -->
-
+			<div id="img" class="container__product--image">
+				<img src="#" id="imageUrl" class="box__image--polaroid" alt="photo du produit"
+					aria-label="photo du produit">
+				<!-- Image END -->
+			</div>
 			<!-- référence -->
 			<div id="ref" class="container__product--ref">
 				<p>Référence du produit : </p>
@@ -100,9 +111,12 @@
 			<!-- Description END -->
 
 			<!-- Choix d'optiques -->
-			<div  class="container__product--lenses">
-				<p>Choix de l'optique : </p>
-				<ul id="lenses"></ul>
+			<div class="container__product--lenses">
+				<label for="lenses" aria-label="Sélection de l'optique"><strong>Choix de l'optique :</strong>
+					&nbsp;</label>
+				<select name="lenses" id="lenses" class="container__product--select">
+					<option value="">Votre optique</option>
+				</select>
 			</div>
 			<!-- Choix d'optiques END -->
 
@@ -121,8 +135,10 @@
 				</a>
 				<!-- Bouton retour au catalogue END -->
 				<!-- Bouton achat -->
-				<button class="container__product--toCart" aria-label="Bouton ajout au panier">Ajouter ce produit au
-					panier</button>
+				<a href="cart.html" class="button__product--toCart addToCart" id="addToCart"
+					aria-label="ajoute au panier et lien vers page panier">Ajouter ce
+					produit au
+					panier</a>
 				<!-- Bouton achat END -->
 			</div>
 			<!-- Contenant pour les boutons retour accueil et bouton achat END -->
@@ -140,7 +156,9 @@
 	<!-- Footer END -->
 
 	<!-- Mes scripts -->
+	<script src="../js/Camera.js"></script>
 	<script src="../js/product.js"></script>
+	<script src="../js/cart.js" defer></script>
 	<!-- Mes scripts END -->
 	<!--Script font awesome-->
 	<script src="https://kit.fontawesome.com/6a89ea6dae.js" crossorigin="anonymous"></script>

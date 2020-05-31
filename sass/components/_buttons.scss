@@ -45,27 +45,16 @@ button, a {
 	}
 }
 //Design boutons retour au catalogue et ajout au panier
-.container__product--toCart,
-.container__product--homeReturn {
+.button__product--toCart,
+.container__product--homeReturn, 
+.container__order--homeReturn {
 	@include mainDesign;
 	@include btnDesign;
-	margin: 1em;
+	margin: 1em 5%;
 }
 //Bouton passer la commande
 .button__form {
 	@include btnDesign;
 	@include mainDesign;
 	margin: 1em;
-}
-
-//Boutons de la page panier et formulaire de commande
-//bouton retirer du panier
-.removeFromCart {
-// 	@include mainDesign;
-// 	@include btnDesign;
-}
-.countItems__cart--table{
-// 	text-align: center;
-// 	@include btnDesign;
-	@include mainDesign;
 }

@@ -49,3 +49,8 @@
 	margin: 1em 0;
 	width: 100%;
 }
+
+//marge des div de la page produit
+@mixin marginProduct {
+	margin: 1em 5%;
+}

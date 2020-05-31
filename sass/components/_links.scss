@@ -6,6 +6,33 @@
 .menu__link {
 	font-size: 1.5em;
 }
+
+//compteur sur le panier
+.cart__link {
+	display: flex;
+	justify-content: space-around;
+	align-items: baseline;
+}
+.header__cart {
+	position: relative;
+	font-size: $fz-h3;
+	border: 1px solid transparent;
+	@include mainDesign;
+}
+.fa-shopping-cart {
+	font-size: $fz-h3;
+}
+.a__cartCounter {
+	position: absolute;
+	top: -8px;
+	left: 37px;
+	font-size: 0.8em;
+	background: linear-gradient(50deg, rgba(227, 137,18,0.7), rgba(179, 111, 152,0.7), rgba(143, 91, 254,0.7));
+	padding:0 0.5em;
+	border-radius: 1em;
+	color: black;
+}
+
 //design identique
 .menu__link,
 .footer__link {

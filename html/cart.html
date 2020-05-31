@@ -66,9 +66,15 @@
 			<!-- retour accueil END-->
 
 			<!-- Accès panier -->
-			<a href="#" aria-label="Lien vers page panier"
-				class="menu__link cart__static cart__visible cart__hidden"><strong><i
-						class="fas fa-shopping-cart"></i></strong>&nbsp; Panier</a>
+			<a href="#" aria-label="Lien vers page panier" class="menu__link cart__link">
+
+				<div class="header__cart">
+					<span><strong><i class="fas fa-shopping-cart"></i></strong></span>
+					<span class="a__cartCounter howManyItems">0</span>
+				</div>
+
+				&nbsp; Panier &nbsp;
+			</a>
 			<!-- Accès panier END -->
 		</nav>
 		<!-- Image and text navbar END-->
@@ -80,7 +86,7 @@
 	<main class="main__content--cart main__cart--background">
 		<h1 class="title__cart">Votre panier</h1>
 		<!-- Panier vide-->
-		<section id="container__cart--empty" class="container__cart--empty">
+		<section id="container__cart--empty" class="container__cart--empty" style="display:none;">
 			<h2><strong><i class="fas fa-info-circle"></i></strong>&nbsp; Votre panier est vide.</h2>
 		</section>
 		<!-- Panier vide END -->
@@ -89,62 +95,18 @@
 		<section id="container__cart--full" class="container__cart--full">
 			<h2>Articles dans votre panier</h2>
 
-			<!-- Tableau des achats -->
-			<div class="container__cart--table">
-				<!-- articles ajoutés -->
-				<div class="flexcontainer__cart--table">
-					<!-- Photo et nom des articles ajoutés -->
-					<div class="article__cart--table">
-						<p class="title__cart--table">Nom de l'article</p>
-						<div id="name0" class="subContent__cart--table">
-							<img src="#" class="img__cart--table" aria-label="image du produit" alt="image du produit">
-							<p>Nom du produit</p>
-						</div>
-						<div id="name1" class="subContent__cart--table">
-							<img src="#" class="img__cart--table" aria-label="image du produit" alt="image du produit">
-							<p>Nom du produit 2</p>
-						</div>
-					</div>
-					<!-- Photo et nom des articles ajoutés END-->
-
-					<!-- Prix unitaire des articles ajoutés -->
-					<div class="unitprice__cart--table">
-						<p class="title__cart--table">Prix unitaire</p>
-						<div id="unitPrice0" class="subContent__cart--table price__cart--table">
-							<p class="price unit_price">&nbsp; 15 </p>
-						</div>
-						<div id="unitPrice1" class="subContent__cart--table price__cart--table">
-							<p class="price">&nbsp; <span class=" unit_price">30</span>&nbsp; </p>
-						</div>
-					</div>
-					<!-- Prix unitaire des articles ajoutés END-->
-
-					<!-- Quantité des articles ajoutés -->
-					<div class="quantity__cart--table">
-						<p class="title__cart--table">Quantité</p>
-						<div id="quantity0" class="subContent__cart--table spaceB__cart--table quantity">
-							<p class="countItems__cart--table">1</p>
-							<button class=" removeFromCart" aria-label="retirer le produit du panier">Supprimer</button>
-						</div>
-						<div id="quantity1" class="subContent__cart--table spaceB__cart--table quantity">
-							<p class="countItems__cart--table">3</p>
-							<button class=" removeFromCart" aria-label="retirer le produit du panier">Supprimer</button>
-						</div>
-					</div>
-					<!-- Quantité des articles ajoutés END-->
-				</div>
-				<!-- articles ajoutés END -->
+			<!-- Panier -->
+			<div class="container__cart" id="contentCart">
 			</div>
-			<!-- Tableau des achats -->
+			<!-- Panier END -->
+
 
 
 			<!-- Prix total des articles ajoutés -->
-			<div class="flexcontainer__cart--table">
-				<div class="totalprice__cart--table">
-					<p class="title__cart--table">Montant total TTC</p>
-					<div id="totalPrice0" class="subContent__cart--table price__cart--table">
-						<p class="price">&nbsp; <span class="total_price">15</span>&nbsp;</p>
-					</div>
+			<div class="subContent__cart--total">
+				<p class="title__cart--total">Montant total TTC</p>
+				<div class="totalPrice__cart">
+					<p class="description__cart total__price">1 €</p>
 				</div>
 			</div>
 			<!-- Prix total des articles ajoutés END-->
@@ -152,8 +114,8 @@
 		</section>
 		<!-- Panier rempli END -->
 
-		<!-- Section formulaire de commande -->
-		<section class="container__form" style="display:none;">
+		<!-- Section formulaire de commande  -->
+		<section class="container__form" style="display: none;">
 			<h2 class="title__form">Votre formulaire de commande</h2>
 
 			<!-- formulaire de commande -->
@@ -265,50 +227,6 @@
 				</fieldset>
 				<!-- Commentaire pour livraison -->
 
-
-				<!-- Paiement -->
-				<fieldset class="fieldset__form">
-					<legend class="legend__form">&nbsp; Commentaires &nbsp;</legend>
-					<div class="subpart__form">
-						<!-- Carte bancaire -->
-						<div class="subpart_form">
-							<input type="radio" id="cb" name="paiement"
-								aria-label="paiement par carte bancaire, choix par défaut" value="Carte bancaire"
-								checked>
-							<label for="cb" class="label__form">&nbsp;Carte bancaire</label>
-							<div class="subpart_form">
-								<div class="subpart_form">
-									<label for="numcb" class="label__form">&nbsp;Visa/Mastercard/Amex</label>
-									<input type="text" id="numcb" autocomplete="on" placeholder="0000 0000 0000 0000"
-										maxlength="16" minlength="16"
-										aria-label="Merci d'indiquer votre numéro de carte bancaire">
-								</div>
-								<div class="subpart_form">
-									<label for="cryptocb" class="label__form">&nbsp;Cryptogramme visuel</label>
-									<input type="text" id="cryptocb" autocomplete="on" placeholder="000" maxlength="5"
-										minlength="3" aria-label="Merci d'indiquer votre numéro de cryptogramme">
-								</div>
-								<div class="subpart_form">
-									<label for="expcb" class="label__form">&nbsp;Date d'expiration</label>
-									<input type="text" id="expcb" autocomplete="on" placeholder="00/00" maxlength="7"
-										minlength="4" aria-label="Merci d'indiquer votre numéro de cryptogramme">
-								</div>
-							</div>
-						</div>
-						<!-- Carte bancaire END -->
-						<!-- Chèque -->
-						<div class="subpart__form">
-							<input type="radio" id="cheque" name="paiement" aria-label="Choix de paiement par chèque"
-								value="cheque">
-							<label for="cheque" class="label__form">&nbsp;Chèque</label>
-							<p class="p__form">Ordre du chèque : Oricamera SARL</p>
-						</div>
-						<!-- Chèque END -->
-					</div>
-				</fieldset>
-				<!-- Commentaire pour livraison -->
-
-
 				<div class="container__buttons--flex">
 					<!-- Bouton effacer le formulaire -->
 					<button class="button__form" type="reset"
@@ -335,7 +253,9 @@
 	</footer>
 	<!-- Footer END -->
 	<!-- Mes scripts -->
+	<script src="../js/Camera.js"></script>
 	<script src="../js/cart.js"></script>
+	<script src="../js/form.js"></script>
 	<!-- Mes scripts END -->
 	<!--Script font awesome-->
 	<script src="https://kit.fontawesome.com/6a89ea6dae.js" crossorigin="anonymous"></script>

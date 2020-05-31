@@ -7,8 +7,10 @@ const cart = {
 const cartJSON = JSON.stringify(cart);
 console.log(cartJSON);
 
-const cartObj = JSON.parse(cart)
-console.log(cartObj);
+
+
+// const cartObj = JSON.parse(cart)
+// console.log(cartObj);
 
 
 

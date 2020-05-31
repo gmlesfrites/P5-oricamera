@@ -99,7 +99,7 @@ button, a {
   margin: 1em; }
 
 .fa-shopping-cart, .fa-cart-plus, .fa-info-circle {
-  background: linear-gradient(120deg, rgba(227, 137, 18, 0.9), rgba(179, 111, 152, 0.9), rgba(143, 91, 254, 0.8));
+  background: linear-gradient(120deg, #e38912e6, #b36f98e6, #8f5bfecc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 0.35em; }
@@ -131,8 +131,8 @@ button, a {
   top: -8px;
   left: 37px;
   font-size: 0.8em;
-  background: linear-gradient(50deg, rgba(227, 137, 18, 0.7), rgba(179, 111, 152, 0.7), rgba(143, 91, 254, 0.7));
-  padding: 0 0.5em;
+  background: linear-gradient(50deg, #e38912b3, #b36f98b3, #8f5bfeb3);
+  padding: 0.1em 0.5em;
   border-radius: 1em;
   color: black; }
 
@@ -161,17 +161,20 @@ button, a {
 .header__navbar {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 0 0.5em;
   align-items: center; }
+  @media all and (min-width: 768px) {
+    .header__navbar {
+      flex-direction: row;
+      justify-content: space-between; } }
 
 .header__navbar--logoText {
   font-weight: 700;
   font-size: 3em;
   text-decoration: none;
   color: #3d3d3d;
-  padding-bottom: 0.2em; }
+  padding-bottom: 1em; }
 
 .noscript {
   background-color: #f0a5a5;

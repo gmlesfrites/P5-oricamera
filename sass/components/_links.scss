@@ -27,8 +27,8 @@
 	top: -8px;
 	left: 37px;
 	font-size: 0.8em;
-	background: linear-gradient(50deg, rgba(227, 137,18,0.7), rgba(179, 111, 152,0.7), rgba(143, 91, 254,0.7));
-	padding:0 0.5em;
+	background: $linear;
+	padding:0.1em 0.5em;
 	border-radius: 1em;
 	color: black;
 }

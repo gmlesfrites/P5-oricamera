@@ -55,8 +55,7 @@ button, a {
   border-radius: 20px 20px;
   padding: 0.6em 1.3em;
   font-size: 1.1em;
-  width: 100%;
-  margin-right: 5%; }
+  width: 100%; }
 
 .button__quickCart {
   font-size: 2em;
@@ -64,6 +63,7 @@ button, a {
   margin-right: 3%;
   cursor: pointer; }
 
+.container__form--button,
 .container__product--buttons {
   width: 100%;
   padding-top: 2em;
@@ -71,10 +71,14 @@ button, a {
   flex-direction: column-reverse;
   justify-content: center; }
   @media all and (min-width: 768px) {
+    .container__form--button,
     .container__product--buttons {
       flex-direction: row;
       justify-content: space-between;
       align-content: center; } }
+
+.container__form--button {
+  width: 90%; }
 
 .button__product--toCart,
 .container__product--homeReturn,
@@ -195,6 +199,13 @@ button, a {
 .container__cart {
   width: 100%;
   padding: 5%; }
+
+#full {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
 
 .article__cart {
   margin: 5%;

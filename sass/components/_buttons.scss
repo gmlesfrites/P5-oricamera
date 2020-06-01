@@ -21,7 +21,6 @@ button, a {
 	@include mainDesign;
 	@include btnDesign;
 	width: 100%;
-	margin-right: 5%;
 }
 // bouton achat rapide
 .button__quickCart {
@@ -32,6 +31,7 @@ button, a {
 }
 
 //Bouton page produit pour retour au catalogue et ajout panier
+.container__form--button,
 .container__product--buttons {
 	width: 100%;
 	padding-top:2em;
@@ -44,6 +44,12 @@ button, a {
 			align-content: center;
 	}
 }
+
+.container__form--button {
+	width:90%;
+
+}
+
 //Design boutons retour au catalogue et ajout au panier
 .button__product--toCart,
 .container__product--homeReturn, 

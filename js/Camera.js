@@ -25,7 +25,6 @@ const fetchCameras = async function () {
     }
 }
 
-
 //Récupération des données par id
 // Récupération des données suite btn produit cliqué
 const newId = new URLSearchParams(window.location.search.substring(0));
@@ -46,3 +45,5 @@ const fetchId = async function () {
         console.log(error);
     }
 };
+
+

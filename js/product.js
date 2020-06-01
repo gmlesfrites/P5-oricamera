@@ -41,3 +41,6 @@ fetchId().then(function (data) {
     btnAddToCart.className = "button__product--toCart addToCart"
 
 });
+
+const productAddtoCart = document.getElementsByClassName('addToCart');
+console.log(productAddtoCart);

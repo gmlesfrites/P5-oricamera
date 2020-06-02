@@ -31,7 +31,7 @@ button, a {
 }
 
 //Bouton page produit pour retour au catalogue et ajout panier
-.container__form--button,
+
 .container__product--buttons {
 	width: 100%;
 	padding-top:2em;
@@ -46,7 +46,16 @@ button, a {
 }
 
 .container__form--button {
-	width:90%;
+	width: 90%;
+	padding-top:2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	@media all and (min-width: 768px) {
+		flex-direction: row;
+		justify-content: space-between;
+			align-content: center;
+	}
 
 }
 
@@ -58,9 +67,4 @@ button, a {
 	@include btnDesign;
 	margin: 1em 5%;
 }
-//Bouton passer la commande
-.button__form {
-	@include btnDesign;
-	@include mainDesign;
-	margin: 1em;
-}
+

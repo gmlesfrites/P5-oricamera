@@ -1,3 +1,25 @@
+//Récupération des données par id
+// Récupération des données suite btn produit cliqué
+const newId = new URLSearchParams(window.location.search.substring(0));
+const id = newId.get("id");
+
+//fetch pour la récupération des données par id
+const urlId = `http://localhost:3000/api/cameras/${id}`;
+const fetchId = async function () {
+    try {
+        const response = await fetch(urlId);
+        if (!response.ok) {
+            throw new Error(response.status);
+        } else {
+            const data = await response.json();
+            return data;
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+
 //Utilisation des données de fetch par Id pour les insérer dans la page
 fetchId().then(function (data) {
     //Ajout de l'image
@@ -22,9 +44,12 @@ fetchId().then(function (data) {
     lensesData.map(lenses => {
         let optElt = document.createElement("option");
         optElt.value = lenses;
+        optElt.id = lenses;
+        optElt.className = "lenses";
         optElt.innerHTML = lenses;
         lensesElt.appendChild(optElt)
     });
+    // TODO trouver solution pour forcer le choix avant validation panier
 
     // Prix
     const singlePriceElt = document.getElementById("price");
@@ -39,8 +64,21 @@ fetchId().then(function (data) {
     const btnAddToCart = document.getElementById('addToCart');
     btnAddToCart.id = `${data._id} `;
     btnAddToCart.className = "button__product--toCart addToCart"
-
 });
 
-const productAddtoCart = document.getElementsByClassName('addToCart');
-console.log(productAddtoCart);
+//Article à mettre au panier
+const addCameras = document.querySelector('.addToCart');
+
+
+
+function addItem(e) {
+    e.preventDefault();
+    const camera = {
+        id: `${id}`,
+        qté: 1,
+    }
+    console.log(camera);
+}
+
+addCameras.addEventListener('submit', addItem);
+console.log(addCameras);

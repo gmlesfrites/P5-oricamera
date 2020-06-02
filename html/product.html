@@ -116,7 +116,7 @@
 				<label for="lenses" aria-label="Sélection de l'optique"><strong>Choix de l'optique :</strong>
 					&nbsp;</label>
 				<select name="lenses" id="lenses" class="container__product--select">
-					<option value="">Votre optique</option>
+					<option value="" id="toChange">Votre optique</option>
 				</select>
 			</div>
 			<!-- Choix d'optiques END -->
@@ -136,10 +136,8 @@
 				</a>
 				<!-- Bouton retour au catalogue END -->
 				<!-- Bouton achat -->
-				<a href="cart.html" class="button__product--toCart addToCart" id="addToCart"
-					aria-label="ajoute au panier et lien vers page panier">Ajouter ce
-					produit au
-					panier</a>
+				<input type="submit" class="button__product--toCart addToCart" id="addToCart"
+					aria-label="ajoute au panier" value="Ajouter ce produit au panier">
 				<!-- Bouton achat END -->
 			</div>
 			<!-- Contenant pour les boutons retour accueil et bouton achat END -->
@@ -159,6 +157,7 @@
 	<!-- Mes scripts -->
 	<script src="../js/Camera.js"></script>
 	<script src="../js/product.js"></script>
+	<script src="../js/cart.js"></script>
 	<!-- Mes scripts END -->
 	<!--Script font awesome-->
 	<script src="https://kit.fontawesome.com/6a89ea6dae.js" crossorigin="anonymous"></script>

@@ -63,7 +63,6 @@ button, a {
   margin-right: 3%;
   cursor: pointer; }
 
-.container__form--button,
 .container__product--buttons {
   width: 100%;
   padding-top: 2em;
@@ -71,14 +70,22 @@ button, a {
   flex-direction: column-reverse;
   justify-content: center; }
   @media all and (min-width: 768px) {
-    .container__form--button,
     .container__product--buttons {
       flex-direction: row;
       justify-content: space-between;
       align-content: center; } }
 
 .container__form--button {
-  width: 90%; }
+  width: 90%;
+  padding-top: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  @media all and (min-width: 768px) {
+    .container__form--button {
+      flex-direction: row;
+      justify-content: space-between;
+      align-content: center; } }
 
 .button__product--toCart,
 .container__product--homeReturn,
@@ -91,16 +98,6 @@ button, a {
   padding: 0.6em 1.3em;
   font-size: 1.1em;
   margin: 1em 5%; }
-
-.button__form {
-  border: 1px solid #daa520;
-  border-radius: 20px 20px;
-  padding: 0.6em 1.3em;
-  font-size: 1.1em;
-  background-color: #f3e9f1;
-  font-family: "Caveat Brush", cursive;
-  color: #3d3d3d;
-  margin: 1em; }
 
 .fa-shopping-cart, .fa-cart-plus, .fa-info-circle {
   background: linear-gradient(120deg, #e38912e6, #b36f98e6, #8f5bfecc);
@@ -181,7 +178,7 @@ button, a {
   padding-bottom: 1em; }
 
 .noscript {
-  background-color: #f0a5a5;
+  background-color: #e07373;
   color: #3d3d3d;
   height: 4em; }
 
@@ -348,6 +345,22 @@ button, a {
   font-weight: 200;
   margin: 1em 0;
   width: 100%; }
+
+input:invalid {
+  border: 1px solid #e07373; }
+
+input:valid {
+  border: 1px solid #daa520; }
+
+.button__form {
+  border: 1px solid #daa520;
+  border-radius: 20px 20px;
+  padding: 0.6em 1.3em;
+  font-size: 1.1em;
+  background-color: #f3e9f1;
+  font-family: "Caveat Brush", cursive;
+  color: #3d3d3d;
+  margin: 1em 0; }
 
 .footer {
   background-color: #f3e9f1;

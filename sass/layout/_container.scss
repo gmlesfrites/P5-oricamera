@@ -22,8 +22,13 @@
 .container__cart {
 	width: 100%;
 	padding:5%;
-	// @include dispoCenter;
 }
+
+#full {
+	@include dispoCenter;
+	width: 100%;
+}
+
 //contenant pour chaque article
 .article__cart {
 	margin: 5%;

@@ -84,167 +84,167 @@
 	<!-- Header END -->
 
 	<!-- Main -->
-	<main class="main__content--cart main__cart--background">
+	<main id="main__content--cart" class="main__content--cart main__cart--background">
 		<h1 class="title__cart">Votre panier</h1>
 		<!-- Panier vide-->
-		<section id="container__cart--empty" class="container__cart--empty" style="display:none;">
+		<section id="empty" class="container__cart--empty">
 			<h2><strong><i class="fas fa-info-circle"></i></strong>&nbsp; Votre panier est vide.</h2>
 		</section>
 		<!-- Panier vide END -->
 
-		<!-- Panier rempli -->
-		<section id="container__cart--full" class="container__cart--full">
-			<h2>Articles dans votre panier</h2>
+		<div id="full">
+			<!-- Panier rempli -->
+			<section class="container__cart--full vide">
+				<h2>Articles dans votre panier</h2>
 
-			<!-- Panier -->
-			<div class="container__cart" id="contentCart">
-			</div>
-			<!-- Panier END -->
-
-
-
-			<!-- Prix total des articles ajoutés -->
-			<div class="subContent__cart--total">
-				<p class="title__cart--total">Montant total TTC</p>
-				<div class="totalPrice__cart">
-					<p class="description__cart total__price">1 €</p>
+				<!-- Panier -->
+				<div class="container__cart" id="contentCart">
 				</div>
-			</div>
-			<!-- Prix total des articles ajoutés END-->
+				<!-- Panier END -->
 
-		</section>
-		<!-- Panier rempli END -->
+				<!-- Prix total des articles ajoutés -->
+				<div class="subContent__cart--total">
+					<p class="title__cart--total">Montant total TTC</p>
+					<div class="totalPrice__cart">
 
-		<!-- Section formulaire de commande  -->
-		<section class="container__form" style="display: none;">
-			<h2 class="title__form">Votre formulaire de commande</h2>
-
-			<!-- formulaire de commande -->
-			<form id="formOrder" class="container__form--flex" method="POST">
-
-				<!-- Civilité -->
-				<fieldset class="fieldset__form">
-					<legend class="legend__form">&nbsp; Votre civilité &nbsp;</legend>
-					<!-- Sexe -->
-					<div class="container__form--sex">
-						<p class="p__form">Merci d'indiquer votre civilité.</p>
-						<!-- Monsieur -->
-						<div class="monsieur__form">
-							<input type="radio" id="Monsieur" name="m-mme" aria-label="Choix Monsieur par défaut"
-								value="Monsieur" checked>
-							<label for="Monsieur" class="label__form">&nbsp;Monsieur</label>
-						</div>
-						<!-- Monsieur END -->
-						<!-- Madame -->
-						<div class="madame__form">
-							<input type="radio" id="Madame" name="m-mme" aria-label="Choix Madame" value="Madame">
-							<label for="Madame" class="label__form">&nbsp;Madame</label>
-						</div>
-						<!-- Madame END -->
 					</div>
-					<!-- Sexe END -->
-
-					<!-- Nom -->
-					<div class="subpart__form">
-						<label for="name">Merci de renseigner votre nom.</label>
-						<input type="text" id="name" name="nom" class="input__form" required autocomplete="on"
-							placeholder="DOE" maxlength="100"
-							aria-label="Merci de renseigner votre nom, ce champ est oligatoire" autofocus>
-					</div>
-					<!-- Nom END -->
-
-					<!-- Prénom -->
-					<div class="subpart__form">
-						<label for="firstname">Merci de renseigner votre prénom.</label>
-						<input type="text" id="firstname" name="prenom" class="input__form" required autocomplete="on"
-							placeholder="John" maxlength="100"
-							aria-label="Merci de renseigner votre prénom, ce champ est oligatoire">
-					</div>
-					<!-- Prénom END -->
-				</fieldset>
-				<!-- Civilité END -->
-
-				<!-- Coordonnées -->
-				<fieldset class="fieldset__form">
-					<legend class="legend__form">&nbsp; Vos coordonnées &nbsp;</legend>
-
-					<!-- Coordonnées Email -->
-					<div class="subpart__form">
-						<label for="email">Merci d'indiquer votre adresse email pour vous adresser votre
-							facture.</label>
-						<input type="email" id="email" name="email" class="input__form" required autocomplete="on"
-							placeholder="johndoe@mail.fr" maxlength="250"
-							aria-label="Merci d'indiquer votre adresse email, ce champ est obligatoire">
-					</div>
-					<!-- Coordonnées Email END -->
-
-					<!-- Coordonnées téléphoniques -->
-					<div class="subpart__form">
-						<label for="telephone">Merci d'indiquer votre numéro de téléphone pour que nous puissions vous
-							contacter.</label>
-						<input type="tel" id="telephone" name="telephone" class="input__form" required autocomplete="on"
-							placeholder="0401020304" maxlength="13" minlength="10"
-							aria-label="Merci d'indiquer votre numéro de téléphone pour que nous puissions vous contacter">
-					</div>
-					<!-- Coordonnées téléphoniques END -->
-				</fieldset>
-				<!-- Coordonnées END -->
-
-				<!-- Adresse -->
-				<fieldset class="fieldset__form">
-					<legend class="legend__form">&nbsp; Adresse de livraison &nbsp;</legend>
-					<div class="subpart__form">
-						<label for="adresse">Adresse</label>
-						<input type="text" id="adresse" name="adresse" class="input__form" required autocomplete="on"
-							placeholder="29 rue Quincampoix" maxlength="250"
-							aria-label="Merci d'indiquer votre adresse postale, ce champ est obligatoire">
-					</div>
-					<div class="subpart__form">
-						<label for="codePostal">Code postal</label>
-						<input type="text" id="codePostal" name="codePostal" class="input__form" required
-							autocomplete="on" placeholder="75004" maxlength="7"
-							aria-label="Merci d'indiquer votre code postal, ce champ est obligatoire">
-					</div>
-					<div class="subpart__form">
-						<label for="ville">Ville</label>
-						<input type="text" id="ville" name="ville" class="input__form" required autocomplete="on"
-							placeholder="PARIS" maxlength="100"
-							aria-label="Merci d'indiquer votre ville, ce champ est obligatoire">
-					</div>
-				</fieldset>
-				<!-- Adresse END -->
-
-
-				<!-- Commentaire pour livraison -->
-				<fieldset class="fieldset__form">
-					<legend class="legend__form">&nbsp; Commentaires &nbsp;</legend>
-					<div class="subpart__form">
-						<label for="message">Merci de préciser les informations utiles pour faciliter la
-							livraison.</label>
-						<textarea class="textarea__form" id="message" name="Votre projet" rows="4" cols="50"
-							maxlength="500" placeholder="Résidence fermée, digicode, ..." autocomplete="on"
-							aria-label="Merci de préciser les informations utiles pour faciliter la livraison, ce champ n'est pas obligatoire."></textarea>
-					</div>
-				</fieldset>
-				<!-- Commentaire pour livraison -->
-
-				<div class="container__buttons--flex">
-					<!-- Bouton effacer le formulaire -->
-					<button class="button__form" type="reset"
-						aria-label="Ci-après le bouton pour effacer de votre formulaire">Effacer le
-						formulaire</button>
-					<!-- Bouton effacer le formulaire END -->
-
-					<!-- Bouton envoi -->
-					<button class="button__form" type="submit"
-						aria-label="Ci-après le bouton d'envoi de votre formulaire">Passer ma
-						commande</button>
-					<!-- Bouton envoi END -->
 				</div>
-			</form>
-			<!-- formulaire de commande END -->
-		</section>
-		<!-- Section formulaire de commande END -->
+				<!-- Prix total des articles ajoutés END-->
+
+			</section>
+			<!-- Panier rempli END -->
+
+			<!-- Section formulaire de commande  -->
+			<section class="container__form">
+				<h2 class="title__form">Votre formulaire de commande</h2>
+
+				<!-- formulaire de commande -->
+				<form id="formOrder" class="container__form--flex" method="POST">
+
+					<!-- Civilité -->
+					<fieldset class="fieldset__form">
+						<legend class="legend__form">&nbsp; Votre civilité &nbsp;</legend>
+						<!-- Sexe -->
+						<div class="container__form--sex">
+							<p class="p__form">Merci d'indiquer votre civilité.</p>
+							<!-- Monsieur -->
+							<div class="monsieur__form">
+								<input type="radio" id="Monsieur" name="m-mme" aria-label="Choix Monsieur par défaut"
+									value="Monsieur" checked>
+								<label for="Monsieur" class="label__form">&nbsp;Monsieur</label>
+							</div>
+							<!-- Monsieur END -->
+							<!-- Madame -->
+							<div class="madame__form">
+								<input type="radio" id="Madame" name="m-mme" aria-label="Choix Madame" value="Madame">
+								<label for="Madame" class="label__form">&nbsp;Madame</label>
+							</div>
+							<!-- Madame END -->
+						</div>
+						<!-- Sexe END -->
+
+						<!-- Nom -->
+						<div class="subpart__form">
+							<label for="name">Merci de renseigner votre nom.</label>
+							<input type="text" id="name" name="nom" class="input__form" required autocomplete="on"
+								placeholder="DOE" maxlength="100"
+								aria-label="Merci de renseigner votre nom, ce champ est oligatoire" autofocus>
+						</div>
+						<!-- Nom END -->
+
+						<!-- Prénom -->
+						<div class="subpart__form">
+							<label for="firstname">Merci de renseigner votre prénom.</label>
+							<input type="text" id="firstname" name="prenom" class="input__form" required
+								autocomplete="on" placeholder="John" maxlength="100"
+								aria-label="Merci de renseigner votre prénom, ce champ est oligatoire">
+						</div>
+						<!-- Prénom END -->
+					</fieldset>
+					<!-- Civilité END -->
+
+					<!-- Coordonnées -->
+					<fieldset class="fieldset__form">
+						<legend class="legend__form">&nbsp; Vos coordonnées &nbsp;</legend>
+
+						<!-- Coordonnées Email -->
+						<div class="subpart__form">
+							<label for="email">Merci d'indiquer votre adresse email pour vous adresser votre
+								facture.</label>
+							<input type="email" id="email" name="email" class="input__form" required autocomplete="on"
+								placeholder="johndoe@mail.fr" maxlength="250"
+								aria-label="Merci d'indiquer votre adresse email, ce champ est obligatoire">
+						</div>
+						<!-- Coordonnées Email END -->
+
+						<!-- Coordonnées téléphoniques -->
+						<div class="subpart__form">
+							<label for="telephone">Merci d'indiquer votre numéro de téléphone pour que nous puissions
+								vous
+								contacter.</label>
+							<input type="tel" id="telephone" name="telephone" class="input__form" required
+								autocomplete="on" placeholder="0401020304" maxlength="13" minlength="10"
+								aria-label="Merci d'indiquer votre numéro de téléphone pour que nous puissions vous contacter">
+						</div>
+						<!-- Coordonnées téléphoniques END -->
+					</fieldset>
+					<!-- Coordonnées END -->
+
+					<!-- Adresse -->
+					<fieldset class="fieldset__form">
+						<legend class="legend__form">&nbsp; Adresse de livraison &nbsp;</legend>
+						<div class="subpart__form">
+							<label for="adresse">Adresse</label>
+							<input type="text" id="adresse" name="adresse" class="input__form" required
+								autocomplete="on" placeholder="29 rue Quincampoix" maxlength="250"
+								aria-label="Merci d'indiquer votre adresse postale, ce champ est obligatoire">
+						</div>
+						<div class="subpart__form">
+							<label for="codePostal">Code postal</label>
+							<input type="text" id="codePostal" name="codePostal" class="input__form" required
+								autocomplete="on" placeholder="75004" maxlength="7"
+								aria-label="Merci d'indiquer votre code postal, ce champ est obligatoire">
+						</div>
+						<div class="subpart__form">
+							<label for="ville">Ville</label>
+							<input type="text" id="ville" name="ville" class="input__form" required autocomplete="on"
+								placeholder="PARIS" maxlength="100"
+								aria-label="Merci d'indiquer votre ville, ce champ est obligatoire">
+						</div>
+					</fieldset>
+					<!-- Adresse END -->
+
+
+					<!-- Commentaire pour livraison -->
+					<fieldset class="fieldset__form">
+						<legend class="legend__form">&nbsp; Commentaires &nbsp;</legend>
+						<div class="subpart__form">
+							<label for="message">Merci de préciser les informations utiles pour faciliter la
+								livraison.</label>
+							<textarea class="textarea__form" id="message" name="Votre projet" rows="4" cols="50"
+								maxlength="500" placeholder="Résidence fermée, digicode, ..." autocomplete="on"
+								aria-label="Merci de préciser les informations utiles pour faciliter la livraison, ce champ n'est pas obligatoire."></textarea>
+						</div>
+					</fieldset>
+					<!-- Commentaire pour livraison -->
+
+					<div class="container__form--button">
+						<!-- Bouton effacer le formulaire -->
+						<input class="button__form" type="reset" aria-label="remettre à zéro les données du formulaire"
+							value="Effacer le formulaire">
+						<!-- Bouton effacer le formulaire END -->
+
+						<!-- Bouton envoi -->
+						<input class="button__form" type="submit" aria-label="validation de la commande"
+							value=" Passer ma commande">
+						<!-- Bouton envoi END -->
+					</div>
+				</form>
+				<!-- formulaire de commande END -->
+
+			</section>
+			<!-- Section formulaire de commande END -->
+		</div>
 
 	</main>
 	<!-- Main END-->
@@ -255,6 +255,7 @@
 	<!-- Footer END -->
 	<!-- Mes scripts -->
 	<script src="../js/Camera.js"></script>
+	<script src="../js/LocalStorage.js"></script>
 	<script src="../js/cart.js"></script>
 	<script src="../js/form.js"></script>
 	<!-- Mes scripts END -->

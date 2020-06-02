@@ -62,3 +62,19 @@
 .radio__form {
 	@include input;
 }
+
+//design validation
+input:invalid {
+	border: 1px solid $color-danger;
+}
+
+input:valid{
+	border: 1px solid $color-main;
+}
+
+//Effacer formulaireou valider commande
+.button__form {
+	@include btnDesign;
+	@include mainDesign;
+	margin: 1em 0;
+}

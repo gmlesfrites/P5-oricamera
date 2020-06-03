@@ -66,26 +66,28 @@ fetchId().then(function (data) {
     const btnAddToCart = document.getElementById('addToCart');
     btnAddToCart.id = `${data._id} `;
     btnAddToCart.className = "button__product--toCart addToCart"
+
+
+    //Produit ajout au localStorage au clic
+    // const addToCart = document.querySelector(".addToCart");
+    btnAddToCart.addEventListener("click", () => {
+
+        const cameraToAdd = {
+            id: `${id}`,
+            qty: 1
+        }
+        const cameraToCart = localStorage.getItem('camera');
+
+        if (cameraToCart) {
+            cart = JSON.parse(cameraToCart);
+            cart.push(cameraToAdd);
+            localStorage.setItem('camera', JSON.stringify(cart));
+        } else {
+            cart = [];
+            cart.push(cameraToAdd);
+            localStorage.setItem('camera', JSON.stringify(cart));
+        }
+        // TODO voir si je passe par là pour alimenter le compteur
+    })
+
 });
-
-//Produit ajout au localStorage au clic
-const addToCart = document.querySelector(".addToCart");
-addToCart.addEventListener("click", () => {
-
-    const cameraToAdd = {
-        id: `${id}`,
-        qty: 1,
-    }
-    const cameraToCart = localStorage.getItem('camera');
-
-    if (cameraToCart) {
-        cart = JSON.parse(cameraToCart);
-        cart.push(cameraToAdd);
-        localStorage.setItem('camera', JSON.stringify(cart));
-    } else {
-        cart = [];
-        cart.push(cameraToAdd);
-        localStorage.setItem('camera', JSON.stringify(cart));
-    }
-    // TODO voir si je passe par là pour alimenter le compteur
-})

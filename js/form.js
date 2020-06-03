@@ -1,13 +1,4 @@
-//Panier : vide ou affichage panier + formulaire
-(function displayContent() {
-    if (cart !== 0) {
-        let blocFull = document.querySelector('#full').style.display = "none";
-        let blocEmpty = document.querySelector('#main__content--cart').style.height = "100vh";
-        //articles au panier : affichage panier + formulaire --> pas message
-    } else {
-        let blocEmpty = document.querySelector('#empty').style.display = "none";
-    }
-})()
+
 
 //e.preventDefault pour neutraliser envoi du formulaire si mal rempli
 

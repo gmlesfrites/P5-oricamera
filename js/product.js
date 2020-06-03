@@ -3,7 +3,6 @@
 const newId = new URLSearchParams(window.location.search.substring(0));
 const id = newId.get("id");
 
-
 //fetch pour la récupération des données par id
 const urlId = `http://localhost:3000/api/cameras/${id}`;
 const fetchId = async function () {
@@ -21,7 +20,6 @@ const fetchId = async function () {
         window.location.href = '../index.html';
     }
 };
-
 
 //Utilisation des données de fetch par Id pour les insérer dans la page
 fetchId().then(function (data) {
@@ -74,6 +72,10 @@ fetchId().then(function (data) {
 
         const cameraToAdd = {
             id: `${id}`,
+            image: `${data.imageUrl}`,
+            name: `${data.name}`,
+            description: `${data.description}`,
+            price: `${data.price}`,
             qty: 1
         }
         const cameraToCart = localStorage.getItem('camera');

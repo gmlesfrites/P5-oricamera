@@ -1,14 +1,14 @@
-// //Panier : vide ou affichage panier + formulaire
-// function displayContent() {
-//     if (cart.length === 0) {
-//         const blocFull = document.getElementById('full').style.display = "none";
-//         const blocEmpty = document.getElementById('main__content--cart').style.height = "100vh";
-//         //articles au panier : affichage panier + formulaire --> pas message
-//     } else {
-//         const blocEmpty = document.getElementById('empty').style.display = "none";
-//     }
-// }
-// displayContent()
+//Panier : vide ou affichage panier + formulaire
+function displayContent() {
+    if (cart.length == 0) {
+        const blocFull = document.querySelector('#full').style.display = "none";
+        const blocEmpty = document.querySelector('#main__content--cart').style.height = "100vh";
+        //articles au panier : affichage panier + formulaire --> pas message
+    } else {
+        const blocEmpty = document.querySelector('#empty').style.display = "none";
+    }
+}
+displayContent()
 
 
 
@@ -20,7 +20,7 @@
 //Vérification du formulaire
 //nom, prénom, ville 
 function inputString() {
-    
+
     console.log();
 }
 //téléphone

@@ -1,13 +1,9 @@
 //Panier
 const cartContent = document.querySelector('section div');
-const cart = [];
+let cart = [];
 
-function getCart() {
-    let getStorage = JSON.parse(localStorage.getItem("cart"));
-    for (let i = 0; i < getStorage.length; i++) {
-        this.cameras.push(getStorage[i]);
-    }
-}
+// au clic sur addToCart --> créa value cameraToAdd 
+// créa localStorage --> cameraToCart (key = 'camera')
 
 
 
@@ -17,7 +13,7 @@ function getCart() {
 
 //Caméras dans le panier par ligne
 fetchCameras().then(function (data) {
-    //Création ligne avec tout le design html/css
+    //Création ligne avec tout le design html/css dans le panier
     function createLignCamera() {
         //Création de la ligne contenant les infos par camera ajoutée
         const lignCamera = document.createElement('div');

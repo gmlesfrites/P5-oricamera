@@ -16,5 +16,7 @@
     "url": "https://github.com/gmlesfrites/P5-oricamera/issues"
   },
   "homepage": "https://github.com/gmlesfrites/P5-oricamera#readme",
-  "dependencies": {}
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
 }

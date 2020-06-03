@@ -52,6 +52,25 @@ fetchCameras().then(function (data) {
 		// quickCartElt.href = "#boxPolaroid";
 		// quickCartElt.innerHTML = `<strong> <i class="fas fa-cart-plus toCart"></i> </strong> `;
 		// divButtons.appendChild(quickCartElt);
+		// quickCartElt.addEventListener("click", (e) => {
+		// 	//ne peut ajouter qu'un article au panier
+		// 	e.stopPropagation();
+		// 	const cameraToAdd = {
+		// 		id: `${idCam}`,
+		// 	}
+		// 	const cameraToCart = localStorage.getItem('camera');
+
+		// 	if (cameraToCart) {
+		// 		cart = JSON.parse(cameraToCart);
+		// 		cart.push(cameraToAdd);
+		// 		localStorage.setItem('camera', JSON.stringify(cart));
+		// 	} else {
+		// 		cart = [];
+		// 		cart.push(cameraToAdd);
+		// 		localStorage.setItem('camera', JSON.stringify(cart));
+		// 	}
+		// 	// TODO voir si je passe par là pour alimenter le compteur
+		// })
 	})
 
 });

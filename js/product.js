@@ -3,6 +3,7 @@
 const newId = new URLSearchParams(window.location.search.substring(0));
 const id = newId.get("id");
 
+
 //fetch pour la récupération des données par id
 const urlId = `http://localhost:3000/api/cameras/${id}`;
 const fetchId = async function () {
@@ -16,6 +17,8 @@ const fetchId = async function () {
         }
     } catch (error) {
         console.log(error);
+        alert("La référence de produit que vous venez d'indiquer n'existe pas. En cliquant sur ok, vous serez redirigé vers l'accueil.");
+        window.location.href = '../index.html';
     }
 };
 
@@ -49,7 +52,6 @@ fetchId().then(function (data) {
         optElt.innerHTML = lenses;
         lensesElt.appendChild(optElt)
     });
-    // TODO trouver solution pour forcer le choix avant validation panier
 
     // Prix
     const singlePriceElt = document.getElementById("price");
@@ -64,21 +66,28 @@ fetchId().then(function (data) {
     const btnAddToCart = document.getElementById('addToCart');
     btnAddToCart.id = `${data._id} `;
     btnAddToCart.className = "button__product--toCart addToCart"
+
+
+    //Produit ajout au localStorage au clic
+    // const addToCart = document.querySelector(".addToCart");
+    btnAddToCart.addEventListener("click", () => {
+
+        const cameraToAdd = {
+            id: `${id}`,
+            qty: 1
+        }
+        const cameraToCart = localStorage.getItem('camera');
+
+        if (cameraToCart) {
+            cart = JSON.parse(cameraToCart);
+            cart.push(cameraToAdd);
+            localStorage.setItem('camera', JSON.stringify(cart));
+        } else {
+            cart = [];
+            cart.push(cameraToAdd);
+            localStorage.setItem('camera', JSON.stringify(cart));
+        }
+        // TODO voir si je passe par là pour alimenter le compteur
+    })
+
 });
-
-//Article à mettre au panier
-const addCameras = document.querySelector('.addToCart');
-
-
-
-function addItem(e) {
-    e.preventDefault();
-    const camera = {
-        id: `${id}`,
-        qté: 1,
-    }
-    console.log(camera);
-}
-
-addCameras.addEventListener('submit', addItem);
-console.log(addCameras);

@@ -1,23 +1,29 @@
+//compteur header
+(function howManyItems() {
+    const howManyItems = document.querySelector('.howManyItems');
+    if (typeof localStorage != 'undefined') {
+        let nbItems_json = localStorage.getItem('camera');
+        let nbItems = JSON.parse(nbItems_json).length;
+        howManyItems.textContent = nbItems;
+    } return 0;
+
+})()
+
 //Panier
 const cartContent = document.querySelector('section div');
-const cart = [];
-
-function getCart() {
-    let getStorage = JSON.parse(localStorage.getItem("cart"));
-    for (let i = 0; i < getStorage.length; i++) {
-        this.cameras.push(getStorage[i]);
-    }
-}
+let cart = [];
 
 
-
-
+let cameraInCart_json = localStorage.getItem('camera');
+cart = JSON.parse(cameraInCart_json);
+console.log(cart);
 
 
 
 //Caméras dans le panier par ligne
 fetchCameras().then(function (data) {
-    //Création ligne avec tout le design html/css
+
+    //Création ligne avec tout le design html/css dans le panier
     function createLignCamera() {
         //Création de la ligne contenant les infos par camera ajoutée
         const lignCamera = document.createElement('div');

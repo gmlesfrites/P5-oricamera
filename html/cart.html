@@ -117,6 +117,9 @@
 			<!-- Section formulaire de commande  -->
 			<section class="container__form">
 				<h2 class="title__form">Votre formulaire de commande</h2>
+				<p class="text__form"> Tous les champs du formulaire comprenant une astérisque <strong><i
+							class="fa fa-asterisk required"></i></strong> sont obligatoires pour le traitement de votre
+					commande.</p>
 
 				<!-- formulaire de commande -->
 				<form id="formOrder" class="container__form--flex" method="POST">
@@ -145,18 +148,20 @@
 
 						<!-- Nom -->
 						<div class="subpart__form">
-							<label for="name">Merci de renseigner votre nom.</label>
+							<label for="name">Merci de renseigner votre nom <strong><i
+										class="fa fa-asterisk required"></i></strong></label>
 							<input type="text" id="name" name="nom" class="input__form" required autocomplete="on"
-								placeholder="DOE" maxlength="100"
+								placeholder="DOE" maxlength="30" pattern="[A-Za-z -]{2,30}"
 								aria-label="Merci de renseigner votre nom, ce champ est oligatoire" autofocus>
 						</div>
 						<!-- Nom END -->
 
 						<!-- Prénom -->
 						<div class="subpart__form">
-							<label for="firstname">Merci de renseigner votre prénom.</label>
+							<label for="firstname">Merci de renseigner votre prénom <strong><i
+										class="fa fa-asterisk required"></i></strong></label>
 							<input type="text" id="firstname" name="prenom" class="input__form" required
-								autocomplete="on" placeholder="John" maxlength="100"
+								autocomplete="on" placeholder="John" maxlength="30" pattern="[A-Za-z -]{2,30}"
 								aria-label="Merci de renseigner votre prénom, ce champ est oligatoire">
 						</div>
 						<!-- Prénom END -->
@@ -169,21 +174,21 @@
 
 						<!-- Coordonnées Email -->
 						<div class="subpart__form">
-							<label for="email">Merci d'indiquer votre adresse email pour vous adresser votre
-								facture.</label>
+							<label for="email">Merci d'indiquer votre adresse email <strong><i
+										class="fa fa-asterisk required"></i></strong></label>
 							<input type="email" id="email" name="email" class="input__form" required autocomplete="on"
-								placeholder="johndoe@mail.fr" maxlength="250"
+								placeholder="johndoe@mail.fr" maxlength="70" pattern="[A-Za-z0-9]{10,70}"
 								aria-label="Merci d'indiquer votre adresse email, ce champ est obligatoire">
 						</div>
 						<!-- Coordonnées Email END -->
 
 						<!-- Coordonnées téléphoniques -->
 						<div class="subpart__form">
-							<label for="telephone">Merci d'indiquer votre numéro de téléphone pour que nous puissions
-								vous
-								contacter.</label>
+							<label for="telephone">Merci d'indiquer votre numéro de téléphone <strong><i
+										class="fa fa-asterisk required"></i></strong></label>
 							<input type="tel" id="telephone" name="telephone" class="input__form" required
 								autocomplete="on" placeholder="0401020304" maxlength="13" minlength="10"
+								pattern="[0-9]{10,13}"
 								aria-label="Merci d'indiquer votre numéro de téléphone pour que nous puissions vous contacter">
 						</div>
 						<!-- Coordonnées téléphoniques END -->
@@ -194,26 +199,28 @@
 					<fieldset class="fieldset__form">
 						<legend class="legend__form">&nbsp; Adresse de livraison &nbsp;</legend>
 						<div class="subpart__form">
-							<label for="adresse">Adresse</label>
-							<input type="text" id="adresse" name="adresse" class="input__form" required
-								autocomplete="on" placeholder="29 rue Quincampoix" maxlength="250"
+							<label for="address">Adresse <strong><i
+										class="fa fa-asterisk required"></i></strong></label>
+							<input type="text" id="address" name="adresse" class="input__form" required
+								autocomplete="on" placeholder="29 rue Quincampoix" maxlength="150"
+								pattern="[A-Za-z0-9 -,._]{5,150}"
 								aria-label="Merci d'indiquer votre adresse postale, ce champ est obligatoire">
 						</div>
 						<div class="subpart__form">
-							<label for="codePostal">Code postal</label>
-							<input type="text" id="codePostal" name="codePostal" class="input__form" required
-								autocomplete="on" placeholder="75004" maxlength="7"
+							<label for="zip">Code postal <strong><i
+										class="fa fa-asterisk required"></i></strong></label>
+							<input type="text" id="zip" name="codePostal" class="input__form" required autocomplete="on"
+								placeholder="75004" maxlength="5" pattern="[0-9]{5,5}"
 								aria-label="Merci d'indiquer votre code postal, ce champ est obligatoire">
 						</div>
 						<div class="subpart__form">
-							<label for="ville">Ville</label>
-							<input type="text" id="ville" name="ville" class="input__form" required autocomplete="on"
-								placeholder="PARIS" maxlength="100"
+							<label for="city">Ville <strong><i class="fa fa-asterisk required"></i></strong></label>
+							<input type="text" id="city" name="ville" class="input__form" required autocomplete="on"
+								placeholder="PARIS" maxlength="70" pattern="[A-Za-z -]{2,70}"
 								aria-label="Merci d'indiquer votre ville, ce champ est obligatoire">
 						</div>
 					</fieldset>
 					<!-- Adresse END -->
-
 
 					<!-- Commentaire pour livraison -->
 					<fieldset class="fieldset__form">
@@ -222,7 +229,7 @@
 							<label for="message">Merci de préciser les informations utiles pour faciliter la
 								livraison.</label>
 							<textarea class="textarea__form" id="message" name="Votre projet" rows="4" cols="50"
-								maxlength="500" placeholder="Résidence fermée, digicode, ..." autocomplete="on"
+								maxlength="200" placeholder="Résidence fermée, digicode, ..." autocomplete="on"
 								aria-label="Merci de préciser les informations utiles pour faciliter la livraison, ce champ n'est pas obligatoire."></textarea>
 						</div>
 					</fieldset>
@@ -254,8 +261,7 @@
 	</footer>
 	<!-- Footer END -->
 	<!-- Mes scripts -->
-	<script src="../js/Camera.js"></script>
-	<script src="../js/cart.js"></script>
+	<script src=" ../js/cart.js"></script>
 	<script src="../js/form.js"></script>
 	<!-- Mes scripts END -->
 	<!--Script font awesome-->

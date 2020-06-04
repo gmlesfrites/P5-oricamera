@@ -288,6 +288,9 @@ button, a {
   align-items: center;
   margin-bottom: 3em; }
 
+.text__form {
+  margin: 5%; }
+
 .container__form--flex {
   display: flex;
   flex-direction: column;
@@ -361,6 +364,10 @@ input:valid {
   font-family: "Caveat Brush", cursive;
   color: #3d3d3d;
   margin: 1em 0; }
+
+.required {
+  color: #e07373;
+  font-size: 0.6em; }
 
 .footer {
   background-color: #f3e9f1;

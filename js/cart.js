@@ -1,19 +1,9 @@
 //Panier
 const cartContent = document.querySelector('section div');
 let cart = [];
-//vide ou affichage panier + formulaire //TODO à revoir erreur ligne 11
-(function displayContent() {
-    if (localStorage.length === 0) {
-        let blocFull = document.querySelector('#full').style.display = "none";
-        let blocEmpty = document.querySelector('#main__content--cart').style.height = "100vh";
-        //articles au panier : affichage panier + formulaire --> pas message
-    } else {
-        let blocEmpty = document.querySelector('#empty').style.display = "none";
-    }
-})()
 
 //compteur header //TODO à revoir erreur sur la condition
-(function howManyItems() {
+function howManyItems() {
     const howManyItems = document.querySelector('.howManyItems');
     if (localStorage.length === 0) {
         howManyItems === 0;
@@ -22,16 +12,25 @@ let cart = [];
         let nbItems = JSON.parse(nbItems_json).length;
         howManyItems.textContent = nbItems;
     }
+}
 
-})()
+// let cameraInCart_json = localStorage.getItem('camera');
+// let cameraInCart = JSON.parse(cameraInCart_json);
+// console.log(cameraInCart);
 
+// for (let id in cameraInCart) {
+//     console.log(cameraInCart[id]);
+// }
+
+
+// fetchCart().then(function (data) {
 let cameraInCart_json = localStorage.getItem('camera');
 let cameraInCart = JSON.parse(cameraInCart_json);
-console.log(cameraInCart);
 
-//Caméras dans le panier par ligne
+cart.push(cameraInCart);
+console.log(cart);
 //Création ligne avec tout le design html/css dans le panier
-function createLignCamera() {
+{
     //Création de la ligne contenant les infos par camera ajoutée
     const lignCamera = document.createElement('div');
     lignCamera.className = "article__cart";
@@ -43,7 +42,7 @@ function createLignCamera() {
 
     const image = document.createElement('img');
     image.className = "img__cart";
-    image.src = `${data.imageUrl}`;
+    image.src = `${cameraInCart.imageUrl}`;
     image.ariaLabel = "image du produit";
     image.alt = "image du produit";
     image.appendChild(boxImg);
@@ -52,24 +51,24 @@ function createLignCamera() {
     boxInfos.className = "subContent__cart--article";
     boxInfos.appendChild(lignCamera);
 
-    let nameCamera = createElement('p');
+    let nameCamera = document.createElement('p');
     nameCamera.className = "title__cart--article";
-    nameCamera.textContent = `${data.name}`;
+    nameCamera.textContent = `${cameraInCart.name}`;
     nameCamera.appendChild(boxInfos);
 
-    let idCamera = createElement('p');
+    let idCamera = document.createElement('p');
     idCamera.className = "ref__cart";
-    idCamera.textContent = `${data._id}`;
+    idCamera.textContent = `${cameraInCart._id}`;
     idCamera.appendChild(boxInfos);
 
-    let descCamera = createElement('p');
+    let descCamera = document.createElement('p');
     descCamera.className = "description__cart";
-    descCamera.textContent = `${camera.description}`;
+    descCamera.textContent = `${cameraInCart.description}`;
     descCamera.appendChild(boxInfos);
 
-    let unitPrice = createElement('p');
+    let unitPrice = document.createElement('p');
     unitPrice.className = "unit__price";
-    let cost = NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${data.price}`); unitPrice.className = "unit__price";
+    let cost = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${cameraInCart.price}`); unitPrice.className = "unit__price";
     unitPrice.textContent = cost;
     unitPrice.appendChild(boxInfos);
 
@@ -80,7 +79,7 @@ function createLignCamera() {
     let plus = document.createElement('span');
     plus.textContent = " + ";
     plus.appendChild(boxQty);
-    plus.addEventListener('click', moreCart);
+    // TODO plus.addEventListener('click', moreCart);
 
     let qty = document.createElement('input');
     qty.className = "countItems__cart";
@@ -92,26 +91,26 @@ function createLignCamera() {
     let minus = document.createElement('span');
     minus.textContent = " + ";
     minus.appendChild(boxQty);
-    minus.addEventListener('click', lessCart);
+    // TODO minus.addEventListener('click', lessCart);
 
-    let removeFromCart = createElement('button');
+    let removeFromCart = document.createElement('button');
     removeFromCart.className = "removeFromCart";
     removeFromCart.ariaLabel = "retirer le produit du panier";
     removeFromCart.textContent = "Supprimer";
     removeFromCart.appendChild(boxQty);
+
 }
 
 //Enlever l'article du panier
 function removeFromCart() {
     //suppression des articles bouton supprimer
-    removeFromCart = document.getElementsByClassName("removeFromCart");
+    let removeFromCart = document.getElementsByClassName("removeFromCart");
     for (i = 0; i < removeFromCart.length; i++) {
         let btnRemove = removeFromCart[i];
         btnRemove.addEventListener('click', function (event) {
             let btnclicked = event.target; {
                 btnclicked.parentElement.parentElement.remove();
-
             }
-        })
-    }
-}
+        });
+    };
+};

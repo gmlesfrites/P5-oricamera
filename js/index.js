@@ -69,8 +69,7 @@ fetchCameras().then(function (data) {
 		quickCartElt.innerHTML = `<strong> <i class="fas fa-cart-plus toCart"></i> </strong> `;
 		divButtons.appendChild(quickCartElt);
 		quickCartElt.addEventListener("click", (e) => {
-			//ne peut ajouter qu'un article au panier
-			// e.stopPropagation();
+
 			const cameraToAdd = {
 				id: `${idCam}`,
 				image: `${camera.imageUrl}`,

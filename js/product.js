@@ -89,7 +89,7 @@ fetchId().then(function (data) {
             cart.push(cameraToAdd);
             localStorage.setItem('camera', JSON.stringify(cart));
         }
-        // TODO voir si je passe par là pour alimenter le compteur
+        howManyItems()
     })
 
 });

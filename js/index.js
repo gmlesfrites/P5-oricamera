@@ -90,6 +90,7 @@ fetchCameras().then(function (data) {
 				cart.push(cameraToAdd);
 				localStorage.setItem('camera', JSON.stringify(cart));
 			}
+			howManyItems()
 		})
 	})
 

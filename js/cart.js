@@ -1,7 +1,3 @@
-//Panier
-const cartContent = document.querySelector('section div');
-let cart = [];
-
 //Compteur header
 function howManyItems() {
     const howManyItems = document.querySelector('.howManyItems');
@@ -12,14 +8,18 @@ function howManyItems() {
         let nbItems = JSON.parse(nbItems_json).length;
         howManyItems.textContent = nbItems;
     }
-}
-howManyItems()
+} howManyItems()
 
+
+//Gestion du panier
+const cartContent = document.querySelector('section div');
+let cart = [];
 
 //Récupération des articles ajoutés dans le localStorage
 let cameraInCart_json = localStorage.getItem('camera');
 let cameraInCart = JSON.parse(cameraInCart_json);
 cameraInCart.map(camera => addToCart(camera));
+
 
 //Création ligne d'article
 function addToCart(cameraInCart) {
@@ -100,7 +100,6 @@ function addToCart(cameraInCart) {
     boxTotalPrice.className = "subContent__cart--sevUnit";
     lignCamera.appendChild(boxTotalPrice);
 
-
     //prix pour 1 ou plusieurs du même article
     let lignPrice = document.createElement('p');
     let totalCost = (`${cameraInCart.price}` * qty.value / 100).toFixed(2);
@@ -109,11 +108,10 @@ function addToCart(cameraInCart) {
     boxTotalPrice.appendChild(lignPrice);
 }
 
-// modififier quantité article
+// modifier quantité article
 function itemQuantity() {
     let countQuantity = document.querySelectorAll(".countItems__cart");
     //TODO mettre en place le compteur de quantité et la maj des tarifs 
-
 }
 
 //Enlever l'article du panier
@@ -125,7 +123,7 @@ function removeFromCart() {
         let btnRemove = removeFromCart[i];
         btnRemove.addEventListener('click', function (event) {
             let btnclicked = event.target; {
-                // cart supprimer la ligne
+                // TODO cart supprimer la ligne
                 btnclicked.parentElement.parentElement.remove();
                 // TODO localStorage.removeItem("trouver la bonne clé");
             }
@@ -134,16 +132,6 @@ function removeFromCart() {
 } removeFromCart()
 
 
-// Supprimer le panier complet
-function deleteCart() {
-    const deleteCart = document.querySelector("#deleteCart");
-    deleteCart.addEventListener('click', function (event) {
-        // TODO il faut remettre tout le panier à zéro sans avoir à rafraichir la page
-        confirm('Etes-vous sûr(e) de vouloir supprimer la totalité de votre panier ?');
-        localStorage.removeItem('camera');
-    });
-    console.log('banana');
-}
-deleteCart()
+
 
 

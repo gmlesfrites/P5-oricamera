@@ -64,10 +64,6 @@ fetchId().then(function (data) {
     const btnAddToCart = document.getElementById('addToCart');
     btnAddToCart.id = `${data._id} `;
     btnAddToCart.className = "button__product--toCart addToCart"
-
-
-    //Produit ajout au localStorage au clic
-    // const addToCart = document.querySelector(".addToCart");
     btnAddToCart.addEventListener("click", () => {
 
         const cameraToAdd = {

@@ -69,7 +69,7 @@ function addToCart(cameraInCart) {
     let cost = (`${cameraInCart.price}` / 100).toFixed(2);
     let newCost = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${cost}`);
     unitPrice.className = "unit__price";
-    unitPrice.textContent = newCost;
+    unitPrice.textContent = "Prix unitaire : " + newCost;
     boxInfos.appendChild(unitPrice);
 
     // pour affichage responsive quantité // bouton supprimer
@@ -77,6 +77,7 @@ function addToCart(cameraInCart) {
     boxQty.className = "subContent__cart--quantity";
     lignCamera.appendChild(boxQty);
 
+    //gestion des quantités
     let qty = document.createElement('input');
     qty.className = "countItems__cart";
     qty.ariaLabel = "ajouter plusieurs de ce même article, entre 1 et 5 unités";
@@ -86,18 +87,32 @@ function addToCart(cameraInCart) {
     qty.max = "5";
     boxQty.appendChild(qty);
 
+    //bouton retirer l'article du panier
     let removeFromCart = document.createElement('button');
     removeFromCart.className = "removeFromCart";
     removeFromCart.ariaLabel = "retirer le produit du panier";
     removeFromCart.textContent = "Supprimer";
     boxQty.appendChild(removeFromCart);
 
+    // pour affichage responsive Prix de plusieurs du même article
+    let boxTotalPrice = document.createElement('div');
+    boxTotalPrice.className = "subContent__cart--sevUnit";
+    lignCamera.appendChild(boxTotalPrice);
+
+
+    //prix pour 1 ou plusieurs du même article
+    let lignPrice = document.createElement('p');
+    let totalCost = (`${cameraInCart.price}` * qty.value / 100).toFixed(2);
+    let newTotalCost = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalCost}`);
+    lignPrice.textContent = "Prix total : " + newTotalCost;
+    boxTotalPrice.appendChild(lignPrice);
 }
 
 // modififier quantité article
 function itemQuantity() {
     let countQuantity = document.querySelectorAll(".countItems__cart");
-    console.log(countQuantity);
+    //TODO mettre en place le compteur de quantité et la maj des tarifs 
+
 }
 
 //Enlever l'article du panier
@@ -109,14 +124,25 @@ function removeFromCart() {
         let btnRemove = removeFromCart[i];
         btnRemove.addEventListener('click', function (event) {
             let btnclicked = event.target; {
+                // cart supprimer la ligne
                 btnclicked.parentElement.parentElement.remove();
-                
+                // TODO localStorage.removeItem("trouver la bonne clé");
             }
         });
     };
-}
-removeFromCart()
+} removeFromCart()
 
 
 // Supprimer le panier complet
-// localStorage.removeItem('camera');
+function deleteCart() {
+    const deleteCart = document.querySelector("#deleteCart");
+    deleteCart.addEventListener('click', function (event) {
+        // TODO il faut remettre tout le panier à zéro sans avoir à rafraichir la page
+        confirm('Etes-vous sûr(e) de vouloir supprimer la totalité de votre panier ?');
+        localStorage.removeItem('camera');
+    });
+    console.log('banana');
+}
+deleteCart()
+
+

@@ -16,8 +16,6 @@ function displayCart() {
     const cartContent = document.querySelector('section div');
     let cart = [];
 
-
-
     //Récupération des articles ajoutés dans le localStorage
     let cameraInCart_json = localStorage.getItem('camera');
     let cameraInCart = JSON.parse(cameraInCart_json);

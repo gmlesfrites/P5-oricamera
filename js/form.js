@@ -1,24 +1,23 @@
-//Panier vide ou affichage panier + formulaire //TODO à revoir erreur ligne 11
+//Panier vide ou affichage panier + formulaire 
+displayContent()
+
+//affichage du panier et du formulaire
 function displayContent() {
     if (localStorage.length === 0) {
-        let blocFull = document.querySelector('#full').style.display = "none";
-        let blocEmpty = document.querySelector('#main__content--cart').style.height = "100vh";
+        //si panier vide pas d'affichage panier + form
+        let blocFull = document.querySelector('#full')
+        blocFull.setAttribute("style", "display:none");
+        //design si panier vide
+        let blocEmpty = document.querySelector('#main__content--cart')
+        blocEmpty.setAttribute("style", "height = 100vh");
+
         //articles au panier : affichage panier + formulaire --> pas message
     } else {
-        let blocEmpty = document.querySelector('#empty').style.display = "none";
-
-        // Supprimer le panier complet lorsqu'il est affiché
-        function deleteCart() {
-            const deleteCart = document.querySelector("#deleteCart");
-            deleteCart.addEventListener('click', function (event) {
-                // TODO il faut remettre tout le panier à zéro sans avoir à rafraichir la page
-                confirm('Etes-vous sûr(e) de vouloir supprimer la totalité de votre panier ?');
-                localStorage.clear();
-            });
-        }
-        deleteCart()
+        let blocEmpty = document.querySelector('#empty')
+        blocEmpty.setAttribute("style", "display: none");
     }
-} displayContent()
+}
+
 
 //e.preventDefault pour neutraliser envoi du formulaire si mal rempli
 window.onload = function () {

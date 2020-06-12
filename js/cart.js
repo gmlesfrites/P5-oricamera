@@ -1,3 +1,5 @@
+
+
 //Compteur header
 function howManyItems() {
     const howManyItems = document.querySelector('.howManyItems');
@@ -10,7 +12,6 @@ function howManyItems() {
     }
 } howManyItems()
 
-
 //Gestion du panier
 const cartContent = document.querySelector('section div');
 let cart = [];
@@ -19,7 +20,6 @@ let cart = [];
 let cameraInCart_json = localStorage.getItem('camera');
 let cameraInCart = JSON.parse(cameraInCart_json);
 cameraInCart.map(camera => addToCart(camera));
-
 
 //Création ligne d'article
 function addToCart(cameraInCart) {
@@ -112,7 +112,7 @@ function addToCart(cameraInCart) {
 function itemQuantity() {
     let countQuantity = document.querySelectorAll(".countItems__cart");
     //TODO mettre en place le compteur de quantité et la maj des tarifs 
-}
+} itemQuantity()
 
 //Enlever l'article du panier
 function removeFromCart() {
@@ -131,7 +131,14 @@ function removeFromCart() {
     };
 } removeFromCart()
 
-
-
+// Supprimer le panier complet lorsqu'il est affiché
+function deleteCart() {
+    const deleteCart = document.querySelector("#deleteCart");
+    deleteCart.addEventListener('click', function (event) {
+        // TODO il faut remettre tout le panier à zéro sans avoir à rafraichir la page
+        confirm('Etes-vous sûr(e) de vouloir supprimer la totalité de votre panier ?');
+        localStorage.clear();
+    });
+} deleteCart()
 
 

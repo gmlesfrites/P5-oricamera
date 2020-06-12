@@ -56,41 +56,17 @@ fetchCameras().then(function (data) {
 		buttonElt.href = `html/product.html?id=${camera._id}`;
 		buttonElt.textContent = "Voir le produit";
 		divButtons.appendChild(buttonElt);
-
-		//Ajout bouton achat rapide
-		const quickCartElt = document.createElement("a");
-		quickCartElt.className = "button__quickCart addToCart";
-		quickCartElt.ariaLabel = "Bouton d'achat rapide";
-		quickCartElt.id = `${camera._id}`;
-		quickCartElt.href = "#boxPolaroid";
-		quickCartElt.innerHTML = `<strong> <i class="fas fa-cart-plus toCart"></i> </strong> `;
-		divButtons.appendChild(quickCartElt);
-		quickCartElt.addEventListener("click", (e) => {
-
-			const cameraToAdd = {
-				id: `${camera._id}`,
-				image: `${camera.imageUrl}`,
-				name: `${camera.name}`,
-				description: `${camera.description}`,
-				price: `${camera.price}`,
-				qty: 1
-			}
-			const cameraToCart = localStorage.getItem('camera');
-
-			if (cameraToCart) {
-				cart = JSON.parse(cameraToCart);
-				cart.push(cameraToAdd);
-				localStorage.setItem('camera', JSON.stringify(cart));
-			} else {
-				cart = [];
-				cart.push(cameraToAdd);
-				localStorage.setItem('camera', JSON.stringify(cart));
-			}
-			howManyItems()
-		})
 	})
-
+	//compteur d'articles partie header
+	howManyItems()
 });
+
+
+
+
+
+
+
 
 //******  Première version avec boucle for          *******
 // // Création de la constante pour la div 'boxPolaroid'
@@ -135,7 +111,7 @@ fetchCameras().then(function (data) {
 // 		const buttonElt = document.createElement("a");
 // 		buttonElt.className = "button__seeProduct";
 // 		buttonElt.ariaLabel = "Lien vers la page produit";
-// 		buttonElt.href = `html/product.html?id=${idCam}`;
+// 		buttonElt.href = `html/product.html?id=${camera._id}`;
 // 		buttonElt.textContent = "Voir le produit";
 // 		divButtons.appendChild(buttonElt);
 
@@ -143,9 +119,30 @@ fetchCameras().then(function (data) {
 // 		const quickCartElt = document.createElement("a");
 // 		quickCartElt.className = "button__quickCart addToCart";
 // 		quickCartElt.ariaLabel = "Lien vers la page produit";
-// 		quickCartElt.id = idCam;
+// 		quickCartElt.id = `${camera._id}`;
 // 		quickCartElt.href = "#boxPolaroid";
 // 		quickCartElt.innerHTML = `<strong> <i class="fas fa-cart-plus toCart"></i> </strong> `;
 // 		divButtons.appendChild(quickCartElt);
+// 		quickCartElt.addEventListener("click", (e) => {
+// 		const cameraToAdd = {
+// 			id: `${camera._id}`,
+// 			image: `${camera.imageUrl}`,
+//	 		name: `${camera.name}`,
+// 			description: `${camera.description}`,
+// 			price: `${camera.price}`,
+//	 		qty: 1
+// 		}
+// 		const cameraToCart = localStorage.getItem('camera');
+
+// 		if (cameraToCart) {
+// 			cart = JSON.parse(cameraToCart);
+// 			cart.push(cameraToAdd);
+// 			localStorage.setItem('camera', JSON.stringify(cart));
+// 		} else {
+// 			cart = [];
+// 			cart.push(cameraToAdd);
+// 			localStorage.setItem('camera', JSON.stringify(cart));
+// 		}
+// 		})
 // 	}
 // });

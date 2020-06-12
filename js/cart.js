@@ -123,7 +123,8 @@ function displayCart() {
             let btnRemove = removeFromCart[i];
             btnRemove.addEventListener('click', function (event) {
                 let btnclicked = event.target; {
-                    // TODO cart supprimer la ligne
+                    // cart.splice(removeFromCart[i]); ????
+                    // TODO cart supprimer la ligne 
                     btnclicked.parentElement.parentElement.remove();
                     // TODO localStorage.removeItem("trouver la bonne clé");
                 }

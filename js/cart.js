@@ -42,24 +42,24 @@ function displayCart() {
         boxImg.appendChild(image);
 
         //pour affichage responsive (boite nom, ref, description, prix unité)
-        let boxInfos = document.createElement('div');
+        const boxInfos = document.createElement('div');
         boxInfos.className = "subContent__cart--article";
         lignCamera.appendChild(boxInfos);
 
         //nom du produit
-        let nameCamera = document.createElement('p');
+        const nameCamera = document.createElement('p');
         nameCamera.className = "title__cart--article";
         nameCamera.textContent = `${cameraInCart.name}`;
         boxInfos.appendChild(nameCamera);
 
         //référence du produit
-        let idCamera = document.createElement('p');
+        const idCamera = document.createElement('p');
         idCamera.className = "ref__cart";
         idCamera.textContent = `${cameraInCart.id}`;
         boxInfos.appendChild(idCamera);
 
         // description du produit
-        let descCamera = document.createElement('p');
+        const descCamera = document.createElement('p');
         descCamera.className = "description__cart";
         descCamera.textContent = `${cameraInCart.description}`;
         boxInfos.appendChild(descCamera);
@@ -68,25 +68,34 @@ function displayCart() {
         let unitPrice = document.createElement('p');
         unitPrice.className = "unit__price";
         let cost = (`${cameraInCart.price}` / 100).toFixed(2);
-        let newCost = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${cost}`);
+        const newCost = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${cost}`);
         unitPrice.className = "unit__price";
         unitPrice.textContent = "Prix unitaire : " + newCost;
         boxInfos.appendChild(unitPrice);
 
         // pour affichage responsive quantité // bouton supprimer
-        let boxQty = document.createElement('div');
+        const boxQty = document.createElement('div');
         boxQty.className = "subContent__cart--quantity";
         lignCamera.appendChild(boxQty);
 
-        //gestion des quantités
-        let qty = document.createElement('input');
+        //gestion des quantités avec select + option
+        const qty = document.createElement('select');
         qty.className = "countItems__cart";
-        qty.ariaLabel = "ajouter plusieurs de ce même article, entre 1 et 5 unités";
-        qty.type = "number";
-        qty.value = "1";
-        qty.min = "1";
-        qty.max = "5";
+        qty.ariaLabel = "ajouter plusieurs de ce même article, entre 1 et 2 unités";
         boxQty.appendChild(qty);
+        //TODO mettre un addEventListener pour écouter si changement quantité ???? --> localStorage MAJ nombre qté
+
+        const optQty1 = document.createElement('option');
+        optQty1.value = "1";
+        optQty1.selected;
+        optQty1.textContent = "1";
+        qty.appendChild(optQty1);
+
+        const optQty2 = document.createElement('option');
+        optQty2.value = "2";
+        optQty2.textContent = "2";
+        qty.appendChild(optQty2);
+
 
         //bouton retirer l'article du panier
         let removeFromCart = document.createElement('button');
@@ -100,8 +109,10 @@ function displayCart() {
         boxTotalPrice.className = "subContent__cart--sevUnit";
         lignCamera.appendChild(boxTotalPrice);
 
-        //prix pour 1 ou plusieurs du même article
-        let lignPrice = document.createElement('p');
+        //prix global ligne article
+        const lignPrice = document.createElement('p');
+        // TODO voir si c'est bien ça *qty.value ????
+
         let totalCost = (`${cameraInCart.price}` * qty.value / 100).toFixed(2);
         let newTotalCost = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalCost}`);
         lignPrice.textContent = "Prix total : " + newTotalCost;
@@ -113,6 +124,24 @@ function displayCart() {
         let countQuantity = document.querySelectorAll(".countItems__cart");
         //TODO mettre en place le compteur de quantité et la maj des tarifs 
     } itemQuantity()
+
+    //prix global panier
+    function updateTotalPrice() {
+        const boxCartTotalPrice = document.querySelector("#totalCart");
+        let totalToPay = document.createElement('p');
+        boxCartTotalPrice.appendChild(totalToPay);
+
+
+        // TODO à modifier pour faire une concat des prix par ligne
+        totalToPay = (`${cameraInCart.price}` * qty.value / 100).toFixed(2);
+        console.log(boxCartTotalPrice);
+
+
+
+
+        let newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalToPay}`);
+        totalToPay.textContent = newTotalToPay;
+    } updateTotalPrice()
 
     //Enlever l'article du panier
     function removeFromCart() {
@@ -143,6 +172,3 @@ function displayCart() {
     } deleteCart()
 
 }
-
-//Ajout article depuis la page produit
-

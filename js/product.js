@@ -3,7 +3,6 @@
 const newId = new URLSearchParams(window.location.search.substring(0));
 const id = newId.get("id");
 
-
 //fetch pour la récupération des données par id
 const urlId = `http://localhost:3000/api/cameras/${id}`;
 const fetchId = async function () {
@@ -21,7 +20,6 @@ const fetchId = async function () {
         window.location.href = '../index.html';
     }
 };
-
 
 //Utilisation des données de fetch par Id pour les insérer dans la page
 fetchId().then(function (data) {
@@ -66,28 +64,29 @@ fetchId().then(function (data) {
     const btnAddToCart = document.getElementById('addToCart');
     btnAddToCart.id = `${data._id} `;
     btnAddToCart.className = "button__product--toCart addToCart"
-
-
-    //Produit ajout au localStorage au clic
-    // const addToCart = document.querySelector(".addToCart");
     btnAddToCart.addEventListener("click", () => {
-
+        //Données du produit pour le localStorage
         const cameraToAdd = {
             id: `${id}`,
+            image: `${data.imageUrl}`,
+            name: `${data.name}`,
+            description: `${data.description}`,
+            price: `${data.price}`,
             qty: 1
         }
-        const cameraToCart = localStorage.getItem('camera');
+        function addItemToCart() {
+            const cameraToCart = localStorage.getItem('camera');
 
-        if (cameraToCart) {
-            cart = JSON.parse(cameraToCart);
-            cart.push(cameraToAdd);
-            localStorage.setItem('camera', JSON.stringify(cart));
-        } else {
-            cart = [];
-            cart.push(cameraToAdd);
-            localStorage.setItem('camera', JSON.stringify(cart));
-        }
-        // TODO voir si je passe par là pour alimenter le compteur
+            if (cameraToCart) {
+                cart = JSON.parse(cameraToCart);
+                cart.push(cameraToAdd);
+                localStorage.setItem('camera', JSON.stringify(cart));
+            } else {
+                cart = [];
+                cart.push(cameraToAdd);
+                localStorage.setItem('camera', JSON.stringify(cart));
+            }
+        } addItemToCart()
     })
-
+    howManyItems()
 });

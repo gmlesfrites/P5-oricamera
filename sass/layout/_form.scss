@@ -5,6 +5,10 @@
 	@include dispoCenter;
 	margin-bottom: 3em;
 }
+// texte explicatif pour les champs requis
+	.text__form {
+		margin: 5%;
+	}
 //contenant balise form
 .container__form--flex {
 	@include dispoCenter;
@@ -77,4 +81,10 @@ input:valid{
 	@include btnDesign;
 	@include mainDesign;
 	margin: 1em 0;
+}
+
+//* requis
+.required {
+	color: $color-danger;
+	font-size: 0.6em;
 }

@@ -21,7 +21,7 @@
 //Container du panier rempli
 .container__cart {
 	width: 100%;
-	padding:5%;
+
 }
 
 #full {
@@ -36,19 +36,20 @@
 	margin-bottom: 3em;
 	border-bottom: 1px solid $color-border;
 	border-top: 1px solid $color-border;
-	@media all and (min-width: 768px) {
+	@media all and (min-width: 1024px) {
 	display: flex;
 	}
 }
 //Contenant photo
 .subContent__cart--photo {
-	width: 20%;	
+	width: 10%;	
 }
 //Contenant descriptif article
 .subContent__cart--article {
 	padding-bottom: 1em;
-	@media all and (min-width:768px) {
-	width: 50%;	
+	@media all and (min-width: 1024px) {
+	width: 42%;	
+	margin: 0 1%;
 	}
 }
 // contenant quantité et bouton supprimer
@@ -57,22 +58,27 @@
 	width: 100%;
 	flex-direction: row;
 	justify-content: space-between;
-	align-items: center;
-	@media all and (min-width:768px) {
-	width: 40%;	
+	align-items: flex-start;
+	@media all and (min-width: 1024px) {
+	width: 30%;	
 	}
 }
 //Prix total plusieurs du même article
 .subContent__cart--sevUnit {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	width: 20%
+	padding-top: 2em;
+	// display: flex;
+	width: 100%;
+	@media all and (min-width: 1024px) {
+	// align-items: flex-start;
+	padding: 0 0 0 5%;
+	width: 18%;
+	}
 }
 .subContent__cart--total{
 	display: flex;
 	flex-direction: column;
-	padding: 0 10%;
+	text-align: right;
+	padding: 0 5%;
 	width: 100%;
 }
 

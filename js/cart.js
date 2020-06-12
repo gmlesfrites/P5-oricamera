@@ -137,7 +137,7 @@ function displayCart() {
 
         // TODO à modifier pour faire une concat des prix par ligne
         totalToPay = (`${cameraInCart.price}` * `${cameraInCart.qty}` / 100).toFixed(2);
-        console.log(boxCartTotalPrice);
+
 
 
 

@@ -459,7 +459,7 @@ input:valid {
   border-radius: 20px 20px;
   padding: 0.6em 1.3em;
   font-size: 1.1em;
-  width: 30%;
+  width: 35%;
   margin-right: 1%; }
 
 .removeFromCart {
@@ -470,7 +470,7 @@ input:valid {
   background-color: #f3e9f1;
   font-family: "Caveat Brush", cursive;
   color: #3d3d3d;
-  width: 60%; }
+  width: 55%; }
 
 .clearOrValidate__cart {
   padding: 2em 0;

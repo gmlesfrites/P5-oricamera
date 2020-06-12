@@ -102,6 +102,9 @@ function displayCart() {
         removeFromCart.className = "removeFromCart";
         removeFromCart.ariaLabel = "retirer le produit du panier";
         removeFromCart.textContent = "Supprimer";
+        // TODO voir si function incluse ou non
+        removeFromCart.addEventListener('click', () => {
+        })
         boxQty.appendChild(removeFromCart);
 
         // pour affichage responsive Prix de plusieurs du même article
@@ -133,7 +136,7 @@ function displayCart() {
 
 
         // TODO à modifier pour faire une concat des prix par ligne
-        totalToPay = (`${cameraInCart.price}` * qty.value / 100).toFixed(2);
+        totalToPay = (`${cameraInCart.price}` * `${cameraInCart.qty}` / 100).toFixed(2);
         console.log(boxCartTotalPrice);
 
 
@@ -150,7 +153,7 @@ function displayCart() {
 
         for (i = 0; i < removeFromCart.length; i++) {
             let btnRemove = removeFromCart[i];
-            btnRemove.addEventListener('click', function (event) {
+            btnRemove.addEventListener('click', (event) => {
                 let btnclicked = event.target; {
                     // cart.splice(removeFromCart[i]); ????
                     // TODO cart supprimer la ligne 

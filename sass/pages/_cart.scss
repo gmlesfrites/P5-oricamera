@@ -84,16 +84,28 @@
 	width: 60%;
 }
 
-// bouton supprimer le panier totalement
-.clear__cart {
-	padding: 2em 0 1em 0;
-	width: 100%;
+//container bouton supprimer/valider le panier
+.clearOrValidate__cart {
+	padding: 2em 0;
+	width: 90%;
 	display: flex;
+	flex-direction: column-reverse;
 	justify-content: center;
+	align-content: center;
+	@media all and (min-width: 768px) {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
 }
-#deleteCart {
+//bouton supprimer/valider le panier
+#deleteCart, #validateCart {
 	@include btnDesign;
 	@include mainDesign;
+	margin:1em 0;
+	@media all and (min-width: 768px) {
+		width: 40%;
+	}
 }
 
 

@@ -112,9 +112,11 @@
 				<!-- Prix total des articles ajoutés END-->
 
 				<!-- bouton vider le panier -->
-				<div class="clear__cart">
-					<button id="deleteCart" aria-label="Supprimer tous les produits du panier" type="submit">Vider mon
+				<div class="clearOrValidate__cart">
+					<button id="deleteCart" aria-label="Supprimer tous les produits du panier" type="submit">Supprimer
+						mon
 						panier</button>
+					<button id="validateCart" aria-label="valider le panier" type="submit">Valider mon panier</button>
 				</div>
 				<!-- bouton vider le panier END -->
 
@@ -122,7 +124,7 @@
 			<!-- Panier rempli END -->
 
 			<!-- Section formulaire de commande  -->
-			<section class="container__form">
+			<section class="container__form" id="toOrder">
 				<h2 class="title__form">Votre formulaire de commande</h2>
 				<p class="text__form"> Tous les champs du formulaire comprenant une astérisque <strong><i
 							class="fa fa-asterisk required"></i></strong> sont obligatoires pour le traitement de votre

@@ -1,7 +1,8 @@
 //Panier vide ou affichage panier + formulaire 
 displayContent()
+displayCart()
 
-//affichage du panier et du formulaire
+//function affichage du panier et du formulaire
 function displayContent() {
     if (localStorage.length === 0) {
         //si panier vide pas d'affichage panier + form
@@ -9,7 +10,7 @@ function displayContent() {
         blocFull.setAttribute("style", "display:none");
         //design si panier vide
         let blocEmpty = document.querySelector('#main__content--cart')
-        blocEmpty.setAttribute("style", "height = 100vh");
+        blocEmpty.setAttribute("style", "height: 100vh");
 
         //articles au panier : affichage panier + formulaire --> pas message
     } else {
@@ -17,7 +18,6 @@ function displayContent() {
         blocEmpty.setAttribute("style", "display: none");
     }
 }
-
 
 //e.preventDefault pour neutraliser envoi du formulaire si mal rempli
 window.onload = function () {

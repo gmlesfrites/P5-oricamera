@@ -65,7 +65,6 @@ fetchId().then(function (data) {
     btnAddToCart.id = `${data._id} `;
     btnAddToCart.className = "button__product--toCart addToCart"
     btnAddToCart.addEventListener("click", () => {
-
         const cameraToAdd = {
             id: `${id}`,
             image: `${data.imageUrl}`,
@@ -74,18 +73,19 @@ fetchId().then(function (data) {
             price: `${data.price}`,
             qty: 1
         }
-        const cameraToCart = localStorage.getItem('camera');
+        function addItemToCart() {
+            const cameraToCart = localStorage.getItem('camera');
 
-        if (cameraToCart) {
-            cart = JSON.parse(cameraToCart);
-            cart.push(cameraToAdd);
-            localStorage.setItem('camera', JSON.stringify(cart));
-        } else {
-            cart = [];
-            cart.push(cameraToAdd);
-            localStorage.setItem('camera', JSON.stringify(cart));
-        }
-        howManyItems()
+            if (cameraToCart) {
+                cart = JSON.parse(cameraToCart);
+                cart.push(cameraToAdd);
+                localStorage.setItem('camera', JSON.stringify(cart));
+            } else {
+                cart = [];
+                cart.push(cameraToAdd);
+                localStorage.setItem('camera', JSON.stringify(cart));
+            }
+        } addItemToCart()
     })
-
+    howManyItems()
 });

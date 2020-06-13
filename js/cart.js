@@ -19,6 +19,7 @@ function displayCart() {
     //Récupération des articles ajoutés dans le localStorage
     let cameraInCart_json = localStorage.getItem('camera');
     let cameraInCart = JSON.parse(cameraInCart_json);
+
     if (cameraInCart === null) {
         displayContent()
     } else {
@@ -86,6 +87,9 @@ function displayCart() {
         const qty = document.createElement('select');
         qty.className = "countItems__cart";
         qty.ariaLabel = "ajouter plusieurs de ce même article, entre 1 et 2 unités";
+        qty.addEventListener("change", () => {
+            // TODO ici on gère la modification des quantités
+        });
         boxQty.appendChild(qty);
 
         const optQty1 = document.createElement('option');
@@ -106,6 +110,7 @@ function displayCart() {
         removeFromCart.textContent = "Supprimer";
         boxQty.appendChild(removeFromCart);
         removeFromCart.addEventListener("click", () => {
+            removeItem()
             removeFromCart.parentElement.parentElement.remove();
         });
 
@@ -116,19 +121,22 @@ function displayCart() {
 
         //prix global ligne article
         const lignPrice = document.createElement('p');
-        // TODO voir si c'est bien ça *qty.value ????
-
-        let totalCost = (`${cameraInCart.price}` * qty.value / 100).toFixed(2);
+        let totalCost = (`${cameraInCart.price}` * `${cameraInCart.qty}` / 100).toFixed(2);
         let newTotalCost = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalCost}`);
         lignPrice.textContent = "Prix total : " + newTotalCost;
         boxTotalPrice.appendChild(lignPrice);
     }
 
-    // modifier quantité article
-    function itemQuantity() {
-        let countQuantity = document.querySelectorAll(".countItems__cart");
-        //TODO mettre en place le compteur de quantité et la maj des tarifs 
-    } itemQuantity()
+    // // modifier quantité article
+    // function itemQuantity() {
+    //     // let countQuantity = document.querySelectorAll(".countItems__cart");
+    //     // countQuantity = 
+    //     // countQuantity = JSON.filter(j => j.id === `${cameraInCart.id}`).map(m => {
+    //     //     m.qty = qtySelected;
+    //     //     return m;
+    //     // });
+    //     console.log('banana');
+    // } itemQuantity()
 
     //prix global panier
     function updateTotalPrice() {
@@ -138,17 +146,24 @@ function displayCart() {
             const boxCartTotalPrice = document.querySelector("#totalCart");
             let totalToPay = document.createElement('p');
             boxCartTotalPrice.appendChild(totalToPay);
+            for (i = 0; i < cameraInCart.length; i++) {
+                let price = `${cameraInCart[i].price}`;
+                let qty = `${cameraInCart[i].qty}`;
 
-            // TODO à modifier pour faire une concat des prix par ligne
-            totalToPay = (`${cameraInCart.price}` * `${cameraInCart.qty}` / 100).toFixed(2);
+                totalToPay = (price * qty / 100).toFixed(2);
 
-            let newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalToPay}`);
-            totalToPay.textContent = newTotalToPay;
-        }
+                let newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalToPay}`);
+                totalToPay.textContent = newTotalToPay;
+            }
+        };
+
     } updateTotalPrice()
 
     //supprimer un article
     function removeItem() {
+        // variable.splice()
+        // let newCameraInCart = localStorage.setItem('camera', JSON.stringify('variable '));
+
         // supprimer l'élément dans le tableau cameraInCart
         //mettre à jour le localStorage
         // TODO si le panier est vide en supprimant cet article alors localStorage.clear() sinon localStorage.removeItem("clé du produit")
@@ -163,6 +178,7 @@ function displayCart() {
                 localStorage.clear();
                 displayContent()
                 howManyItems()
+                // manque l'asynchrone pour éviter de rafraichir 
             }
         });
     } deleteCart()

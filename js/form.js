@@ -8,7 +8,7 @@ displayCart()
 displayForm()
 
 
-//function affichage du panier
+//function affichage de la page panier
 function displayContent() {
     if (localStorage.length === 0) {
         //si panier vide pas d'affichage panier + form
@@ -40,7 +40,8 @@ function displayForm() {
         const formOrder = document.querySelector('#toOrder');
         formOrder.setAttribute("style", "display:initial");
     })
-} 
+}
+
 //e.preventDefault pour neutraliser envoi du formulaire si mal rempli
 window.onload = function () {
     document.getElementById("name").oninput = checkText;

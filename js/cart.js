@@ -1,9 +1,9 @@
 //Compteur header
 function howManyItems() {
     const howManyItems = document.querySelector('.howManyItems');
-    if (localStorage.length === 0) {
+    if (localStorage === null) {
         howManyItems === 0;
-    } else {
+    } else if (localStorage.length !== 0) {
         let nbItems_json = localStorage.getItem('camera');
         let nbItems = JSON.parse(nbItems_json).length;
         howManyItems.textContent = nbItems;
@@ -19,7 +19,11 @@ function displayCart() {
     //Récupération des articles ajoutés dans le localStorage
     let cameraInCart_json = localStorage.getItem('camera');
     let cameraInCart = JSON.parse(cameraInCart_json);
-    cameraInCart.map(camera => addToCart(camera));
+    if (cameraInCart === null) {
+        displayContent()
+    } else {
+        cameraInCart.map(camera => addToCart(camera));
+    }
 
     //Création ligne d'article
     function addToCart(cameraInCart) {
@@ -83,7 +87,6 @@ function displayCart() {
         qty.className = "countItems__cart";
         qty.ariaLabel = "ajouter plusieurs de ce même article, entre 1 et 2 unités";
         boxQty.appendChild(qty);
-        //TODO mettre un addEventListener pour écouter si changement quantité ???? --> localStorage MAJ nombre qté
 
         const optQty1 = document.createElement('option');
         optQty1.value = "1";
@@ -96,16 +99,15 @@ function displayCart() {
         optQty2.textContent = "2";
         qty.appendChild(optQty2);
 
-
         //bouton retirer l'article du panier
         let removeFromCart = document.createElement('button');
         removeFromCart.className = "removeFromCart";
         removeFromCart.ariaLabel = "retirer le produit du panier";
         removeFromCart.textContent = "Supprimer";
-        // TODO voir si function incluse ou non
-        removeFromCart.addEventListener('click', () => {
-        })
         boxQty.appendChild(removeFromCart);
+        removeFromCart.addEventListener("click", () => {
+            removeFromCart.parentElement.parentElement.remove();
+        });
 
         // pour affichage responsive Prix de plusieurs du même article
         let boxTotalPrice = document.createElement('div');
@@ -130,47 +132,38 @@ function displayCart() {
 
     //prix global panier
     function updateTotalPrice() {
-        const boxCartTotalPrice = document.querySelector("#totalCart");
-        let totalToPay = document.createElement('p');
-        boxCartTotalPrice.appendChild(totalToPay);
+        if (cameraInCart === null) {
+            displayContent()
+        } else {
+            const boxCartTotalPrice = document.querySelector("#totalCart");
+            let totalToPay = document.createElement('p');
+            boxCartTotalPrice.appendChild(totalToPay);
 
+            // TODO à modifier pour faire une concat des prix par ligne
+            totalToPay = (`${cameraInCart.price}` * `${cameraInCart.qty}` / 100).toFixed(2);
 
-        // TODO à modifier pour faire une concat des prix par ligne
-        totalToPay = (`${cameraInCart.price}` * `${cameraInCart.qty}` / 100).toFixed(2);
-
-
-
-
-
-        let newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalToPay}`);
-        totalToPay.textContent = newTotalToPay;
+            let newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalToPay}`);
+            totalToPay.textContent = newTotalToPay;
+        }
     } updateTotalPrice()
 
-    //Enlever l'article du panier
-    function removeFromCart() {
-        //suppression des articles bouton supprimer
-        let removeFromCart = document.querySelectorAll(".removeFromCart");
-
-        for (i = 0; i < removeFromCart.length; i++) {
-            let btnRemove = removeFromCart[i];
-            btnRemove.addEventListener('click', (event) => {
-                let btnclicked = event.target; {
-                    // cart.splice(removeFromCart[i]); ????
-                    // TODO cart supprimer la ligne 
-                    btnclicked.parentElement.parentElement.remove();
-                    // TODO localStorage.removeItem("trouver la bonne clé");
-                }
-            });
-        };
-    } removeFromCart()
+    //supprimer un article
+    function removeItem() {
+        // supprimer l'élément dans le tableau cameraInCart
+        //mettre à jour le localStorage
+        // TODO si le panier est vide en supprimant cet article alors localStorage.clear() sinon localStorage.removeItem("clé du produit")
+    } removeItem()
 
     // Supprimer le panier complet lorsqu'il est affiché
     function deleteCart() {
         const deleteCart = document.querySelector("#deleteCart");
-        deleteCart.addEventListener('click', function (event) {
-            // TODO il faut remettre tout le panier à zéro sans avoir à rafraichir la page
-            confirm('Etes-vous sûr(e) de vouloir supprimer la totalité de votre panier ?');
-            localStorage.clear();
+        deleteCart.addEventListener('click', (event) => {
+            let youSure = confirm('Etes-vous sûr(e) de vouloir supprimer la totalité de votre panier ?');
+            if (youSure == true) {
+                localStorage.clear();
+                displayContent()
+                howManyItems()
+            }
         });
     } deleteCart()
 

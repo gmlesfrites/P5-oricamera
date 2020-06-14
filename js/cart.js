@@ -4,8 +4,8 @@ function howManyItems() {
     if (localStorage === null) {
         howManyItems === 0;
     } else if (localStorage.length !== 0) {
-        let nbItems_json = localStorage.getItem('camera');
-        let nbItems = JSON.parse(nbItems_json).length;
+        const nbItems_json = localStorage.getItem('camera');
+        const nbItems = JSON.parse(nbItems_json).length;
         howManyItems.textContent = nbItems;
     }
 } howManyItems()
@@ -17,8 +17,8 @@ function displayCart() {
     let cart = [];
 
     //Récupération des articles ajoutés dans le localStorage
-    let cameraInCart_json = localStorage.getItem('camera');
-    let cameraInCart = JSON.parse(cameraInCart_json);
+    const cameraInCart_json = localStorage.getItem('camera');
+    const cameraInCart = JSON.parse(cameraInCart_json);
 
     if (cameraInCart === null) {
         displayContent()
@@ -88,6 +88,13 @@ function displayCart() {
         qty.className = "countItems__cart";
         qty.ariaLabel = "ajouter plusieurs de ce même article, entre 1 et 2 unités";
         qty.addEventListener("change", () => {
+            console.log(cameraInCart.id);
+            console.log(qty.value);
+
+            // JSON.filter(j => j.id == `${cameraInCart.id}`).map(m => {
+            //     m.qty = qty.value;
+            //     return m;
+            // });
             // TODO ici on gère la modification des quantités
         });
         boxQty.appendChild(qty);
@@ -127,14 +134,20 @@ function displayCart() {
         boxTotalPrice.appendChild(lignPrice);
     }
 
-    // // modifier quantité article
+    //Gestion des quantités
+    function itemQuantity() {
+        console.log('banana');
+        //     cart.find(element => element.id === cameraToCart.id);
+        //     if (cameraToAdd !== undefined) {
+        //         console.log(cameraToCart);
+        //         cameraToAdd.qty++;
+        //     }
+    }
     // function itemQuantity() {
-    //     // let countQuantity = document.querySelectorAll(".countItems__cart");
-    //     // countQuantity = 
-    //     // countQuantity = JSON.filter(j => j.id === `${cameraInCart.id}`).map(m => {
-    //     //     m.qty = qtySelected;
-    //     //     return m;
-    //     // });
+    //     // JSON.filter(j => j.id == `${cameraInCart.id}`).map(m => {
+    //     //         m.qty = qty.value;
+    //     //         return m;
+    //     //     });
     //     console.log('banana');
     // } itemQuantity()
 
@@ -147,12 +160,12 @@ function displayCart() {
             let totalToPay = document.createElement('p');
             boxCartTotalPrice.appendChild(totalToPay);
             for (i = 0; i < cameraInCart.length; i++) {
-                let price = `${cameraInCart[i].price}`;
-                let qty = `${cameraInCart[i].qty}`;
+                const price = `${cameraInCart[i].price}`;
+                const qty = `${cameraInCart[i].qty}`;
 
                 totalToPay = (price * qty / 100).toFixed(2);
 
-                let newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalToPay}`);
+                const newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalToPay}`);
                 totalToPay.textContent = newTotalToPay;
             }
         };
@@ -174,7 +187,7 @@ function displayCart() {
         const deleteCart = document.querySelector("#deleteCart");
         deleteCart.addEventListener('click', (event) => {
             let youSure = confirm('Etes-vous sûr(e) de vouloir supprimer la totalité de votre panier ?');
-            if (youSure == true) {
+            if (youSure) {
                 localStorage.clear();
                 displayContent()
                 howManyItems()

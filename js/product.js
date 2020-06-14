@@ -1,28 +1,22 @@
-//Récupération des données par id
-// Récupération des données suite btn produit cliqué
+//Récupération des données par id (paramètre Url suite btn cliqué)
 const newId = new URLSearchParams(window.location.search.substring(0));
 const id = newId.get("id");
 
 //fetch pour la récupération des données par id
 const urlId = `http://localhost:3000/api/cameras/${id}`;
-const fetchId = async function () {
-    try {
-        const response = await fetch(urlId);
-        if (!response.ok) {
-            throw new Error(response.status);
-        } else {
-            const data = await response.json();
-            return data;
-        }
-    } catch (error) {
-        console.log(error);
-        alert("La référence de produit que vous venez d'indiquer n'existe pas. En cliquant sur ok, vous serez redirigé vers l'accueil.");
-        window.location.href = '../index.html';
-    }
-};
+
+const fetchCameras = fetch(urlId)
+    .catch(error => {
+        console.error(error);
+        manageError()
+    })
+    .then(response => response.json())
+    .then((data) => {
+        showItemDetail(data)
+    });
 
 //Utilisation des données de fetch par Id pour les insérer dans la page
-fetchId().then(function (data) {
+function showItemDetail(data) {
     //Ajout de l'image
     const imageElt = document.getElementById("imageUrl");
     imageElt.src = data.imageUrl;
@@ -33,7 +27,7 @@ fetchId().then(function (data) {
 
     //Nom du produit
     const singleTitleElt = document.getElementById("name");
-    singleTitleElt.innerHTML = `<h2> ${data.name} </h2>`;
+    singleTitleElt.textContent = `${data.name}`;
 
     //Description
     const descriptionElt = document.getElementById("description");
@@ -64,7 +58,7 @@ fetchId().then(function (data) {
     const btnAddToCart = document.getElementById('addToCart');
     btnAddToCart.id = `${data._id} `;
     btnAddToCart.className = "button__product--toCart addToCart"
-    btnAddToCart.addEventListener("click", () => {
+    btnAddToCart.addEventListener("click", (e) => {
         //Données du produit pour le localStorage
         const cameraToAdd = {
             id: `${id}`,
@@ -74,19 +68,37 @@ fetchId().then(function (data) {
             price: `${data.price}`,
             qty: 1
         }
-        function addItemToCart() {
-            const cameraToCart = localStorage.getItem('camera');
-
-            if (cameraToCart) {
-                cart = JSON.parse(cameraToCart);
-                cart.push(cameraToAdd);
-                localStorage.setItem('camera', JSON.stringify(cart));
-            } else {
-                cart = [];
-                cart.push(cameraToAdd);
-                localStorage.setItem('camera', JSON.stringify(cart));
-            }
-        } addItemToCart()
+        addItemToCart(cameraToAdd)
     })
     howManyItems()
-});
+};
+
+
+//Ajout au panier
+function addItemToCart(cameraToAdd) {
+    const cameraToCart = localStorage.getItem('camera');
+
+    if (cameraToCart) {
+        cart = JSON.parse(cameraToCart);
+        itemQuantity()
+        cart.push(cameraToAdd);
+        localStorage.setItem('camera', JSON.stringify(cart));
+    } else {
+        cart = [];
+        cart.push(cameraToAdd);
+        localStorage.setItem('camera', JSON.stringify(cart));
+    }
+
+}
+
+
+// TODO à revoir ça ne fonctionne pas en cas d'erreur d'identifiant produit map undefined
+//gestion des erreurs d'identifiant produit
+function manageError() {
+    if (error) {
+        alert("La référence de produit que vous venez d'indiquer n'existe pas. En cliquant sur ok, vous serez redirigé vers l'accueil.");
+        const productPage = document.querySelector("#productPage");
+        productPage.setAttribute("style", "display:none");
+        window.location.href = '../index.html';
+    }
+}

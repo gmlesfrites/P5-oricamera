@@ -5,7 +5,7 @@ const id = newId.get("id");
 //fetch pour la récupération des données par id
 const urlId = `http://localhost:3000/api/cameras/${id}`;
 
-const fetchCameras = fetch(urlId)
+const fetchItem = fetch(urlId)
     .catch(error => {
         console.error(error);
         manageError()
@@ -60,7 +60,7 @@ function showItemDetail(data) {
     btnAddToCart.className = "button__product--toCart addToCart"
     btnAddToCart.addEventListener("click", (e) => {
         //Données du produit pour le localStorage
-        const cameraToAdd = {
+        const itemToAdd = {
             id: `${id}`,
             image: `${data.imageUrl}`,
             name: `${data.name}`,
@@ -68,23 +68,23 @@ function showItemDetail(data) {
             price: `${data.price}`,
             qty: 1
         }
-        addItemToCart(cameraToAdd)
+        addItemToCart(itemToAdd)
     })
     howManyItems()
 };
 
 //Ajout au panier
-function addItemToCart(cameraToAdd) {
-    const cameraToCart = localStorage.getItem('camera');
+function addItemToCart(itemToAdd) {
+    const itemToCart = localStorage.getItem('camera');
 
-    if (cameraToCart) {
-        cart = JSON.parse(cameraToCart);
+    if (itemToCart) {
+        cart = JSON.parse(itemToCart);
         itemQuantity()
-        cart.push(cameraToAdd);
+        cart.push(itemToAdd);
         localStorage.setItem('camera', JSON.stringify(cart));
     } else {
         cart = [];
-        cart.push(cameraToAdd);
+        cart.push(itemToAdd);
         localStorage.setItem('camera', JSON.stringify(cart));
     }
 

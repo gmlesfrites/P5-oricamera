@@ -62,7 +62,13 @@
 	align-items: flex-start;
 	}
 	@media all and (min-width: 1024px) {
-	width: 30%;	
+		flex-direction: column;
+		justify-content: initial;
+		width: 30%;	
+	}
+	@media all and (min-width: 1440px) {
+		flex-direction: row;
+		justify-content: space-between;
 	}
 }
 //Prix total plusieurs du même article

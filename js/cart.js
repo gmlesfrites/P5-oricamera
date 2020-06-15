@@ -98,10 +98,10 @@ function addToCart(itemInCart) {
 
     const minus = document.createElement('button');
     minus.className = "minus";
-    minus.textContent = "-";
-    minus.addEventListener("click", () => {
-        addLess()
-    });
+    minus.innerHTML = `<strong><i class="fa fa-minus" aria-label="quantité en moins"></i></strong>`;
+    // minus.addEventListener("click", () => {
+    //     addLess(itemInCart)
+    // });
     qtyCheck.appendChild(minus);
 
     const qty = document.createElement('p');
@@ -111,10 +111,10 @@ function addToCart(itemInCart) {
 
     const plus = document.createElement('button');
     plus.className = "plus";
-    plus.textContent = "+";
-    plus.addEventListener("click", () => {
-        addMore()
-    });
+    plus.innerHTML = `<strong><i class="fa fa-plus" aria-label="quantité en +"></i></strong>`;
+    // plus.addEventListener("click", () => {
+    //     addMore(itemInCart)
+    // });
     qtyCheck.appendChild(plus);
 
 
@@ -142,16 +142,6 @@ function addToCart(itemInCart) {
     boxTotalPrice.appendChild(lignPrice);
 }
 
-//gestion des quantités
-function addLess() {
-    console.log('banana');
-}
-function addMore() {
-    console.log('banana');
-}
-
-
-
 // Supprimer le panier complet
 function deleteCart() {
     const deleteCart = document.querySelector("#deleteCart");
@@ -164,4 +154,17 @@ function deleteCart() {
             howManyItems()
         }
     });
+}
+
+//supprimer un article
+function removeFromCart() {
+    console.log('banana');
+    // const newItemInCart = itemInCart;
+    // // newItemInCart.filter(t => t.id !== id);
+    // console.log(newItemInCart);
+    // localStorage.setItem('products', JSON.stringify('newItemInCart'));
+
+    // supprimer l'élément dans le tableau cameraInCart
+    //mettre à jour le localStorage
+    // TODO si le panier est vide en supprimant cet article alors localStorage.clear() sinon localStorage.removeItem("clé du produit")
 }

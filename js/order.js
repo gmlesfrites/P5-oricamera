@@ -30,19 +30,14 @@ function updateTotalPrice(itemInCart) {
 
 }
 
-//supprimer un article
-function removeFromCart() {
+
+
+
+//gestion des quantités
+function addLess(itemInCart) {
     console.log('banana');
+}
 
-
-
-
-    // const newItemInCart = itemInCart;
-    // // newItemInCart.filter(t => t.id !== id);
-    // console.log(newItemInCart);
-    // localStorage.setItem('products', JSON.stringify('newItemInCart'));
-
-    // supprimer l'élément dans le tableau cameraInCart
-    //mettre à jour le localStorage
-    // TODO si le panier est vide en supprimant cet article alors localStorage.clear() sinon localStorage.removeItem("clé du produit")
+function addMore(itemInCart) {
+    console.log('banana');
 }

@@ -88,14 +88,7 @@ function displayCart() {
         qty.className = "countItems__cart";
         qty.ariaLabel = "ajouter plusieurs de ce même article, entre 1 et 2 unités";
         qty.addEventListener("change", () => {
-            console.log(cameraInCart.id);
-            console.log(qty.value);
-
-            // JSON.filter(j => j.id == `${cameraInCart.id}`).map(m => {
-            //     m.qty = qty.value;
-            //     return m;
-            // });
-            // TODO ici on gère la modification des quantités
+            itemQuantity()
         });
         boxQty.appendChild(qty);
 
@@ -141,15 +134,20 @@ function displayCart() {
         //     if (cameraToAdd !== undefined) {
         //         console.log(cameraToCart);
         //         cameraToAdd.qty++;
-        //     }
+
+        //console.log(cameraInCart.id);
+        // console.log(qty.value);
+
+        // JSON.filter(j => j.id == `${cameraInCart.id}`).map(m => {
+        //     m.qty = qty.value;
+        //     return m;
+        // });
+        // TODO ici on gère la modification des quantités
+        // JSON.filter(j => j.id == `${cameraInCart.id}`).map(m => {
+        //     //         m.qty = qty.value;
+        //     //         return m;
+        //     //     });
     }
-    // function itemQuantity() {
-    //     // JSON.filter(j => j.id == `${cameraInCart.id}`).map(m => {
-    //     //         m.qty = qty.value;
-    //     //         return m;
-    //     //     });
-    //     console.log('banana');
-    // } itemQuantity()
 
     //prix global panier
     function updateTotalPrice() {
@@ -173,8 +171,8 @@ function displayCart() {
     } updateTotalPrice()
 
     //supprimer un article
-    function removeItem() {
-        // variable.splice()
+    function removeItem(removeFromCart) {
+        // variable.splice(n°index,1);
         // let newCameraInCart = localStorage.setItem('camera', JSON.stringify('variable '));
 
         // supprimer l'élément dans le tableau cameraInCart

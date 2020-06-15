@@ -73,7 +73,6 @@ function showItemDetail(data) {
     howManyItems()
 };
 
-
 //Ajout au panier
 function addItemToCart(cameraToAdd) {
     const cameraToCart = localStorage.getItem('camera');
@@ -90,7 +89,6 @@ function addItemToCart(cameraToAdd) {
     }
 
 }
-
 
 // TODO à revoir ça ne fonctionne pas en cas d'erreur d'identifiant produit map undefined
 //gestion des erreurs d'identifiant produit

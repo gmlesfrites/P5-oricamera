@@ -54,11 +54,13 @@
 }
 // contenant quantité et bouton supprimer
 .subContent__cart--quantity {
+	@media all and (min-width: 768px) {
 	display: flex;
 	width: 100%;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: flex-start;
+	}
 	@media all and (min-width: 1024px) {
 	width: 30%;	
 	}

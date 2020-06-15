@@ -58,7 +58,8 @@ function showItemDetail(data) {
     const btnAddToCart = document.getElementById('addToCart');
     btnAddToCart.id = `${data._id} `;
     btnAddToCart.className = "button__product--toCart addToCart"
-    btnAddToCart.addEventListener("click", (e) => {
+    btnAddToCart.addEventListener("click", () => {
+
         //Données du produit pour le localStorage
         const itemToAdd = {
             id: `${id}`,
@@ -75,17 +76,17 @@ function showItemDetail(data) {
 
 //Ajout au panier
 function addItemToCart(itemToAdd) {
-    const itemToCart = localStorage.getItem('camera');
+    //récup du localStorag
+    const itemToCart = localStorage.getItem('products');
 
     if (itemToCart) {
         cart = JSON.parse(itemToCart);
-        itemQuantity()
         cart.push(itemToAdd);
-        localStorage.setItem('camera', JSON.stringify(cart));
+        localStorage.setItem('products', JSON.stringify(cart));
     } else {
         cart = [];
         cart.push(itemToAdd);
-        localStorage.setItem('camera', JSON.stringify(cart));
+        localStorage.setItem('products', JSON.stringify(cart));
     }
 
 }

@@ -15,7 +15,6 @@ function howManyItems() {
 
 //Fonctions  page panier
 function displayCart() {
-
     let cart = [];
 
     //Récupération des articles ajoutés dans le localStorage
@@ -30,6 +29,9 @@ function displayCart() {
         // TODO ajouter les fonctions qty, suppression article, MAJ Prix ligne et prix global
     }
 }
+
+//cette méthode est appelée dans la méthode ligne 38 -->déclenchée au clic sur le précédnt screen
+removeFromCart(itemInCart)
 
 //Création ligne d'article
 function addToCart(itemInCart) {
@@ -117,7 +119,6 @@ function addToCart(itemInCart) {
     // });
     qtyCheck.appendChild(plus);
 
-
     //bouton retirer l'article du panier
     let removeFromCart = document.createElement('button');
     removeFromCart.className = "removeFromCart";
@@ -125,8 +126,8 @@ function addToCart(itemInCart) {
     removeFromCart.textContent = "Supprimer";
     boxQty.appendChild(removeFromCart);
     removeFromCart.addEventListener("click", () => {
-        console.log('banana');
-
+        removeFromCart(itemInCart)
+        // removeFromCart.parentElement.parentElement.remove();
     });
 
     // pour affichage responsive Prix de plusieurs du même article
@@ -157,14 +158,15 @@ function deleteCart() {
 }
 
 //supprimer un article
-function removeFromCart() {
-    console.log('banana');
-    // const newItemInCart = itemInCart;
-    // // newItemInCart.filter(t => t.id !== id);
-    // console.log(newItemInCart);
-    // localStorage.setItem('products', JSON.stringify('newItemInCart'));
-
-    // supprimer l'élément dans le tableau cameraInCart
+function removeFromCart(itemInCart) {
+    const removeItem = itemInCart.filter((item) => {
+        return item.id !== id
+    });
     //mettre à jour le localStorage
-    // TODO si le panier est vide en supprimant cet article alors localStorage.clear() sinon localStorage.removeItem("clé du produit")
+    if (localStorage !== undefined) {
+        localStorage.setItem('products', JSON.stringify(removeItem))
+    } else {
+        localStorage.clear()
+    }
+
 }

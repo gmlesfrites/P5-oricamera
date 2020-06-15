@@ -1,14 +1,3 @@
-//Gestion des quantités
-function itemQuantity(itemInCart) {
-    const qtySelected = document.querySelectorAll('.countItems__cart');
-    qtySelected.JSON.filter(j => j.id == "5be9c4471c9d440000a730e8").map(m => {
-        m.qty = qtySelected;
-        return m;
-    });
-    // TODO ici on gère la modification des quantités
-}
-
-
 //prix global panier
 function updateTotalPrice(itemInCart) {
     if (itemInCart === null) {
@@ -31,6 +20,15 @@ function updateTotalPrice(itemInCart) {
 }
 
 
+//Gestion des quantités
+function itemQuantity(itemInCart) {
+    const qtySelected = document.querySelectorAll('.countItems__cart');
+    qtySelected.JSON.filter(j => j.id == itemInCart.id).map(m => {
+        m.qty = qtySelected;
+        return m;
+    });
+    // TODO ici on gère la modification des quantités
+}
 
 
 //gestion des quantités

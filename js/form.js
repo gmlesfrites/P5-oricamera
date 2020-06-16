@@ -1,34 +1,8 @@
 //Affichage panier vide / panier plein
 displayContent()
 
-//Affichage contenant panier
-displayCart()
-
-//affichage formulaire
-displayForm()
-
-
-//function affichage de la page panier
-function displayContent() {
-    if (localStorage.length === 0) {
-        //si panier vide pas d'affichage panier + form
-        const blocFull = document.querySelector('#full');
-        blocFull.setAttribute("style", "display:none");
-        //design si panier vide
-        const blocEmpty = document.querySelector('#main__content--cart');
-        blocEmpty.setAttribute("style", "height: 100vh");
-
-        //articles au panier : affichage panier 
-    } else {
-        const blocEmpty = document.querySelector('#empty');
-        blocEmpty.setAttribute("style", "display: none");
-        const formOrder = document.querySelector('#toOrder');
-        formOrder.setAttribute("style", "display:none");
-    }
-}
-
 //Affichage du formulaire après validation du panier
-function displayForm() {
+const displayForm = () => {
     //récupération du bouton "valider le panier"
     const validateCart = document.querySelector("#validateCart");
     validateCart.addEventListener('click', () => {
@@ -37,7 +11,7 @@ function displayForm() {
 }
 
 //transition panier -> formulaire
-function submitCart() {
+const submitCart = () => {
     //au clic sur le bouton valider, le panier s'efface
     const validatedCart = document.querySelector('.container__cart--full');
     validatedCart.setAttribute("style", "display:none")
@@ -46,8 +20,10 @@ function submitCart() {
     const formOrder = document.querySelector('#toOrder');
     formOrder.setAttribute("style", "display:initial");
 }
+
+
 //e.preventDefault pour neutraliser envoi du formulaire si mal rempli
-window.onload = function () {
+const checkForm = () => {
     document.getElementById("name").oninput = checkText;
     document.getElementById("firstname").oninput = checkText;
     document.getElementById("email").oninput = checkEmail;
@@ -56,11 +32,10 @@ window.onload = function () {
     document.getElementById("zip").oninput = checkZip;
     document.getElementById("city").oninput = checkText;
     document.getElementById("message").oninput = checkMessage;
-
-
 }
+
 //traitement des erreurs
-function colorize() {
+const colorize = () => {
     const input = document.getElementsByTagName('input');
     if (error) {
         input.style.backgroundColor = "#e07373";
@@ -71,28 +46,28 @@ function colorize() {
 }
 
 //Nom, prénom, Ville
-function checkText() {
+const checkText = () => {
     colorize()
 }
 //email
-function checkEmail() {
+const checkEmail = () => {
     colorize()
 }
 //téléphone
-function checkTel() {
+const checkTel = () => {
     colorize()
 }
 //adresse
-function checkAddress() {
+const checkAddress = () => {
     colorize()
 }
 //Code Postal
-function checkZip() {
+const checkZip = () => {
     let constraints = /'^(F-)?\\d{5}$'/;
     colorize()
 }
 //commentaires
-function checkMessage() {
+const checkMessage = () => {
     colorize()
 }
 

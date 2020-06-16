@@ -81,8 +81,14 @@ const addItemToCart = itemToAdd => {
 
     if (itemToCart) {
         cart = JSON.parse(itemToCart);
-        cart.push(itemToAdd);
-        localStorage.setItem('products', JSON.stringify(cart));
+        // si produit avec id identique
+        if (itemToAdd.id !== itemToCart.id) {
+            // TODO gestion des quantités pour ne pas ajouter de ligne si article déjà au panier
+            cart.push(itemToAdd);
+            localStorage.setItem('products', JSON.stringify(cart));
+        } else {
+
+        }
     } else {
         cart = [];
         cart.push(itemToAdd);

@@ -1,12 +1,20 @@
-//fonction pour le compteur du header
-const howManyItems = () => {
-    const howManyItems = document.querySelector('.howManyItems');
-    if (localStorage === null) {
-        howManyItems === 0;
-    } else if (localStorage.length !== 0) {
-        const nbItems_json = localStorage.getItem('products');
-        const nbItems = JSON.parse(nbItems_json).length;
-        howManyItems.textContent = nbItems;
+//function affichage de la page panier
+const displayContent = () => {
+    if (localStorage.length === 0) {
+        //si panier vide pas d'affichage panier + form
+        const blocFull = document.querySelector('#full');
+        blocFull.setAttribute("style", "display:none");
+        //design si panier vide
+        const blocEmpty = document.querySelector('#main__content--cart');
+        blocEmpty.setAttribute("style", "height: 100vh");
+
+        //articles au panier : affichage panier 
+    } else {
+        const blocEmpty = document.querySelector('#empty');
+        blocEmpty.setAttribute("style", "display: none");
+        const formOrder = document.querySelector('#toOrder');
+        formOrder.setAttribute("style", "display:none");
+        displayCart()
     }
 }
 
@@ -25,7 +33,7 @@ const displayCart = () => {
         itemInCart.map(item => addToCart(item));
         deleteCart()
         howManyItems()
-        // TODO ajouter les fonctions qty, suppression article, MAJ Prix ligne et prix global
+        // TODO updateTotalPrice()
     }
 }
 
@@ -98,7 +106,11 @@ const addToCart = itemInCart => {
     minus.className = "minus";
     minus.innerHTML = `<strong><i class="fa fa-minus" aria-label="quantité en moins"></i></strong>`;
     minus.addEventListener("click", () => {
-        addLess(itemInCart)
+        //Données de quantité pour le localStorage
+        const qtyLess = {
+            id: `${itemInCart.id}`
+        }
+        addLess(qtyLess)
     });
     qtyCheck.appendChild(minus);
 
@@ -111,7 +123,11 @@ const addToCart = itemInCart => {
     plus.className = "plus";
     plus.innerHTML = `<strong><i class="fa fa-plus" aria-label="quantité en +"></i></strong>`;
     plus.addEventListener("click", () => {
-        addMore(itemInCart)
+        //Données de quantité pour le localStorage
+        const qtyMore = {
+            id: `${itemInCart.id}`
+        }
+        addMore(qtyMore)
     });
     qtyCheck.appendChild(plus);
 
@@ -126,9 +142,8 @@ const addToCart = itemInCart => {
         const itemToRemove = {
             id: `${itemInCart.id}`
         }
-        console.log(itemToRemove);
         removeItem(itemToRemove)
-        // removeFromCart.parentElement.parentElement.remove();
+        removeFromCart.parentElement.parentElement.remove()
     });
 
     // pour affichage responsive Prix de plusieurs du même article
@@ -142,6 +157,63 @@ const addToCart = itemInCart => {
     let newTotalCost = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalCost}`);
     lignPrice.textContent = "Prix total : " + newTotalCost;
     boxTotalPrice.appendChild(lignPrice);
+}
+
+//fonction pour le compteur du header
+const howManyItems = () => {
+    const howManyItems = document.querySelector('.howManyItems');
+    if (localStorage === null) {
+        howManyItems === 0;
+    } else if (localStorage.length !== 0) {
+        const nbItems_json = localStorage.getItem('products');
+        const nbItems = JSON.parse(nbItems_json).length;
+
+        //TODO  modifier pour aller chercher les qty dans le localStorage et non length
+
+        howManyItems.textContent = nbItems;
+    }
+}
+
+//Gestion de la quantité en -
+const addLess = qtyLess => {
+    const qty_json = localStorage.getItem('products');
+    const qty = JSON.parse(qty_json);
+
+    const qtyFilter = qty.filter(quantity => quantity.id === qtyLess.id).map(less => {
+        less.qty--;
+        return less;
+    });
+    localStorage.setItem('products', JSON.stringify(qtyFilter))
+    document.location.reload()
+}
+
+// Gestion de la quantité en +
+const addMore = qtyMore => {
+    const qty_json = localStorage.getItem('products');
+    const qty = JSON.parse(qty_json);
+
+    const qtyFilter = qty.filter(quantity => quantity.id === qtyMore.id).map(plus => {
+        plus.qty++;
+        return plus;
+    });
+    localStorage.setItem('products', JSON.stringify(qtyFilter))
+    document.location.reload()
+}
+
+//supprimer un article
+const removeItem = (itemToRemove) => {
+    const products_json = localStorage.getItem('products');
+    const products = JSON.parse(products_json);
+
+    const itemFilter = products.filter(t => t.id !== itemToRemove.id);
+
+    //mettre à jour le localStorage
+    if (itemFilter.length !== 0) {
+        localStorage.setItem('products', JSON.stringify(itemFilter))
+    } else {
+        localStorage.clear()
+        document.location.reload()
+    }
 }
 
 // Supprimer le panier complet
@@ -158,19 +230,17 @@ const deleteCart = () => {
     });
 }
 
+//prix global panier
+// const updateTotalPrice = () => {
+//     const boxCartTotalPrice = document.getElementsByClassName("totalPrice__cart");
+//     const totalToPay = document.createElement('p');
 
-//supprimer un article
-const removeItem = itemToRemove => {
-    const products_json = localStorage.getItem('products');
-    const products = JSON.parse(products_json);
+//     boxCartTotalPrice.appendChild(totalToPay);
 
-    const itemFilter = products.filter(t => t.id !== itemToRemove.id);
 
-    //mettre à jour le localStorage
-    if (itemFilter.length !== 0) {
-        localStorage.setItem('products', JSON.stringify(itemFilter))
-    } else {
-        localStorage.clear()
-    }
-    document.location.reload()
-}
+
+//     totalToPay = (price * qty / 100).toFixed(2);
+
+//     //     const newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalToPay}`);
+//     //     totalToPay.textContent = newTotalToPay;
+// }

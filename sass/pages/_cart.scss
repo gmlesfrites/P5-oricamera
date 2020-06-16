@@ -25,15 +25,7 @@
 	font-size: $fz-h1;
 }
 
-//contenant global du panier (fond polaroid)
-.container__cart--empty,
-.container__cart--full {
-	@include dispoCenter;
-	@include designBox;
-	font-size: $fz-h3;
-	opacity: 0.7;
-	margin-bottom: 5em;
-}
+
 
 
 //Affichage de l'image du produit

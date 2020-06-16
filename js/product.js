@@ -6,14 +6,28 @@ const id = newId.get("id");
 const urlId = `http://localhost:3000/api/cameras/${id}`;
 
 const fetchItem = fetch(urlId)
-    .catch(error => {
-        console.error(error);
-        manageError()
-    })
-    .then(response => response.json())
-    .then((data) => {
-        showItemDetail(data)
-    });
+    // .catch(error => {
+    //     console.error(response.status);
+    //     manageError(error)
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //     showItemDetail(data)
+    // });
+
+    .then(response => {
+        if (response.ok) {
+            response.json()
+                .then(data => {
+                    showItemDetail(data)
+                    badId()
+                });
+        } else {
+            manageError()
+        }
+    }).catch(console.error);
+
+
 
 //Utilisation des données de fetch par Id pour les insérer dans la page
 const showItemDetail = data => {
@@ -73,8 +87,17 @@ const showItemDetail = data => {
     howManyItems()
 };
 
+//cache la partie mauvaise manip de l'url
+const badId = () => {
+    const badId = document.querySelector("#badId");
+    badId.setAttribute("style", "display:none");
+
+}
+
+
 //Ajout au panier
 const addItemToCart = itemToAdd => {
+
     //récup du localStorage
     const itemToCart = localStorage.getItem('products');
 
@@ -99,10 +122,6 @@ const addItemToCart = itemToAdd => {
 // TODO à revoir ça ne fonctionne pas en cas d'erreur d'identifiant produit map undefined
 //gestion des erreurs d'identifiant produit
 const manageError = () => {
-    if (error) {
-        alert("La référence de produit que vous venez d'indiquer n'existe pas. En cliquant sur ok, vous serez redirigé vers l'accueil.");
-        const productPage = document.querySelector("#productPage");
-        productPage.setAttribute("style", "display:none");
-        window.location.href = '../index.html';
-    }
+    const productPage = document.querySelector("#product");
+    productPage.setAttribute("style", "display:none");
 }

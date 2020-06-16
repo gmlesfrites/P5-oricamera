@@ -16,7 +16,7 @@ const fetchItem = fetch(urlId)
     });
 
 //Utilisation des données de fetch par Id pour les insérer dans la page
-function showItemDetail(data) {
+const showItemDetail = data => {
     //Ajout de l'image
     const imageElt = document.getElementById("imageUrl");
     imageElt.src = data.imageUrl;
@@ -75,8 +75,8 @@ function showItemDetail(data) {
 };
 
 //Ajout au panier
-function addItemToCart(itemToAdd) {
-    //récup du localStorag
+const addItemToCart = itemToAdd => {
+    //récup du localStorage
     const itemToCart = localStorage.getItem('products');
 
     if (itemToCart) {
@@ -93,7 +93,7 @@ function addItemToCart(itemToAdd) {
 
 // TODO à revoir ça ne fonctionne pas en cas d'erreur d'identifiant produit map undefined
 //gestion des erreurs d'identifiant produit
-function manageError() {
+const manageError = () => {
     if (error) {
         alert("La référence de produit que vous venez d'indiquer n'existe pas. En cliquant sur ok, vous serez redirigé vers l'accueil.");
         const productPage = document.querySelector("#productPage");

@@ -15,7 +15,7 @@ const fetchItems = fetch(url)
 	});
 
 //Génération des articles 
-function showProducts(product) {
+const showProducts = product => {
 	// Création de la constante pour la div 'boxPolaroid'
 	const divElt = document.querySelector("main div");
 

@@ -1,8 +1,5 @@
-//Compteur header
-howManyItems()
-
 //fonction pour le compteur du header
-function howManyItems() {
+const howManyItems = () => {
     const howManyItems = document.querySelector('.howManyItems');
     if (localStorage === null) {
         howManyItems === 0;
@@ -13,8 +10,9 @@ function howManyItems() {
     }
 }
 
-//Fonctions  page panier
-function displayCart() {
+//Fonctions page panier
+const displayCart = () => {
+
     let cart = [];
 
     //Récupération des articles ajoutés dans le localStorage
@@ -25,16 +23,15 @@ function displayCart() {
         displayContent()
     } else {
         itemInCart.map(item => addToCart(item));
-        deleteCart();
+        deleteCart()
+        howManyItems()
+
         // TODO ajouter les fonctions qty, suppression article, MAJ Prix ligne et prix global
     }
 }
 
-//cette méthode est appelée dans la méthode ligne 38 -->déclenchée au clic sur le précédnt screen
-removeFromCart(itemInCart)
-
 //Création ligne d'article
-function addToCart(itemInCart) {
+const addToCart = itemInCart => {
     //Gestion du panier
     const cartContent = document.querySelector('section div');
 
@@ -126,7 +123,7 @@ function addToCart(itemInCart) {
     removeFromCart.textContent = "Supprimer";
     boxQty.appendChild(removeFromCart);
     removeFromCart.addEventListener("click", () => {
-        removeFromCart(itemInCart)
+        removeFromCart()
         // removeFromCart.parentElement.parentElement.remove();
     });
 
@@ -144,7 +141,7 @@ function addToCart(itemInCart) {
 }
 
 // Supprimer le panier complet
-function deleteCart() {
+const deleteCart = () => {
     const deleteCart = document.querySelector("#deleteCart");
     deleteCart.addEventListener('click', () => {
         let youSure = confirm('Etes-vous sûr(e) de vouloir supprimer la totalité de votre panier ?');
@@ -158,7 +155,7 @@ function deleteCart() {
 }
 
 //supprimer un article
-function removeFromCart(itemInCart) {
+const removeFromCart = itemInCart => {
     const removeItem = itemInCart.filter((item) => {
         return item.id !== id
     });
@@ -168,5 +165,4 @@ function removeFromCart(itemInCart) {
     } else {
         localStorage.clear()
     }
-
 }

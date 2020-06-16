@@ -220,15 +220,20 @@ const removeItem = (itemToRemove) => {
 const deleteCart = () => {
     const deleteCart = document.querySelector("#deleteCart");
     deleteCart.addEventListener('click', () => {
-        let youSure = confirm('Etes-vous sûr(e) de vouloir supprimer la totalité de votre panier ?');
-        if (youSure) {
-            localStorage.clear();
-            document.location.reload()
-            displayContent()
-            howManyItems()
-        }
+        youSure()
     });
 }
+//confirmation de suppression du panier
+const youSure = () => {
+    confirm('Etes-vous sûr(e) de vouloir supprimer la totalité de votre panier ?');
+    if (youSure) {
+        localStorage.clear();
+        document.location.reload()
+        displayContent()
+        howManyItems()
+    }
+}
+
 
 //prix global panier
 // const updateTotalPrice = () => {

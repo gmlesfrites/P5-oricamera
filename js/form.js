@@ -1,15 +1,6 @@
 //Affichage panier vide / panier plein
 displayContent()
 
-//Affichage du formulaire après validation du panier
-const displayForm = () => {
-    //récupération du bouton "valider le panier"
-    const validateCart = document.querySelector("#validateCart");
-    validateCart.addEventListener('click', () => {
-        submitCart()
-    })
-}
-
 //transition panier -> formulaire
 const submitCart = () => {
     //au clic sur le bouton valider, le panier s'efface
@@ -20,18 +11,20 @@ const submitCart = () => {
     const formOrder = document.querySelector('#toOrder');
     formOrder.setAttribute("style", "display:initial");
 }
+displayForm()
 
-
-//e.preventDefault pour neutraliser envoi du formulaire si mal rempli
+// Vérification de la saisie
 const checkForm = () => {
-    document.getElementById("name").oninput = checkText;
-    document.getElementById("firstname").oninput = checkText;
-    document.getElementById("email").oninput = checkEmail;
-    document.getElementById("telephone").oninput = checkTel;
-    document.getElementById("address").oninput = checkAddress;
-    document.getElementById("zip").oninput = checkZip;
-    document.getElementById("city").oninput = checkText;
-    document.getElementById("message").oninput = checkMessage;
+    document.getElementById("name").oninput = checkInput;
+    document.getElementById("firstname").oninput = checkInput;
+    document.getElementById("email").oninput = checkInput;
+    document.getElementById("address").oninput = checkInput;
+    document.getElementById("city").oninput = checkInput;
+}
+
+//commentaires
+const checkInput = () => {
+    colorize()
 }
 
 //traitement des erreurs
@@ -45,31 +38,8 @@ const colorize = () => {
     }
 }
 
-//Nom, prénom, Ville
-const checkText = () => {
-    colorize()
-}
-//email
-const checkEmail = () => {
-    colorize()
-}
-//téléphone
-const checkTel = () => {
-    colorize()
-}
-//adresse
-const checkAddress = () => {
-    colorize()
-}
-//Code Postal
-const checkZip = () => {
-    let constraints = /'^(F-)?\\d{5}$'/;
-    colorize()
-}
-//commentaires
-const checkMessage = () => {
-    colorize()
-}
+
+
 
 
 
@@ -77,3 +47,13 @@ const checkMessage = () => {
 //  TODO http://localhost:3000/api/cameras/order
 
 
+//Gestion du remplissage -> e.preventDefault pour neutraliser envoi du formulaire si mal rempli
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    console.log('name:', e.target.name.value)
+    console.log('firstname:', e.target.firstname.value)
+    console.log('address:', e.target.address.value)
+    console.log('email:', e.target.email.value)
+    console.log('city:', e.target.city.value)
+});

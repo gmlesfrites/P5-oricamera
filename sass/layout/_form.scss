@@ -68,11 +68,11 @@
 }
 
 //design validation
-input:invalid {
+input:invalid, .invalid {
 	border: 1px solid $color-danger;
 }
 
-input:valid{
+input:valid, .valid {
 	border: 1px solid $color-main;
 }
 

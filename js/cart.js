@@ -253,3 +253,13 @@ const newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', curren
 totalPrice.textContent = newTotalToPay;
 // }
 
+
+
+//Affichage du formulaire après validation du panier
+const displayForm = () => {
+    //récupération du bouton "valider le panier"
+    const validateCart = document.querySelector("#validateCart");
+    validateCart.addEventListener('click', () => {
+        submitCart()
+    })
+}

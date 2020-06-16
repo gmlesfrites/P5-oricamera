@@ -8,10 +8,12 @@ const fetchItems = fetch(url)
 	.then((data) => {
 		//Utilisation des données de l'API
 		data.map(product => {
+			//méthode pour générer les produits
 			showProducts(product)
+			
+			//compteur d'articles partie header
+			howManyItems()
 		});
-		//compteur d'articles partie header
-		howManyItems()
 	});
 
 //Génération des articles 

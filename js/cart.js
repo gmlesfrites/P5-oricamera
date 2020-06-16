@@ -25,7 +25,6 @@ const displayCart = () => {
         itemInCart.map(item => addToCart(item));
         deleteCart()
         howManyItems()
-
         // TODO ajouter les fonctions qty, suppression article, MAJ Prix ligne et prix global
     }
 }
@@ -98,9 +97,9 @@ const addToCart = itemInCart => {
     const minus = document.createElement('button');
     minus.className = "minus";
     minus.innerHTML = `<strong><i class="fa fa-minus" aria-label="quantité en moins"></i></strong>`;
-    // minus.addEventListener("click", () => {
-    //     addLess(itemInCart)
-    // });
+    minus.addEventListener("click", () => {
+        addLess(itemInCart)
+    });
     qtyCheck.appendChild(minus);
 
     const qty = document.createElement('p');
@@ -111,9 +110,9 @@ const addToCart = itemInCart => {
     const plus = document.createElement('button');
     plus.className = "plus";
     plus.innerHTML = `<strong><i class="fa fa-plus" aria-label="quantité en +"></i></strong>`;
-    // plus.addEventListener("click", () => {
-    //     addMore(itemInCart)
-    // });
+    plus.addEventListener("click", () => {
+        addMore(itemInCart)
+    });
     qtyCheck.appendChild(plus);
 
     //bouton retirer l'article du panier
@@ -123,7 +122,12 @@ const addToCart = itemInCart => {
     removeFromCart.textContent = "Supprimer";
     boxQty.appendChild(removeFromCart);
     removeFromCart.addEventListener("click", () => {
-        removeFromCart()
+        //Données du produit pour le localStorage
+        const itemToRemove = {
+            id: `${itemInCart.id}`
+        }
+        console.log(itemToRemove);
+        removeItem(itemToRemove)
         // removeFromCart.parentElement.parentElement.remove();
     });
 
@@ -154,15 +158,19 @@ const deleteCart = () => {
     });
 }
 
+
 //supprimer un article
-const removeFromCart = itemInCart => {
-    const removeItem = itemInCart.filter((item) => {
-        return item.id !== id
-    });
+const removeItem = itemToRemove => {
+    const products_json = localStorage.getItem('products');
+    const products = JSON.parse(products_json);
+
+    const itemFilter = products.filter(t => t.id !== itemToRemove.id);
+
     //mettre à jour le localStorage
-    if (localStorage !== undefined) {
-        localStorage.setItem('products', JSON.stringify(removeItem))
+    if (itemFilter.length !== 0) {
+        localStorage.setItem('products', JSON.stringify(itemFilter))
     } else {
         localStorage.clear()
     }
+    document.location.reload()
 }

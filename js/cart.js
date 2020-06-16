@@ -33,7 +33,7 @@ const displayCart = () => {
         itemInCart.map(item => addToCart(item));
         deleteCart()
         howManyItems()
-        // TODO updateTotalPrice()
+        updateTotalPrice()
     }
 }
 
@@ -234,18 +234,23 @@ const youSure = () => {
     }
 }
 
-
 //prix global panier
-// const updateTotalPrice = () => {
-//     const boxCartTotalPrice = document.getElementsByClassName("totalPrice__cart");
-//     const totalToPay = document.createElement('p');
+const updateTotalPrice = () => {
+    const totalPrice = document.getElementById("totalCart");
+    totalPrice.textContent = "banana";
 
-//     boxCartTotalPrice.appendChild(totalToPay);
+    // //Récupération des articles ajoutés dans le localStorage
+    const localPrice_json = localStorage.getItem('products');
+    const localPrice = JSON.parse(localPrice_json);
+
+    //     const totalToPay = document.createElement('p');
+
+    //     boxCartTotalPrice.appendChild(totalToPay);
 
 
 
-//     totalToPay = (price * qty / 100).toFixed(2);
+    //     totalToPay = (price * qty / 100).toFixed(2);
 
-//     //     const newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalToPay}`);
-//     //     totalToPay.textContent = newTotalToPay;
-// }
+    //     //     const newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalToPay}`);
+    //     //     totalToPay.textContent = newTotalToPay;
+}

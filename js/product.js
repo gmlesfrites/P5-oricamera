@@ -49,7 +49,7 @@ const showItemDetail = data => {
     const singlePriceElt = document.getElementById("price");
 
     //Prix 000.00€
-    let priceDot = (data.price / 100).toFixed(2);
+    let priceDot = (data.price / 100);
     priceDot = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${priceDot}`);
 
     singlePriceElt.innerHTML = `<p><strong>Prix : </strong> ${priceDot} </p>`;
@@ -59,7 +59,6 @@ const showItemDetail = data => {
     btnAddToCart.id = `${data._id} `;
     btnAddToCart.className = "button__product--toCart addToCart"
     btnAddToCart.addEventListener("click", () => {
-
         //Données du produit pour le localStorage
         const itemToAdd = {
             id: `${id}`,

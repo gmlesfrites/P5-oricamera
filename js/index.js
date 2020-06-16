@@ -10,7 +10,7 @@ const fetchItems = fetch(url)
 		data.map(product => {
 			//méthode pour générer les produits
 			showProducts(product)
-			
+
 			//compteur d'articles partie header
 			howManyItems()
 		});
@@ -41,7 +41,7 @@ const showProducts = product => {
 
 	//Ajout des détails de prix
 	const priceElt = document.createElement("p");
-	const price = (product.price / 100).toFixed(2);
+	const price = (product.price / 100);
 	priceElt.textContent = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${price}`);
 	boxPolaroid.appendChild(priceElt);
 

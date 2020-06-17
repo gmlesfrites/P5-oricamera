@@ -220,39 +220,35 @@ const removeItem = (itemToRemove) => {
 const deleteCart = () => {
     const deleteCart = document.querySelector("#deleteCart");
     deleteCart.addEventListener('click', () => {
-        youSure()
+        const youSure = confirm('Etes-vous sûr(e) de vouloir supprimer la totalité de votre panier ?');
+        if (youSure) {
+            console.log('banana');
+            localStorage.clear();
+            document.location.reload()
+            displayContent()
+            howManyItems()
+        }
     });
-}
-//confirmation de suppression du panier
-const youSure = () => {
-    confirm('Etes-vous sûr(e) de vouloir supprimer la totalité de votre panier ?');
-    if (youSure) {
-        localStorage.clear();
-        document.location.reload()
-        displayContent()
-        howManyItems()
-    }
 }
 
 //prix global panier
-// const updateTotalPrice = () => {
-//Position du prix
-let totalPrice = document.getElementById("totalCart");
+const updateTotalPrice = () => {
+    //Position du prix
+    let totalPrice = document.getElementById("totalCart");
 
-//Récupération des articles ajoutés dans le localStorage
-const localPrice_json = localStorage.getItem('products');
-const localPrice = JSON.parse(localPrice_json);
+    //Récupération des articles ajoutés dans le localStorage
+    const localPrice_json = localStorage.getItem('products');
+    const localPrice = JSON.parse(localPrice_json);
 
-for (i = 0; i < localPrice.length; i++) {
-    totalPrice = (parseInt(localPrice[i].price) * parseInt(localPrice[i].qty) / 100);
-    console.log(totalPrice);
+    for (i = 0; i < localPrice.length; i++) {
+        totalPrice = (parseInt(localPrice[i].price) * parseInt(localPrice[i].qty) / 100);
+        console.log(totalPrice);
+    }
+
+    const newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalPrice}`);
+
+    totalPrice.textContent = newTotalToPay;
 }
-
-const newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalPrice}`);
-
-totalPrice.textContent = newTotalToPay;
-// }
-
 
 
 //Affichage du formulaire après validation du panier

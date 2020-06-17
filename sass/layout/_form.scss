@@ -68,13 +68,32 @@
 }
 
 //design validation
-input:invalid, .invalid {
+input:invalid {
 	border: 1px solid $color-danger;
 }
 
-input:valid, .valid {
+input:valid {
 	border: 1px solid $color-main;
 }
+
+.subpart__form.error input {
+	border: 1px ridge $color-danger;
+}
+
+.subpart__form.error::after {
+    content: 'Ce champ est invalide, merci de respecter le format à renseigner.';
+    display: block;
+    color:$color-danger;
+    padding: 5px 0;
+	font-size: $fz-p;
+	font-weight: bolder;
+}
+
+
+
+
+
+
 
 //Effacer formulaireou valider commande
 .button__form {

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -380,6 +381,17 @@ input:invalid {
 
 input:valid {
   border: 1px solid #daa520; }
+
+.subpart__form.error input {
+  border: 1px ridge #e07373; }
+
+.subpart__form.error::after {
+  content: 'Ce champ est invalide, merci de respecter le format à renseigner.';
+  display: block;
+  color: #e07373;
+  padding: 5px 0;
+  font-size: 1em;
+  font-weight: bolder; }
 
 .button__form {
   border: 1px solid #daa520;

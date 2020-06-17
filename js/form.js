@@ -13,31 +13,35 @@ const submitCart = () => {
 }
 displayForm()
 
+
+
 // Vérification de la saisie
-const checkForm = () => {
-    document.getElementById("name").oninput = checkInput;
-    document.getElementById("firstname").oninput = checkInput;
-    document.getElementById("email").oninput = checkInput;
-    document.getElementById("address").oninput = checkInput;
-    document.getElementById("city").oninput = checkInput;
+const inputs = document.querySelectorAll("input")
+
+const checkForm = input => {
+    input.addEventListener('input', (event) => {
+        if (!event.target.validity.valid) {
+            event.target.parentElement.classList.add('error')
+        }
+    })
+
+    input.addEventListener('input', (event) => {
+        if (event.target.validity.valid) {
+            event.target.parentElement.classList.remove('error')
+        }
+    })
 }
 
-//commentaires
-const checkInput = () => {
-    colorize()
-}
+Array.from(inputs).forEach(checkForm);
 
-//traitement des erreurs
-const colorize = () => {
-    const input = document.getElementsByTagName('input');
-    if (error) {
-        input.style.backgroundColor = "#e07373";
-        alert('Merci de renseigner correctement ce champ');
-    } else {
-        input.style.backgroundColor = "#86d411";
-    }
-}
 
+//Bouton reset formulaire
+const reset = () => {
+    const buttonReset = document.querySelector('reset');
+    buttonReset.addEventListener('click', (event) => {
+        console.log('banana');
+    })
+}
 
 
 

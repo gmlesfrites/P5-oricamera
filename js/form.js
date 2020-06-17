@@ -11,13 +11,11 @@ const submitCart = () => {
     const formOrder = document.querySelector('#toOrder');
     formOrder.setAttribute("style", "display:initial");
 }
+
 displayForm()
-
-
 
 // Vérification de la saisie
 const inputs = document.querySelectorAll("input")
-
 const checkForm = input => {
     input.addEventListener('input', (event) => {
         if (!event.target.validity.valid) {
@@ -34,30 +32,39 @@ const checkForm = input => {
 
 Array.from(inputs).forEach(checkForm);
 
-
 //Bouton reset formulaire
-const reset = () => {
-    const buttonReset = document.querySelector('reset');
+const resetForm = () => {
+    const buttonReset = document.querySelector('.reset');
     buttonReset.addEventListener('click', (event) => {
-        console.log('banana');
+        sessionStorage.removeItem('contact')
     })
 }
 
 
+//Gestion du remplissage -> e.preventDefault pour neutraliser envoi du formulaire si mal rempli  e.preventDefault()
+const contactToStorage = () => {
+    const form = document.querySelector('form');
+    form.addEventListener('input', (e) => {
+        //Données du produit pour le localStorage
+        const contactInfo = {
+            lastname: `${e.target.lastname.value}`,
+            firstname: `${e.target.firstname.value}`,
+            address: `${e.target.address.value}`,
+            email: `${e.target.email.value}`,
+            city: `${e.target.city.value}`,
+        }
+        addContactToStorage(contactInfo)
+    })
+}
 
-
+//Ajout des infos de contact au sessionStorage
+const addContactToStorage = (contactInfo) => {
+    if (!contactInfo) {
+        contact = [];
+        contact.push(contactInfo);
+        sessionStorage.setItem('contact', JSON.stringify(contact));
+    }
+}
 
 
 //  TODO http://localhost:3000/api/cameras/order
-
-
-//Gestion du remplissage -> e.preventDefault pour neutraliser envoi du formulaire si mal rempli
-const form = document.querySelector('form');
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-    console.log('name:', e.target.name.value)
-    console.log('firstname:', e.target.firstname.value)
-    console.log('address:', e.target.address.value)
-    console.log('email:', e.target.email.value)
-    console.log('city:', e.target.city.value)
-});

@@ -129,8 +129,8 @@
 					commande.</p>
 
 				<!-- formulaire de commande -->
-				<form id="formOrder" class="container__form--flex" action="" method="POST">
-
+				<form id="formOrder" class="container__form--flex">
+					<!-- TODO action="" method="POST" -->
 					<!-- Civilité -->
 					<fieldset class="fieldset__form">
 						<legend class="legend__form">&nbsp; Votre civilité &nbsp;</legend>
@@ -155,10 +155,10 @@
 
 						<!-- Nom -->
 						<div class="subpart__form">
-							<label for="name">Merci de renseigner votre nom <strong><i
+							<label for="lastname">Merci de renseigner votre nom <strong><i
 										class="fa fa-asterisk required"></i></strong></label>
-							<input type="text" id="name" name="nom" class="input__form" required autocomplete="on"
-								placeholder="DOE (en toute lettre majuscule/miniscule)" maxlength="25"
+							<input type="text" id="lastname" name="lastname" class="input__form" required
+								autocomplete="on" placeholder="DOE (en toute lettre majuscule/miniscule)" maxlength="25"
 								pattern="[a-zA-Zàäâçéèëêïîôöùû-]{2,25}"
 								aria-label="Merci de renseigner votre nom, ce champ est oligatoire" autofocus>
 							<span class=""></span>
@@ -169,7 +169,7 @@
 						<div class="subpart__form">
 							<label for="firstname">Merci de renseigner votre prénom <strong><i
 										class="fa fa-asterisk required"></i></strong></label>
-							<input type="text" id="firstname" name="prenom" class="input__form" required
+							<input type="text" id="firstname" name="firstname" class="input__form" required
 								autocomplete="on" placeholder="John (en toute lettre majuscule/miniscule)"
 								maxlength="25" pattern="[a-zA-Zàäâçéèëêïîôöùû-]{2,25}"
 								aria-label="Merci de renseigner votre prénom, ce champ est oligatoire">
@@ -188,32 +188,31 @@
 										class="fa fa-asterisk required"></i></strong></label>
 							<input type="email" id="email" name="email" class="input__form" required autocomplete="on"
 								placeholder="johndoe@mail.fr" maxlength="70"
-								pattern="[a-zA-Z0-9._-&]{1,20}+@[a-zA-Z0-9._-]{2,15}+.[a-zA-Z.]{2,15}"
 								aria-label="Merci d'indiquer votre adresse email, ce champ est obligatoire">
 						</div>
 
 						<div class="subpart__form">
 							<label for="address">Votre adresse postale <strong><i
 										class="fa fa-asterisk required"></i></strong></label>
-							<input type="text" id="address" name="adresse" class="input__form" required
+							<input type="text" id="address" name="address" class="input__form" required
 								autocomplete="on"
 								placeholder="29 rue Quincampoix (chiffres et lettres sans ponctuation) " maxlength="150"
-								pattern="[A-Za-z0-9 ]{5,150}"
+								pattern="[0-9a-zA-Zàäâçéèëêïîôöùû -]{2,150}"
 								aria-label="Merci d'indiquer votre adresse postale, ce champ est obligatoire">
 						</div>
 						<div class="subpart__form">
 							<label for="zip">Code postal <strong><i
 										class="fa fa-asterisk required"></i></strong></label>
-							<input type="text" id="zip" name="codePostal" class="input__form" required autocomplete="on"
+							<input type="text" id="zip" name="zipCode" class="input__form" required autocomplete="on"
 								placeholder="75004 (5 chiffres)" maxlength="5" pattern="[0-9]{5,5}"
 								aria-label="Merci d'indiquer votre code postal, ce champ est obligatoire">
 						</div>
 						<div class="subpart__form">
 							<label for="city">Votre ville de résidence <strong><i
 										class="fa fa-asterisk required"></i></strong></label>
-							<input type="text" id="city" name="ville" class="input__form" required autocomplete="on"
+							<input type="text" id="city" name="city" class="input__form" required autocomplete="on"
 								placeholder="PARIS (Lettres minuscules/majuscules)" maxlength="70"
-								pattern="[- A-Za-z]{2,70}"
+								pattern="[A-Za-z -]{2,70}"
 								aria-label="Merci d'indiquer votre ville, ce champ est obligatoire">
 						</div>
 					</fieldset>
@@ -221,13 +220,14 @@
 
 					<div class="container__form--button">
 						<!-- Bouton effacer le formulaire -->
-						<input class="button__form" type="reset" aria-label="remettre à zéro les données du formulaire"
-							value="Effacer le formulaire">
+						<button class="button__form reset"
+							aria-label="remettre à zéro les données du formulaire">Effacer le
+							formulaire</button>
 						<!-- Bouton effacer le formulaire END -->
 
 						<!-- Bouton envoi -->
-						<input class="button__form" type="submit" aria-label="validation de la commande"
-							value=" Passer ma commande">
+						<input class="button__form" id="submitOrder" type="submit"
+							aria-label="validation de la commande" value=" Passer ma commande">
 						<!-- Bouton envoi END -->
 					</div>
 				</form>

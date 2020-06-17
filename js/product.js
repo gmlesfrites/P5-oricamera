@@ -87,14 +87,6 @@ const showItemDetail = data => {
     howManyItems()
 };
 
-//cache la partie mauvaise manip de l'url
-const badId = () => {
-    const badId = document.querySelector("#badId");
-    badId.setAttribute("style", "display:none");
-
-}
-
-
 //Ajout au panier
 const addItemToCart = itemToAdd => {
 
@@ -119,7 +111,13 @@ const addItemToCart = itemToAdd => {
 
 }
 
-// TODO à revoir ça ne fonctionne pas en cas d'erreur d'identifiant produit map undefined
+//cache la partie mauvaise manip de l'url
+const badId = () => {
+    const badId = document.querySelector("#badId");
+    badId.setAttribute("style", "display:none");
+
+}
+
 //gestion des erreurs d'identifiant produit
 const manageError = () => {
     const productPage = document.querySelector("#product");

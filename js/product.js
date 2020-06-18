@@ -89,26 +89,29 @@ const showItemDetail = data => {
 
 //Ajout au panier
 const addItemToCart = itemToAdd => {
-
     //récup du localStorage
     const itemToCart = localStorage.getItem('products');
+    cart = JSON.parse(itemToCart);
 
+    //si déjà des articles dans le panier vérif si article identique
     if (itemToCart) {
-        cart = JSON.parse(itemToCart);
-        // si produit avec id identique
-        if (itemToAdd.id !== itemToCart.id) {
-            // TODO gestion des quantités pour ne pas ajouter de ligne si article déjà au panier
-            cart.push(itemToAdd);
-            localStorage.setItem('products', JSON.stringify(cart));
-        } else {
-
-        }
+        checkExisting(itemToAdd)
     } else {
+        //création du panier si non créé et 0 article 
         cart = [];
         cart.push(itemToAdd);
         localStorage.setItem('products', JSON.stringify(cart));
     }
-
+}
+const checkExisting = itemToAdd => {
+    const existingItem = cart.some(item => item.id === itemToAdd.id);
+    if (existingItem) {
+        existingItem.qty++;
+    } else {
+        //si produit avec id différent
+        cart.push(itemToAdd);
+        localStorage.setItem('products', JSON.stringify(cart));
+    }
 }
 
 //cache la partie mauvaise manip de l'url

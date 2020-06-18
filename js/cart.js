@@ -18,22 +18,22 @@ const displayContent = () => {
     }
 }
 
+//Récupération des articles ajoutés dans le localStorage
+const itemsInCart_json = localStorage.getItem('products');
+const itemInCart = JSON.parse(itemsInCart_json);
+
+
 //Fonctions page panier
 const displayCart = () => {
-
     let cart = [];
-
-    //Récupération des articles ajoutés dans le localStorage
-    const itemsInCart_json = localStorage.getItem('products');
-    const itemInCart = JSON.parse(itemsInCart_json);
 
     if (itemInCart === null) {
         displayContent()
     } else {
         itemInCart.map(item => addToCart(item));
+        updateTotalPrice()
         deleteCart()
         howManyItems()
-        // updateTotalPrice()
     }
 }
 
@@ -105,13 +105,13 @@ const addToCart = itemInCart => {
     const minus = document.createElement('button');
     minus.className = "minus";
     minus.innerHTML = `<strong><i class="fa fa-minus" aria-label="quantité en moins"></i></strong>`;
-    minus.addEventListener("click", () => {
-        //Données de quantité pour le localStorage
-        const qtyLess = {
-            id: `${itemInCart.id}`
-        }
-        addLess(qtyLess)
-    });
+    // minus.addEventListener("click", () => {
+    //     //Données de quantité pour le localStorage
+    //     const qtyLess = {
+    //         id: `${itemInCart.id}`
+    //     }
+    //     addLess(qtyLess)
+    // });
     qtyCheck.appendChild(minus);
 
     const qty = document.createElement('p');
@@ -122,13 +122,13 @@ const addToCart = itemInCart => {
     const plus = document.createElement('button');
     plus.className = "plus";
     plus.innerHTML = `<strong><i class="fa fa-plus" aria-label="quantité en +"></i></strong>`;
-    plus.addEventListener("click", () => {
-        //Données de quantité pour le localStorage
-        const qtyMore = {
-            id: `${itemInCart.id}`
-        }
-        addMore(qtyMore)
-    });
+    // plus.addEventListener("click", () => {
+    //     //Données de quantité pour le localStorage
+    //     const qtyMore = {
+    //         id: `${itemInCart.id}`
+    //     }
+    //     addMore(qtyMore)
+    // });
     qtyCheck.appendChild(plus);
 
     //bouton retirer l'article du panier
@@ -159,61 +159,51 @@ const addToCart = itemInCart => {
     boxTotalPrice.appendChild(lignPrice);
 }
 
+//prix global panier
+const updateTotalPrice = () => {
+    //Position du prix
+    let totalPrice = document.getElementById("totalCart");
+    let price = 0;
+
+    // //calcul de prix
+    // if (!itemInCart) {
+    //     // si panier passe à 0
+    //     localStorage.clear()
+    //     document.location.reload()
+    // } else {
+    //Boucle de calcul des qty/price par ligne 
+    itemInCart.map(item => price += (parseInt(item.price) * parseInt(item.qty) / 100));
+
+    //Passe en €
+    const newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${price}`);
+    totalPrice.textContent = newTotalToPay;
+    // }
+}
+
 //fonction pour le compteur du header
 const howManyItems = () => {
     const howManyItems = document.querySelector('.howManyItems');
     if (localStorage === null) {
         howManyItems === 0;
     } else if (localStorage.length !== 0) {
-        // const nbItems_json = localStorage.getItem('products');
-        // const nbItems = JSON.parse(nbItems_json).length;
+        const nbItems_json = localStorage.getItem('products');
+        const nbItems = JSON.parse(nbItems_json).length;
 
         //TODO  modifier pour aller chercher les qty dans le localStorage et non length
 
-        howManyItems.textContent = 'banana';
+        howManyItems.textContent = nbItems;
     }
 }
 
-//Gestion de la quantité en -
-const addLess = qtyLess => {
-    const qty_json = localStorage.getItem('products');
-    const qty = JSON.parse(qty_json);
-
-    const qtyFilter = qty.filter(quantity => quantity.id === qtyLess.id).map(less => {
-        less.qty--;
-        return less;
-        do {
-            qtyFilter.qty--;
-        } while (qty.filter >= 1);
-    });
-    localStorage.setItem('products', JSON.stringify(qtyFilter))
-    document.location.reload()
-}
-
-// Gestion de la quantité en +
-const addMore = qtyMore => {
-    const qty_json = localStorage.getItem('products');
-    const qty = JSON.parse(qty_json);
-
-    const qtyFilter = qty.filter(quantity => quantity.id === qtyMore.id).map(plus => {
-        plus.qty++;
-        return plus;
-    });
-    localStorage.setItem('products', JSON.stringify(qtyFilter))
-    document.location.reload()
-}
-
 //supprimer un article
-const removeItem = (itemToRemove) => {
-    const products_json = localStorage.getItem('products');
-    const products = JSON.parse(products_json);
-
-    const itemFilter = products.filter(t => t.id !== itemToRemove.id);
+const removeItem = itemToRemove => {
+    const itemFilter = itemInCart.filter(t => t.id !== itemToRemove.id);
 
     //mettre à jour le localStorage
     if (itemFilter.length !== 0) {
         localStorage.setItem('products', JSON.stringify(itemFilter))
     } else {
+        updateTotalPrice()
         localStorage.clear()
         document.location.reload()
     }
@@ -225,7 +215,6 @@ const deleteCart = () => {
     deleteCart.addEventListener('click', () => {
         const youSure = confirm('Etes-vous sûr(e) de vouloir supprimer la totalité de votre panier ?');
         if (youSure) {
-            console.log('banana');
             localStorage.clear();
             document.location.reload()
             displayContent()
@@ -233,26 +222,6 @@ const deleteCart = () => {
         }
     });
 }
-
-//prix global panier
-const updateTotalPrice = () => {
-    //Position du prix
-    let totalPrice = document.getElementById("totalCart");
-
-    //Récupération des articles ajoutés dans le localStorage
-    const localPrice_json = localStorage.getItem('products');
-    const localPrice = JSON.parse(localPrice_json);
-
-    for (i = 0; i < localPrice.length; i++) {
-        totalPrice = (parseInt(localPrice[i].price) * parseInt(localPrice[i].qty) / 100);
-        console.log(totalPrice);
-    }
-
-    const newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalPrice}`);
-
-    totalPrice.textContent = newTotalToPay;
-}
-
 
 //Affichage du formulaire après validation du panier
 const displayForm = () => {
@@ -263,3 +232,39 @@ const displayForm = () => {
         resetForm()
     })
 }
+
+
+// // //Gestion de la quantité en -
+// // const addLess = (qtyLess) => {
+// //     const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyLess.id).map(minus => {
+// //         minus.qty--;
+// //         return minus;
+// //     });
+// //     // removeQty0(qtyLess)
+// //     localStorage.setItem('products', JSON.stringify(qtyFilter))
+// //     document.location.reload()
+// // }
+// // //si compteur quantité passe sous 1
+// // const removeQty0 = qtyLess => {
+// //     const qtyFilter = itemInCart.filter(t => t.id !== qtyLess.id);
+
+// //     //mettre à jour le localStorage
+// //     if (qtyFilter.length !== 0) {
+// //         localStorage.setItem('products', JSON.stringify(qtyFilter))
+// //     } else {
+// //         localStorage.clear()
+// //         document.location.reload()
+// //     }
+// // }
+
+
+
+// // Gestion de la quantité en +
+// const addMore = qtyMore => {
+//     const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyMore.id).map(plus => {
+//         plus.qty++;
+//         return plus;
+//     });
+//     localStorage.setItem('products', JSON.stringify(qtyFilter))
+//     document.location.reload()
+// }

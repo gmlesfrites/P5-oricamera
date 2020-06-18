@@ -463,13 +463,15 @@ input:valid {
   font-size: 1em; }
 
 .title__cart--total {
-  font-size: 1.15em;
+  font-size: 1.2em;
   border-bottom: 1px #a5a5a5 dashed;
   margin-bottom: 1em; }
 
 .totalPrice__cart {
   display: flex;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  font-size: 1.15em;
+  font-weight: bold; }
 
 .countItems__cart {
   background-color: #f3e9f1;

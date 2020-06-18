@@ -53,7 +53,7 @@
 }
 //titre montant global
 .title__cart--total {
-	font-size: $fz-h4;
+	font-size: $fz-h3;
 	border-bottom: 1px $color-border dashed;
 	margin-bottom: 1em;
 }
@@ -61,6 +61,8 @@
 .totalPrice__cart {
 	display: flex;
 	justify-content: flex-end;
+	font-size: $fz-h4;
+	font-weight: bold;
 }
 //compteur quantité
 .countItems__cart {

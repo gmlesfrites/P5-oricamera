@@ -162,7 +162,7 @@ const addToCart = itemInCart => {
     const lignPrice = document.createElement('p');
     let totalCost = (`${itemInCart.price}` * `${itemInCart.qty}` / 100).toFixed(2);
     let newTotalCost = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalCost}`);
-    lignPrice.textContent = "Prix total : " + newTotalCost;
+    lignPrice.innerHTML = "<strong>" + "Prix total : " + "</strong>" + newTotalCost;
     boxTotalPrice.appendChild(lignPrice);
 }
 

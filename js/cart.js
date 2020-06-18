@@ -192,6 +192,27 @@ const howManyItems = () => {
     }
     howManyItems.textContent = counter;
 }
+//Gestion de la quantité en -
+const addLess = qtyLess => {
+    const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyLess.id).map(minus => {
+        minus.qty--;
+        return minus;
+    });
+    itemInCart.slice(qtyFilter)
+    localStorage.setItem('products', JSON.stringify(itemInCart))
+    document.location.reload()
+}
+
+// Gestion de la quantité en +
+const addMore = qtyMore => {
+    const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyMore.id).map(plus => {
+        plus.qty++;
+        return plus;
+    });
+    itemInCart.slice(qtyFilter)
+    localStorage.setItem('products', JSON.stringify(itemInCart))
+    document.location.reload()
+}
 
 //supprimer un article
 const removeItem = itemToRemove => {
@@ -230,25 +251,3 @@ const displayForm = () => {
     })
 }
 
-
-//Gestion de la quantité en -
-const addLess = qtyLess => {
-    const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyLess.id).map(minus => {
-        minus.qty--;
-        return minus;
-    });
-    // removeQty0(qtyLess)
-    localStorage.setItem('products', JSON.stringify(qtyFilter))
-    document.location.reload()
-}
-
-// Gestion de la quantité en +
-const addMore = qtyMore => {
-    const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyMore.id).map(plus => {
-        plus.qty++;
-        return plus;
-    });
-    itemInCart.slice(qtyFilter)
-    localStorage.setItem('products', JSON.stringify(itemInCart))
-    document.location.reload()
-}

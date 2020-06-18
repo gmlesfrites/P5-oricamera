@@ -165,12 +165,12 @@ const howManyItems = () => {
     if (localStorage === null) {
         howManyItems === 0;
     } else if (localStorage.length !== 0) {
-        const nbItems_json = localStorage.getItem('products');
-        const nbItems = JSON.parse(nbItems_json).length;
+        // const nbItems_json = localStorage.getItem('products');
+        // const nbItems = JSON.parse(nbItems_json).length;
 
         //TODO  modifier pour aller chercher les qty dans le localStorage et non length
 
-        howManyItems.textContent = nbItems;
+        howManyItems.textContent = 'banana';
     }
 }
 
@@ -182,6 +182,9 @@ const addLess = qtyLess => {
     const qtyFilter = qty.filter(quantity => quantity.id === qtyLess.id).map(less => {
         less.qty--;
         return less;
+        do {
+            qtyFilter.qty--;
+        } while (qty.filter >= 1);
     });
     localStorage.setItem('products', JSON.stringify(qtyFilter))
     document.location.reload()

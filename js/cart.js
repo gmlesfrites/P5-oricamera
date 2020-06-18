@@ -248,6 +248,7 @@ const addMore = qtyMore => {
         plus.qty++;
         return plus;
     });
-    localStorage.setItem('products', JSON.stringify(qtyFilter))
+    itemInCart.slice(qtyFilter)
+    localStorage.setItem('products', JSON.stringify(itemInCart))
     document.location.reload()
 }

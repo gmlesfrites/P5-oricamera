@@ -106,7 +106,8 @@ const addItemToCart = itemToAdd => {
 const checkExisting = itemToAdd => {
     const existingItem = cart.some(item => item.id === itemToAdd.id);
     if (existingItem) {
-        existingItem.qty++;
+        console.log('banana');
+        // existingItem.qty++;
     } else {
         //si produit avec id différent
         cart.push(itemToAdd);

@@ -104,30 +104,34 @@ const addToCart = itemInCart => {
     const minus = document.createElement('button');
     minus.className = "minus";
     minus.innerHTML = `<strong><i class="fa fa-minus" aria-label="quantité en moins"></i></strong>`;
-    // minus.addEventListener("click", () => {
-    //     //Données de quantité pour le localStorage
-    //     const qtyLess = {
-    //         id: `${itemInCart.id}`
-    //     }
-    //     addLess(qtyLess)
-    // });
+    minus.addEventListener("click", () => {
+        //Données de quantité pour le localStorage
+        const qtyLess = {
+            id: `${itemInCart.id}`
+        }
+        addLess(qtyLess)
+
+    });
     qtyCheck.appendChild(minus);
 
     const qty = document.createElement('p');
     qty.className = "qty";
     qty.textContent = `${itemInCart.qty}`;
+    if (itemInCart.qty === 1) {
+        minus.setAttribute("style", "visibility:hidden")
+    }
     qtyCheck.appendChild(qty);
 
     const plus = document.createElement('button');
     plus.className = "plus";
     plus.innerHTML = `<strong><i class="fa fa-plus" aria-label="quantité en +"></i></strong>`;
-    // plus.addEventListener("click", () => {
-    //     //Données de quantité pour le localStorage
-    //     const qtyMore = {
-    //         id: `${itemInCart.id}`
-    //     }
-    //     addMore(qtyMore)
-    // });
+    plus.addEventListener("click", () => {
+        //Données de quantité pour le localStorage
+        const qtyMore = {
+            id: `${itemInCart.id}`
+        }
+        addMore(qtyMore)
+    });
     qtyCheck.appendChild(plus);
 
     //bouton retirer l'article du panier
@@ -223,37 +227,23 @@ const displayForm = () => {
 }
 
 
-// // //Gestion de la quantité en -
-// // const addLess = (qtyLess) => {
-// //     const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyLess.id).map(minus => {
-// //         minus.qty--;
-// //         return minus;
-// //     });
-// //     // removeQty0(qtyLess)
-// //     localStorage.setItem('products', JSON.stringify(qtyFilter))
-// //     document.location.reload()
-// // }
-// // //si compteur quantité passe sous 1
-// // const removeQty0 = qtyLess => {
-// //     const qtyFilter = itemInCart.filter(t => t.id !== qtyLess.id);
+//Gestion de la quantité en -
+const addLess = (qtyLess) => {
+    const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyLess.id).map(minus => {
+        minus.qty--;
+        return minus;
+    });
+    // removeQty0(qtyLess)
+    localStorage.setItem('products', JSON.stringify(qtyFilter))
+    document.location.reload()
+}
 
-// //     //mettre à jour le localStorage
-// //     if (qtyFilter.length !== 0) {
-// //         localStorage.setItem('products', JSON.stringify(qtyFilter))
-// //     } else {
-// //         localStorage.clear()
-// //         document.location.reload()
-// //     }
-// // }
-
-
-
-// // Gestion de la quantité en +
-// const addMore = qtyMore => {
-//     const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyMore.id).map(plus => {
-//         plus.qty++;
-//         return plus;
-//     });
-//     localStorage.setItem('products', JSON.stringify(qtyFilter))
-//     document.location.reload()
-// }
+// Gestion de la quantité en +
+const addMore = qtyMore => {
+    const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyMore.id).map(plus => {
+        plus.qty++;
+        return plus;
+    });
+    localStorage.setItem('products', JSON.stringify(qtyFilter))
+    document.location.reload()
+}

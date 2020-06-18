@@ -105,33 +105,37 @@ const addToCart = itemInCart => {
     minus.className = "minus";
     minus.innerHTML = `<strong><i class="fa fa-minus" aria-label="quantité en moins"></i></strong>`;
     minus.addEventListener("click", () => {
-        //Données de quantité pour le localStorage
+        //Données de quantité
         const qtyLess = {
             id: `${itemInCart.id}`
         }
         addLess(qtyLess)
 
     });
+    if (itemInCart.qty === 1) {
+        minus.setAttribute("style", "visibility:hidden")
+    }
     qtyCheck.appendChild(minus);
 
     const qty = document.createElement('p');
     qty.className = "qty";
     qty.textContent = `${itemInCart.qty}`;
-    if (itemInCart.qty === 1) {
-        minus.setAttribute("style", "visibility:hidden")
-    }
+
     qtyCheck.appendChild(qty);
 
     const plus = document.createElement('button');
     plus.className = "plus";
     plus.innerHTML = `<strong><i class="fa fa-plus" aria-label="quantité en +"></i></strong>`;
     plus.addEventListener("click", () => {
-        //Données de quantité pour le localStorage
+        //Données de quantité
         const qtyMore = {
             id: `${itemInCart.id}`
         }
         addMore(qtyMore)
     });
+    if (itemInCart.qty === 5) {
+        plus.setAttribute("style", "visibility:hidden")
+    }
     qtyCheck.appendChild(plus);
 
     //bouton retirer l'article du panier
@@ -228,7 +232,7 @@ const displayForm = () => {
 
 
 //Gestion de la quantité en -
-const addLess = (qtyLess) => {
+const addLess = qtyLess => {
     const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyLess.id).map(minus => {
         minus.qty--;
         return minus;

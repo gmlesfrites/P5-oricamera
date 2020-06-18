@@ -22,7 +22,6 @@ const displayContent = () => {
 const itemsInCart_json = localStorage.getItem('products');
 const itemInCart = JSON.parse(itemsInCart_json);
 
-
 //Fonctions page panier
 const displayCart = () => {
     let cart = [];
@@ -165,12 +164,6 @@ const updateTotalPrice = () => {
     let totalPrice = document.getElementById("totalCart");
     let price = 0;
 
-    // //calcul de prix
-    // if (!itemInCart) {
-    //     // si panier passe à 0
-    //     localStorage.clear()
-    //     document.location.reload()
-    // } else {
     //Boucle de calcul des qty/price par ligne 
     itemInCart.map(item => price += (parseInt(item.price) * parseInt(item.qty) / 100));
 
@@ -183,22 +176,18 @@ const updateTotalPrice = () => {
 //fonction pour le compteur du header
 const howManyItems = () => {
     const howManyItems = document.querySelector('.howManyItems');
-    if (localStorage === null) {
-        howManyItems === 0;
-    } else if (localStorage.length !== 0) {
-        const nbItems_json = localStorage.getItem('products');
-        const nbItems = JSON.parse(nbItems_json).length;
+    let counter = 0;
 
-        //TODO  modifier pour aller chercher les qty dans le localStorage et non length
-
-        howManyItems.textContent = nbItems;
+    //Boucle de calcul des qty par ligne
+    if (itemInCart) {
+        itemInCart.map(item => counter += parseInt(item.qty));
     }
+    howManyItems.textContent = counter;
 }
 
 //supprimer un article
 const removeItem = itemToRemove => {
     const itemFilter = itemInCart.filter(t => t.id !== itemToRemove.id);
-
     //mettre à jour le localStorage
     if (itemFilter.length !== 0) {
         localStorage.setItem('products', JSON.stringify(itemFilter))

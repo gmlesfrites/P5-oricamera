@@ -33,31 +33,25 @@ const checkForm = input => {
 Array.from(inputs).forEach(checkForm);
 
 //Bouton reset formulaire
-const resetForm = () => {
-    const buttonReset = document.querySelector('.reset');
-    buttonReset.addEventListener('click', (event) => {
+// const resetForm = () => {
+//     const buttonReset = document.querySelector('.reset');
+//     buttonReset.addEventListener('click', () => {
 
-        const youSure = confirm('Etes-vous sûr(e) de vouloir effacer les données du formulaire ?');
-        if (youSure) {
-            localStorage.removeItem('contact')
-            document.location.reload()
-        }
-    });
-}
+//     });
+// }
 
 
 //Gestion du remplissage -> e.preventDefault pour neutraliser envoi du formulaire si mal rempli  e.preventDefault()
-const contactToStorage = () => {
+const getcontact = () => {
     const form = document.querySelector('form');
     form.addEventListener('input', (e) => {
         //Données du produit pour le localStorage
-        const contactInfo = {
-            lastname: `${e.target.lastName.value}`,
-            firstname: `${e.target.firstName.value}`,
+        const contact = {
+            lastName: `${e.target.lastName.value}`,
+            firstName: `${e.target.firstName.value}`,
             address: `${e.target.address.value}`,
             email: `${e.target.email.value}`,
             city: `${e.target.city.value}`,
         }
-        addContactToStorage(contactInfo)
     })
 }

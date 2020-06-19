@@ -6,15 +6,6 @@ const id = newId.get("id");
 const urlId = `http://localhost:3000/api/cameras/${id}`;
 
 const fetchItem = fetch(urlId)
-    // .catch(error => {
-    //     console.error(response.status);
-    //     manageError(error)
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-    //     showItemDetail(data)
-    // });
-
     .then(response => {
         if (response.ok) {
             response.json()
@@ -94,23 +85,27 @@ const addItemToCart = itemToAdd => {
     cart = JSON.parse(itemToCart);
 
     if (itemToCart) {
-        //si déjà des articles dans le panier vérif si article identique
         const existingItem = cart.filter(item => item.id === itemToAdd.id).map(oneMore => {
             oneMore.qty++;
-            return oneMore
-        });
-        cart.slice(existingItem)
-        localStorage.setItem('products', JSON.stringify(cart));
+            return oneMore;
+        });;
 
-        //si déjà produit(s) avec id différent
-        if (!existingItem) {
+        //si déjà des articles dans le panier vérif si article identique
+        if (existingItem) {
+
+            existingItem.qty++;
+            cart.slice(existingItem)
+            localStorage.setItem('products', JSON.stringify(cart));
+
+        } else {
+
+            //si déjà produit(s) avec id différent
             cart.push(itemToAdd);
             localStorage.setItem('products', JSON.stringify(cart));
 
         }
-        //Si pas de panier  -> création et ajout de l'article 
     } else {
-
+        //création du panier si non créé et 0 article 
         cart = [];
         cart.push(itemToAdd);
         localStorage.setItem('products', JSON.stringify(cart));

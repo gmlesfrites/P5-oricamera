@@ -36,8 +36,13 @@ Array.from(inputs).forEach(checkForm);
 const resetForm = () => {
     const buttonReset = document.querySelector('.reset');
     buttonReset.addEventListener('click', (event) => {
-        sessionStorage.removeItem('contact')
-    })
+
+        const youSure = confirm('Etes-vous sûr(e) de vouloir effacer les données du formulaire ?');
+        if (youSure) {
+            localStorage.removeItem('contact')
+            document.location.reload()
+        }
+    });
 }
 
 
@@ -47,8 +52,8 @@ const contactToStorage = () => {
     form.addEventListener('input', (e) => {
         //Données du produit pour le localStorage
         const contactInfo = {
-            lastname: `${e.target.lastname.value}`,
-            firstname: `${e.target.firstname.value}`,
+            lastname: `${e.target.lastName.value}`,
+            firstname: `${e.target.firstName.value}`,
             address: `${e.target.address.value}`,
             email: `${e.target.email.value}`,
             city: `${e.target.city.value}`,
@@ -56,15 +61,3 @@ const contactToStorage = () => {
         addContactToStorage(contactInfo)
     })
 }
-
-//Ajout des infos de contact au sessionStorage
-const addContactToStorage = (contactInfo) => {
-    if (!contactInfo) {
-        contact = [];
-        contact.push(contactInfo);
-        sessionStorage.setItem('contact', JSON.stringify(contact));
-    }
-}
-
-
-//  TODO http://localhost:3000/api/cameras/order

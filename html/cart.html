@@ -157,7 +157,7 @@
 						<div class="subpart__form">
 							<label for="lastname">Merci de renseigner votre nom <strong><i
 										class="fa fa-asterisk required"></i></strong></label>
-							<input type="text" id="lastname" name="lastname" class="input__form" required
+							<input type="text" id="lastname" name="lastName" class="input__form" required
 								autocomplete="on" placeholder="DOE (en toute lettre majuscule/miniscule)" maxlength="25"
 								pattern="[a-zA-Zàäâçéèëêïîôöùû-]{2,25}"
 								aria-label="Merci de renseigner votre nom, ce champ est oligatoire" autofocus>
@@ -169,7 +169,7 @@
 						<div class="subpart__form">
 							<label for="firstname">Merci de renseigner votre prénom <strong><i
 										class="fa fa-asterisk required"></i></strong></label>
-							<input type="text" id="firstname" name="firstname" class="input__form" required
+							<input type="text" id="firstname" name="firstName" class="input__form" required
 								autocomplete="on" placeholder="John (en toute lettre majuscule/miniscule)"
 								maxlength="25" pattern="[a-zA-Zàäâçéèëêïîôöùû-]{2,25}"
 								aria-label="Merci de renseigner votre prénom, ce champ est oligatoire">
@@ -245,8 +245,9 @@
 	</footer>
 	<!-- Footer END -->
 	<!-- Mes scripts -->
-	<script src=" ../js/cart.js"></script>
-	<script src="../js/form.js"></script>
+	<script src=" ../js/cart.js" async></script>
+	<script src="../js/form.js" defer></script>
+	<script src="../js/order.js" defer></script>
 	<!-- Mes scripts END -->
 	<!--Script font awesome-->
 	<script src="https://kit.fontawesome.com/6a89ea6dae.js" crossorigin="anonymous"></script>

@@ -85,25 +85,25 @@ const addItemToCart = itemToAdd => {
     cart = JSON.parse(itemToCart);
 
     if (itemToCart) {
-        const existingItem = cart.filter(item => item.id === itemToAdd.id).map(oneMore => {
-            oneMore.qty++;
-            return oneMore;
-        });;
+        // const existingItem = cart.filter(item => item.id === itemToAdd.id).map(oneMore => {
+        //     oneMore.qty++;
+        //     return oneMore;
+        // });;
 
-        //si déjà des articles dans le panier vérif si article identique
-        if (existingItem) {
+        // //si déjà des articles dans le panier vérif si article identique
+        // if (existingItem) {
 
-            existingItem.qty++;
-            cart.slice(existingItem)
-            localStorage.setItem('products', JSON.stringify(cart));
+        //     existingItem.qty++;
+        //     cart.slice(existingItem)
+        //     localStorage.setItem('products', JSON.stringify(cart));
 
-        } else {
+        // } else {
 
-            //si déjà produit(s) avec id différent
-            cart.push(itemToAdd);
-            localStorage.setItem('products', JSON.stringify(cart));
+        //si déjà produit(s) avec id différent
+        cart.push(itemToAdd);
+        localStorage.setItem('products', JSON.stringify(cart));
 
-        }
+        // }
     } else {
         //création du panier si non créé et 0 article 
         cart = [];

@@ -30,9 +30,10 @@ const displayCart = () => {
         displayContent()
     } else {
         itemInCart.map(item => addToCart(item));
-        updateTotalPrice()
+
         deleteCart()
         howManyItems()
+        updateTotalPrice()
     }
 }
 
@@ -133,7 +134,7 @@ const addToCart = itemInCart => {
         }
         addMore(qtyMore)
     });
-    if (itemInCart.qty === 5) {
+    if (itemInCart.qty >= 5) {
         plus.setAttribute("style", "visibility:hidden")
     }
     qtyCheck.appendChild(plus);
@@ -220,6 +221,8 @@ const removeItem = itemToRemove => {
     //mettre à jour le localStorage
     if (itemFilter.length !== 0) {
         localStorage.setItem('products', JSON.stringify(itemFilter))
+        updateTotalPrice()
+        document.location.reload()
     } else {
         updateTotalPrice()
         localStorage.clear()

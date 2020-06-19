@@ -247,7 +247,5 @@ const displayForm = () => {
     const validateCart = document.querySelector("#validateCart");
     validateCart.addEventListener('click', () => {
         submitCart()
-        resetForm()
     })
 }
-

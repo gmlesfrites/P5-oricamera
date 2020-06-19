@@ -93,23 +93,26 @@ const addItemToCart = itemToAdd => {
     const itemToCart = localStorage.getItem('products');
     cart = JSON.parse(itemToCart);
 
-    //si déjà des articles dans le panier vérif si article identique
     if (itemToCart) {
-        checkExisting(itemToAdd)
+        const existingItem = cart.some(item => item.id === itemToAdd.id);
+
+        //si déjà des articles dans le panier vérif si article identique
+        if (existingItem) {
+            console.log('banana');
+            existingItem.qty++;
+            cart.slice(existingItem)
+            localStorage.setItem('products', JSON.stringify(cart));
+
+        } else {
+            console.log('prems');
+            //si déjà produit(s) avec id différent
+            cart.push(itemToAdd);
+            localStorage.setItem('products', JSON.stringify(cart));
+
+        }
     } else {
         //création du panier si non créé et 0 article 
         cart = [];
-        cart.push(itemToAdd);
-        localStorage.setItem('products', JSON.stringify(cart));
-    }
-}
-const checkExisting = itemToAdd => {
-    const existingItem = cart.some(item => item.id === itemToAdd.id);
-    if (existingItem) {
-        console.log('banana');
-        // existingItem.qty++;
-    } else {
-        //si produit avec id différent
         cart.push(itemToAdd);
         localStorage.setItem('products', JSON.stringify(cart));
     }

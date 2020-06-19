@@ -32,15 +32,6 @@ const checkForm = input => {
 
 Array.from(inputs).forEach(checkForm);
 
-//Bouton reset formulaire
-// const resetForm = () => {
-//     const buttonReset = document.querySelector('.reset');
-//     buttonReset.addEventListener('click', () => {
-
-//     });
-// }
-
-
 //Gestion du remplissage -> e.preventDefault pour neutraliser envoi du formulaire si mal rempli  e.preventDefault()
 const getcontact = () => {
     const form = document.querySelector('form');
@@ -54,4 +45,17 @@ const getcontact = () => {
             city: `${e.target.city.value}`,
         }
     })
+}
+
+// Données du formulaire
+document.addEventListener('DOMContentLoaded', () => {
+    document
+        .getElementById('formOrder')
+        .addEventListener('submit', getInfos);
+});
+
+const getInfos = event => {
+    //interdire le rechargement pour éviter la perte d'infos
+    event.preventDefault()
+    
 }

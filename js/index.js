@@ -58,7 +58,6 @@ const showProducts = product => {
 	buttonElt.textContent = "Voir le produit";
 	divButtons.appendChild(buttonElt);
 
-
 	// //Ajout bouton achat rapide
 	// const quickCartElt = document.createElement("a");
 	// quickCartElt.className = "button__quickCart addToCart";
@@ -67,21 +66,4 @@ const showProducts = product => {
 	// quickCartElt.href = "#boxPolaroid";
 	// quickCartElt.innerHTML = `<strong> <i class="fas fa-cart-plus toCart"></i> </strong> `;
 	// divButtons.appendChild(quickCartElt);
-	// quickCartElt.addEventListener("click", () => {
-	// 	const itemToAdd = {
-	// 		id: `${product._id}`,
-	// 		image: `${product.imageUrl}`,
-	// 		name: `${product.name}`,
-	// 		description: `${product.description}`,
-	// 		price: `${product.price}`,
-	// 		qty: 1
-	// 	}
-	// 	quickItemToCart(itemToAdd);
-	// })
-	// howManyItems()
 }
-
-// const quickItemToCart = itemToAdd => {
-// 	console.log('banana');
-// 	// TODO revoir la méthode utilisée sur la page produit 
-// }

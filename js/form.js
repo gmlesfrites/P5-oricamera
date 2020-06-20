@@ -75,7 +75,7 @@ const requestFetch = new Request(url, {
     body: getInfos,
     method: 'POST',
 });
-//console.log(req);
+
 fetch(requestFetch)
     .then((Response) => Response.json())
     .then((data) => {

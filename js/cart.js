@@ -217,7 +217,7 @@ const addMore = qtyMore => {
 
 //supprimer un article
 const removeItem = itemToRemove => {
-    const itemFilter = itemInCart.filter(t => t.id !== itemToRemove.id);
+    const itemFilter = itemInCart.filter(array => array.id !== itemToRemove.id);
     //mettre à jour le localStorage
     if (itemFilter.length !== 0) {
         localStorage.setItem('products', JSON.stringify(itemFilter))

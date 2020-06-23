@@ -1,38 +1,34 @@
-//  TODO http://localhost:3000/api/cameras/order
 
-// Données du formulaire
-document.addEventListener('DOMContentLoaded', () => {
-    document
-        .getElementById('formOrder')
-        .addEventListener('submit', getInfos);
-});
+//Gestion de l'identifiant de commande 
+//récupération de l'Id par paramètre de l'url
+let orderId = new URLSearchParams(window.location.search.substring(0));
+orderId = orderId.get("orderId");
 
-const getInfos = event => {
-    //interdire le rechargement pour éviter la perte d'infos
-    event.preventDefault()
-    //récupérer les données du formulaire
-    const contact = event.target;
-    let toSend = JSON.stringify(new FormData(contact));
+if (orderId) {
+    //ajout de l'information dans la page utilisateur
+    const refPurchase = document.querySelector('#refPurchase');
+    refPurchase.innerHTML = "La référence de votre commande est la suivante : " + "<br>" + orderId + ".";
 
-    //ajoute le panier
-    toSend.append(localStorage.getItem('products'));
+
+    //gestion de l'affichage du prix du panier
+    // const orderPurchase = () => {
+    let pricePurchase = document.querySelector('#orderPurchase');
+
+    const cartJSON = localStorage.getItem('products');
+    let cart = JSON.parse(cartJSON);
+
+    let price = 0;
+
+    //récupération des données de qty*price de chaque ligne puis addition du tableau complet
+    cart.map(item => price += (parseInt(item.price) * parseInt(item.qty) / 100))
+
+    console.log(price);
+
+    const priceEuro = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${price}`);
+
+    pricePurchase.innerHTML = `Le montant de votre commande est : ${priceEuro}`;
 }
 
-//Envoi à l'API
-const url = 'http://localhost:3000/api/cameras/order';
-const headersFetch = new Headers();
-headersFetch.append('Content-type', 'application/json');
-
-const requestFetch = new Request(url, {
-    headers: headersFetch,
-    body: getInfos,
-    method: 'POST',
+window.addEventListener("unload", () => {
+    localStorage.clear()
 });
-
-fetch(requestFetch)
-    .then((Response) => Response.json())
-    .then((data) => {
-        console.log('Response from server');
-        console.log(data);
-    })
-    .catch(console.warn);

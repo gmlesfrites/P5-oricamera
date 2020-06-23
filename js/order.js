@@ -1,34 +1,42 @@
+// Gestion du localStorage
+window.addEventListener("unload", () => {
+    localStorage.clear()
+});
 
-//Gestion de l'identifiant de commande 
-//récupération de l'Id par paramètre de l'url
+//Gestion de l'affichage du récap de commande 
 let orderId = new URLSearchParams(window.location.search.substring(0));
 orderId = orderId.get("orderId");
 
-if (orderId) {
+const cartJSON = localStorage.getItem('products');
+let cart = JSON.parse(cartJSON);
+
+if (orderId && cart) {
     //ajout de l'information dans la page utilisateur
     const refPurchase = document.querySelector('#refPurchase');
     refPurchase.innerHTML = "La référence de votre commande est la suivante : " + "<br>" + orderId + ".";
 
 
     //gestion de l'affichage du prix du panier
-    // const orderPurchase = () => {
     let pricePurchase = document.querySelector('#orderPurchase');
 
-    const cartJSON = localStorage.getItem('products');
-    let cart = JSON.parse(cartJSON);
 
     let price = 0;
 
     //récupération des données de qty*price de chaque ligne puis addition du tableau complet
     cart.map(item => price += (parseInt(item.price) * parseInt(item.qty) / 100))
-
-    console.log(price);
-
     const priceEuro = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${price}`);
 
     pricePurchase.innerHTML = `Le montant de votre commande est : ${priceEuro}`;
+
+    //cache la partie mauvaise manip de l'url
+    const noPurchase = document.getElementById("noId");
+    noPurchase.setAttribute("style", "display:none");
+
+} else {
+    const noId = document.getElementById("orderOk");
+    noId.setAttribute("style", "display:none");
 }
 
-window.addEventListener("unload", () => {
-    localStorage.clear()
-});
+
+
+

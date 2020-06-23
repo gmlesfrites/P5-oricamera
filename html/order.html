@@ -90,7 +90,7 @@
 		<h1 class="title__order">Confirmation de commande
 		</h1>
 		<!-- Section comprenant les informations de commande -->
-		<section class="container__purchase">
+		<section id="orderOk" class="container__purchase">
 
 			<!-- Récapitulatif de commande -->
 			<h2 class="title__purchase">Votre commande est validée</h2>
@@ -117,6 +117,15 @@
 		</section>
 		<!-- Section comprenant les informations de commande -->
 
+		<!-- Panier vide-->
+		<section id="noId" class="container__badId">
+			<h2><strong><i class="fas fa-exclamation-triangle"></i></strong>
+				&nbsp; Il n'y a pas de commande à afficher.</h2>
+			<a href="../index.html" class="container__product--homeReturn" aria-label="Lien retour vers catalogue">
+				Retour au catalogue
+			</a>
+		</section>
+		<!-- Panier vide END -->
 	</main>
 	<!-- Main END-->
 

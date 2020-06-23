@@ -116,7 +116,6 @@ const addItemToCart = itemToAdd => {
 const badId = () => {
     const badId = document.querySelector("#badId");
     badId.setAttribute("style", "display:none");
-
 }
 
 //gestion des erreurs d'identifiant produit

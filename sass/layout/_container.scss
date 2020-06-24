@@ -5,6 +5,13 @@
 	color: $color-text;
 	height: 4em;
 }
+//affichage grand écran
+.main__content--home,
+.main__content--order {
+	@media all and (min-width: 1900px) {
+		height: 100vh;
+	}
+}
 
 // PAGE PRODUIT
 //Page Produit : conteneur global des articles

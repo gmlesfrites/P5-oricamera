@@ -183,6 +183,11 @@ button, a {
   color: #3d3d3d;
   height: 4em; }
 
+@media all and (min-width: 1900px) {
+  .main__content--home,
+  .main__content--order {
+    height: 100vh; } }
+
 .container__boxPolaroid--flex {
   display: flex;
   flex-direction: column;
@@ -453,6 +458,10 @@ input:valid {
     .img__cart {
       width: 100%;
       height: 50%; } }
+  @media all and (min-width: 1900px) {
+    .img__cart {
+      width: 100%;
+      height: 80%; } }
 
 .title__cart--article {
   font-size: 1.2em;

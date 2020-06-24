@@ -1,3 +1,22 @@
+//Loader
+const showContent = () => {
+	document.querySelector(".container__loader").classList.add('hidden');
+}
+
+const hiddenLoader = () => {
+	document.querySelector(".container__loader").setAttribute('style', "display:none");
+}
+const loader = localStorage.getItem('loader');
+
+if (!loader) {
+	setTimeout(showContent, 3000)
+	localStorage.setItem('loader', JSON.stringify('only one time'))
+} else {
+	hiddenLoader()
+}
+
+
+
 // Récupération des données globales
 const url = 'http://localhost:3000/api/cameras';
 const fetchItems = fetch(url)
@@ -58,3 +77,4 @@ const showProducts = product => {
 	buttonElt.textContent = "Voir le produit";
 	divButtons.appendChild(buttonElt);
 }
+

@@ -134,9 +134,9 @@ const addToCart = itemInCart => {
         }
         addMore(qtyMore)
     });
-    if (itemInCart.qty >= 5) {
-        plus.setAttribute("style", "visibility:hidden")
-    }
+    // if (itemInCart.qty >= 5) {
+    //     plus.setAttribute("style", "visibility:hidden")
+    // }
     qtyCheck.appendChild(plus);
 
     //bouton retirer l'article du panier

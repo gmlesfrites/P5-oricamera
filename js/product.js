@@ -40,6 +40,7 @@ const showItemDetail = data => {
 
     // Optiques
     const lensesElt = document.querySelector("select");
+
     const lensesData = data.lenses;
     lensesData.map(lenses => {
         let optElt = document.createElement("option");

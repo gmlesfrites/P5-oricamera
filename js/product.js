@@ -81,7 +81,6 @@ const showItemDetail = data => {
 //recherche si article existant
 const addItem = (itemToAdd) => {
     const existingItem = cart.find(element => element.id === itemToAdd.id);
-    console.log(existingItem);
 
     if (existingItem !== undefined) {
         existingItem.qty++;

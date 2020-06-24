@@ -32,6 +32,7 @@ const checkForm = input => {
 
 Array.from(inputs).forEach(checkForm);
 
+//Gestion de l'envoi du bon de commande (contact + products)
 const getOrderDone = () => {
     //Gestion des données du panier
     const productsJSON = localStorage.getItem('products');
@@ -40,7 +41,6 @@ const getOrderDone = () => {
     products = productsParse.map(item => {
         return item.id;
     });
-    console.log(products);
 
     //Gestion des données du contact
     const lastName = document.forms['formOrder']['lastName'];
@@ -61,9 +61,10 @@ const getOrderDone = () => {
             city: city.value
         }
 
+        //envoi en objet de contact + products
         let toSend = { contact, products };
         toSend = JSON.stringify(toSend);
-        console.log(toSend);
+
         //Envoi à l'API method="POST"
         const url = 'http://localhost:3000/api/cameras/order';
 
@@ -71,7 +72,11 @@ const getOrderDone = () => {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: toSend
-        }).then(res => res.json())
+        })
+            .catch(error => {
+                throw new error(response.status);
+            })
+            .then(res => res.json())
             .then(data => showPurchase(data));
     });
 }

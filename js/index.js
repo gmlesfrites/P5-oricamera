@@ -57,13 +57,4 @@ const showProducts = product => {
 	buttonElt.href = `html/product.html?id=${product._id}`;
 	buttonElt.textContent = "Voir le produit";
 	divButtons.appendChild(buttonElt);
-
-	// //Ajout bouton achat rapide
-	// const quickCartElt = document.createElement("a");
-	// quickCartElt.className = "button__quickCart addToCart";
-	// quickCartElt.ariaLabel = "Lien vers la page produit";
-	// quickCartElt.id = `${product._id}`;
-	// quickCartElt.href = "#boxPolaroid";
-	// quickCartElt.innerHTML = `<strong> <i class="fas fa-cart-plus toCart"></i> </strong> `;
-	// divButtons.appendChild(quickCartElt);
 }

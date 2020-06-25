@@ -1,38 +1,4 @@
-//Loader
-const showContent = () => {
-	const loader = document.querySelector(".container__loader");
-	loader.classList.add('hidden');
 
-	const blurLoader = document.createElement("div");
-	blurLoader.classList = "container__loader--blur";
-	loader.appendChild(blurLoader)
-
-	const titleLoader = document.createElement("p");
-	titleLoader.classList = "title__loader";
-	titleLoader.textContent = "Bienvenue chez Oricamera";
-	blurLoader.appendChild(titleLoader);
-
-	const circleLoader = document.createElement("div");
-	circleLoader.classList = "loader";
-	blurLoader.appendChild(circleLoader);
-}
-
-const hiddenLoader = () => {
-	document.querySelector(".container__loader").setAttribute('style', "display:none");
-}
-const loader = sessionStorage.getItem('loader');
-
-if (!loader) {
-	setTimeout(showContent, 3500)
-	sessionStorage.setItem('loader', JSON.stringify('only one time'))
-} else {
-	hiddenLoader()
-}
-
-// Gestion du localStorage
-window.addEventListener("close", () => {
-	sessionStorage.removeItem('loader')
-});
 
 // Récupération des données globales
 const url = 'http://localhost:3000/api/cameras';

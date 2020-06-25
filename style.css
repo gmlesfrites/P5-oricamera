@@ -311,6 +311,7 @@ button, a {
   width: 100%; }
   @media all and (min-width: 1024px) {
     .subContent__cart--sevUnit {
+      text-align: right;
       padding: 0 0 0 5%;
       width: 18%; } }
 

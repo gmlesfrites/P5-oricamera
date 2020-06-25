@@ -105,7 +105,11 @@
 .main__content--order {
 	margin-top: 5em;
 	@include dispoCenter;
+	@media all and (min-width: 1900px ) {
+		margin-top: 0;
+	}
 }
+
 
 //contenant des images
 .box__link--polaroid {

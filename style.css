@@ -309,6 +309,12 @@ button, a {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  @media all and (min-width: 1900px) {
+    .main__content--home,
+    .main__content--product,
+    .main__content--cart,
+    .main__content--order {
+      margin-top: 0; } }
 
 .box__link--polaroid {
   background-color: #fffff9;

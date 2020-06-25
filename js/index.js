@@ -1,8 +1,10 @@
 //Loader
 const showContent = () => {
+	let loader = document.querySelector(".container__loader");
+	loader.setAttribute("style", "display: block");
 	document.querySelector(".container__loader").classList.add('hidden');
-}
 
+}
 const hiddenLoader = () => {
 	document.querySelector(".container__loader").setAttribute('style', "display:none");
 }
@@ -15,7 +17,10 @@ if (!loader) {
 	hiddenLoader()
 }
 
-
+// Gestion du localStorage
+window.addEventListener("unload", () => {
+	localStorage.removeItem('loader')
+});
 
 // Récupération des données globales
 const url = 'http://localhost:3000/api/cameras';

@@ -1,9 +1,10 @@
 //HOME
 //Design alerte javascript désactivé
 .noscript {
-	background-color: $color-danger;
-	color: $color-text;
-	height: 4em;
+	background-color: #f3e9f1;
+	color:$color-text;
+	height: 20em;
+	width: 100%;
 }
 //affichage grand écran
 .main__content--home,

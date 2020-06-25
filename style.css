@@ -161,6 +161,7 @@ button, a {
   z-index: 1; }
 
 .container__loader {
+  display: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -187,7 +188,7 @@ button, a {
 .loader {
   width: 120px;
   height: 120px;
-  border: 16px #f3eeee solid;
+  border: 16px #3d3d3d solid;
   border-radius: 50%;
   border-top: 16px solid #daa520;
   position: absolute;
@@ -199,6 +200,22 @@ button, a {
 @keyframes loader {
   100% {
     transform: translate(-50%, -50%) rotate(360deg); } }
+.title__loader {
+  color: #3d3d3d;
+  font-size: 4em;
+  font-family: "Caveat Brush", cursive;
+  font-weight: bolder;
+  text-align: center;
+  width: 100%;
+  padding-top: 2em; }
+  @media all and (min-width: 768px) {
+    .title__loader {
+      padding-top: 4em; } }
+  @media all and (min-width: 1024px) {
+    .title__loader {
+      font-size: 5em;
+      padding-top: 9em; } }
+
 .header__navbar {
   width: 100%;
   display: flex;
@@ -218,9 +235,10 @@ button, a {
   padding-bottom: 1em; }
 
 .noscript {
-  background-color: #e07373;
+  background-color: #f3e9f1;
   color: #3d3d3d;
-  height: 4em; }
+  height: 20em;
+  width: 100%; }
 
 @media all and (min-width: 1900px) {
   .main__content--home,
@@ -626,6 +644,9 @@ input:valid {
   bottom: 0;
   left: 0;
   z-index: -1; }
+
+.noJS {
+  font-size: 2em; }
 
 .main__product--background {
   position: relative; }

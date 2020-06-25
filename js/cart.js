@@ -1,6 +1,6 @@
 //function affichage de la page panier
 const displayContent = () => {
-    if (localStorage.length === 0) {
+    if (!localStorage.products) {
         //si panier vide pas d'affichage panier + form
         const blocFull = document.querySelector('#full');
         blocFull.setAttribute("style", "display:none");
@@ -151,7 +151,6 @@ const addToCart = itemInCart => {
             id: `${itemInCart.id}`
         }
         removeItem(itemToRemove)
-        removeFromCart.parentElement.parentElement.remove()
     });
 
     // pour affichage responsive Prix de plusieurs du même article
@@ -219,15 +218,21 @@ const addMore = qtyMore => {
 const removeItem = itemToRemove => {
     const itemFilter = itemInCart.filter(array => array.id !== itemToRemove.id);
     //mettre à jour le localStorage
-    
+
     if (itemFilter.length !== 0) {
-        localStorage.setItem('products', JSON.stringify(itemFilter))
-        updateTotalPrice()
-        document.location.reload()
+        const sure = confirm('Le choix est difficile, vous allez supprimer cet article de votre panier ?');
+        if (sure) {
+            localStorage.setItem('products', JSON.stringify(itemFilter))
+            updateTotalPrice()
+            document.location.reload()
+        }
     } else {
-        updateTotalPrice()
-        localStorage.clear()
-        document.location.reload()
+        const reallySure = confirm('Si vous ôtez cet article, votre panier sera de nouveau vide. Vous confirmez ?');
+        if (reallySure) {
+            updateTotalPrice()
+            localStorage.clear()
+            document.location.reload()
+        }
     }
 }
 

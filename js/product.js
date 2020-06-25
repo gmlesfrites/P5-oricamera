@@ -25,6 +25,7 @@ const showItemDetail = data => {
     //Ajout de l'image
     const imageElt = document.getElementById("imageUrl");
     imageElt.src = data.imageUrl;
+    imageElt.setAttribute("alt", "photo du produit présenté à la vente : " + `${data.name}`);
 
     //Ajout de la référence de produit
     const refElt = document.getElementById("ref");

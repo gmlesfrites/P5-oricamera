@@ -57,7 +57,7 @@ const addToCart = itemInCart => {
     image.className = "img__cart";
     image.src = `${itemInCart.image}`;
     image.ariaLabel = "image du produit";
-    image.alt = "image du produit";
+    image.setAttribute("alt", "photo du produit présenté à la vente : " + `${itemInCart.name}`);
     boxImg.appendChild(image);
 
     //pour affichage responsive (boite nom, ref, description, prix unité)

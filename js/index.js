@@ -17,6 +17,11 @@ if (!loader) {
 	hiddenLoader()
 }
 
+// Gestion du localStorage
+window.addEventListener("close", () => {
+	sessionStorage.removeItem('loader')
+});
+
 // Récupération des données globales
 const url = 'http://localhost:3000/api/cameras';
 const fetchItems = fetch(url)

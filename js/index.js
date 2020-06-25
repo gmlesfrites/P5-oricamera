@@ -32,6 +32,7 @@ const showProducts = product => {
 	const imgElt = document.createElement("img");
 	imgElt.src = `${product.imageUrl}`;
 	imgElt.id = "imageUrl";
+	imgElt.setAttribute("alt", "photo du produit présenté à la vente : " + `${product.name}`);
 	imgElt.className = "box__image--polaroid";
 	boxPolaroid.appendChild(imgElt);
 

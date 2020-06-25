@@ -1,10 +1,22 @@
 //Loader
 const showContent = () => {
-	let loader = document.querySelector(".container__loader");
-	loader.setAttribute("style", "display: block");
-	document.querySelector(".container__loader").classList.add('hidden');
+	const loader = document.querySelector(".container__loader");
+	loader.classList.add('hidden');
 
+	const blurLoader = document.createElement("div");
+	blurLoader.classList = "container__loader--blur";
+	loader.appendChild(blurLoader)
+
+	const titleLoader = document.createElement("p");
+	titleLoader.classList = "title__loader";
+	titleLoader.textContent = "Bienvenue chez Oricamera";
+	blurLoader.appendChild(titleLoader);
+
+	const circleLoader = document.createElement("div");
+	circleLoader.classList = "loader";
+	blurLoader.appendChild(circleLoader);
 }
+
 const hiddenLoader = () => {
 	document.querySelector(".container__loader").setAttribute('style', "display:none");
 }

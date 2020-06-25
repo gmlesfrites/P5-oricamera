@@ -8,19 +8,14 @@ const showContent = () => {
 const hiddenLoader = () => {
 	document.querySelector(".container__loader").setAttribute('style', "display:none");
 }
-const loader = localStorage.getItem('loader');
+const loader = sessionStorage.getItem('loader');
 
 if (!loader) {
-	setTimeout(showContent, 3000)
-	localStorage.setItem('loader', JSON.stringify('only one time'))
+	setTimeout(showContent, 3500)
+	sessionStorage.setItem('loader', JSON.stringify('only one time'))
 } else {
 	hiddenLoader()
 }
-
-// Gestion du localStorage
-window.addEventListener("unload", () => {
-	localStorage.removeItem('loader')
-});
 
 // Récupération des données globales
 const url = 'http://localhost:3000/api/cameras';

@@ -55,12 +55,16 @@
     font-weight: bolder;
     text-align: center;
     width:100%;
-    padding-top:2em;
+    padding-top:1em;
+
     @media all and (min-width: 768px) {
-        padding-top:4em;
+        padding-top:7em;
     }
     @media all and (min-width: 1024px) {
         font-size: 5em;
+        padding-top: 6em;
+    }
+    @media all and (min-width: 1900px) {
         padding-top: 9em;
     }
 }

@@ -6,13 +6,6 @@
 	height: 20em;
 	width: 100%;
 }
-//affichage grand écran
-.main__content--home,
-.main__content--order {
-	@media all and (min-width: 1900px) {
-		height: 100vh;
-	}
-}
 
 // PAGE PRODUIT
 //Page Produit : conteneur global des articles
@@ -105,10 +98,15 @@
 .main__content--product,
 .main__content--cart,
 .main__content--order {
-	margin-top: 5em;
+	margin-top: 2em;
 	@include dispoCenter;
+	@media all and (min-width: 768px ) {
+		margin-top: 0.5em;
+	}
+
 	@media all and (min-width: 1900px ) {
-		margin-top: 0;
+
+		min-height: 100vh;
 	}
 }
 

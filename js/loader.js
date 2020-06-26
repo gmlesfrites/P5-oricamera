@@ -1,36 +1,20 @@
 //Loader
-const showContent = (loader) => {
-    const mainIndex = document.querySelector('body')
+const showContent = () => {
+    let loader = document.querySelector(".container__loader");
+    loader.setAttribute("style", "display: block");
+    document.querySelector(".container__loader").classList.add('hidden');
 
-    loader = document.createElement("div");
-    loader.classList = "container__loader hidden";
-    mainIndex.appendChild(loader);
-
-    const blurLoader = document.createElement("div");
-    blurLoader.classList = "container__loader--blur";
-    loader.appendChild(blurLoader)
-
-    const titleLoader = document.createElement("p");
-    titleLoader.classList = "title__loader";
-    titleLoader.textContent = "Bienvenue chez Oricamera";
-    blurLoader.appendChild(titleLoader);
-
-    const circleLoader = document.createElement("div");
-    circleLoader.classList = "loader";
-    blurLoader.appendChild(circleLoader);
 }
-
-const hiddenLoader = (loader) => {
-    loader = document.getElementsByClassName('.container__loader hidden')
-    loader.style = "display:none";
+const hiddenLoader = () => {
+    document.querySelector(".container__loader").setAttribute('style', "display:none");
 }
 const loader = sessionStorage.getItem('loader');
 
 if (!loader) {
-    setTimeout(showContent(loader), 3500)
+    setTimeout(showContent, 3500)
     sessionStorage.setItem('loader', JSON.stringify('only one time'))
 } else {
-    hiddenLoader(loader)
+    hiddenLoader()
 }
 
 // Gestion du localStorage

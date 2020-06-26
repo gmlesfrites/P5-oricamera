@@ -11,9 +11,12 @@ body {
   font-family: "Raleway", sans-serif; }
 
 h1 {
-  margin-top: 3em;
+  margin-top: 4em;
   font-size: 1.728em;
   padding: 1.728em; }
+  @media all and (min-width: 1024px) {
+    h1 {
+      margin-top: 3em; } }
 
 h2 {
   font-size: 1.44em;
@@ -153,7 +156,7 @@ button, a {
   background-color: #f3e9f1;
   font-family: "Caveat Brush", cursive;
   color: #3d3d3d;
-  padding: 1em 0;
+  padding-top: 1em;
   box-shadow: 0px 1px 1px #daa520;
   position: fixed;
   width: 100%;
@@ -246,19 +249,15 @@ button, a {
   font-weight: 700;
   font-size: 3em;
   text-decoration: none;
+  text-align: center;
   color: #3d3d3d;
-  padding-bottom: 1em; }
+  padding-bottom: 0.5em; }
 
 .noscript {
   background-color: #f3e9f1;
   color: #3d3d3d;
   height: 20em;
   width: 100%; }
-
-@media all and (min-width: 1900px) {
-  .main__content--home,
-  .main__content--order {
-    height: 100vh; } }
 
 .container__boxPolaroid--flex {
   display: flex;
@@ -338,17 +337,23 @@ button, a {
 .main__content--product,
 .main__content--cart,
 .main__content--order {
-  margin-top: 5em;
+  margin-top: 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  @media all and (min-width: 768px) {
+    .main__content--home,
+    .main__content--product,
+    .main__content--cart,
+    .main__content--order {
+      margin-top: 0.5em; } }
   @media all and (min-width: 1900px) {
     .main__content--home,
     .main__content--product,
     .main__content--cart,
     .main__content--order {
-      margin-top: 0; } }
+      min-height: 100vh; } }
 
 .box__link--polaroid {
   background-color: #fffff9;
@@ -769,7 +774,6 @@ input:valid {
 
 .title__order {
   font-size: 1.728em;
-  margin: 2em;
   text-align: center; }
 
 .title__purchase {

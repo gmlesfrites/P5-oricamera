@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/gmlesfrites/P5-oricamera#readme",
   "dependencies": {
-    "node-sass": "^4.14.1",
-    "sweetalert2": "^9.15.2"
+    "node-sass": "^4.14.1"
   }
 }

@@ -102,11 +102,10 @@ const addToCart = itemInCart => {
     const minus = document.createElement('button');
     minus.className = "minus";
     minus.innerHTML = `<strong><i class="fa fa-minus" aria-label="quantité en moins"></i></strong>`;
-    minus.addEventListener("click", () => {
-        // TODO Données de quantité
-        const qtyLess = {
-            id: `${itemInCart.id}`
-        }
+    minus.addEventListener("click", (qtyLess, itemInCart) => {
+
+        qtyLess(itemInCart)// TODO Données de quantité
+
         addLess(qtyLess)
 
     });
@@ -143,7 +142,7 @@ const addToCart = itemInCart => {
     removeFromCart.textContent = "Supprimer";
     boxQty.appendChild(removeFromCart);
     removeFromCart.addEventListener("click", () => {
-        // TODO Données du produit pour le localStorage
+        //TODO Données du produit pour le localStorage
         const itemToRemove = {
             id: `${itemInCart.id}`
         }
@@ -191,6 +190,9 @@ const howManyItems = () => {
 }
 
 //Gestion de la quantité en -
+const qtyLess = itemInCart => {
+    id = `${itemInCart.id}`
+}
 const addLess = qtyLess => {
     const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyLess.id).map(minus => {
         minus.qty--;
@@ -259,6 +261,4 @@ const displayForm = () => {
     const validateCart = document.querySelector("#validateCart");
     validateCart.addEventListener('click', () => submitCart())
 }
-
-
 

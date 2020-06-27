@@ -1,21 +1,22 @@
-
 // Récupération des données globales
-const url = 'http://localhost:3000/api/cameras';
-const fetchItems = fetch(url)
-	.catch(error => {
-		throw new error(response.status);
-	})
-	.then(response => response.json())
-	.then((data) => {
-		//Utilisation des données de l'API
-		data.map(product => {
-			//méthode pour générer les produits
-			showProducts(product)
+const fetchItems = () => {
+	const url = 'http://localhost:3000/api/cameras';
+	fetch(url)
+		.catch(error => {
+			throw new error(response.status);
+		})
+		.then(response => response.json())
+		.then((data) => {
+			//Utilisation des données de l'API
+			data.map(product => {
+				//méthode pour générer les produits
+				showProducts(product)
 
-			//compteur d'articles partie header
-			howManyItems()
+				//compteur d'articles partie header
+				howManyItems()
+			});
 		});
-	});
+}
 
 //Génération des articles 
 const showProducts = product => {
@@ -61,3 +62,5 @@ const showProducts = product => {
 	divButtons.appendChild(buttonElt);
 }
 
+//déclenchement de la fetch
+fetchItems()

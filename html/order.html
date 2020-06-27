@@ -1,156 +1,124 @@
 <!DOCTYPE html>
 <html lang="fr">
+	<head>
+		<!-- Balises meta -->
+		<meta charset="UTF-8" />
+		<!-- Balises meta END -->
+		<!-- Balises Meta description -->
+		<meta name="description"
+			content="votre panier - Oricamera, boutique en ligne spécialisée dans la vente d'appareils photos argentiques d'occasion" />
+		<meta name="author"
+			content="Paul LECEO - Directeur d'agence, Fanny LUXE - UX Designer, Jeanne DEVE - Web développeur, Emilie GOURLIN - Web développeur" />
+		<meta name="copyright"
+			content="&copy; 2020 - oricamera, site de e-commerce, vente d'appareils photos argentiques" />
+		<meta name="theme-color" content="#f3e9f1">
+		<!-- Balises Meta description END -->
+		<!-- Balise canonique -->
+		<link rel="canonical" href="https://gmlesfrites.github.io/P5-oricamera/html/order.html" />
+		<!-- Balise canonique END -->
+		<!--Balises meta pour la compatibilté navigateurs et différents device-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<!-- Balises meta pour la compatibilté navigateurs et différents device END -->
+		<!--Favicon-->
+		<link href="../Images/favicon.png" rel="icon" type="image/vnd.microsoft.icon" />
+		<!-- Favicon END -->
+		<!-- Icône pour apple -->
+		<link rel="apple-touch-icon" href="../Images/favicon.png" />
+		<!-- Icône pour apple END-->
+		<!--Titre page-->
+		<title>Confirmation de commande - Oricamera | camera shop</title>
+		<!-- Titre page END -->
+		<!--Liens Google Fonts-->
+		<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+		<!--Liens Google Fonts END-->
+		<!--Liens font awesome-->
+		<link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all"
+			rel="stylesheet" />
+		<link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"
+			rel="stylesheet" />
+		<link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet" />
+		<!-- Liens font awesome END-->
+		<!-- Lien Feuille de style -->
+		<link rel="stylesheet" type="text/css" href="../style.css" />
+		<!-- Lien Feuille de style END-->
+	</head>
+	<body>
+		<!-- Header -->
+		<header class="header__menu">
+			<!-- Image and text navbar -->
+			<nav class="header__navbar">
+				<!-- retour accueil -->
+				<a class="header__navbar--logoText" href="../index.html" aria-label="Lien vers la page d'accueil"><strong><i
+							class="fa fa-camera-retro"></i></strong>&nbsp;Oricamera</a>
+				<!-- retour accueil END-->
+				<!-- Accès panier -->
+				<a href="cart.html" aria-label="Lien vers page panier" class="menu__link cart__link">
 
-<head>
-	<!-- Balises meta -->
-	<meta charset="UTF-8" />
-	<!-- Balises meta END -->
+					<div class="header__cart">
+						<span><strong><i class="fas fa-shopping-cart"></i></strong></span>
+						<span class="a__cartCounter howManyItems">0</span>
+					</div>
+					&nbsp; Panier &nbsp;
+				</a>
+				<!-- Accès panier END -->
+			</nav>
+			<!-- Image and text navbar END-->
+		</header>
+		<!-- Header END -->
+		<!-- Main -->
+		<main class="main__content--order main__order--background">
+			<h1 class="title__order">Confirmation de commande
+			</h1>
+			<!-- Section comprenant les informations de commande -->
+			<section id="orderOk" class="container__purchase">
 
-	<!-- Balises Meta description -->
-	<meta name="description"
-		content="votre panier - Oricamera, boutique en ligne spécialisée dans la vente d'appareils photos argentiques d'occasion" />
-	<meta name="author"
-		content="Paul LECEO - Directeur d'agence, Fanny LUXE - UX Designer, Jeanne DEVE - Web développeur, Emilie GOURLIN - Web développeur" />
-	<meta name="copyright"
-		content="&copy; 2020 - oricamera, site de e-commerce, vente d'appareils photos argentiques" />
-	<meta name="theme-color" content="#f3e9f1">
-	<!-- Balises Meta description END -->
+				<!-- Récapitulatif de commande -->
+				<h2 class="title__purchase">Votre commande est validée</h2>
+				<!-- Message de confirmation de commande -->
+				<p class="thanks__purchase">Nous vous remercions pour votre commande.</p>
+				<p class="thanks__purchase">Vous allez recevoir un email de confirmation dans lequel vous retrouverez les
+					informations ci-dessous.</p>
+				<!-- Message de confirmation de commande END -->
+				<!-- Informations de commande -->
+				<section class="details__purchase">
+					<h2 class="title__purchase">Détails de votre commande</h2>
+					<p class="ref__purchase" id="refPurchase">numéro </p>
+					<p class="order__purchase" id="orderPurchase">montant </p>
+				</section>
+				<!-- Informations de commande -->
+				<!-- Récapitulatif de commande END -->
 
-	<!-- Balise canonique -->
-	<link rel="canonical" href="https://gmlesfrites.github.io/P5-oricamera/html/order.html" />
-	<!-- Balise canonique END -->
-
-	<!--Balises meta pour la compatibilté navigateurs et différents device-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<!-- Balises meta pour la compatibilté navigateurs et différents device END -->
-
-	<!--Favicon-->
-	<link href="../Images/favicon.png" rel="icon" type="image/vnd.microsoft.icon" />
-	<!-- Favicon END -->
-
-	<!-- Icône pour apple -->
-	<link rel="apple-touch-icon" href="../Images/favicon.png" />
-	<!-- Icône pour apple END-->
-
-	<!--Titre page-->
-	<title>Confirmation de commande - Oricamera | camera shop</title>
-	<!-- Titre page END -->
-
-	<!--Liens Google Fonts-->
-	<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
-	<!--Liens Google Fonts END-->
-
-	<!--Liens font awesome-->
-	<link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all"
-		rel="stylesheet" />
-	<link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"
-		rel="stylesheet" />
-	<link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet" />
-	<!-- Liens font awesome END-->
-
-	<!-- Lien Feuille de style -->
-	<link rel="stylesheet" type="text/css" href="../style.css" />
-	<!-- Lien Feuille de style END-->
-</head>
-
-<body>
-	<!-- Header -->
-	<header class="header__menu">
-
-		<!-- Image and text navbar -->
-		<nav class="header__navbar">
-			<!-- retour accueil -->
-			<a class="header__navbar--logoText" href="../index.html" aria-label="Lien vers la page d'accueil"><strong><i
-						class="fa fa-camera-retro"></i></strong>&nbsp;Oricamera</a>
-			<!-- retour accueil END-->
-
-			<!-- Accès panier -->
-			<a href="cart.html" aria-label="Lien vers page panier" class="menu__link cart__link">
-
-				<div class="header__cart">
-					<span><strong><i class="fas fa-shopping-cart"></i></strong></span>
-					<span class="a__cartCounter howManyItems">0</span>
+				<!-- Bouton retour au catalogue -->
+				<div class="container__order--homeReturn">
+					<a href="../index.html" aria-label="Bouton retour vers catalogue">Retour au catalogue</a>
 				</div>
+				<!-- Bouton retour au catalogue END -->
 
-				&nbsp; Panier &nbsp;
-			</a>
-			<!-- Accès panier END -->
-		</nav>
-		<!-- Image and text navbar END-->
-
-	</header>
-	<!-- Header END -->
-
-	<!-- Main -->
-	<main class="main__content--order main__order--background">
-
-
-		<h1 class="title__order">Confirmation de commande
-		</h1>
-		<!-- Section comprenant les informations de commande -->
-		<section id="orderOk" class="container__purchase">
-
-			<!-- Récapitulatif de commande -->
-			<h2 class="title__purchase">Votre commande est validée</h2>
-			<!-- Message de confirmation de commande -->
-			<p class="thanks__purchase">Nous vous remercions pour votre commande.</p>
-			<p class="thanks__purchase">Vous allez recevoir un email de confirmation dans lequel vous retrouverez les
-				informations ci-dessous.</p>
-			<!-- Message de confirmation de commande END -->
-			<!-- Informations de commande -->
-			<section class="details__purchase">
-				<h2 class="title__purchase">Détails de votre commande</h2>
-				<p class="ref__purchase" id="refPurchase">numéro </p>
-				<p class="order__purchase" id="orderPurchase">montant </p>
 			</section>
-			<!-- Informations de commande -->
-			<!-- Récapitulatif de commande END -->
-
-			<!-- Bouton retour au catalogue -->
-			<div class="container__order--homeReturn">
-				<a href="../index.html" aria-label="Bouton retour vers catalogue">Retour au catalogue</a>
-			</div>
-			<!-- Bouton retour au catalogue END -->
-
-		</section>
-		<!-- Section comprenant les informations de commande -->
-
-		<!-- Panier vide-->
-		<section id="noId" class="container__badId">
-			<h2><strong><i class="fas fa-exclamation-triangle"></i></strong>
-				&nbsp; Il n'y a pas de commande à afficher.</h2>
-			<a href="../index.html" class="container__product--homeReturn" aria-label="Lien retour vers catalogue">
-				Retour au catalogue
-			</a>
-		</section>
-		<!-- Panier vide END -->
-	</main>
-	<!-- Main END-->
-
-	<!-- Footer -->
-	<footer class="footer">
-		<p>&copy; 2020 - Oricamera</p>
-	</footer>
-	<!-- Footer END -->
-	<!-- Mes scripts -->
-	<script src="../js/order.js"></script>
-	<!-- Mes scripts END -->
-	<!-- en cas de desactivation de JavaScript -->
-	<noscript>
-		<div class="noscript">
-			<p class="noJS"><strong><i class="fas fa-info-circle"></i></strong>Javascript est désactivé.</p>
-			<p class="noJS">Merci d'activer Javascript dans votre navigateur pour profiter de toutes les fonctionnalités
-				de ce site.
-			</p>
-		</div>
-	</noscript>
-	<!-- en cas de desactivation de JavaScript END -->
-
-	<!--Script font awesome-->
-	<script src="https://kit.fontawesome.com/6a89ea6dae.js" crossorigin="anonymous"></script>
-	<!-- Script font awesome END -->
-</body>
-
+			<!-- Section comprenant les informations de commande -->
+			<!-- Panier vide-->
+			<section id="noId" class="container__badId">
+				<h2><strong><i class="fas fa-exclamation-triangle"></i></strong>
+					&nbsp; Il n'y a pas de commande à afficher.</h2>
+				<a href="../index.html" class="container__product--homeReturn" aria-label="Lien retour vers catalogue">
+					Retour au catalogue
+				</a>
+			</section>
+			<!-- Panier vide END -->
+		</main>
+		<!-- Main END-->
+		<!-- Footer -->
+		<footer class="footer">
+			<p>&copy; 2020 - Oricamera</p>
+		</footer>
+		<!-- Footer END -->
+		<!-- Mes scripts -->
+		<script src="../js/order.js"></script>
+		<!-- Mes scripts END -->
+		<!--Script font awesome-->
+		<script src="https://kit.fontawesome.com/6a89ea6dae.js" crossorigin="anonymous"></script>
+		<!-- Script font awesome END -->
+	</body>
 </html>

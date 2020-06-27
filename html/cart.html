@@ -1,264 +1,225 @@
 <!DOCTYPE html>
 <html lang="fr">
+	<head>
+		<!-- Balises meta -->
+		<meta charset="UTF-8" />
+		<!-- Balises meta END -->
+		<!-- Balises Meta description -->
+		<meta name="description"
+			content="votre panier - Oricamera, boutique en ligne spécialisée dans la vente d'appareils photos argentiques d'occasion" />
+		<meta name="author"
+			content="Paul LECEO - Directeur d'agence, Fanny LUXE - UX Designer, Jeanne DEVE - Web développeur, Emilie GOURLIN - Web développeur" />
+		<meta name="copyright"
+			content="&copy; 2020 - oricamera, site de e-commerce, vente d'appareils photos argentiques" />
+		<meta name="theme-color" content="#f3e9f1">
+		<!-- Balises Meta description END -->
+		<!-- Balise canonique -->
+		<link rel="canonical" href="https://gmlesfrites.github.io/P5-oricamera/html/cart.html" />
+		<!-- Balise canonique END -->
+		<!--Balises meta pour la compatibilté navigateurs et différents device-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<!-- Balises meta pour la compatibilté navigateurs et différents device END -->
+		<!--Favicon-->
+		<link href="../Images/favicon.png" rel="icon" type="image/vnd.microsoft.icon" />
+		<!-- Favicon END -->
+		<!-- Icône pour apple -->
+		<link rel="apple-touch-icon" href="../Images/favicon.png" />
+		<!-- Icône pour apple END-->
+		<!--Titre page-->
+		<title>Votre panier - Oricamera | camera shop</title>
+		<!-- Titre page END -->
+		<!--Liens Google Fonts-->
+		<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+		<!--Liens Google Fonts END-->
+		<!--Liens font awesome-->
+		<link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all"
+			rel="stylesheet" />
+		<link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"
+			rel="stylesheet" />
+		<link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet" />
+		<!-- Liens font awesome END-->
+		<!-- Lien Feuille de style -->
+		<link rel="stylesheet" type="text/css" href="../style.css" />
+		<!-- Lien Feuille de style END-->
+	</head>
+	<body>
+		<!-- Header -->
+		<header class="header__menu">
+			<!-- Image and text navbar -->
+			<nav class="header__navbar">
+				<!-- retour accueil -->
+				<a class="header__navbar--logoText" href="../index.html" aria-label="Lien vers la page d'accueil"><strong><i
+							class="fa fa-camera-retro"></i></strong>&nbsp; Oricamera</a>
+				<!-- retour accueil END-->
+				<!-- Accès panier -->
+				<a href="#" aria-label="Lien vers page panier" class="menu__link cart__link">
 
-<head>
-	<!-- Balises meta -->
-	<meta charset="UTF-8" />
-	<!-- Balises meta END -->
-
-	<!-- Balises Meta description -->
-	<meta name="description"
-		content="votre panier - Oricamera, boutique en ligne spécialisée dans la vente d'appareils photos argentiques d'occasion" />
-	<meta name="author"
-		content="Paul LECEO - Directeur d'agence, Fanny LUXE - UX Designer, Jeanne DEVE - Web développeur, Emilie GOURLIN - Web développeur" />
-	<meta name="copyright"
-		content="&copy; 2020 - oricamera, site de e-commerce, vente d'appareils photos argentiques" />
-	<meta name="theme-color" content="#f3e9f1">
-	<!-- Balises Meta description END -->
-
-	<!-- Balise canonique -->
-	<link rel="canonical" href="https://gmlesfrites.github.io/P5-oricamera/html/cart.html" />
-	<!-- Balise canonique END -->
-
-	<!--Balises meta pour la compatibilté navigateurs et différents device-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<!-- Balises meta pour la compatibilté navigateurs et différents device END -->
-
-	<!--Favicon-->
-	<link href="../Images/favicon.png" rel="icon" type="image/vnd.microsoft.icon" />
-	<!-- Favicon END -->
-
-	<!-- Icône pour apple -->
-	<link rel="apple-touch-icon" href="../Images/favicon.png" />
-	<!-- Icône pour apple END-->
-
-	<!--Titre page-->
-	<title>Votre panier - Oricamera | camera shop</title>
-	<!-- Titre page END -->
-
-	<!--Liens Google Fonts-->
-	<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
-	<!--Liens Google Fonts END-->
-
-	<!--Liens font awesome-->
-	<link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all"
-		rel="stylesheet" />
-	<link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"
-		rel="stylesheet" />
-	<link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet" />
-	<!-- Liens font awesome END-->
-
-	<!-- Lien Feuille de style -->
-	<link rel="stylesheet" type="text/css" href="../style.css" />
-	<!-- Lien Feuille de style END-->
-</head>
-
-<body>
-	<!-- Header -->
-	<header class="header__menu">
-
-		<!-- Image and text navbar -->
-		<nav class="header__navbar">
-			<!-- retour accueil -->
-			<a class="header__navbar--logoText" href="../index.html" aria-label="Lien vers la page d'accueil"><strong><i
-						class="fa fa-camera-retro"></i></strong>&nbsp; Oricamera</a>
-			<!-- retour accueil END-->
-
-			<!-- Accès panier -->
-			<a href="#" aria-label="Lien vers page panier" class="menu__link cart__link">
-
-				<div class="header__cart">
-					<span><strong><i class="fas fa-shopping-cart"></i></strong></span>
-					<span class="a__cartCounter howManyItems">0</span>
-				</div>
-
-				&nbsp; Panier &nbsp;
-			</a>
-			<!-- Accès panier END -->
-		</nav>
-		<!-- Image and text navbar END-->
-
-	</header>
-	<!-- Header END -->
-
-	<!-- Main -->
-	<main id="main__content--cart" class="main__content--cart main__cart--background">
-		<h1 class="title__cart">Votre panier</h1>
-		<!-- Panier vide-->
-		<section id="empty" class="container__cart--empty">
-			<h2><strong><i class="fas fa-info-circle"></i></strong>&nbsp; Votre panier est vide.</h2>
-		</section>
-		<!-- Panier vide END -->
-
-		<div id="full">
-			<!-- Panier rempli -->
-			<section class="container__cart--full vide">
-				<h2>Articles dans votre panier</h2>
-
-				<!-- Panier -->
-				<div class="container__cart" id="contentCart">
-				</div>
-				<!-- Panier END -->
-
-				<!-- Prix total des articles ajoutés -->
-				<div class="subContent__cart--total">
-					<h3 class="title__cart--total">Montant total de votre panier (TTC)</h3>
-					<p class="totalPrice__cart" id="totalCart">Prix</p>
-				</div>
-				<!-- Prix total des articles ajoutés END-->
-
-				<!-- bouton vider le panier -->
-				<div class="clearOrValidate__cart">
-					<button id="deleteCart" aria-label="Supprimer tous les produits du panier" type="submit">Supprimer
-						mon
-						panier</button>
-					<button id="validateCart" aria-label="valider le panier" type="submit">Valider mon panier</button>
-				</div>
-				<!-- bouton vider le panier END -->
-
-			</section>
-			<!-- Panier rempli END -->
-
-			<!-- Section formulaire de commande  -->
-			<section class="container__form" id="toOrder">
-				<h2 class="title__form">Votre formulaire de commande</h2>
-				<p class="text__form"> Tous les champs du formulaire comprenant une astérisque <strong><i
-							class="fa fa-asterisk required"></i></strong> sont obligatoires pour le traitement de votre
-					commande.</p>
-
-				<!-- formulaire de commande -->
-				<form id="formOrder" class="container__form--flex" method="POST">
-					<!-- Civilité -->
-					<fieldset class="fieldset__form">
-						<legend class="legend__form">&nbsp; Votre civilité &nbsp;</legend>
-						<!-- Sexe -->
-						<div class="container__form--sex">
-							<p class="p__form">Merci d'indiquer votre civilité.</p>
-							<!-- Monsieur -->
-							<div class="monsieur__form">
-								<input type="radio" id="Monsieur" name="m-mme" aria-label="Choix Monsieur par défaut"
-									value="Monsieur" checked>
-								<label for="Monsieur" class="label__form">&nbsp;Monsieur</label>
-							</div>
-							<!-- Monsieur END -->
-							<!-- Madame -->
-							<div class="madame__form">
-								<input type="radio" id="Madame" name="m-mme" aria-label="Choix Madame" value="Madame">
-								<label for="Madame" class="label__form">&nbsp;Madame</label>
-							</div>
-							<!-- Madame END -->
-						</div>
-						<!-- Sexe END -->
-
-						<!-- Nom -->
-						<div class="subpart__form">
-							<label for="lastname">Merci de renseigner votre nom <strong><i
-										class="fa fa-asterisk required"></i></strong></label>
-							<input type="text" id="lastname" name="lastName" class="input__form" required
-								autocomplete="on" placeholder="DOE (en toute lettre majuscule/miniscule)" maxlength="25"
-								pattern="[a-zA-Zàäâçéèëêïîôöùû-]{2,25}"
-								aria-label="Merci de renseigner votre nom, ce champ est oligatoire" autofocus>
-							<span class=""></span>
-						</div>
-						<!-- Nom END -->
-
-						<!-- Prénom -->
-						<div class="subpart__form">
-							<label for="firstname">Merci de renseigner votre prénom <strong><i
-										class="fa fa-asterisk required"></i></strong></label>
-							<input type="text" id="firstname" name="firstName" class="input__form" required
-								autocomplete="on" placeholder="John (en toute lettre majuscule/miniscule)"
-								maxlength="25" pattern="[a-zA-Zàäâçéèëêïîôöùû-]{2,25}"
-								aria-label="Merci de renseigner votre prénom, ce champ est oligatoire">
-						</div>
-						<!-- Prénom END -->
-					</fieldset>
-					<!-- Civilité END -->
-
-					<!-- Coordonnées -->
-					<fieldset class="fieldset__form">
-						<legend class="legend__form">&nbsp; Vos coordonnées &nbsp;</legend>
-
-						<!-- Coordonnées Email -->
-						<div class="subpart__form">
-							<label for="email">Votre adresse email <strong><i
-										class="fa fa-asterisk required"></i></strong></label>
-							<input type="email" id="email" name="email" class="input__form" required autocomplete="on"
-								placeholder="johndoe@mail.fr" maxlength="70"
-								aria-label="Merci d'indiquer votre adresse email, ce champ est obligatoire">
-						</div>
-
-						<div class="subpart__form">
-							<label for="address">Votre adresse postale <strong><i
-										class="fa fa-asterisk required"></i></strong></label>
-							<input type="text" id="address" name="address" class="input__form" required
-								autocomplete="on"
-								placeholder="29 rue Quincampoix (chiffres et lettres sans ponctuation) " maxlength="150"
-								pattern="[0-9a-zA-Zàäâçéèëêïîôöùû -]{2,150}"
-								aria-label="Merci d'indiquer votre adresse postale, ce champ est obligatoire">
-						</div>
-						<div class="subpart__form">
-							<label for="zip">Code postal <strong><i
-										class="fa fa-asterisk required"></i></strong></label>
-							<input type="text" id="zip" name="zipCode" class="input__form" required autocomplete="on"
-								placeholder="75004 (5 chiffres)" maxlength="5" pattern="[0-9]{5,5}"
-								aria-label="Merci d'indiquer votre code postal, ce champ est obligatoire">
-						</div>
-						<div class="subpart__form">
-							<label for="city">Votre ville de résidence <strong><i
-										class="fa fa-asterisk required"></i></strong></label>
-							<input type="text" id="city" name="city" class="input__form" required autocomplete="on"
-								placeholder="PARIS (Lettres minuscules/majuscules)" maxlength="70"
-								pattern="[A-Za-z -]{2,70}"
-								aria-label="Merci d'indiquer votre ville, ce champ est obligatoire">
-						</div>
-					</fieldset>
-					<!-- Coordonnées END -->
-
-					<div class="container__form--button">
-						<!-- Bouton effacer le formulaire -->
-						<input class="button__form reset" aria-label="remettre à zéro les données du formulaire"
-							type="reset" value="Effacer le formulaire">
-						<!-- Bouton effacer le formulaire END -->
-
-						<!-- Bouton envoi -->
-						<input class="button__form" id="submitOrder" type="submit"
-							aria-label="validation de la commande" value=" Passer ma commande">
-						<!-- Bouton envoi END -->
+					<div class="header__cart">
+						<span><strong><i class="fas fa-shopping-cart"></i></strong></span>
+						<span class="a__cartCounter howManyItems">0</span>
 					</div>
-				</form>
-				<!-- formulaire de commande END -->
-
+					&nbsp; Panier &nbsp;
+				</a>
+				<!-- Accès panier END -->
+			</nav>
+			<!-- Image and text navbar END-->
+		</header>
+		<!-- Header END -->
+		<!-- Main -->
+		<main id="main__content--cart" class="main__content--cart main__cart--background">
+			<h1 class="title__cart">Votre panier</h1>
+			<!-- Panier vide-->
+			<section id="empty" class="container__cart--empty">
+				<h2><strong><i class="fas fa-info-circle"></i></strong>&nbsp; Votre panier est vide.</h2>
 			</section>
-			<!-- Section formulaire de commande END -->
-		</div>
+			<!-- Panier vide END -->
+			<div id="full">
+				<!-- Panier rempli -->
+				<section class="container__cart--full vide">
+					<h2>Articles dans votre panier</h2>
 
-	</main>
-	<!-- Main END-->
-	<!-- Footer -->
-	<footer class="footer">
-		<p>&copy; 2020 - Oricamera</p>
-	</footer>
-	<!-- Footer END -->
-	<!-- Mes scripts -->
-	<script src=" ../js/cart.js"></script>
-	<script src="../js/form.js"></script>
-	<!-- Mes scripts END -->
-	<!-- en cas de desactivation de JavaScript -->
-	<noscript>
-		<div class="noscript">
-			<p class="noJS"><strong><i class="fas fa-info-circle"></i></strong>Javascript est désactivé.</p>
-			<p class="noJS">Merci d'activer Javascript dans votre navigateur pour profiter de toutes les fonctionnalités
-				de ce site.
-			</p>
-		</div>
-	</noscript>
-	<!-- en cas de desactivation de JavaScript END -->
-	<!--Script font awesome-->
-	<script src="https://kit.fontawesome.com/6a89ea6dae.js" crossorigin="anonymous"></script>
-	<!-- Script font awesome END -->
-</body>
+					<!-- Panier -->
+					<div class="container__cart" id="contentCart">
+					</div>
+					<!-- Panier END -->
 
+					<!-- Prix total des articles ajoutés -->
+					<div class="subContent__cart--total">
+						<h3 class="title__cart--total">Montant total de votre panier (TTC)</h3>
+						<p class="totalPrice__cart" id="totalCart">Prix</p>
+					</div>
+					<!-- Prix total des articles ajoutés END-->
+
+					<!-- bouton vider le panier -->
+					<div class="clearOrValidate__cart">
+						<button id="deleteCart" aria-label="Supprimer tous les produits du panier" type="submit">Supprimer
+							mon
+							panier</button>
+						<button id="validateCart" aria-label="valider le panier" type="submit">Valider mon panier</button>
+					</div>
+					<!-- bouton vider le panier END -->
+
+				</section>
+				<!-- Panier rempli END -->
+				<!-- Section formulaire de commande  -->
+				<section class="container__form" id="toOrder">
+					<h2 class="title__form">Votre formulaire de commande</h2>
+					<p class="text__form"> Tous les champs du formulaire comprenant une astérisque <strong><i
+								class="fa fa-asterisk required"></i></strong> sont obligatoires pour le traitement de votre
+						commande.</p>
+					<!-- formulaire de commande -->
+					<form id="formOrder" class="container__form--flex" method="POST">
+						<!-- Civilité -->
+						<fieldset class="fieldset__form">
+							<legend class="legend__form">&nbsp; Votre civilité &nbsp;</legend>
+							<!-- Sexe -->
+							<div class="container__form--sex">
+								<p class="p__form">Merci d'indiquer votre civilité.</p>
+								<!-- Monsieur -->
+								<div class="monsieur__form">
+									<input type="radio" id="Monsieur" name="m-mme" aria-label="Choix Monsieur par défaut"
+										value="Monsieur" checked>
+									<label for="Monsieur" class="label__form">&nbsp;Monsieur</label>
+								</div>
+								<!-- Monsieur END -->
+								<!-- Madame -->
+								<div class="madame__form">
+									<input type="radio" id="Madame" name="m-mme" aria-label="Choix Madame" value="Madame">
+									<label for="Madame" class="label__form">&nbsp;Madame</label>
+								</div>
+								<!-- Madame END -->
+							</div>
+							<!-- Sexe END -->
+							<!-- Nom -->
+							<div class="subpart__form">
+								<label for="lastname">Merci de renseigner votre nom <strong><i
+											class="fa fa-asterisk required"></i></strong></label>
+								<input type="text" id="lastname" name="lastName" class="input__form" required
+									autocomplete="on" placeholder="DOE (en toute lettre majuscule/miniscule)" maxlength="25"
+									pattern="[a-zA-Zàäâçéèëêïîôöùû-]{2,25}"
+									aria-label="Merci de renseigner votre nom, ce champ est oligatoire" autofocus>
+								<span class=""></span>
+							</div>
+							<!-- Nom END -->
+							<!-- Prénom -->
+							<div class="subpart__form">
+								<label for="firstname">Merci de renseigner votre prénom <strong><i
+											class="fa fa-asterisk required"></i></strong></label>
+								<input type="text" id="firstname" name="firstName" class="input__form" required
+									autocomplete="on" placeholder="John (en toute lettre majuscule/miniscule)"
+									maxlength="25" pattern="[a-zA-Zàäâçéèëêïîôöùû-]{2,25}"
+									aria-label="Merci de renseigner votre prénom, ce champ est oligatoire">
+							</div>
+							<!-- Prénom END -->
+						</fieldset>
+						<!-- Civilité END -->
+						<!-- Coordonnées -->
+						<fieldset class="fieldset__form">
+							<legend class="legend__form">&nbsp; Vos coordonnées &nbsp;</legend>
+							<!-- Coordonnées Email -->
+							<div class="subpart__form">
+								<label for="email">Votre adresse email <strong><i
+											class="fa fa-asterisk required"></i></strong></label>
+								<input type="email" id="email" name="email" class="input__form" required autocomplete="on"
+									placeholder="johndoe@mail.fr" maxlength="70"
+									aria-label="Merci d'indiquer votre adresse email, ce champ est obligatoire">
+							</div>
+							<div class="subpart__form">
+								<label for="address">Votre adresse postale <strong><i
+											class="fa fa-asterisk required"></i></strong></label>
+								<input type="text" id="address" name="address" class="input__form" required
+									autocomplete="on"
+									placeholder="29 rue Quincampoix (chiffres et lettres sans ponctuation) " maxlength="150"
+									pattern="[0-9a-zA-Zàäâçéèëêïîôöùû -]{2,150}"
+									aria-label="Merci d'indiquer votre adresse postale, ce champ est obligatoire">
+							</div>
+							<div class="subpart__form">
+								<label for="zip">Code postal <strong><i
+											class="fa fa-asterisk required"></i></strong></label>
+								<input type="text" id="zip" name="zipCode" class="input__form" required autocomplete="on"
+									placeholder="75004 (5 chiffres)" maxlength="5" pattern="[0-9]{5,5}"
+									aria-label="Merci d'indiquer votre code postal, ce champ est obligatoire">
+							</div>
+							<div class="subpart__form">
+								<label for="city">Votre ville de résidence <strong><i
+											class="fa fa-asterisk required"></i></strong></label>
+								<input type="text" id="city" name="city" class="input__form" required autocomplete="on"
+									placeholder="PARIS (Lettres minuscules/majuscules)" maxlength="70"
+									pattern="[A-Za-z -]{2,70}"
+									aria-label="Merci d'indiquer votre ville, ce champ est obligatoire">
+							</div>
+						</fieldset>
+						<!-- Coordonnées END -->
+						<div class="container__form--button">
+							<!-- Bouton effacer le formulaire -->
+							<input class="button__form reset" aria-label="remettre à zéro les données du formulaire"
+								type="reset" value="Effacer le formulaire">
+							<!-- Bouton effacer le formulaire END -->
+							<!-- Bouton envoi -->
+							<input class="button__form" id="submitOrder" type="submit"
+								aria-label="validation de la commande" value=" Passer ma commande">
+							<!-- Bouton envoi END -->
+						</div>
+					</form>
+					<!-- formulaire de commande END -->
+				</section>
+				<!-- Section formulaire de commande END -->
+			</div>
+		</main>
+		<!-- Main END-->
+		<!-- Footer -->
+		<footer class="footer">
+			<p>&copy; 2020 - Oricamera</p>
+		</footer>
+		<!-- Footer END -->
+		<!-- Mes scripts -->
+		<script src=" ../js/cart.js"></script>
+		<script src="../js/form.js"></script>
+		<!-- Mes scripts END -->
+		<!--Script font awesome-->
+		<script src="https://kit.fontawesome.com/6a89ea6dae.js" crossorigin="anonymous"></script>
+		<!-- Script font awesome END -->
+	</body>
 </html>

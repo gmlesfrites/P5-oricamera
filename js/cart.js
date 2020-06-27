@@ -24,13 +24,10 @@ const itemInCart = JSON.parse(itemsInCart_json);
 
 //Fonctions page panier
 const displayCart = () => {
-    let cart = [];
-
     if (itemInCart === null) {
         displayContent()
     } else {
         itemInCart.map(item => addToCart(item));
-
         deleteCart()
         howManyItems()
         updateTotalPrice()
@@ -106,7 +103,7 @@ const addToCart = itemInCart => {
     minus.className = "minus";
     minus.innerHTML = `<strong><i class="fa fa-minus" aria-label="quantité en moins"></i></strong>`;
     minus.addEventListener("click", () => {
-        //Données de quantité
+        // TODO Données de quantité
         const qtyLess = {
             id: `${itemInCart.id}`
         }
@@ -128,7 +125,7 @@ const addToCart = itemInCart => {
     plus.className = "plus";
     plus.innerHTML = `<strong><i class="fa fa-plus" aria-label="quantité en +"></i></strong>`;
     plus.addEventListener("click", () => {
-        //Données de quantité
+        //TODO Données de quantité
         const qtyMore = {
             id: `${itemInCart.id}`
         }
@@ -146,22 +143,22 @@ const addToCart = itemInCart => {
     removeFromCart.textContent = "Supprimer";
     boxQty.appendChild(removeFromCart);
     removeFromCart.addEventListener("click", () => {
-        //Données du produit pour le localStorage
+        // TODO Données du produit pour le localStorage
         const itemToRemove = {
             id: `${itemInCart.id}`
         }
-        removeItem(itemToRemove)
+    removeItem(itemToRemove)
     });
 
     // pour affichage responsive Prix de plusieurs du même article
-    let boxTotalPrice = document.createElement('div');
+    const boxTotalPrice = document.createElement('div');
     boxTotalPrice.className = "subContent__cart--sevUnit";
     lignItem.appendChild(boxTotalPrice);
 
     //prix global ligne article
     const lignPrice = document.createElement('p');
-    let totalCost = (`${itemInCart.price}` * `${itemInCart.qty}` / 100).toFixed(2);
-    let newTotalCost = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalCost}`);
+    const totalCost = (`${itemInCart.price}` * `${itemInCart.qty}` / 100).toFixed(2);
+    const newTotalCost = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${totalCost}`);
     lignPrice.innerHTML = "<strong>" + "Prix total : " + "</strong>" + newTotalCost;
     boxTotalPrice.appendChild(lignPrice);
 }
@@ -169,10 +166,10 @@ const addToCart = itemInCart => {
 //prix global panier
 const updateTotalPrice = () => {
     //Position du prix
-    let totalPrice = document.getElementById("totalCart");
+    const totalPrice = document.getElementById("totalCart");
     let price = 0;
 
-    //Boucle de calcul des qty/price par ligne 
+    // Boucle de calcul des qty/price par ligne 
     itemInCart.map(item => price += (parseInt(item.price) * parseInt(item.qty) / 100));
 
     //Passe en €
@@ -192,6 +189,7 @@ const howManyItems = () => {
     }
     howManyItems.textContent = counter;
 }
+
 //Gestion de la quantité en -
 const addLess = qtyLess => {
     const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyLess.id).map(minus => {
@@ -221,18 +219,18 @@ const removeItem = itemToRemove => {
 
     if (itemFilter.length !== 0) {
         const sure = confirm('Le choix est difficile, vous allez supprimer cet article de votre panier ?');
-        if (sure) {
-            localStorage.setItem('products', JSON.stringify(itemFilter))
-            updateTotalPrice()
-            document.location.reload()
-        }
+        removeItemSure(sure, itemFilter)
     } else {
-        const reallySure = confirm('Si vous ôtez cet article, votre panier sera de nouveau vide. Vous confirmez ?');
-        if (reallySure) {
-            updateTotalPrice()
-            localStorage.clear()
-            document.location.reload()
-        }
+        const youSure = confirm('Si vous ôtez cet article, votre panier sera de nouveau vide. Vous confirmez ?');
+        deleteYouSure(youSure)
+    }
+}
+//Pour supprimer un seul article
+const removeItemSure = (sure, itemFilter) => {
+    if (sure) {
+        localStorage.setItem('products', JSON.stringify(itemFilter))
+        updateTotalPrice()
+        document.location.reload()
     }
 }
 
@@ -241,22 +239,25 @@ const deleteCart = () => {
     const deleteCart = document.querySelector("#deleteCart");
     deleteCart.addEventListener('click', () => {
         const youSure = confirm('Etes-vous sûr(e) de vouloir supprimer la totalité de votre panier ?');
-        if (youSure) {
-            localStorage.clear();
-            document.location.reload()
-            displayContent()
-            howManyItems()
-        }
+        deleteYouSure(youSure)
     });
+}
+
+// Supression du panier complet (valable pour le bouton supprimer le panier et supprimer dans la ligne article)
+const deleteYouSure = youSure => {
+    if (youSure) {
+        localStorage.clear();
+        document.location.reload()
+        displayContent()
+        howManyItems()
+    }
 }
 
 //Affichage du formulaire après validation du panier
 const displayForm = () => {
     //récupération du bouton "valider le panier"
     const validateCart = document.querySelector("#validateCart");
-    validateCart.addEventListener('click', () => {
-        submitCart()
-    })
+    validateCart.addEventListener('click', () => submitCart())
 }
 
 

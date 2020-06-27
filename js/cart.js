@@ -170,7 +170,7 @@ const updateTotalPrice = () => {
     let price = 0;
 
     // Boucle de calcul des qty/price par ligne 
-    itemInCart.map(item => price += (parseInt(item.price) * parseInt(item.qty) / 100));
+    itemInCart.map(item => price += ((parseInt(item.price) * parseInt(item.qty) / 100)).toFixed(2));
 
     //Passe en €
     const newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${price}`);

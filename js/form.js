@@ -29,8 +29,7 @@ const checkForm = input => {
         }
     })
 }
-
-Array.from(inputs).forEach(checkForm);
+Array.from(inputs).map(checkForm);
 
 //Gestion de l'envoi du bon de commande (contact + products)
 const getOrderDone = () => {
@@ -38,9 +37,7 @@ const getOrderDone = () => {
     const productsJSON = localStorage.getItem('products');
     const productsParse = JSON.parse(productsJSON);
     let products = [];
-    products = productsParse.map(item => {
-        return item.id;
-    });
+    products = productsParse.map(item => item.id);
 
     //Gestion des données du contact
     const lastName = document.forms['formOrder']['lastName'];
@@ -50,38 +47,46 @@ const getOrderDone = () => {
     const city = document.forms['formOrder']['city'];
 
     //au 'submit' sur le formulaire validé
-    let form = document.getElementById('formOrder');
+    const form = document.getElementById('formOrder');
     form.addEventListener('submit', (e) => {
         e.preventDefault()
-        contact = {
-            lastName: lastName.value,
-            firstName: firstName.value,
-            email: email.value,
-            address: address.value,
-            city: city.value
-        }
-
-        //envoi en objet de contact + products
-        let toSend = { contact, products };
-        toSend = JSON.stringify(toSend);
-
-        //Envoi à l'API method="POST"
-        const url = 'http://localhost:3000/api/cameras/order';
-
-        fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: toSend
-        })
-            .catch(error => {
-                throw new error(response.status);
-            })
-            .then(res => res.json())
-            .then(data => showPurchase(data));
+        forFetchOrder(lastName, firstName, email, address, city, products)
     });
 }
 
-//ouverture de la page de confirmation
+//récupération des informations nécessaires au clic
+const forFetchOrder = (lastName, firstName, email, address, city, products) => {
+    contact = {
+        lastName: lastName.value,
+        firstName: firstName.value,
+        email: email.value,
+        address: address.value,
+        city: city.value
+    }
+
+    //envoi en objet de contact + products
+    const toSend = JSON.stringify({ contact, products });
+    fetchOrder(toSend)
+}
+
+//fetch envoi à l'api et récupération de l'orderId
+const fetchOrder = toSend => {
+    //Envoi à l'API method="POST"
+    const url = 'http://localhost:3000/api/cameras/order';
+
+    fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: toSend
+    })
+        .catch(error => {
+            throw new error(response.status);
+        })
+        .then(res => res.json())
+        .then(data => showPurchase(data));
+}
+
+//ouverture de la page de confirmation (utilisation du retour orderId de l'API)
 showPurchase = data => {
     const orderId = `${data.orderId}`;
     window.location.href = '../html/order.html?orderId=' + `${orderId}`;

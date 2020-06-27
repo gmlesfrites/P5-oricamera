@@ -3,6 +3,7 @@ window.addEventListener("unload", () => localStorage.clear());
 
 //Gestion de l'affichage du récap de commande 
 const orderId = new URLSearchParams(window.location.search.substring(0)).get("orderId");
+console.log(orderId);
 const cartJSON = localStorage.getItem('products');
 const cart = JSON.parse(cartJSON);
 

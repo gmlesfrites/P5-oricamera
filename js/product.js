@@ -63,7 +63,7 @@ const showItemDetail = data => {
     const btnAddToCart = document.getElementById('addToCart');
     btnAddToCart.id = `${data._id} `;
     btnAddToCart.className = "button__product--toCart addToCart"
-    btnAddToCart.addEventListener("click", data => {
+    btnAddToCart.addEventListener("click", () => {
         itemToAdd = {
             id: `${id}`,
             image: `${data.imageUrl}`,

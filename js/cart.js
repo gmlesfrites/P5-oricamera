@@ -147,7 +147,7 @@ const addToCart = itemInCart => {
         const itemToRemove = {
             id: `${itemInCart.id}`
         }
-    removeItem(itemToRemove)
+        removeItem(itemToRemove)
     });
 
     // pour affichage responsive Prix de plusieurs du même article
@@ -170,7 +170,7 @@ const updateTotalPrice = () => {
     let price = 0;
 
     // Boucle de calcul des qty/price par ligne 
-    itemInCart.map(item => price += ((parseInt(item.price) * parseInt(item.qty) / 100)).toFixed(2));
+    itemInCart.map(item => price += (parseInt(item.price) * parseInt(item.qty) / 100));
 
     //Passe en €
     const newTotalToPay = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(`${price}`);

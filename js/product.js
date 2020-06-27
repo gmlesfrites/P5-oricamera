@@ -1,8 +1,6 @@
-//Récupération des données par id
 const fetchProduct = () => {
     //Récupération des données par id (paramètre Url suite btn cliqué)
-    const newId = new URLSearchParams(window.location.search.substring(0));
-    const id = newId.get("id");
+    const id = new URLSearchParams(window.location.search.substring(0)).get("id");
 
     //fetch pour la récupération des données par id
     const urlId = `http://localhost:3000/api/cameras/${id}`;
@@ -42,6 +40,7 @@ const showItemDetail = data => {
 
     // Optiques
     const lensesElt = document.querySelector("select");
+
     const lensesData = data.lenses;
     lensesData.map(lenses => {
         let optElt = document.createElement("option");
@@ -66,14 +65,17 @@ const showItemDetail = data => {
     btnAddToCart.id = `${data._id} `;
     btnAddToCart.className = "button__product--toCart addToCart"
     btnAddToCart.addEventListener("click", () => {
-        itemToAdd = {
-            id: `${id}`,
+
+        //Infos sur le produit
+        const itemToAdd = {
+            id: `${data._id} `,
             image: `${data.imageUrl}`,
             name: `${data.name}`,
             description: `${data.description}`,
             price: `${data.price}`,
             qty: 1
         }
+
         addItemToCart(itemToAdd)
     })
     howManyItems()
@@ -113,12 +115,11 @@ const badId = () => {
     const badId = document.querySelector("#badId");
     badId.setAttribute("style", "display:none");
 }
-
 //gestion des erreurs d'identifiant produit
 const manageError = () => {
     const productPage = document.querySelector("#product");
     productPage.setAttribute("style", "display:none");
 }
 
-//déclenchement de la fetch
+//déclenchement de fetchProduct
 fetchProduct()

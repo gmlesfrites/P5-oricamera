@@ -1,4 +1,4 @@
-// Mise en page de la page confirmation de commande
+/* Mise en page de la page confirmation de commande */
 .main__order--background {
 	position: relative;
 }
@@ -18,45 +18,36 @@
 	left: 0;
 	z-index: -1;
 }
-
-
-
-//contenant du récap de commande
+/* contenant du récap de commande */
 .container__purchase {
 	@include designBox;
 	opacity: 0.6;
 	padding: 5%;
 	margin-bottom:5em;
 }
-
-//titre de la page
+/* titre de la page */
 .title__order {
 	font-size: $fz-h1;
 	text-align: center;
 }
-
-// Récap de la commande 
+/* Récap de la commande */
 .title__purchase {
 	font-size: $fz-h2;
 }
-
-//Partie infos de commande
+/* Partie infos de commande */
 .details__purchase {
 	margin: 2em 0 5em 0;
 }
-//Texte de confirmation de commande
+/* Texte de confirmation de commande */
 .thanks__purchase {
 	padding-bottom: $fz-h3;
 }
-
-//référence commande et montant de commande
+/* référence commande et montant de commande */
 .date__purchase, .ref__purchase, .order__purchase  {
 	padding-top : $fz-h3;
 	font-weight: 700;
 }
-
-
-// Bouton retour home
+/*  Bouton retour home */
 .container__order--homeReturn {
 	margin:2em;
 	text-align: center;

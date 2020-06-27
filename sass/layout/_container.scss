@@ -1,14 +1,5 @@
-//HOME
-//Design alerte javascript désactivé
-.noscript {
-	background-color: #f3e9f1;
-	color:$color-text;
-	height: 20em;
-	width: 100%;
-}
-
 // PAGE PRODUIT
-//Page Produit : conteneur global des articles
+/* Page Produit : conteneur global des articles*/
 .container__boxPolaroid--flex {
 	@include dispoCenter;
 	width:100%;
@@ -17,20 +8,17 @@
 		flex-wrap: wrap;
 	}
 }
-
 // PAGE PANIER
-//Container du panier rempli
+/* Container du panier rempli */
 .container__cart {
 	width: 100%;
 
 }
-
 #full {
 	@include dispoCenter;
 	width: 100%;
 }
-
-//contenant pour chaque article
+/* contenant pour chaque article */
 .article__cart {
 	margin: 5%;
 	padding: 1em 0;
@@ -41,11 +29,11 @@
 	display: flex;
 	}
 }
-//Contenant photo
+/* Contenant photo */
 .subContent__cart--photo {
 	width: 10%;	
 }
-//Contenant descriptif article
+/* Contenant descriptif article */
 .subContent__cart--article {
 	padding-bottom: 1em;
 	@media all and (min-width: 1024px) {
@@ -53,7 +41,7 @@
 	margin: 0 1%;
 	}
 }
-// contenant quantité et bouton supprimer
+/* contenant quantité et bouton supprimer */
 .subContent__cart--quantity {
 	@media all and (min-width: 768px) {
 	display: flex;
@@ -72,7 +60,7 @@
 		justify-content: space-between;
 	}
 }
-//Prix total plusieurs du même article
+/* Prix total plusieurs du même article */
 .subContent__cart--sevUnit {
 	padding-top: 2em;
 	// display: flex;
@@ -91,9 +79,8 @@
 	padding: 0 5%;
 	width: 100%;
 }
-
 // GLOBAL 
-//Page accueil, produit, panier et confirmation de commande
+/* Page accueil, produit, panier et confirmation de commande */
 .main__content--home, 
 .main__content--product,
 .main__content--cart,
@@ -103,15 +90,11 @@
 	@media all and (min-width: 768px ) {
 		margin-top: 0.5em;
 	}
-
 	@media all and (min-width: 1900px ) {
-
 		min-height: 100vh;
 	}
 }
-
-
-//contenant des images
+/* contenant des images */
 .box__link--polaroid {
 	@include designBox;
 	margin: 2em 0;
@@ -125,8 +108,7 @@
 		max-width:400px;
 	}
 }
-
-//contenant global (fond polaroid)
+/* contenant global (fond polaroid) */
 .container__badId,
 .container__cart--empty,
 .container__cart--full {

@@ -1,4 +1,4 @@
-//règle générale pour les boutons et les liens
+/*règle générale pour les boutons et les liens*/
 button, a {
 	cursor: pointer;
 	text-decoration: none;
@@ -6,8 +6,7 @@ button, a {
 	font-family: $ff-title;
 	text-align: center;
 }
-
-// page d'accueil container des deux boutons voir et achat rapide
+/*page d'accueil container des deux boutons voir et achat rapide*/
 .container__buttons--flex {
 	width: 90%;
 	margin: 5%;
@@ -16,22 +15,13 @@ button, a {
 	align-content: center;
 	align-items: center;
 }
-// bouton voir le produit
+/*bouton voir le produit*/
 .button__seeProduct {
 	@include mainDesign;
 	@include btnDesign;
 	width: 100%;
 }
-// bouton achat rapide
-.button__quickCart {
-	font-size: 2em;
-	padding: 1em 0 1em 1em;
-	margin-right: 3%;
-	cursor: pointer;
-}
-
-//Bouton page produit pour retour au catalogue et ajout panier
-
+/*Bouton page produit pour retour au catalogue et ajout panier*/
 .container__product--buttons {
 	width: 100%;
 	padding-top:2em;
@@ -44,7 +34,7 @@ button, a {
 			align-content: center;
 	}
 }
-
+/*Boutons du formulaire*/
 .container__form--button {
 	width: 90%;
 	padding-top:2em;
@@ -58,8 +48,7 @@ button, a {
 	}
 
 }
-
-//Design boutons retour au catalogue et ajout au panier
+/*Design boutons retour au catalogue et ajout au panier*/
 .button__product--toCart,
 .container__product--homeReturn, 
 .container__order--homeReturn {
@@ -67,4 +56,3 @@ button, a {
 	@include btnDesign;
 	margin: 1em 5%;
 }
-

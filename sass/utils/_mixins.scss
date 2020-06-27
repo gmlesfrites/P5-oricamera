@@ -5,14 +5,12 @@
 	justify-content: center;
 	align-items: center;
 }
-
 //Header et footer
 @mixin mainDesign {
 	background-color: #f3e9f1;
 	font-family: $ff-title;
 	color: $color-text;
 }
-
 //Design de boutons
 @mixin btnDesign {
 	border: 1px solid $color-main;
@@ -20,19 +18,6 @@
 	padding: 0.6em 1.3em;
 	font-size: $fz-btn;
 }
-
-//Si animation bouton
-@mixin zoomBtn($zoom) {
-	-webkit-transform: scale($zoom);
-	-moz-transform: scale($zoom);
-	-ms-transform: scale($zoom);
-	transform: scale($zoom);
-	&:active:hover {
-		transition: 0.8s cubic-bezier(0.68, 0.25, 0.53, 0.82);
-		opacity: 0.8;
-	}
-}
-
 //Format polaroid
 @mixin designBox {
 	background-color: #fffff9;
@@ -41,7 +26,6 @@
 	width: 90%;
 	border-radius: 5px;
 }
-
 //format input
 @mixin input {
 	font-family: $ff-text;
@@ -49,7 +33,6 @@
 	margin: 1em 0;
 	width: 100%;
 }
-
 //marge des div de la page produit
 @mixin marginProduct {
 	margin: 1em 5%;

@@ -1,20 +1,20 @@
-//contenant global du formulaire
+/* contenant global du formulaire */
 .container__form {
 	@include designBox;
 	opacity: 0.7;
 	@include dispoCenter;
 	margin-bottom: 3em;
 }
-// texte explicatif pour les champs requis
+/* texte explicatif pour les champs requis */
 	.text__form {
 		margin: 5%;
 	}
-//contenant balise form
+/* contenant balise form */
 .container__form--flex {
 	@include dispoCenter;
 	width: 100%;
 }
-//partie civilité - coordonnées - adresse - commentaires
+/* partie civilité - coordonnées - adresse - commentaires */
 .fieldset__form {
 	font-size: $fz-h3;
 	display: flex;
@@ -22,40 +22,36 @@
 	padding: 5%;
 	margin: 2em 0;
 }
-//légende des fieldsets
+/* légende des fieldsets */
 .legend__form {
 	font-size: $fz-h2;
 	font-family: $ff-title;
 }
-// contenant de chaque sous-partie contenant label+input
+/* contenant de chaque sous-partie contenant label+input */
 .subpart__form {
 	margin-bottom: 1.5em;
 }
-//label
+/* label */
 .label__form,
 .p__form {
 	font-family: $ff-text;
 	font-size: $fz-p;
 }
-//Input classique
+/* Input classique*/
 .input__form {
 	@include input;
 	height: 3em;
+	font-size: $fz-p;
+	padding: 0.5em;
 }
-//textarea
-.textarea__form {
-	@include input;
-	height: 6em;
-}
-
-//Contenant Monsieur-Madame
-//Input radio
+/* Contenant Monsieur-Madame */
+/* Input radio */
 .container__form--sex,
 .subpart__form--ck, 
 .subpart__form--cb {
 	margin-bottom: 1.5em;
 }
-//Monsieur-Madame__form
+/* Monsieur-Madame__form */
 .monsieur__form,
 .madame__form {
 	font-family: $ff-text;
@@ -66,20 +62,16 @@
 .radio__form {
 	@include input;
 }
-
-//design validation
+/* design validation */
 input:invalid {
 	border: 1px solid $color-danger;
 }
-
 input:valid {
 	border: 1px solid $color-main;
 }
-
 .subpart__form.error input {
 	border: 1px ridge $color-danger;
 }
-
 .subpart__form.error::after {
     content: 'Ce champ est invalide, merci de respecter le format à renseigner.';
     display: block;
@@ -88,21 +80,13 @@ input:valid {
 	font-size: $fz-p;
 	font-weight: bolder;
 }
-
-
-
-
-
-
-
-//Effacer formulaireou valider commande
+/* Effacer formulaireou valider commande */
 .button__form {
 	@include btnDesign;
 	@include mainDesign;
 	margin: 1em 0;
 }
-
-//* requis
+/* requis */
 .required {
 	color: $color-danger;
 	font-size: 0.6em;

@@ -5,9 +5,14 @@
 	flex-direction: column;
 	padding: 0 0.5em;
 	align-items: center;
-	@media all and (min-width:768px) {
+	@media all and (min-width: 768px) {
 		flex-direction: row;
-		justify-content: space-between;
+		justify-content: space-around;
+	}
+	@media (min-width: 1024px) {
+    	flex-direction: row;
+    	justify-content: flex-end;
+    	align-items: center;
 	}
 }
 .header__navbar--logoText {

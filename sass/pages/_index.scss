@@ -1,4 +1,4 @@
-// Mise en page de la partie principale page accueil
+/* Mise en page de la partie principale page accueil */
 .main__home--background {
 	position: relative;
 }
@@ -17,8 +17,4 @@
 	bottom: 0;
 	left: 0;
 	z-index: -1;
-}
-
-.noJS {
-	font-size: 2em;
 }

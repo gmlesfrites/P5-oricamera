@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/*annule les marges, paddings des différents navigateurs*/
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +10,10 @@ html,
 body {
   font-size: 16px;
   font-family: "Raleway", sans-serif; }
+  @media all and (min-width: 1900px) {
+    html,
+    body {
+      font-size: 22px; } }
 
 h1 {
   margin-top: 4em;
@@ -36,6 +41,7 @@ p {
   font-size: 1em;
   font-family: "Raleway", sans-serif; }
 
+/*règle générale pour les boutons et les liens*/
 button, a {
   cursor: pointer;
   text-decoration: none;
@@ -43,6 +49,7 @@ button, a {
   font-family: "Caveat Brush", cursive;
   text-align: center; }
 
+/*page d'accueil container des deux boutons voir et achat rapide*/
 .container__buttons--flex {
   width: 90%;
   margin: 5%;
@@ -51,6 +58,7 @@ button, a {
   align-content: center;
   align-items: center; }
 
+/*bouton voir le produit*/
 .button__seeProduct {
   background-color: #f3e9f1;
   font-family: "Caveat Brush", cursive;
@@ -61,12 +69,7 @@ button, a {
   font-size: 1.1em;
   width: 100%; }
 
-.button__quickCart {
-  font-size: 2em;
-  padding: 1em 0 1em 1em;
-  margin-right: 3%;
-  cursor: pointer; }
-
+/*Bouton page produit pour retour au catalogue et ajout panier*/
 .container__product--buttons {
   width: 100%;
   padding-top: 2em;
@@ -79,6 +82,7 @@ button, a {
       justify-content: space-between;
       align-content: center; } }
 
+/*Boutons du formulaire*/
 .container__form--button {
   width: 90%;
   padding-top: 2em;
@@ -91,6 +95,7 @@ button, a {
       justify-content: space-between;
       align-content: center; } }
 
+/*Design boutons retour au catalogue et ajout au panier*/
 .button__product--toCart,
 .container__product--homeReturn,
 .container__order--homeReturn {
@@ -103,22 +108,35 @@ button, a {
   font-size: 1.1em;
   margin: 1em 5%; }
 
+/* Icônes font-awesome  */
 .fa-shopping-cart, .fa-cart-plus, .fa-info-circle, .fa-exclamation-triangle {
   background: linear-gradient(120deg, #e38912e6, #b36f98e6, #8f5bfecc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 0.35em; }
 
+/* Liens du footer */
 .footer__link {
   padding: 1.5em 2em 0 2em; }
 
+/* Menu du header */
 .menu__link {
   font-size: 1.5em; }
 
+/* compteur sur le panier*/
 .cart__link {
   display: flex;
   justify-content: space-around;
   align-items: baseline; }
+  @media all and (min-width: 1024px) {
+    .cart__link {
+      margin-left: 20%; } }
+  @media all and (min-width: 1440px) {
+    .cart__link {
+      margin-left: 30%; } }
+  @media all and (min-width: 1900px) {
+    .cart__link {
+      margin-left: 35%; } }
 
 .header__cart {
   position: relative;
@@ -141,17 +159,20 @@ button, a {
   border-radius: 1em;
   color: black; }
 
+/*design identique*/
 .menu__link,
 .footer__link {
   color: #3d3d3d;
   font-family: "Raleway", sans-serif;
   text-decoration: none; }
 
+/*images des appareils*/
 .box__image--polaroid {
   width: 90%;
   text-align: center;
   border: 1px solid #acaaaa23; }
 
+/* Design du header */
 .header__menu {
   background-color: #f3e9f1;
   font-family: "Caveat Brush", cursive;
@@ -163,6 +184,7 @@ button, a {
   top: 0;
   z-index: 1; }
 
+/* contenant du loader */
 .container__loader {
   position: fixed;
   top: 0;
@@ -181,16 +203,19 @@ button, a {
   -o-transition: opacity ease-in 1s, o-visibility ease-in 1s;
   transition: opacity ease-in 1s, visibility ease-in 1s; }
 
+/* animation cachée avec JS */
 .container__loader.hidden {
   opacity: 0;
   visibility: hidden; }
 
+/* container entre le fond et le loader*/
 .container__loader--blur {
   width: 100%;
   height: 100%;
   background: rgba(212, 201, 201, 0.466);
   -webkit-backdrop-filter: sepia(0.7) contrast(0.8) blur(1px); }
 
+/* loader */
 .loader {
   width: 120px;
   height: 120px;
@@ -209,12 +234,14 @@ button, a {
   -o-animation: loader 1.5s ease-in-out infinite;
   animation: loader 1.5s ease-in-out infinite; }
 
+/* animation loader*/
 @keyframes loader {
   100% {
     -webkit-transform: -webkit-translate(-50%, -50%) -webkit-rotate(360deg);
     -moz-transform: -moz-translate(-50%, -50%) moz-rotate(360deg);
     -o-transform: -o-translate(-50%, -50%) -o-rotate(360deg);
     transform: translate(-50%, -50%) rotate(360deg); } }
+/* titre loader */
 .title__loader {
   color: #3d3d3d;
   font-size: 4em;
@@ -243,7 +270,12 @@ button, a {
   @media all and (min-width: 768px) {
     .header__navbar {
       flex-direction: row;
-      justify-content: space-between; } }
+      justify-content: space-around; } }
+  @media (min-width: 1024px) {
+    .header__navbar {
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center; } }
 
 .header__navbar--logoText {
   font-weight: 700;
@@ -253,12 +285,7 @@ button, a {
   color: #3d3d3d;
   padding-bottom: 0.5em; }
 
-.noscript {
-  background-color: #f3e9f1;
-  color: #3d3d3d;
-  height: 20em;
-  width: 100%; }
-
+/* Page Produit : conteneur global des articles*/
 .container__boxPolaroid--flex {
   display: flex;
   flex-direction: column;
@@ -270,6 +297,7 @@ button, a {
       flex-direction: row;
       flex-wrap: wrap; } }
 
+/* Container du panier rempli */
 .container__cart {
   width: 100%; }
 
@@ -280,6 +308,7 @@ button, a {
   align-items: center;
   width: 100%; }
 
+/* contenant pour chaque article */
 .article__cart {
   margin: 5%;
   padding: 1em 0;
@@ -290,9 +319,11 @@ button, a {
     .article__cart {
       display: flex; } }
 
+/* Contenant photo */
 .subContent__cart--photo {
   width: 10%; }
 
+/* Contenant descriptif article */
 .subContent__cart--article {
   padding-bottom: 1em; }
   @media all and (min-width: 1024px) {
@@ -300,6 +331,7 @@ button, a {
       width: 42%;
       margin: 0 1%; } }
 
+/* contenant quantité et bouton supprimer */
 @media all and (min-width: 768px) {
   .subContent__cart--quantity {
     display: flex;
@@ -317,6 +349,7 @@ button, a {
     flex-direction: row;
     justify-content: space-between; } }
 
+/* Prix total plusieurs du même article */
 .subContent__cart--sevUnit {
   padding-top: 2em;
   width: 100%; }
@@ -333,6 +366,7 @@ button, a {
   padding: 0 5%;
   width: 100%; }
 
+/* Page accueil, produit, panier et confirmation de commande */
 .main__content--home,
 .main__content--product,
 .main__content--cart,
@@ -355,6 +389,7 @@ button, a {
     .main__content--order {
       min-height: 100vh; } }
 
+/* contenant des images */
 .box__link--polaroid {
   background-color: #fffff9;
   padding: 1.5em 0.2em 2em 0.2em;
@@ -375,6 +410,7 @@ button, a {
     .box__link--polaroid {
       max-width: 400px; } }
 
+/* contenant global (fond polaroid) */
 .container__badId,
 .container__cart--empty,
 .container__cart--full {
@@ -391,6 +427,7 @@ button, a {
   opacity: 0.7;
   margin-bottom: 5em; }
 
+/* contenant global du formulaire */
 .container__form {
   background-color: #fffff9;
   padding: 1.5em 0.2em 2em 0.2em;
@@ -404,9 +441,11 @@ button, a {
   align-items: center;
   margin-bottom: 3em; }
 
+/* texte explicatif pour les champs requis */
 .text__form {
   margin: 5%; }
 
+/* contenant balise form */
 .container__form--flex {
   display: flex;
   flex-direction: column;
@@ -414,6 +453,7 @@ button, a {
   align-items: center;
   width: 100%; }
 
+/* partie civilité - coordonnées - adresse - commentaires */
 .fieldset__form {
   font-size: 1.2em;
   display: flex;
@@ -421,37 +461,39 @@ button, a {
   padding: 5%;
   margin: 2em 0; }
 
+/* légende des fieldsets */
 .legend__form {
   font-size: 1.44em;
   font-family: "Caveat Brush", cursive; }
 
+/* contenant de chaque sous-partie contenant label+input */
 .subpart__form {
   margin-bottom: 1.5em; }
 
+/* label */
 .label__form,
 .p__form {
   font-family: "Raleway", sans-serif;
   font-size: 1em; }
 
+/* Input classique*/
 .input__form {
   font-family: "Raleway", sans-serif;
   font-weight: 200;
   margin: 1em 0;
   width: 100%;
-  height: 3em; }
+  height: 3em;
+  font-size: 1em;
+  padding: 0.5em; }
 
-.textarea__form {
-  font-family: "Raleway", sans-serif;
-  font-weight: 200;
-  margin: 1em 0;
-  width: 100%;
-  height: 6em; }
-
+/* Contenant Monsieur-Madame */
+/* Input radio */
 .container__form--sex,
 .subpart__form--ck,
 .subpart__form--cb {
   margin-bottom: 1.5em; }
 
+/* Monsieur-Madame__form */
 .monsieur__form,
 .madame__form {
   font-family: "Raleway", sans-serif;
@@ -465,6 +507,7 @@ button, a {
   margin: 1em 0;
   width: 100%; }
 
+/* design validation */
 input:invalid {
   border: 1px solid #e07373; }
 
@@ -482,6 +525,7 @@ input:valid {
   font-size: 1em;
   font-weight: bolder; }
 
+/* Effacer formulaireou valider commande */
 .button__form {
   border: 1px solid #daa520;
   border-radius: 20px 20px;
@@ -492,10 +536,12 @@ input:valid {
   color: #3d3d3d;
   margin: 1em 0; }
 
+/* requis */
 .required {
   color: #e07373;
   font-size: 0.6em; }
 
+/* Mise en page du footer */
 .footer {
   background-color: #f3e9f1;
   font-family: "Caveat Brush", cursive;
@@ -508,6 +554,7 @@ input:valid {
   text-align: center;
   box-shadow: 1px -1px 0 #daa520; }
 
+/* Mise en page de la partie principale page panier */
 .main__cart--background {
   position: relative; }
 
@@ -527,10 +574,12 @@ input:valid {
   left: 0;
   z-index: -1; }
 
+/* titres */
 .title__cart,
 .title__form {
   font-size: 1.728em; }
 
+/* Affichage de l'image du produit */
 .img__cart {
   width: 100%;
   height: 100%; }
@@ -547,25 +596,30 @@ input:valid {
       width: 100%;
       height: 80%; } }
 
+/* Titre du produit */
 .title__cart--article {
   font-size: 1.2em;
   font-weight: 600; }
 
+/* Description du produit */
 .ref__cart, .description__cart,
 .unit__price, .sevUnit__price {
   font-size: 1em; }
 
+/* titre montant global*/
 .title__cart--total {
   font-size: 1.2em;
   border-bottom: 1px #a5a5a5 dashed;
   margin-bottom: 1em; }
 
+/* Alignement des prix en fin de colonne */
 .totalPrice__cart {
   display: flex;
   justify-content: flex-end;
   font-size: 1.15em;
   font-weight: bold; }
 
+/* compteur quantité */
 .countItems__cart {
   background-color: #f3e9f1;
   font-family: "Caveat Brush", cursive;
@@ -598,6 +652,7 @@ input:valid {
   background-color: transparent;
   font-weight: bolder; }
 
+/* bouton supprimer du panier */
 .removeFromCart {
   border: 1px solid #daa520;
   border-radius: 20px 20px;
@@ -621,6 +676,7 @@ input:valid {
       width: 55%;
       margin-top: 0; } }
 
+/* container bouton supprimer/valider le panier */
 .clearOrValidate__cart {
   padding: 2em 0;
   width: 90%;
@@ -634,6 +690,7 @@ input:valid {
       justify-content: space-between;
       align-items: center; } }
 
+/* bouton supprimer/valider le panier */
 #deleteCart, #validateCart {
   border: 1px solid #daa520;
   border-radius: 20px 20px;
@@ -647,6 +704,7 @@ input:valid {
     #deleteCart, #validateCart {
       width: 40%; } }
 
+/* Mise en page de la partie principale page accueil */
 .main__home--background {
   position: relative; }
 
@@ -666,9 +724,7 @@ input:valid {
   left: 0;
   z-index: -1; }
 
-.noJS {
-  font-size: 2em; }
-
+/* Mise en page de la partie principale page produit */
 .main__product--background {
   position: relative; }
 
@@ -688,9 +744,11 @@ input:valid {
   left: 0;
   z-index: -1; }
 
+/* Mise en page */
 .main__content--product {
   min-height: 100vh; }
 
+/* Contenant de la fiche produit */
 .container__product {
   background-color: #fffff9;
   padding: 1.5em 0.2em 2em 0.2em;
@@ -703,27 +761,33 @@ input:valid {
   padding: 2em 1em;
   margin: 2em 0; }
 
+/* Image du produit */
 .container__product--image {
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 1.5em 0 1em; }
 
+/* Référence produit */
 .container__product--ref {
   font-size: 0.8em;
   margin: 1em 5%; }
 
+/* Titre du produit */
 .container__product--title {
   font-size: 1.2em; }
 
+/* Description du produit */
 .container__product--description {
   font-size: 1em;
   margin: 1em 5%; }
 
+/* choix des optiques */
 .container__product--lenses {
   font-size: 1em;
   margin: 1em 5%; }
 
+/* Sélection*/
 .container__product--select {
   font-family: "Raleway", sans-serif;
   border: 1px solid #daa520;
@@ -739,10 +803,12 @@ input:valid {
     .container__product--select {
       width: auto; } }
 
+/* Prix du produit */
 .container__product--price {
   font-size: 1em;
   margin: 1em 5%; }
 
+/* Mise en page de la page confirmation de commande */
 .main__order--background {
   position: relative; }
 
@@ -762,6 +828,7 @@ input:valid {
   left: 0;
   z-index: -1; }
 
+/* contenant du récap de commande */
 .container__purchase {
   background-color: #fffff9;
   padding: 1.5em 0.2em 2em 0.2em;
@@ -772,23 +839,29 @@ input:valid {
   padding: 5%;
   margin-bottom: 5em; }
 
+/* titre de la page */
 .title__order {
   font-size: 1.728em;
   text-align: center; }
 
+/* Récap de la commande */
 .title__purchase {
   font-size: 1.44em; }
 
+/* Partie infos de commande */
 .details__purchase {
   margin: 2em 0 5em 0; }
 
+/* Texte de confirmation de commande */
 .thanks__purchase {
   padding-bottom: 1.2em; }
 
+/* référence commande et montant de commande */
 .date__purchase, .ref__purchase, .order__purchase {
   padding-top: 1.2em;
   font-weight: 700; }
 
+/*  Bouton retour home */
 .container__order--homeReturn {
   margin: 2em;
   text-align: center; }

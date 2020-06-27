@@ -1,4 +1,4 @@
-// contenant du loader
+/* contenant du loader */
 .container__loader {
     position: fixed;
     top:0;
@@ -17,21 +17,19 @@
     -o-transition: opacity ease-in 1s, o-visibility ease-in 1s;
     transition: opacity ease-in 1s, visibility ease-in 1s;
 }
-
-//animation cachée avec JS
+/* animation cachée avec JS */
 .container__loader.hidden {
     opacity: 0;
     visibility: hidden;
 }
-
-//container entre le fond et le loader
+/* container entre le fond et le loader*/
 .container__loader--blur {
     width: 100%;
     height: 100%; 
     background: rgba(212, 201, 201, 0.466);
     -webkit-backdrop-filter: sepia(0.7) contrast(0.8) blur(1px);
 }
-// loader
+/* loader */
 .loader {
     width: 120px;
     height: 120px;
@@ -45,14 +43,12 @@
     -moz-transform: -moz-translate(-50%, -50%) moz-rotate(0deg);
     -o-transform: -o-translate(-50%, -50%) -o-rotate(0deg);
     transform: translate(-50%, -50%) rotate(0deg);
-
     -webkit-animation: loader 1.5s ease-in-out infinite;
     -moz-animation: loader 1.5s ease-in-out infinite;
     -o-animation: loader 1.5s ease-in-out infinite;
     animation: loader 1.5s ease-in-out infinite;
 }
-
-//animation loader
+/* animation loader*/
 @keyframes loader {
     100% {
         -webkit-transform: -webkit-translate(-50%, -50%) -webkit-rotate(360deg);
@@ -60,8 +56,7 @@
         -o-transform: -o-translate(-50%, -50%) -o-rotate(360deg);
         transform: translate(-50%, -50%) rotate(360deg);}
 }
-
-//titre loader
+/* titre loader */
 .title__loader {
     color:$color-text;
     font-size: 4em;
@@ -82,4 +77,3 @@
         padding-top: 9em;
     }
 }
-

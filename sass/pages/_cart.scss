@@ -1,4 +1,4 @@
-// Mise en page de la partie principale page panier
+/* Mise en page de la partie principale page panier */
 .main__cart--background {
 	position: relative;
 }
@@ -18,17 +18,12 @@
 	left: 0;
 	z-index: -1;
 }
-
-//titres
+/* titres */
 .title__cart,
 .title__form {
 	font-size: $fz-h1;
 }
-
-
-
-
-//Affichage de l'image du produit
+/* Affichage de l'image du produit */
 .img__cart {
 	width: 100%;
 	height:100%;
@@ -45,30 +40,30 @@
 		height: 80%;
 	}
 }
-// Titre du produit
+/* Titre du produit */
 .title__cart--article{
 	font-size: $fz-h3;
 	font-weight: 600;
 }
-// Description du produit
+/* Description du produit */
 .ref__cart, .description__cart, 
 .unit__price, .sevUnit__price{
 	font-size: $fz-p;
 }
-//titre montant global
+/* titre montant global*/
 .title__cart--total {
 	font-size: $fz-h3;
 	border-bottom: 1px $color-border dashed;
 	margin-bottom: 1em;
 }
-//Alignement des prix en fin de colonne
+/* Alignement des prix en fin de colonne */
 .totalPrice__cart {
 	display: flex;
 	justify-content: flex-end;
 	font-size: $fz-h4;
 	font-weight: bold;
 }
-//compteur quantité
+/* compteur quantité */
 .countItems__cart {
 	@include mainDesign;
 	@include btnDesign;
@@ -96,8 +91,7 @@
 	background-color: transparent;
 	font-weight: bolder;
 }
-
-//bouton supprimer du panier
+/* bouton supprimer du panier */
 .removeFromCart {
 	@include btnDesign;
 	@include mainDesign;
@@ -116,8 +110,7 @@
 		margin-top: 0;
 	}
 }
-
-//container bouton supprimer/valider le panier
+/* container bouton supprimer/valider le panier */
 .clearOrValidate__cart {
 	padding: 2em 0;
 	width: 90%;
@@ -131,7 +124,7 @@
 		align-items: center;
 	}
 }
-//bouton supprimer/valider le panier
+/* bouton supprimer/valider le panier */
 #deleteCart, #validateCart {
 	@include btnDesign;
 	@include mainDesign;
@@ -140,6 +133,3 @@
 		width: 40%;
 	}
 }
-
-
-

@@ -1,4 +1,4 @@
-// Mise en page de la partie principale page produit
+/* Mise en page de la partie principale page produit */
 .main__product--background {
 	position: relative;
 }
@@ -18,13 +18,11 @@
 	left: 0;
 	z-index: -1;
 }
-
-//Mise en page
+/* Mise en page */
 .main__content--product {
 	min-height: 100vh;
 }
-
-// Contenant de la fiche produit
+/* Contenant de la fiche produit */
 .container__product {
 	@include designBox;
 	display: flex;
@@ -33,38 +31,33 @@
 	padding: 2em 1em;
 	margin: 2em 0;
 }
-
-//Image du produit
+/* Image du produit */
 .container__product--image {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	padding: 1.5em 0 1em;
 }
-
-//Référence produit
+/* Référence produit */
 .container__product--ref{
 	font-size: $fz-ref;
 	@include marginProduct;
 }
-
-//Titre du produit
+/* Titre du produit */
 .container__product--title {
 	font-size: $fz-h3;
 }
-
-//Description du produit
+/* Description du produit */
 .container__product--description {
 	font-size: $fz-p;
 	@include marginProduct;
 }
-//choix des optiques
+/* choix des optiques */
 .container__product--lenses {
 	font-size: $fz-p;
 	@include marginProduct;
 }
-
-//Sélection
+/* Sélection*/
 .container__product--select {
 	font-family: $ff-text;
 	@include btnDesign;
@@ -75,11 +68,9 @@
 		width:auto;
 	}
 }
-
-//Prix du produit
+/* Prix du produit */
 .container__product--price {
 	font-size: $fz-p;
 	@include marginProduct;
 
 }
-

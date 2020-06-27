@@ -1,17 +1,25 @@
-// Liens du footer
+/* Liens du footer */
 .footer__link {
 	padding: 1.5em 2em 0 2em;
 }
-// Menu du header
+/* Menu du header */
 .menu__link {
 	font-size: 1.5em;
 }
-
-//compteur sur le panier
+/* compteur sur le panier*/
 .cart__link {
 	display: flex;
 	justify-content: space-around;
 	align-items: baseline;
+	@media all and (min-width:1024px) {
+		margin-left: 20%;
+	}
+	@media all and (min-width:1440px) {
+		margin-left: 30%;
+	}
+	@media all and (min-width:1900px) {
+		margin-left: 35%;
+	}
 }
 .header__cart {
 	position: relative;
@@ -32,8 +40,7 @@
 	border-radius: 1em;
 	color: black;
 }
-
-//design identique
+/*design identique*/
 .menu__link,
 .footer__link {
 	color: $color-text;

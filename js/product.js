@@ -4,8 +4,8 @@ const id = newId.get("id");
 
 //fetch pour la récupération des données par id
 const urlId = `http://localhost:3000/api/cameras/${id}`;
-
 const fetchItem = fetch(urlId)
+    .catch(console.error)
     .then(response => {
         if (response.ok) {
             response.json()
@@ -16,9 +16,7 @@ const fetchItem = fetch(urlId)
         } else {
             manageError()
         }
-    }).catch(console.error);
-
-
+    });
 
 //Utilisation des données de fetch par Id pour les insérer dans la page
 const showItemDetail = data => {
@@ -65,9 +63,8 @@ const showItemDetail = data => {
     const btnAddToCart = document.getElementById('addToCart');
     btnAddToCart.id = `${data._id} `;
     btnAddToCart.className = "button__product--toCart addToCart"
-    btnAddToCart.addEventListener("click", () => {
-        //Données du produit pour le localStorage
-        const itemToAdd = {
+    btnAddToCart.addEventListener("click", data => {
+        itemToAdd = {
             id: `${id}`,
             image: `${data.imageUrl}`,
             name: `${data.name}`,

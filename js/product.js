@@ -1,22 +1,25 @@
-//Récupération des données par id (paramètre Url suite btn cliqué)
-const newId = new URLSearchParams(window.location.search.substring(0));
-const id = newId.get("id");
+//Récupération des données par id
+const fetchProduct = () => {
+    //Récupération des données par id (paramètre Url suite btn cliqué)
+    const newId = new URLSearchParams(window.location.search.substring(0));
+    const id = newId.get("id");
 
-//fetch pour la récupération des données par id
-const urlId = `http://localhost:3000/api/cameras/${id}`;
-const fetchItem = fetch(urlId)
-    .catch(console.error)
-    .then(response => {
-        if (response.ok) {
-            response.json()
-                .then(data => {
-                    showItemDetail(data)
-                    badId()
-                });
-        } else {
-            manageError()
-        }
-    });
+    //fetch pour la récupération des données par id
+    const urlId = `http://localhost:3000/api/cameras/${id}`;
+    fetch(urlId)
+        .catch(console.error)
+        .then(response => {
+            if (response.ok) {
+                response.json()
+                    .then(data => {
+                        showItemDetail(data)
+                        badId()
+                    });
+            } else {
+                manageError()
+            }
+        });
+}
 
 //Utilisation des données de fetch par Id pour les insérer dans la page
 const showItemDetail = data => {
@@ -117,3 +120,6 @@ const manageError = () => {
     const productPage = document.querySelector("#product");
     productPage.setAttribute("style", "display:none");
 }
+
+//déclenchement de la fetch
+fetchProduct()

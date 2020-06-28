@@ -1,19 +1,20 @@
 // Gestion du localStorage
-window.addEventListener("unload", () => localStorage.clear());
+window.addEventListener("unload", () => {
+    localStorage.clear()
+});
 
 //Gestion de l'affichage du récap de commande 
 const orderId = new URLSearchParams(window.location.search.substring(0)).get("orderId");
-console.log(orderId);
-const cartJSON = localStorage.getItem('products');
-const cart = JSON.parse(cartJSON);
+const cart = JSON.parse(localStorage.getItem('products'));
 
 if (orderId && cart) {
     //ajout de l'information dans la page utilisateur
     const refPurchase = document.querySelector('#refPurchase');
     refPurchase.innerHTML = "La référence de votre commande est la suivante : " + "<br>" + orderId + ".";
 
+
     //gestion de l'affichage du prix du panier
-    let pricePurchase = document.querySelector('#orderPurchase');
+    const pricePurchase = document.querySelector('#orderPurchase');
     let price = 0;
 
     //récupération des données de qty*price de chaque ligne puis addition du tableau complet
@@ -24,11 +25,8 @@ if (orderId && cart) {
     //cache la partie mauvaise manip de l'url
     const noPurchase = document.getElementById("noId");
     noPurchase.setAttribute("style", "display:none");
+
 } else {
     const noId = document.getElementById("orderOk");
     noId.setAttribute("style", "display:none");
 }
-
-
-
-

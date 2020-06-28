@@ -1,8 +1,7 @@
-const fetchProduct = () => {
-    //Récupération des données par id (paramètre Url suite btn cliqué)
-    const id = new URLSearchParams(window.location.search.substring(0)).get("id");
+//Récupération des données par id (paramètre Url suite btn cliqué)
+const id = new URLSearchParams(window.location.search.substring(0)).get("id");
 
-    //fetch pour la récupération des données par id
+const fetchProduct = () => {
     const urlId = `http://localhost:3000/api/cameras/${id}`;
     fetch(urlId)
         .catch(console.error)
@@ -68,7 +67,7 @@ const showItemDetail = data => {
 
         //Infos sur le produit
         const itemToAdd = {
-            id: `${data._id} `,
+            id: id,
             image: `${data.imageUrl}`,
             name: `${data.name}`,
             description: `${data.description}`,
@@ -98,8 +97,7 @@ const addItem = (itemToAdd) => {
 //Ajout au panier
 const addItemToCart = (itemToAdd) => {
     //récup du localStorage
-    const itemToCart = localStorage.getItem('products');
-    cart = JSON.parse(itemToCart);
+    cart = JSON.parse(localStorage.getItem('products'));
 
     if (cart !== null) {
         addItem(itemToAdd)

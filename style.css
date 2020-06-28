@@ -375,19 +375,14 @@ button, a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  min-height: 100vh; }
   @media all and (min-width: 768px) {
     .main__content--home,
     .main__content--product,
     .main__content--cart,
     .main__content--order {
       margin-top: 0.5em; } }
-  @media all and (min-width: 1900px) {
-    .main__content--home,
-    .main__content--product,
-    .main__content--cart,
-    .main__content--order {
-      min-height: 100vh; } }
 
 /* contenant des images */
 .box__link--polaroid {

@@ -3,6 +3,7 @@ const fetchItems = () => {
 	const url = 'http://localhost:3000/api/cameras';
 	fetch(url)
 		.catch(error => {
+			manageError()
 			throw new error(response.status);
 		})
 		.then(response => response.json())
@@ -16,6 +17,10 @@ const fetchItems = () => {
 				howManyItems()
 			});
 		});
+}
+//si souci fetch
+const manageError = () => {
+	alert('Petit souci technique, le site est peut-être victime de son succès !')
 }
 
 //Génération des articles 
@@ -64,3 +69,4 @@ const showProducts = product => {
 
 //déclenchement de la fetch
 fetchItems()
+

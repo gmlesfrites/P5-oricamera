@@ -87,11 +87,9 @@
 .main__content--order {
 	margin-top: 2em;
 	@include dispoCenter;
+	min-height: 100vh;
 	@media all and (min-width: 768px ) {
 		margin-top: 0.5em;
-	}
-	@media all and (min-width: 1900px ) {
-		min-height: 100vh;
 	}
 }
 /* contenant des images */

@@ -2,7 +2,7 @@
 const displayContent = () => {
     if (!localStorage.products) {
         //si panier vide pas d'affichage panier + form
-        const blocFull = document.querySelector('#full');
+        const blocFull = document.querySelector('#full')
         blocFull.setAttribute("style", "display:none");
         //design si panier vide
         const blocEmpty = document.querySelector('#main__content--cart');
@@ -19,8 +19,7 @@ const displayContent = () => {
 }
 
 //Récupération des articles ajoutés dans le localStorage
-const itemsInCart_json = localStorage.getItem('products');
-const itemInCart = JSON.parse(itemsInCart_json);
+const itemInCart = JSON.parse(localStorage.getItem('products'));
 
 //Fonctions page panier
 const displayCart = () => {
@@ -102,10 +101,11 @@ const addToCart = itemInCart => {
     const minus = document.createElement('button');
     minus.className = "minus";
     minus.innerHTML = `<strong><i class="fa fa-minus" aria-label="quantité en moins"></i></strong>`;
-    minus.addEventListener("click", (qtyLess, itemInCart) => {
-
-        qtyLess(itemInCart)// TODO Données de quantité
-
+    minus.addEventListener("click", () => {
+        //TODO Données de quantité
+        const qtyLess = {
+            id: `${itemInCart.id}`
+        }
         addLess(qtyLess)
 
     });

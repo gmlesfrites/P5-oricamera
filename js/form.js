@@ -31,11 +31,10 @@ const checkForm = input => {
 }
 Array.from(inputs).map(checkForm);
 
-//Gestion de l'envoi du bon de commande (contact + products)
+//Infos pour fetch
 const getOrderDone = () => {
     //Gestion des données du panier
-    const productsJSON = localStorage.getItem('products');
-    const productsParse = JSON.parse(productsJSON);
+    const productsParse = JSON.parse(localStorage.getItem('products'));
     let products = [];
     products = productsParse.map(item => item.id);
 
@@ -47,30 +46,23 @@ const getOrderDone = () => {
     const city = document.forms['formOrder']['city'];
 
     //au 'submit' sur le formulaire validé
-    const form = document.getElementById('formOrder');
+    let form = document.getElementById('formOrder');
     form.addEventListener('submit', (e) => {
         e.preventDefault()
-        forFetchOrder(lastName, firstName, email, address, city, products)
+        contact = {
+            lastName: lastName.value,
+            firstName: firstName.value,
+            email: email.value,
+            address: address.value,
+            city: city.value
+        }
+        const toSend = JSON.stringify({ contact, products });
+        fetchOrder(toSend)
     });
 }
 
-//récupération des informations nécessaires au clic
-const forFetchOrder = (lastName, firstName, email, address, city, products) => {
-    contact = {
-        lastName: lastName.value,
-        firstName: firstName.value,
-        email: email.value,
-        address: address.value,
-        city: city.value
-    }
-
-    //envoi en objet de contact + products
-    const toSend = JSON.stringify({ contact, products });
-    fetchOrder(toSend)
-}
-
-//fetch envoi à l'api et récupération de l'orderId
-const fetchOrder = toSend => {
+//Fetch pour envoi à l'api
+const fetchOrder = (toSend) => {
     //Envoi à l'API method="POST"
     const url = 'http://localhost:3000/api/cameras/order';
 
@@ -78,15 +70,13 @@ const fetchOrder = toSend => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: toSend
-    })
-        .catch(error => {
-            throw new error(response.status);
-        })
-        .then(res => res.json())
+    }).catch(error => {
+        throw new error(response.status);
+    }).then(res => res.json())
         .then(data => showPurchase(data));
 }
 
-//ouverture de la page de confirmation (utilisation du retour orderId de l'API)
+//ouverture de la page de confirmation
 showPurchase = data => {
     const orderId = `${data.orderId}`;
     window.location.href = '../html/order.html?orderId=' + `${orderId}`;

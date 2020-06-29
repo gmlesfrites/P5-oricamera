@@ -1,6 +1,5 @@
 //Récupération des données par id (paramètre Url suite btn cliqué)
 const id = new URLSearchParams(window.location.search.substring(0)).get("id");
-
 const fetchProduct = () => {
     const urlId = `http://localhost:3000/api/cameras/${id}`;
     fetch(urlId)
@@ -64,7 +63,6 @@ const showItemDetail = data => {
     btnAddToCart.id = `${data._id} `;
     btnAddToCart.className = "button__product--toCart addToCart"
     btnAddToCart.addEventListener("click", () => {
-
         //Infos sur le produit
         const itemToAdd = {
             id: id,
@@ -74,7 +72,6 @@ const showItemDetail = data => {
             price: `${data.price}`,
             qty: 1
         }
-
         addItemToCart(itemToAdd)
     })
     howManyItems()
@@ -93,7 +90,6 @@ const addItem = (itemToAdd) => {
         localStorage.setItem('products', JSON.stringify(cart));
     }
 }
-
 //Ajout au panier
 const addItemToCart = (itemToAdd) => {
     //récup du localStorage

@@ -17,7 +17,6 @@ const displayContent = () => {
         displayCart()
     }
 }
-
 //Récupération des articles ajoutés dans le localStorage
 const itemInCart = JSON.parse(localStorage.getItem('products'));
 
@@ -190,9 +189,9 @@ const howManyItems = () => {
 }
 
 //Gestion de la quantité en -
-const qtyLess = itemInCart => {
-    id = `${itemInCart.id}`
-}
+// const qtyLess = itemInCart => {
+//     id = `${itemInCart.id}`
+// }
 const addLess = qtyLess => {
     const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyLess.id).map(minus => {
         minus.qty--;

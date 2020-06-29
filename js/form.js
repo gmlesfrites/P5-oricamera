@@ -31,34 +31,41 @@ const checkForm = input => {
 }
 Array.from(inputs).map(checkForm);
 
-//Infos pour fetch
-const getOrderDone = () => {
-    //Gestion des données du panier
-    const productsParse = JSON.parse(localStorage.getItem('products'));
-    let products = [];
-    products = productsParse.map(item => item.id);
-
+//Gestion du formulaire 
+const getOrderDone = (lastName, firstName, email, address, city) => {
     //Gestion des données du contact
-    const lastName = document.forms['formOrder']['lastName'];
-    const firstName = document.forms['formOrder']['firstName'];
-    const email = document.forms['formOrder']['email'];
-    const address = document.forms['formOrder']['address'];
-    const city = document.forms['formOrder']['city'];
+    lastName = document.forms['formOrder']['lastName'];
+    firstName = document.forms['formOrder']['firstName'];
+    email = document.forms['formOrder']['email'];
+    address = document.forms['formOrder']['address'];
+    city = document.forms['formOrder']['city'];
 
     //au 'submit' sur le formulaire validé
     let form = document.getElementById('formOrder');
     form.addEventListener('submit', (e) => {
         e.preventDefault()
-        contact = {
-            lastName: lastName.value,
-            firstName: firstName.value,
-            email: email.value,
-            address: address.value,
-            city: city.value
-        }
-        const toSend = JSON.stringify({ contact, products });
-        fetchOrder(toSend)
+        clickedForm(lastName, firstName, email, address, city)
     });
+}
+
+//méthode utilisée au clic
+const clickedForm = (lastName, firstName, email, address, city) => {
+    //Gestion des données du panier
+    const productsParse = JSON.parse(localStorage.getItem('products'));
+    products = productsParse.map(item => item.id);
+
+    //Gestion des infos du formulaire
+    contact = {
+        lastName: lastName.value,
+        firstName: firstName.value,
+        email: email.value,
+        address: address.value,
+        city: city.value
+    }
+
+    //transformation en objet JSON pour fetch
+    const toSend = JSON.stringify({ contact, products });
+    fetchOrder(toSend)
 }
 
 //Fetch pour envoi à l'api

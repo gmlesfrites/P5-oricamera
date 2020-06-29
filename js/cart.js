@@ -100,14 +100,7 @@ const addToCart = itemInCart => {
     const minus = document.createElement('button');
     minus.className = "minus";
     minus.innerHTML = `<strong><i class="fa fa-minus" aria-label="quantité en moins"></i></strong>`;
-    minus.addEventListener("click", () => {
-        //TODO Données de quantité
-        const qtyLess = {
-            id: `${itemInCart.id}`
-        }
-        addLess(qtyLess)
-
-    });
+    minus.addEventListener("click", () => clickLess());
     if (itemInCart.qty === 1) {
         minus.setAttribute("style", "visibility:hidden")
     }
@@ -116,22 +109,12 @@ const addToCart = itemInCart => {
     const qty = document.createElement('p');
     qty.className = "qty";
     qty.textContent = `${itemInCart.qty}`;
-
     qtyCheck.appendChild(qty);
 
     const plus = document.createElement('button');
     plus.className = "plus";
     plus.innerHTML = `<strong><i class="fa fa-plus" aria-label="quantité en +"></i></strong>`;
-    plus.addEventListener("click", () => {
-        //TODO Données de quantité
-        const qtyMore = {
-            id: `${itemInCart.id}`
-        }
-        addMore(qtyMore)
-    });
-    // if (itemInCart.qty >= 5) {
-    //     plus.setAttribute("style", "visibility:hidden")
-    // }
+    plus.addEventListener("click", () => clickMore());
     qtyCheck.appendChild(plus);
 
     //bouton retirer l'article du panier
@@ -140,13 +123,7 @@ const addToCart = itemInCart => {
     removeFromCart.ariaLabel = "retirer le produit du panier";
     removeFromCart.textContent = "Supprimer";
     boxQty.appendChild(removeFromCart);
-    removeFromCart.addEventListener("click", () => {
-        //TODO Données du produit pour le localStorage
-        const itemToRemove = {
-            id: `${itemInCart.id}`
-        }
-        removeItem(itemToRemove)
-    });
+    removeFromCart.addEventListener("click", () => clickRemove());
 
     // pour affichage responsive Prix de plusieurs du même article
     const boxTotalPrice = document.createElement('div');
@@ -189,9 +166,13 @@ const howManyItems = () => {
 }
 
 //Gestion de la quantité en -
-// const qtyLess = itemInCart => {
-//     id = `${itemInCart.id}`
-// }
+const clickLess = () => {
+    //TODO Données de quantité
+    const qtyLess = {
+        id: `${itemInCart.id}`
+    }
+    addLess(qtyLess)
+}
 const addLess = qtyLess => {
     const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyLess.id).map(minus => {
         minus.qty--;
@@ -203,6 +184,13 @@ const addLess = qtyLess => {
 }
 
 // Gestion de la quantité en +
+const clickMore = () => {
+    //TODO Données de quantité
+    const qtyMore = {
+        id: `${itemInCart.id}`
+    }
+    addMore(qtyMore)
+}
 const addMore = qtyMore => {
     const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyMore.id).map(plus => {
         plus.qty++;
@@ -214,6 +202,13 @@ const addMore = qtyMore => {
 }
 
 //supprimer un article
+const clickRemove = () => {
+    //TODO Données du produit pour le localStorage
+    const itemToRemove = {
+        id: `${itemInCart.id}`
+    }
+    removeItem(itemToRemove)
+}
 const removeItem = itemToRemove => {
     const itemFilter = itemInCart.filter(array => array.id !== itemToRemove.id);
     //mettre à jour le localStorage

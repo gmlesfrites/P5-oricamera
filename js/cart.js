@@ -34,9 +34,6 @@ const displayCart = () => {
 
 //Création ligne d'article
 const addToCart = itemInCart => {
-    //récupération de l'id pour la gestion des quantités +/- et suppression article
-    const itemInCartId = `${itemInCart.id}`;
-
     //Gestion du panier
     const cartContent = document.querySelector('section div');
 
@@ -99,6 +96,9 @@ const addToCart = itemInCart => {
     const qtyCheck = document.createElement('div');
     qtyCheck.className = "countItems__cart";
     boxQty.appendChild(qtyCheck);
+
+    //récupération de l'id pour la gestion des quantités +/- et suppression article
+    const itemInCartId = `${itemInCart.id}`;
 
     const minus = document.createElement('button');
     minus.className = "minus";
@@ -179,7 +179,6 @@ const addLess = itemInCartId => {
     localStorage.setItem('products', JSON.stringify(itemInCart))
     document.location.reload()
 }
-
 //Gestion de la quantité en +
 const addMore = itemInCartId => {
     const qtyFilter = itemInCart.filter(quantity => quantity.id === itemInCartId).map(plus => {

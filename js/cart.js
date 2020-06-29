@@ -168,11 +168,14 @@ const howManyItems = () => {
 //Gestion de la quantité en -
 const clickLess = () => {
     //TODO Données de quantité
+    console.log('banana');
     const qtyLess = {
         id: `${itemInCart.id}`
     }
+    console.log(qtyLess);
     addLess(qtyLess)
 }
+
 const addLess = qtyLess => {
     const qtyFilter = itemInCart.filter(quantity => quantity.id === qtyLess.id).map(minus => {
         minus.qty--;

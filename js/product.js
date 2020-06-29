@@ -19,6 +19,9 @@ const fetchProduct = () => {
 
 //Utilisation des données de fetch par Id pour les insérer dans la page
 const showItemDetail = data => {
+    //Pour MAJ du compteur sur le header
+    howManyItems()
+
     //Ajout de l'image
     const imageElt = document.getElementById("imageUrl");
     imageElt.src = data.imageUrl;
@@ -61,21 +64,23 @@ const showItemDetail = data => {
     //Bouton addToCart page produit
     const btnAddToCart = document.getElementById('addToCart');
     btnAddToCart.id = `${data._id} `;
-    btnAddToCart.className = "button__product--toCart addToCart"
-    btnAddToCart.addEventListener("click", () => {
-        //Infos sur le produit
-        const itemToAdd = {
-            id: id,
-            image: `${data.imageUrl}`,
-            name: `${data.name}`,
-            description: `${data.description}`,
-            price: `${data.price}`,
-            qty: 1
-        }
-        addItemToCart(itemToAdd)
-    })
-    howManyItems()
+    btnAddToCart.className = "button__product--toCart addToCart";
+    btnAddToCart.addEventListener("click", () => clicked(data));
 };
+
+//Informations à récupérer au clic
+const clicked = data => {
+    //Infos sur le produit
+    const itemToAdd = {
+        id: id,
+        image: `${data.imageUrl}`,
+        name: `${data.name}`,
+        description: `${data.description}`,
+        price: `${data.price}`,
+        qty: 1
+    }
+    addItemToCart(itemToAdd)
+}
 
 //recherche si article existant
 const addItem = (itemToAdd) => {

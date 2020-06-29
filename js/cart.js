@@ -220,7 +220,6 @@ const deleteCart = () => {
         deleteYouSure(youSure)
     });
 }
-
 // Supression du panier complet (valable pour le bouton supprimer le panier et supprimer dans la ligne article)
 const deleteYouSure = youSure => {
     if (youSure) {

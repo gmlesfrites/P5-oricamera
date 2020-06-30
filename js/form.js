@@ -47,13 +47,11 @@ const getOrderDone = (lastName, firstName, email, address, city) => {
         clickedForm(lastName, firstName, email, address, city)
     });
 }
-
 //méthode utilisée au clic
 const clickedForm = (lastName, firstName, email, address, city) => {
     //Gestion des données du panier
     const productsParse = JSON.parse(localStorage.getItem('products'));
     products = productsParse.map(item => item.id);
-
     //Gestion des infos du formulaire
     contact = {
         lastName: lastName.value,
@@ -62,7 +60,6 @@ const clickedForm = (lastName, firstName, email, address, city) => {
         address: address.value,
         city: city.value
     }
-
     //transformation en objet JSON pour fetch
     const toSend = JSON.stringify({ contact, products });
     fetchOrder(toSend)
